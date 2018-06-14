@@ -1,3 +1,11 @@
+.idea/
+.vscode/
+tmp/
+temp/
+info.md
+dump.rdb
+secrets.ts
+
 # Logs
 logs
 *.log
