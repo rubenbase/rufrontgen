@@ -1,196 +1,144 @@
 import * as React from "react";
 
-import {
-  Form,
-  Input,
-  Tooltip,
-  Icon,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button
-} from "antd";
+import { Form, Input, Icon, Button, Select } from "antd";
+
+import { withFormik, FormikErrors, FormikProps } from "formik";
 const FormItem = Form.Item;
 const Option = Select.Option;
 
-class RegistrationForm extends React.PureComponent<any> {
-  state = {
-    confirmDirty: false,
-    autoCompleteResult: []
-  };
-  handleSubmit = (e: any) => {
-    e.preventDefault();
-    this.props.form.validateFieldsAndScroll((err: any, values: any) => {
-      if (!err) {
-        console.log("Received values of form: ", values);
-      }
-    });
-  };
-  handleConfirmBlur = (e: any) => {
-    const value = e.target.value;
-    this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-  };
-  compareToFirstPassword = (rule: any, value: any, callback: any) => {
-    const form = this.props.form;
-    if (value && value !== form.getFieldValue("password")) {
-      callback("Two passwords that you enter is inconsistent!");
-    } else {
-      callback();
-    }
-  };
-  validateToNextPassword = (rule: any, value: any, callback: any) => {
-    const form = this.props.form;
-    if (value && this.state.confirmDirty) {
-      form.validateFields(["confirm"], { force: true });
-    }
-    callback();
-  };
+interface FormValues {
+  email: string;
+  password: string;
+  name: string;
+  lastname: string;
+  address: string;
+  country: string;
+  postalcode: string;
+  gender: string;
+}
 
+interface Props {
+  submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
+}
+
+class RegistrationForm extends React.PureComponent<
+  FormikProps<FormValues> & Props
+> {
   render() {
-    const { getFieldDecorator } = this.props.form;
-
-    const formItemLayout = {
-      labelCol: {
-        xs: { span: 24 },
-        sm: { span: 8 }
-      },
-      wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 16 }
-      }
-    };
-    const tailFormItemLayout = {
-      wrapperCol: {
-        xs: {
-          span: 24,
-          offset: 0
-        },
-        sm: {
-          span: 16,
-          offset: 8
-        }
-      }
-    };
-    const prefixSelector = getFieldDecorator("prefix", {
-      initialValue: "34"
-    })(
-      <Select style={{ width: 70 }}>
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    );
+    const { values, handleChange, handleBlur, handleSubmit } = this.props;
 
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <FormItem {...formItemLayout} label="E-mail">
-          {getFieldDecorator("email", {
-            rules: [
-              {
-                type: "email",
-                message: "The input is not valid E-mail!"
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!"
-              }
-            ]
-          })(<Input />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Password">
-          {getFieldDecorator("password", {
-            rules: [
-              {
-                required: true,
-                message: "Please input your password!"
-              },
-              {
-                validator: this.validateToNextPassword
-              }
-            ]
-          })(<Input type="password" />)}
-        </FormItem>
-        <FormItem {...formItemLayout} label="Confirm Password">
-          {getFieldDecorator("confirm", {
-            rules: [
-              {
-                required: true,
-                message: "Please confirm your password!"
-              },
-              {
-                validator: this.compareToFirstPassword
-              }
-            ]
-          })(<Input type="password" onBlur={this.handleConfirmBlur} />)}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label={
-            <span>
-              Name&nbsp;
-              <Tooltip title="What do you want others to call you?">
-                <Icon type="question-circle-o" />
-              </Tooltip>
-            </span>
-          }
-        >
-          {getFieldDecorator("nickname", {
-            rules: [
-              {
-                required: true,
-                message: "Please input your nickname!",
-                whitespace: true
-              }
-            ]
-          })(<Input />)}
-        </FormItem>
-
-        <FormItem {...formItemLayout} label="Phone Number">
-          {getFieldDecorator("phone", {
-            rules: [
-              { required: true, message: "Please input your phone number!" }
-            ]
-          })(<Input addonBefore={prefixSelector} style={{ width: "100%" }} />)}
-        </FormItem>
-
-        <FormItem
-          {...formItemLayout}
-          label="Captcha"
-          extra="We must make sure that your are a human."
-        >
-          <Row gutter={8}>
-            <Col span={12}>
-              {getFieldDecorator("captcha", {
-                rules: [
-                  {
-                    required: true,
-                    message: "Please input the captcha you got!"
-                  }
-                ]
-              })(<Input />)}
-            </Col>
-            <Col span={12}>
-              <Button>Get captcha</Button>
-            </Col>
-          </Row>
-        </FormItem>
-        <FormItem {...tailFormItemLayout}>
-          {getFieldDecorator("agreement", {
-            valuePropName: "checked"
-          })(
-            <Checkbox>
-              I have read the <a href="">agreement</a>
-            </Checkbox>
-          )}
-        </FormItem>
-        <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            Register
-          </Button>
-        </FormItem>
-      </Form>
+      <form style={{ display: "flex" }} onSubmit={handleSubmit}>
+        <div style={{ width: 400, margin: "auto" }}>
+          <FormItem>
+            <Input
+              name="email"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="Email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              name="password"
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              type="password"
+              placeholder="Password"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              name="name"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="Name"
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              name="lastname"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="Lastname"
+              value={values.lastname}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              name="address"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="Address"
+              value={values.address}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              name="country"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="Country"
+              value={values.country}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              name="postalcode"
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              placeholder="Postal Code"
+              value={values.postalcode}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </FormItem>
+          <FormItem>
+            <Select placeholder="Gender" value={values.postalcode}>
+              <Option value="male">male</Option>
+              <Option value="female">female</Option>
+              <Option value="other">other</Option>
+            </Select>
+          </FormItem>
+          <FormItem>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="login-form-button"
+            >
+              Register
+            </Button>
+            Or <a href="">register now!</a>
+          </FormItem>
+        </div>
+      </form>
     );
   }
 }
 
-export const RegisterView = Form.create()(RegistrationForm);
+export const RegisterView = withFormik<Props, FormValues>({
+  mapPropsToValues: () => ({
+    email: "",
+    password: "",
+    name: "",
+    lastname: "",
+    address: "",
+    country: "",
+    postalcode: "",
+    gender: ""
+  }),
+  handleSubmit: async (values, { props, setErrors }) => {
+    const errors = await props.submit(values);
+    if (errors) {
+      setErrors(errors);
+    }
+  }
+})(RegistrationForm);
