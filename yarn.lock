@@ -288,6 +288,10 @@
   version "0.24.6"
   resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.24.6.tgz#b086f6aee4e2656196914863871a97dfcc4f8dd7"
 
+"@types/yup@^0.24.7":
+  version "0.24.7"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.24.7.tgz#d3b6d7c5d4faf9419005a889ce4d3fddfc0e77ed"
+
 "@types/zen-observable@^0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.5.3.tgz#91b728599544efbb7386d8b6633693a3c2e7ade5"
