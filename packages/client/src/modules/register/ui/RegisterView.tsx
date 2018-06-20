@@ -1,10 +1,9 @@
 import * as React from "react";
-
-import { Form, Input, Icon, Button, Select } from "antd";
-
+import { Form, Input, Icon, Button } from "antd";
+import * as yup from "yup";
 import { withFormik, FormikErrors, FormikProps } from "formik";
+
 const FormItem = Form.Item;
-const Option = Select.Option;
 
 interface FormValues {
   email: string;
@@ -14,7 +13,6 @@ interface FormValues {
   address: string;
   country: string;
   postalcode: string;
-  gender: string;
 }
 
 interface Props {
@@ -101,13 +99,16 @@ class RegistrationForm extends React.PureComponent<
               onBlur={handleBlur}
             />
           </FormItem>
-          <FormItem>
+
+          {/* <FormItem>
             <Select placeholder="Gender" value={values.postalcode}>
               <Option value="male">male</Option>
+
               <Option value="female">female</Option>
               <Option value="other">other</Option>
             </Select>
-          </FormItem>
+          </FormItem> */}
+
           <FormItem>
             <Button
               type="primary"
@@ -116,13 +117,33 @@ class RegistrationForm extends React.PureComponent<
             >
               Register
             </Button>
-            Or <a href="">register now!</a>
+          </FormItem>
+          <FormItem>
+            Or <a href="">Login now!</a>
           </FormItem>
         </div>
       </form>
     );
   }
 }
+
+const emailNotLongEnough = "email must be at least 3 characters";
+const invalidEmail = "email must be a valid email";
+const passwordNotLongEnough = "password must be at least 3 characters";
+
+export const registerPasswordValidation = yup
+  .string()
+  .min(3, passwordNotLongEnough)
+  .max(255);
+
+const schema = yup.object().shape({
+  email: yup
+    .string()
+    .min(3, emailNotLongEnough)
+    .max(255)
+    .email(invalidEmail),
+  password: registerPasswordValidation
+});
 
 export const RegisterView = withFormik<Props, FormValues>({
   mapPropsToValues: () => ({
@@ -132,8 +153,7 @@ export const RegisterView = withFormik<Props, FormValues>({
     lastname: "",
     address: "",
     country: "",
-    postalcode: "",
-    gender: ""
+    postalcode: ""
   }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);

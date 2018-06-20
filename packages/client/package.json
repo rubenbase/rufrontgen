@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/react-router-dom": "^4.2.7",
+    "@types/yup": "^0.24.7",
     "antd": "^3.6.2",
     "apollo-cache-inmemory": "^1.2.4",
     "apollo-client": "^2.3.4",
@@ -15,7 +16,8 @@
     "react-apollo": "^2.1.5",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts-ts": "2.16.0"
+    "react-scripts-ts": "2.16.0",
+    "yup": "^0.25.1"
   },
   "scripts": {
     "start": "react-scripts-ts start",
