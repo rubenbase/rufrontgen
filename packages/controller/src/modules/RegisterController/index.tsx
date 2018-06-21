@@ -1,4 +1,6 @@
 import * as React from "react";
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
 
 interface IProps {
   children: (
@@ -6,7 +8,7 @@ interface IProps {
   ) => JSX.Element | null;
   defaulted: number;
 }
-class RegisterController extends React.PureComponent<IProps> {
+class C extends React.PureComponent<IProps> {
   public static defaultProps = {
     defaulted: 0
   };
@@ -20,4 +22,11 @@ class RegisterController extends React.PureComponent<IProps> {
   }
 }
 
-module.exports = RegisterController;
+const RegisterMutation = gql`
+  mutation($email: String!, $password: String!) {
+    register(email: $email, password: $password) {
+      path
+      message
+    }
+  }
+`;
