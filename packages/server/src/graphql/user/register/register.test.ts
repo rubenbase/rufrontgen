@@ -1,15 +1,15 @@
-import { request } from "graphql-request";
-import { User } from "../../../models/User";
+import faker = require("faker");
 import {
-  duplicateEmail,
   emailNotLongEnough,
   invalidEmail,
   passwordNotLongEnough
-} from "../../../utils/validation/errorMessages";
+} from "@rufrontgen/common";
+
+import { User } from "../../../models/User";
+import { duplicateEmail } from "../../../utils/validation/errorMessages";
 import { Connection } from "typeorm";
 import { TestClient } from "../../../utils/testing/TestClient";
 import { createTestConn } from "../../../utils/testing/createTestConn";
-import faker = require("faker");
 
 faker.seed(Date.now() + 5);
 

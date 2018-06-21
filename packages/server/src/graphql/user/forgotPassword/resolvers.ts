@@ -5,9 +5,12 @@ import { ResolverMap } from "../../../types/graphql-utils";
 import { forgotPasswordLockAccount } from "../../../utils/forgotPasswordLockAccount";
 import { createForgotPasswordLink } from "../../../utils/createForgotPasswordLink";
 import { User } from "../../../models/User";
-import { userNotFoundError, expiredKeyError } from "../../../utils/validation/errorMessages";
+import {
+  userNotFoundError,
+  expiredKeyError
+} from "../../../utils/validation/errorMessages";
 import { forgotPasswordPrefix } from "../../../constants";
-import { registerPasswordValidation } from "../../../utils/validation/yupSchemas";
+import { registerPasswordValidation } from "@rufrontgen/common";
 import { formatYupError } from "../../../utils/validation/formatYupError";
 
 const schema = yup.object().shape({
@@ -15,7 +18,6 @@ const schema = yup.object().shape({
 });
 
 export const resolvers: ResolverMap = {
-
   Mutation: {
     sendForgotPasswordEmail: async (
       _,
