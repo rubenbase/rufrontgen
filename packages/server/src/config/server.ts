@@ -26,14 +26,14 @@ if (redisDebugMode) {
 
 // Creates the GraphQL server
 const server = new GraphQLServer({
-  schema: genSchema(),
-  context: ({ request }: any) => ({
+  schema: genSchema() as any,
+  context: ({ request }) => ({
     redis,
     url: request.protocol + "://" + request.get("host"),
     session: request.session,
     req: request
   })
-} as any);
+});
 
 module.exports.server = server;
 module.exports.redis = redis;

@@ -1,32 +1,20 @@
-import * as yup from "yup";
+import { validUserSchema } from "@rufrontgen/common";
 
 import { User } from "../../../models/User";
 import { ResolverMap } from "../../../types/graphql-utils";
 import { formatYupError } from "../../../utils/validation/formatYupError";
-import { emailNotLongEnough, invalidEmail } from "../../../utils/validation/errorMessages";
-import { registerPasswordValidation } from "../../../utils/validation/yupSchemas";
-// import { sendEmail } from "../../utils/sendEmail";
-// import { createConfirmEmailLink } from "./createConfirmEmailLink";
-
-const schema = yup.object().shape({
-  email: yup
-    .string()
-    .min(3, emailNotLongEnough)
-    .max(255)
-    .email(invalidEmail),
-  password: registerPasswordValidation
-});
+import { sendEmail } from "../../../utils/sendEmail";
+import { createConfirmEmailLink } from "./createConfirmEmailLink";
 
 export const resolvers: ResolverMap = {
-
   Mutation: {
     register: async (
       _,
-      args: GQL.IRegisterOnMutationArguments
-      // { redis, url }
+      args: GQL.IRegisterOnMutationArguments,
+      { redis, url }
     ) => {
       try {
-        await schema.validate(args, { abortEarly: false });
+        await validUserSchema.validate(args, { abortEarly: false });
       } catch (err) {
         return formatYupError(err);
       }
@@ -49,12 +37,12 @@ export const resolvers: ResolverMap = {
       });
       await user.save();
 
-      //  if (process.env.NODE_ENV !== "test") {
-      //    await sendEmail(
-      //      email,
-      //      await createConfirmEmailLink(url, user.id, redis)
-      //    );
-      //  }
+      if (process.env.NODE_ENV !== "test") {
+        await sendEmail(
+          email,
+          await createConfirmEmailLink(url, user.id, redis)
+        );
+      }
 
       return null;
     }

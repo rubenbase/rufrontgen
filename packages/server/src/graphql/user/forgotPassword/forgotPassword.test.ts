@@ -5,9 +5,9 @@ import { TestClient } from "../../../utils/testing/TestClient";
 import { createForgotPasswordLink } from "../../../utils/createForgotPasswordLink";
 import Redis = require("ioredis");
 import { forgotPasswordLockAccount } from "../../../utils/forgotPasswordLockAccount";
+import { passwordNotLongEnough } from "@rufrontgen/common";
 import {
   forgotPasswordLockedError,
-  passwordNotLongEnough,
   expiredKeyError
 } from "../../../utils/validation/errorMessages";
 import faker = require("faker");

@@ -1,9 +1,10 @@
 import * as React from "react";
-import { Form, Input, Icon, Button } from "antd";
-import { withFormik, FormikErrors, FormikProps } from "formik";
+import { withFormik, FormikErrors, FormikProps, Field, Form } from "formik";
+import { Form as FormA, Icon, Button } from "antd";
 import { validUserSchema } from "@rufrontgen/common";
+import { InputField } from "../../shared/inputField";
 
-const FormItem = Form.Item;
+const FormItem = FormA.Item;
 
 interface FormValues {
   email: string;
@@ -23,154 +24,87 @@ class RegistrationForm extends React.PureComponent<
   FormikProps<FormValues> & Props
 > {
   render() {
-    const {
-      values,
-      handleChange,
-      handleBlur,
-      handleSubmit,
-      touched,
-      errors
-    } = this.props;
-
     return (
       <div style={{ margin: 250 }}>
-        <form style={{ display: "flex" }} onSubmit={handleSubmit}>
+        <Form style={{ display: "flex" }}>
           <div style={{ width: 400, margin: "auto" }}>
-            <FormItem
-              help={touched.email && errors.email ? errors.email : ""}
+            <Field
+              name="email"
               // tslint:disable-next-line:jsx-no-multiline-js
-              validateStatus={
-                touched.email && errors.email ? "error" : undefined
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
-            >
-              <Input
-                name="email"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Email"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
+              placeholder="Email"
+              component={InputField}
+            />
 
-            <FormItem
-              help={touched.password && errors.password ? errors.password : ""}
+            <Field
+              name="password"
+              type="password"
               // tslint:disable-next-line:jsx-no-multiline-js
-              validateStatus={
-                touched.password && errors.password ? "error" : undefined
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
-            >
-              <Input
-                name="password"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                type="password"
-                placeholder="Password"
-                value={values.password}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
-            <FormItem
-              help={touched.name && errors.name ? errors.name : ""}
-              validateStatus={touched.name && errors.name ? "error" : undefined}
-            >
-              <Input
-                name="name"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Name"
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
-            <FormItem
-              help={touched.lastname && errors.lastname ? errors.lastname : ""}
+              placeholder="Password"
+              component={InputField}
+            />
+
+            <Field
+              name="name"
               // tslint:disable-next-line:jsx-no-multiline-js
-              validateStatus={
-                touched.lastname && errors.lastname ? "error" : undefined
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
-            >
-              <Input
-                name="lastname"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Lastname"
-                value={values.lastname}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
-            <FormItem
-              help={touched.address && errors.address ? errors.address : ""}
+              placeholder="Name"
+              component={InputField}
+            />
+
+            <Field
+              name="lastname"
               // tslint:disable-next-line:jsx-no-multiline-js
-              validateStatus={
-                touched.address && errors.address ? "error" : undefined
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
-            >
-              <Input
-                name="address"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Address"
-                value={values.address}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
-            <FormItem
-              help={touched.country && errors.country ? errors.country : ""}
+              placeholder="Last name"
+              component={InputField}
+            />
+
+            <Field
+              name="address"
               // tslint:disable-next-line:jsx-no-multiline-js
-              validateStatus={
-                touched.country && errors.country ? "error" : undefined
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
-            >
-              <Input
-                name="country"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Country"
-                value={values.country}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
-            <FormItem
+              placeholder="Address"
+              component={InputField}
+            />
+
+            <Field
+              name="country"
               // tslint:disable-next-line:jsx-no-multiline-js
-              help={
-                touched.postalcode && errors.postalcode ? errors.postalcode : ""
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
+              placeholder="Country"
+              component={InputField}
+            />
+
+            <Field
+              name="postalcode"
               // tslint:disable-next-line:jsx-no-multiline-js
-              validateStatus={
-                touched.postalcode && errors.postalcode ? "error" : undefined
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                // tslint:disable-next-line:jsx-curly-spacing
               }
-            >
-              <Input
-                name="postalcode"
-                // tslint:disable-next-line:jsx-no-multiline-js
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Postal Code"
-                value={values.postalcode}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-            </FormItem>
+              placeholder="Postal Code"
+              component={InputField}
+            />
 
             <FormItem>
               <Button
@@ -185,7 +119,7 @@ class RegistrationForm extends React.PureComponent<
               Or <a href="">Login now!</a>
             </FormItem>
           </div>
-        </form>
+        </Form>
       </div>
     );
   }
