@@ -1,19 +1,28 @@
 import * as React from "react";
-import { graphql } from "react-apollo";
+import { graphql, ChildMutateProps } from "react-apollo";
 import gql from "graphql-tag";
-
+import {
+  RegisterMutation,
+  RegisterMutationVariables
+} from "./__generated__/RegisterMutation";
 interface IProps {
   children: (
-    data: { submit: (values: any) => Promise<null> }
+    data: { submit: (values: RegisterMutationVariables) => Promise<null> }
   ) => JSX.Element | null;
-  defaulted: number;
 }
-class C extends React.PureComponent<IProps> {
-  public static defaultProps = {
-    defaulted: 0
-  };
-  submit = async (values: any) => {
-    console.log(values);
+class C extends React.PureComponent<
+  ChildMutateProps<IProps, RegisterMutation, RegisterMutationVariables>
+> {
+  submit = async (values: RegisterMutationVariables) => {
+    const response = await this.props.mutate({
+      variables: {
+        email: values.email,
+        password: values.password,
+        name: values.name,
+        lastname: values.lastname
+      }
+    });
+    console.log("RESPONSE ", response);
     return null;
   };
 
@@ -22,11 +31,32 @@ class C extends React.PureComponent<IProps> {
   }
 }
 
-const RegisterMutation = gql`
-  mutation($email: String!, $password: String!) {
-    register(email: $email, password: $password) {
+const registerMutation = gql`
+  mutation RegisterMutation(
+    $email: String!
+    $password: String!
+    $name: String!
+    $lastname: String!
+  ) {
+    register(
+      email: $email
+      password: $password
+      name: $name
+      lastname: $lastname
+    ) {
       path
       message
     }
   }
 `;
+
+export const RegisterController = graphql<
+  IProps,
+  RegisterMutation,
+  RegisterMutationVariables
+>(registerMutation)(C);
+
+// export const RegisterController = graphql<
+// IProps,
+// RegisterMutation,
+// REgisterMutationVariables>(registerMutation)(C);

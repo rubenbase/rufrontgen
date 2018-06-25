@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "module": "esnext",
+    "declaration": true,
     "target": "es5",
     "lib": ["es6", "dom", "esnext.asynciterable"],
     "sourceMap": true,
@@ -17,8 +18,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "types": ["jest", "node", "react", "react-dom", "react-router-dom"],
-    "skipLibCheck": true,
-    "declaration": true
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
