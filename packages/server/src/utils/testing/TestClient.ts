@@ -33,13 +33,18 @@ export class TestClient {
     });
   }
 
-  async register(email: string, password: string) {
+  async register(
+    email: string,
+    password: string,
+    name: string,
+    lastname: string
+  ) {
     return rp.post(this.url, {
       ...this.options,
       body: {
         query: `
         mutation {
-          register(email: "${email}", password: "${password}") {
+          register(email: "${email}", password: "${password}", name: "${name}", lastname: "${lastname}") {
             path
             message
           }
@@ -71,6 +76,8 @@ export class TestClient {
           me {
             id
             email
+            name
+            lastname
           }
         }
         `

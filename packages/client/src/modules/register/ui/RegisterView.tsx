@@ -11,18 +11,13 @@ interface FormValues {
   password: string;
   name: string;
   lastname: string;
-  address: string;
-  country: string;
-  postalcode: string;
 }
 
 interface Props {
   submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
 }
 
-class RegistrationForm extends React.PureComponent<
-  FormikProps<FormValues> & Props
-> {
+class C extends React.PureComponent<FormikProps<FormValues> & Props> {
   render() {
     return (
       <div style={{ margin: 250 }}>
@@ -73,39 +68,6 @@ class RegistrationForm extends React.PureComponent<
               component={InputField}
             />
 
-            <Field
-              name="address"
-              // tslint:disable-next-line:jsx-no-multiline-js
-              prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
-                // tslint:disable-next-line:jsx-curly-spacing
-              }
-              placeholder="Address"
-              component={InputField}
-            />
-
-            <Field
-              name="country"
-              // tslint:disable-next-line:jsx-no-multiline-js
-              prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
-                // tslint:disable-next-line:jsx-curly-spacing
-              }
-              placeholder="Country"
-              component={InputField}
-            />
-
-            <Field
-              name="postalcode"
-              // tslint:disable-next-line:jsx-no-multiline-js
-              prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
-                // tslint:disable-next-line:jsx-curly-spacing
-              }
-              placeholder="Postal Code"
-              component={InputField}
-            />
-
             <FormItem>
               <Button
                 type="primary"
@@ -131,10 +93,7 @@ export const RegisterView = withFormik<Props, FormValues>({
     email: "",
     password: "",
     name: "",
-    lastname: "",
-    address: "",
-    country: "",
-    postalcode: ""
+    lastname: ""
   }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);
@@ -142,4 +101,4 @@ export const RegisterView = withFormik<Props, FormValues>({
       setErrors(errors);
     }
   }
-})(RegistrationForm);
+})(C);

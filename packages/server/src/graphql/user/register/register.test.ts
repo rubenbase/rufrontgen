@@ -15,6 +15,8 @@ faker.seed(Date.now() + 5);
 
 const email = faker.internet.email();
 const password = faker.internet.password();
+const name = faker.name.firstName();
+const lastname = faker.name.lastName();
 
 let conn: Connection;
 beforeAll(async () => {
@@ -29,7 +31,7 @@ describe("Register user", async () => {
     const client = new TestClient(process.env.TEST_HOST as string);
 
     // make sure we can register a user
-    const response = await client.register(email, password);
+    const response = await client.register(email, password, name, lastname);
     expect(response.data).toEqual({ register: null });
     const users = await User.find({ where: { email } });
     expect(users).toHaveLength(1);
@@ -38,7 +40,7 @@ describe("Register user", async () => {
     expect(user.password).not.toEqual(password);
 
     // test for duplicate emails
-    const response2 = await client.register(email, password);
+    const response2 = await client.register(email, password, name, lastname);
 
     expect(response2.data.register).toHaveLength(1);
     expect(response2.data.register[0]).toEqual({
@@ -51,7 +53,7 @@ describe("Register user", async () => {
     const client = new TestClient(process.env.TEST_HOST as string);
 
     // catch bad email
-    const response3 = await client.register("b", password);
+    const response3 = await client.register("b", password, name, lastname);
     expect(response3.data).toEqual({
       register: [
         {
@@ -70,7 +72,12 @@ describe("Register user", async () => {
     const client = new TestClient(process.env.TEST_HOST as string);
 
     // catch bad password
-    const response4 = await client.register(faker.internet.email(), "aa");
+    const response4 = await client.register(
+      faker.internet.email(),
+      "aa",
+      name,
+      lastname
+    );
 
     expect(response4.data).toEqual({
       register: [
@@ -86,7 +93,7 @@ describe("Register user", async () => {
     const client = new TestClient(process.env.TEST_HOST as string);
 
     // catch bad password and bad email
-    const response5 = await client.register("df", "ad");
+    const response5 = await client.register("df", "ad", name, lastname);
 
     expect(response5.data).toEqual({
       register: [

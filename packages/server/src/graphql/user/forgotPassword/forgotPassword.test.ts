@@ -17,6 +17,8 @@ faker.seed(Date.now() + 0);
 const email = faker.internet.email();
 const password = faker.internet.password();
 const newPassword = faker.internet.password();
+const name = faker.name.findName();
+const lastname = faker.name.lastName();
 let userId: string;
 
 beforeAll(async () => {
@@ -24,6 +26,8 @@ beforeAll(async () => {
   const user = await User.create({
     email,
     password,
+    name,
+    lastname,
     confirmed: true
   }).save();
   userId = user.id;

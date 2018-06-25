@@ -10,6 +10,8 @@ import faker = require("faker");
 faker.seed(Date.now() + 1);
 const email = faker.internet.email();
 const password = faker.internet.password();
+const name = faker.name.firstName();
+const lastname = faker.name.lastName();
 
 let conn: Connection;
 beforeAll(async () => {
@@ -56,7 +58,7 @@ describe("login", () => {
     const client = new TestClient(process.env.TEST_HOST as string);
 
     // We register an user.
-    await client.register(email, password);
+    await client.register(email, password, name, lastname);
 
     // We expect an error as we didn't confirm the email.
     await loginExpectError(client, email, password, confirmEmailError);

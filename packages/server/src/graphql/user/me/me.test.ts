@@ -7,6 +7,8 @@ let conn: Connection;
 faker.seed(Date.now() + 3);
 const email = faker.internet.email();
 const password = faker.internet.password();
+const name = faker.name.firstName();
+const lastname = faker.name.lastName();
 let userId: string;
 
 beforeAll(async () => {
@@ -14,6 +16,8 @@ beforeAll(async () => {
   const user = await User.create({
     email,
     password,
+    name,
+    lastname,
     confirmed: true
   }).save();
   userId = user.id;
@@ -44,7 +48,9 @@ describe("me", () => {
     expect(response.data).toEqual({
       me: {
         id: userId,
-        email
+        email,
+        name,
+        lastname
       }
     });
   });

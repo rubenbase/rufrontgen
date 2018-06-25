@@ -60,7 +60,7 @@ export const startServer = async () => {
         secure: process.env.NODE_ENV === "production", // needs https on production
         maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
       }
-    })
+    } as any)
   );
 
   const cors = {
@@ -91,7 +91,7 @@ export const startServer = async () => {
     port: process.env.NODE_ENV === "test" ? 0 : 4000
   });
 
-  console.log("\nServer is running on http://localhost:4000");
+  console.log("\nServer is running! Go to http://localhost:4000/docs");
 
   return app;
 };

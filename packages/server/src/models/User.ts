@@ -1,12 +1,12 @@
 import * as bcrypt from "bcryptjs";
-
 import {
   Entity,
-  Column,
-  BaseEntity,
   PrimaryGeneratedColumn,
-  BeforeInsert
+  Column,
+  BeforeInsert,
+  CreateDateColumn
 } from "typeorm";
+import { BaseEntity } from "typeorm/repository/BaseEntity";
 
 @Entity("users")
 export class User extends BaseEntity {
@@ -15,7 +15,17 @@ export class User extends BaseEntity {
   @Column("varchar", { length: 255 })
   email: string;
 
+  @Column("text") name: string;
+
+  @Column("text") lastname: string;
+
   @Column("text") password: string;
+
+  @CreateDateColumn({ type: "timestamptz" })
+  createdAt: Date;
+
+  @Column("boolean", { default: true })
+  active: boolean;
 
   @Column("boolean", { default: false })
   confirmed: boolean;

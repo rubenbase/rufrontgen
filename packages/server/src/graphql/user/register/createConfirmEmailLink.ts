@@ -1,7 +1,7 @@
 import v4 = require("uuid/v4");
 import { Redis } from "ioredis";
 
-// http://localhost:4000
+// http://localhost:4000/docs
 // https://my-website.com
 // https://my-website.com/confirm/<id>
 export const createConfirmEmailLink = async (

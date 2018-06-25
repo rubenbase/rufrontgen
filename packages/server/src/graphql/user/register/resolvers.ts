@@ -18,7 +18,8 @@ export const resolvers: ResolverMap = {
       } catch (err) {
         return formatYupError(err);
       }
-      const { email, password } = args;
+
+      const { email, password, name, lastname } = args;
       const userAlreadyExists = await User.findOne({
         where: { email },
         select: ["id"]
@@ -33,7 +34,9 @@ export const resolvers: ResolverMap = {
       }
       const user = User.create({
         email,
-        password
+        password,
+        name,
+        lastname
       });
       await user.save();
 
