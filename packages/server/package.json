@@ -62,7 +62,8 @@
     "win-test": "SET NODE_ENV=test&& jest --watch",
     "start": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "test": "NODE_ENV=test jest --watch",
-    "gen-schema-types": "ts-node src/scripts/createTypes.ts"
+    "gen-schema-types": "ts-node src/scripts/createTypes.ts",
+    "build": "tsc"
   },
   "jest": {
     "globalSetup": "./src/utils/testing/callSetup.js",

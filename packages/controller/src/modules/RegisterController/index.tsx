@@ -5,7 +5,7 @@ import {
   RegisterMutation,
   RegisterMutationVariables
 } from "./__generated__/RegisterMutation";
-interface IProps {
+export interface IProps {
   children: (
     data: { submit: (values: RegisterMutationVariables) => Promise<null> }
   ) => JSX.Element | null;
