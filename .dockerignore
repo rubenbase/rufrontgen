@@ -5,4 +5,4 @@
 !./packages/common/dist
 !./packages/server/package.json
 !./packages/server/.env.prod
-!./ormconfig.json 
+!./ormconfig.json
