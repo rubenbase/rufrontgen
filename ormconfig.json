@@ -1,5 +1,25 @@
 [
   {
+    "name": "production",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "my_postgres_password",
+    "database": "postgres",
+    "synchronize": true,
+    "dropSchema": true,
+    "logging": true,
+    "entities": ["src/models/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/models",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+  {
     "name": "development",
     "type": "postgres",
     "host": "localhost",

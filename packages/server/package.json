@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Boilerplate for Nodejs and GraphQL.",
   "devDependencies": {
+    "@gql2ts/types": "^1.8.0",
     "@types/bcryptjs": "^2.4.1",
     "@types/connect-redis": "^0.0.7",
     "@types/dotenv": "^4.0.3",
@@ -10,11 +11,12 @@
     "@types/express-session": "^1.15.9",
     "@types/ioredis": "^3.2.8",
     "@types/jest": "^22.2.3",
-    "@types/node": "^10.0.8",
+    "@types/node": "10.1.4",
     "@types/node-fetch": "^1.6.9",
     "@types/request-promise": "^4.1.41",
     "@types/sparkpost": "^2.1.4",
     "@types/uuid": "^3.4.3",
+    "@types/ws": "^5.1.2",
     "@types/yup": "^0.24.4",
     "copyfiles": "^2.0.0",
     "gql2ts": "^1.8.0",
@@ -65,7 +67,7 @@
     "start": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "test": "NODE_ENV=test jest --watch",
     "gen-schema-types": "ts-node src/scripts/createTypes.ts",
-    "build": "rimraf dist && tsc && copyfiles src/**/*.graphql dist"
+    "build": "rimraf dist && tsc && copyfiles -u 1 src/**/*.graphql dist"
   },
   "jest": {
     "globalSetup": "./src/utils/testing/callSetup.js",
