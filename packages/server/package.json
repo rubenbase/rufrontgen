@@ -16,9 +16,11 @@
     "@types/sparkpost": "^2.1.4",
     "@types/uuid": "^3.4.3",
     "@types/yup": "^0.24.4",
+    "copyfiles": "^2.0.0",
     "gql2ts": "^1.8.0",
     "jest": "^22.4.3",
     "nodemon": "^1.17.4",
+    "rimraf": "^2.6.2",
     "ts-jest": "^22.4.6",
     "ts-node": "6.0.3",
     "tslint": "^5.10.0",
@@ -27,6 +29,7 @@
   },
   "dependencies": {
     "@gql2ts/from-schema": "^1.8.0",
+    "@rufrontgen/common": "1.0.0",
     "@types/express-rate-limit": "^2.9.3",
     "@types/faker": "^4.1.2",
     "@types/glob": "^5.0.35",
@@ -54,8 +57,7 @@
     "sparkpost": "^2.1.2",
     "typeorm": "0.2.5",
     "uuid": "^3.2.1",
-    "yup": "^0.25.1",
-    "@rufrontgen/common": "1.0.0"
+    "yup": "^0.25.1"
   },
   "scripts": {
     "win-start": "SET NODE_ENV=development&& nodemon --exec ts-node src/index.ts",
@@ -63,7 +65,7 @@
     "start": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "test": "NODE_ENV=test jest --watch",
     "gen-schema-types": "ts-node src/scripts/createTypes.ts",
-    "build": "tsc"
+    "build": "rimraf dist && tsc && copyfiles src/**/*.graphql dist"
   },
   "jest": {
     "globalSetup": "./src/utils/testing/callSetup.js",
