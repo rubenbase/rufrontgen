@@ -8,5 +8,8 @@
       "**/rimraf",
       "**/rimraf/**"
     ]
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
   }
 }
