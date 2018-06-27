@@ -1,7 +1,7 @@
-import RateLimit = require("express-rate-limit");
-import RateLimitRedisStore from "rate-limit-redis";
-import "reflect-metadata";
 import dotenv = require("dotenv");
+import RateLimit = require("express-rate-limit");
+import RateLimitRedisStore = require("rate-limit-redis");
+import "reflect-metadata";
 import session = require("express-session");
 import connectRedis = require("connect-redis");
 

@@ -82,6 +82,10 @@
       "jsx",
       "json",
       "node"
+    ],
+    "testPathIgnorePatterns": [
+      "./node_modules/",
+      "./dist"
     ]
   }
 }
