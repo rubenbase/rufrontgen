@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "lerna": "^2.11.0"
+  },
+  "scripts": {
+    "build:server": "lerna run build --scope={'@rufrontgen/common','@rufrontgen/server'}"
   }
 }

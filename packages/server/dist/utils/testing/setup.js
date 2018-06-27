@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const startServer_1 = require("../../utils/startServer");
+const startServer_1 = require("../../startServer");
 exports.setup = () => __awaiter(this, void 0, void 0, function* () {
     const app = yield startServer_1.startServer();
     const { port } = app.address();

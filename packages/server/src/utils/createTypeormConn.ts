@@ -1,4 +1,5 @@
 import { getConnectionOptions, createConnection } from "typeorm";
+import { User } from "../models/User";
 
 export const createTypeormConn = async () => {
   const connectionOptions = await getConnectionOptions(process.env.NODE_ENV);
@@ -6,6 +7,7 @@ export const createTypeormConn = async () => {
     ? createConnection({
         ...connectionOptions,
         url: process.env.DATABASE_URL as string,
+        entities: [User],
         name: "default"
       } as any)
     : createConnection({ ...connectionOptions, name: "default" });

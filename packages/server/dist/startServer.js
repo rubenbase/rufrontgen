@@ -8,16 +8,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const RateLimit = require("express-rate-limit");
-const rate_limit_redis_1 = require("rate-limit-redis");
-require("reflect-metadata");
 const dotenv = require("dotenv");
+const RateLimit = require("express-rate-limit");
+const RateLimitRedisStore = require("rate-limit-redis");
+require("reflect-metadata");
 const session = require("express-session");
 const connectRedis = require("connect-redis");
-const createTypeormConn_1 = require("./createTypeormConn");
-const User_1 = require("../models/User");
-const constants_1 = require("../constants");
-const createTestConn_1 = require("./testing/createTestConn");
+const createTypeormConn_1 = require("./utils/createTypeormConn");
+const User_1 = require("./models/User");
+const constants_1 = require("./constants");
+const createTestConn_1 = require("./utils/testing/createTestConn");
 const SESSION_SECRET = "sdbvsahvasv";
 const RedisStore = connectRedis(session);
 exports.startServer = () => __awaiter(this, void 0, void 0, function* () {
@@ -25,12 +25,12 @@ exports.startServer = () => __awaiter(this, void 0, void 0, function* () {
     if (result.error) {
         throw result.error;
     }
-    const { server, redis } = require("../config/server");
+    const { server, redis } = require("./config/server");
     if (process.env.NODE_ENV === "test") {
         yield redis.flushall();
     }
     server.express.use(new RateLimit({
-        store: new rate_limit_redis_1.default({
+        store: new RateLimitRedisStore({
             client: redis
         }),
         windowMs: 15 * 60 * 1000,
@@ -58,7 +58,7 @@ exports.startServer = () => __awaiter(this, void 0, void 0, function* () {
             ? "*"
             : process.env.FRONTEND_HOST
     };
-    const authRoute = require("../routes/authRoutes")(User_1.User, redis);
+    const authRoute = require("./routes/authRoutes")(User_1.User, redis);
     server.express.use("/auth", authRoute);
     if (process.env.NODE_ENV === "test") {
         yield createTestConn_1.createTestConn(true);

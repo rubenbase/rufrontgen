@@ -32,7 +32,7 @@ afterAll(() => __awaiter(this, void 0, void 0, function* () {
     conn.close();
 }));
 test("Make sure it confirms user and clears key in redis", () => __awaiter(this, void 0, void 0, function* () {
-    const url = yield createConfirmEmailLink_1.createConfirmEmailLink(process.env.TEST_HOST, userId, new Redis());
+    const url = yield createConfirmEmailLink_1.createConfirmEmailLink(process.env.TEST_HOST, userId, redis);
     const response = yield node_fetch_1.default(url);
     const text = yield response.text();
     expect(text).toEqual("Ok");
