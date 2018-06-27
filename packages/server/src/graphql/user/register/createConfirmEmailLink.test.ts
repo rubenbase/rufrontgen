@@ -30,7 +30,7 @@ test("Make sure it confirms user and clears key in redis", async () => {
   const url = await createConfirmEmailLink(
     process.env.TEST_HOST as string,
     userId,
-    new Redis()
+    redis
   );
 
   const response = await fetch(url);

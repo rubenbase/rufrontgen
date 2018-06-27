@@ -1,11 +1,8 @@
 import { GraphQLServer } from "graphql-yoga";
-import Redis = require("ioredis");
-
+import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
 
 // Iterates over folders and build the executable schemas
-
-const redis = new Redis();
 
 const redisDebugMode = false;
 
