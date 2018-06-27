@@ -5,10 +5,10 @@ import "reflect-metadata";
 import session = require("express-session");
 import connectRedis = require("connect-redis");
 
-import { createTypeormConn } from "./createTypeormConn";
-import { User } from "../models/User";
-import { redisSessionPrefix } from "../constants";
-import { createTestConn } from "./testing/createTestConn";
+import { createTypeormConn } from "./utils/createTypeormConn";
+import { User } from "./models/User";
+import { redisSessionPrefix } from "./constants";
+import { createTestConn } from "./utils/testing/createTestConn";
 
 const SESSION_SECRET = "sdbvsahvasv";
 const RedisStore = connectRedis(session);
@@ -22,7 +22,7 @@ export const startServer = async () => {
   }
 
   // GraphQL & Redis Configuration
-  const { server, redis } = require("../config/server");
+  const { server, redis } = require("./config/server");
 
   // Clears redis data for testing
   if (process.env.NODE_ENV === "test") {
@@ -72,7 +72,7 @@ export const startServer = async () => {
   };
 
   // Load express routes
-  const authRoute = require("../routes/authRoutes")(User, redis);
+  const authRoute = require("./routes/authRoutes")(User, redis);
 
   // Mount routes
   server.express.use("/auth", authRoute);
