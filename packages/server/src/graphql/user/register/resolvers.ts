@@ -3,15 +3,15 @@ import { validUserSchema } from "@rufrontgen/common";
 import { User } from "../../../models/User";
 import { ResolverMap } from "../../../types/graphql-utils";
 import { formatYupError } from "../../../utils/validation/formatYupError";
-// import { sendEmail } from "../../../utils/sendEmail";
-// import { createConfirmEmailLink } from "./createConfirmEmailLink";
+import { sendEmail } from "../../../utils/sendEmail";
+import { createConfirmEmailLink } from "./createConfirmEmailLink";
 
 export const resolvers: ResolverMap = {
   Mutation: {
     register: async (
       _,
-      args: GQL.IRegisterOnMutationArguments
-      // { redis, url }
+      args: GQL.IRegisterOnMutationArguments,
+      { redis, url }
     ) => {
       try {
         await validUserSchema.validate(args, { abortEarly: false });
@@ -40,12 +40,12 @@ export const resolvers: ResolverMap = {
       });
       await user.save();
 
-      // if (process.env.NODE_ENV !== "test") {
-      //   await sendEmail(
-      //     email,
-      //     await createConfirmEmailLink(url, user.id, redis)
-      //   );
-      // }
+      if (process.env.NODE_ENV !== "test") {
+        await sendEmail(
+          email,
+          await createConfirmEmailLink(url, user.id, redis)
+        );
+      }
 
       return null;
     }
