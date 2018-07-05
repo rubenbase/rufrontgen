@@ -8,6 +8,7 @@ export const Routes = () => (
     <Switch>
       <Route exact={true} path="/register" component={RegisterConnector} />
       <Route exact={true} path="/legal" component={LegalConnector} />
+      {/* <Route exact={true} path="/legal" component={LoginConnector} />     */}
     </Switch>
   </BrowserRouter>
 );
