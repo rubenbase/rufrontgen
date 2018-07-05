@@ -9,6 +9,8 @@
       "**/rimraf/**",
       "**/react-native",
       "**/react-native/**",
+      "**/react-native**",
+      "**/antd-mobile-rn",
       "**/expo",
       "**/expo/**",
       "**/react-native-typescript-transformer",
