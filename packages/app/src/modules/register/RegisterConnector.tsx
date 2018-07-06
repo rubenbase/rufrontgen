@@ -1,14 +1,14 @@
 import * as React from "react";
-import { Button, WhiteSpace } from "antd-mobile-rn";
-import { View } from "react-native";
+import { RegisterView } from "./ui/RegisterView";
 
-export default class RegisterConnector extends React.PureComponent<any, any> {
+export class RegisterConnector extends React.PureComponent {
+  dummySubmit = async (values: any) => {
+    console.log(values);
+
+    return null;
+  };
+
   render() {
-    return (
-      <View>
-        <WhiteSpace size="xs" />
-        <Button type="primary">Testing connections between</Button>
-      </View>
-    );
+    return <RegisterView submit={this.dummySubmit} />;
   }
 }

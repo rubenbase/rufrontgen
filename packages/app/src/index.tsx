@@ -7,6 +7,7 @@ import { client } from "./apollo";
 
 // Load routes
 import RegisterConnector from "./modules/register/RegisterConnector";
+
 export default class App extends React.PureComponent {
   render() {
     return (
