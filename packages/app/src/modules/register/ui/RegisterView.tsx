@@ -1,7 +1,6 @@
 import * as React from "react";
-import { View } from "react-native";
-import { withFormik, FormikErrors, FormikProps, Field, Form } from "formik";
-import { Icon, Button } from "antd-mobile-rn";
+import { View, Button } from "react-native";
+import { withFormik, FormikErrors, FormikProps, Field } from "formik";
 import { validUserSchema } from "@rufrontgen/common";
 import { InputField } from "../../shared/inputField";
 
@@ -30,9 +29,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
         />
         <Field name="name" placeholder="Name" component={InputField} />
         <Field name="lastname" placeholder="Last name" component={InputField} />
-        <Button type="primary" onClick={handleSubmit}>
-          Register
-        </Button>
+        <Button title="Submit" onPress={handleSubmit as any} />
         Or <a href="">Login now!</a>
       </View>
     );
