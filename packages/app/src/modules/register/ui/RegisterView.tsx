@@ -24,6 +24,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
         <Field
           name="password"
           type="password"
+          secureTextEntry={true}
           placeholder="Password"
           component={InputField}
         />

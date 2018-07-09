@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FieldProps } from "formik";
-import { InputItem } from "antd-mobile-rn";
+import { Input } from "react-native-elements";
 
 const errStyle = {
   color: "red"
@@ -28,11 +28,10 @@ export class InputField extends React.Component<FieldProps<any>> {
     } = this.props;
     const errorMsg = touched[field.name] && errors[field.name];
     return (
-      <InputItem
+      <Input
         {...props}
-        // style={[this.state.isError ? errStyle : null]}
-        // error={}
-        onErrorClick={errorMsg}
+        errorStyle={errStyle}
+        errorMessage={errorMsg}
         onChangeText={this.onChange}
         value={field.value}
         onBlur={field.onBlur}
@@ -40,19 +39,3 @@ export class InputField extends React.Component<FieldProps<any>> {
     );
   }
 }
-
-// export const InputField: React.SFC<
-//   FieldProps<any> & { prefix: React.ReactNode }
-// > = ({
-//
-
-//   return (
-//     // <FormItem help={errorMsg} validateStatus={errorMsg ? "error" : undefined}>
-//     //   <Input {...field} {...props} />
-//     // </FormItem>
-//     <InputItem>
-
-//     </InputItem>
-//   );
-// }
-// ;
