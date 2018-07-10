@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { RegisterController } from "@rufrontgen/controller";
 import { RegisterView } from "./ui/RegisterView";
 export default class RegisterConnector extends React.Component {
   dummySubmit = async (values: any) => {
@@ -8,6 +8,10 @@ export default class RegisterConnector extends React.Component {
   };
 
   render() {
-    return <RegisterView submit={this.dummySubmit} />;
+    return (
+      <RegisterController>
+        {({ submit }) => <RegisterView submit={this.dummySubmit} />}
+      </RegisterController>
+    );
   }
 }
