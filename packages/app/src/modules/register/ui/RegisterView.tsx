@@ -8,6 +8,8 @@ import { InputField } from "../../shared/InputField";
 interface FormValues {
   email: string;
   password: string;
+  name: string;
+  lastname: string;
 }
 
 interface Props {
@@ -68,7 +70,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
 
 export const RegisterView = withFormik<Props, FormValues>({
   validationSchema: validUserSchema,
-  mapPropsToValues: () => ({ email: "", password: "" }),
+  mapPropsToValues: () => ({ email: "", password: "", name: "", lastname: "" }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);
     if (errors) {

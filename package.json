@@ -25,6 +25,7 @@
     "lerna": "^2.11.0"
   },
   "scripts": {
-    "build:server": "lerna run build --scope={'@rufrontgen/common','@rufrontgen/server'}"
+    "build:server": "lerna run build --scope={'@rufrontgen/common','@rufrontgen/server'}",
+    "build:web": "lerna run build --scope={@rufrontgen/common, @rufrontgen/controller, @rufrontgen/web}"
   }
 }
