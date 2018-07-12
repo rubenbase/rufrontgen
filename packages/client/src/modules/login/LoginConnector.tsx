@@ -1,13 +1,13 @@
 import * as React from "react";
+import { LoginController } from "@rufrontgen/controller";
 import { LoginView } from "./ui/LoginView";
 
 export class LoginConnector extends React.PureComponent {
-  dummySubmit = async (values: any) => {
-    console.log(values);
-    return null;
-  };
-
   render() {
-    return <LoginView submit={this.dummySubmit} />;
+    return (
+      <LoginController>
+        {({ submit }: { submit: any }) => <LoginView submit={submit} />}
+      </LoginController>
+    );
   }
 }

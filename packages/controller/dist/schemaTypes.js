@@ -8,4 +8,4 @@
 //==============================================================
 // END Enums and Input Objects
 //==============================================================
-//# sourceMappingURL=RegisterMutation.js.map
+//# sourceMappingURL=schemaTypes.js.map

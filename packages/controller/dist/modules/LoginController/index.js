@@ -50,12 +50,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import * as React from "react";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
+import { normalizeErros } from "../../utils/normalizeErrors";
 var C = /** @class */ (function (_super) {
     __extends(C, _super);
     function C() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.submit = function (values) { return __awaiter(_this, void 0, void 0, function () {
-            var response;
+            var login;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -64,8 +65,11 @@ var C = /** @class */ (function (_super) {
                                 variables: values
                             })];
                     case 1:
-                        response = _a.sent();
-                        console.log("response: ", response);
+                        login = (_a.sent()).data.login;
+                        console.log("response: ", login);
+                        if (login) {
+                            return [2 /*return*/, normalizeErros(login)];
+                        }
                         return [2 /*return*/, null];
                 }
             });
@@ -77,7 +81,7 @@ var C = /** @class */ (function (_super) {
     };
     return C;
 }(React.PureComponent));
-var registerMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation RegisterMutation(\n    $email: String!\n    $password: String!\n    $name: String!\n    $lastname: String!\n  ) {\n    register(\n      email: $email\n      password: $password\n      name: $name\n      lastname: $lastname\n    ) {\n      path\n      message\n    }\n  }\n"], ["\n  mutation RegisterMutation(\n    $email: String!\n    $password: String!\n    $name: String!\n    $lastname: String!\n  ) {\n    register(\n      email: $email\n      password: $password\n      name: $name\n      lastname: $lastname\n    ) {\n      path\n      message\n    }\n  }\n"])));
-export var RegisterController = graphql(registerMutation)(C);
+var loginMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      path\n      message\n    }\n  }\n"], ["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      path\n      message\n    }\n  }\n"])));
+export var LoginController = graphql(loginMutation)(C);
 var templateObject_1;
 //# sourceMappingURL=index.js.map

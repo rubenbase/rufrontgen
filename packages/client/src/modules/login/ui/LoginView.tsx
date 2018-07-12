@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withFormik, FormikErrors, FormikProps, Field, Form } from "formik";
+import { withFormik, FormikProps, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { loginSchema } from "@rufrontgen/common";
 import { Link } from "react-router-dom";
@@ -14,7 +14,11 @@ interface FormValues {
 }
 
 interface Props {
-  submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
+  submit: (
+    values: FormValues
+  ) => Promise<{
+    [key: string]: string;
+  } | null>;
 }
 
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {
@@ -52,12 +56,12 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
               </Button>
             </FormItem>
             <FormItem>
-              Or <Link to="/register">Register now!</Link>
-            </FormItem>
-            <FormItem>
               <a className="login-form-forgot" href="">
                 Forgot password
               </a>
+            </FormItem>
+            <FormItem>
+              Or <Link to="/register">Register now!</Link>
             </FormItem>
           </div>
         </Form>
@@ -68,6 +72,8 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
 
 export const LoginView = withFormik<Props, FormValues>({
   validationSchema: loginSchema,
+  validateOnBlur: false,
+  validateOnChange: false,
   mapPropsToValues: () => ({
     email: "",
     password: ""
