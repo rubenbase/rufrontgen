@@ -92,5 +92,6 @@ export const startServer = async () => {
   });
 
   console.log("\nServer is running! Go to http://localhost:4000");
+
   return app;
 };
