@@ -7,10 +7,20 @@ import { client } from "./apollo";
 
 // Load routes
 import RegisterConnector from "./modules/register/RegisterConnector";
+import LoginConnector from "./modules/login/LoginConnector";
 
 const AppStackNavigator = createStackNavigator({
   Register: {
-    screen: RegisterConnector
+    screen: RegisterConnector,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Login: {
+    screen: LoginConnector,
+    navigationOptions: {
+      header: null
+    }
   }
 });
 
