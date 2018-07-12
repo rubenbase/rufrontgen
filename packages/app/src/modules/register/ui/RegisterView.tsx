@@ -58,11 +58,16 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
           component={InputField}
           containerStyle={{ width: "100%" }}
         />
-        <Button
-          style={{ padding: 30 }}
-          title="Submit"
-          onPress={handleSubmit as any}
-        />
+        <View>
+          <Button
+            style={{ padding: 30 }}
+            title="Submit"
+            onPress={handleSubmit as any}
+          />
+        </View>
+        <View>
+          <Button clear={true} title="or Login " />
+        </View>
       </View>
     );
   }
