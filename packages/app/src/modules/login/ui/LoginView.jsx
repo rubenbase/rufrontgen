@@ -1,22 +1,11 @@
 import * as React from "react";
 import { withFormik, FormikErrors, FormikProps, Field } from "formik";
-import { validUserSchema } from "@rufrontgen/common";
+import { loginSchema } from "@rufrontgen/common";
 import { View, Text } from "react-native";
 import { Button } from "react-native-elements";
 import { InputField } from "../../shared/InputField";
 
-interface FormValues {
-  email: string;
-  password: string;
-  name: string;
-  lastname: string;
-}
-
-interface Props {
-  submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
-}
-
-class C extends React.PureComponent<FormikProps<FormValues> & Props> {
+class C extends React.PureComponent {
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -30,7 +19,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
         }}
       >
         <Text style={{ color: "white", fontSize: 30, marginBottom: 100 }}>
-          Register
+          Login
         </Text>
         <Field
           name="email"
@@ -46,36 +35,16 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
           component={InputField}
           containerStyle={{ width: "100%" }}
         />
-        <Field
-          name="name"
-          placeholder="Name"
-          component={InputField}
-          containerStyle={{ width: "100%" }}
-        />
-        <Field
-          name="lastname"
-          placeholder="Lastname"
-          component={InputField}
-          containerStyle={{ width: "100%" }}
-        />
-        <View>
-          <Button
-            style={{ padding: 30 }}
-            title="Submit"
-            onPress={handleSubmit as any}
-          />
-        </View>
-        <View>
-          <Button clear={true} title="or Login " />
-        </View>
+
+        <Button style={{ padding: 30 }} title="Submit" onPress={handleSubmit} />
       </View>
     );
   }
 }
 
-export const RegisterView = withFormik<Props, FormValues>({
-  validationSchema: validUserSchema,
-  mapPropsToValues: () => ({ email: "", password: "", name: "", lastname: "" }),
+export const LoginView = withFormik({
+  validationSchema: loginSchema,
+  mapPropsToValues: () => ({ email: "", password: "" }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);
     if (errors) {

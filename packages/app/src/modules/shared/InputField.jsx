@@ -6,13 +6,13 @@ const errStyle = {
   color: "red"
 };
 
-export class InputField extends React.Component<FieldProps<any>> {
-  constructor(props: any) {
+export class InputField extends React.Component {
+  constructor(props) {
     super(props);
     this.state = { isError: null };
   }
 
-  onChange = (text: string) => {
+  onChange = text => {
     const {
       form: { setFieldValue },
       field: { name }
