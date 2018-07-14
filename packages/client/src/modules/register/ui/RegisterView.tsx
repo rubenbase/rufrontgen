@@ -17,7 +17,7 @@ interface Props {
   submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
 }
 
-class C extends React.PureComponent<FormikProps<FormValues> & Props> {
+class C extends React.PureComponent<FormikProps<FormValues> & Props | any> {
   render() {
     return (
       <div style={{ margin: 250 }}>

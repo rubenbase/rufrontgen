@@ -5,7 +5,7 @@ import { Form, Input } from "antd";
 const FormItem = Form.Item;
 
 export const InputField: React.SFC<
-  FieldProps<any> & { prefix: React.ReactNode }
+  FieldProps<any> & { prefix: React.ReactNode } | any
 > = ({
   field, // { name, value, onChange, onBlur }
   form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.

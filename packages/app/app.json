@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "ts-app",
-    "description": "This project is really great.",
-    "slug": "ts-app",
+    "name": "Rufrontgen",
+    "description": "React native boilerplate.",
+    "slug": "rufrontgen",
     "privacy": "public",
     "sdkVersion": "27.0.0",
     "platforms": ["ios", "android"],
@@ -25,8 +25,7 @@
     "packagerOpts": {
       "config": "rn-cli.config.js",
       "projectRoots": "",
-      "sourceExts": ["ts", "tsx"],
-      "transformer": "node_modules/react-native-typescript-transformer/index.js"
+      "sourceExts": ["js", "jsx"]
     }
   }
 }
