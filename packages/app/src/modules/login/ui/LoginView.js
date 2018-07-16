@@ -37,6 +37,13 @@ class C extends React.PureComponent {
         />
 
         <Button style={{ padding: 30 }} title="Submit" onPress={handleSubmit} />
+        <View>
+          <Button
+            clear={true}
+            title="or Register "
+            onPress={() => this.props.navigation.navigate("Register")}
+          />
+        </View>
       </View>
     );
   }
