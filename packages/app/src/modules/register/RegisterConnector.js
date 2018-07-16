@@ -5,7 +5,7 @@ export default class RegisterConnector extends React.Component {
   render() {
     return (
       <RegisterController>
-        {({ submit }) => <RegisterView submit={submit} />}
+        {({ submit }) => <RegisterView submit={submit} {...this.props} />}
       </RegisterController>
     );
   }

@@ -10,7 +10,7 @@ export default class RegisterConnector extends React.Component {
   render() {
     return (
       <LoginController>
-        {({ submit }) => <LoginView submit={submit} />}
+        {({ submit }) => <LoginView submit={submit} {...this.props} />}
       </LoginController>
     );
   }
