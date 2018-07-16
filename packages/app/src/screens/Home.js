@@ -8,10 +8,14 @@ import {
   Platform,
   StatusBar,
   ScrollView,
-  Divider
+  Dimensions
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import WorkingOrderBox from "../modules/Home/WorkingOrderBox";
+import SpaceBox from "../modules/Home/SpaceBox";
+
+const { height, width } = Dimensions.get("window");
+
 class Home extends Component {
   componentWillMount() {
     this.startHeaderHeight = 80;
@@ -19,6 +23,15 @@ class Home extends Component {
       this.startHeaderHeight = 100 + StatusBar.currentHeight;
     }
   }
+
+  createTable = () => {
+    let values = [];
+    for (let i = 0; i < 100; i++) {
+      values.push(<SpaceBox name={100 + i} width={width} />);
+    }
+
+    return values;
+  };
 
   render() {
     return (
@@ -82,6 +95,20 @@ class Home extends Component {
                   <WorkingOrderBox date={"5"} />
                   <WorkingOrderBox date={"6"} />
                 </ScrollView>
+              </View>
+            </View>
+
+            <View style={{ marginTop: 40 }}>
+              <View
+                style={{
+                  paddingHorizontal: 20,
+                  marginTop: 20,
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  justifyContent: "space-between"
+                }}
+              >
+                {this.createTable()}
               </View>
             </View>
           </ScrollView>
