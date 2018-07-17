@@ -1,35 +1,60 @@
-import React from "react";
-import { ScrollView, Text, Linking, View } from "react-native";
+import React, { Component } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TextInput,
+  Platform,
+  StatusBar
+} from "react-native";
+import { Avatar } from "react-native-elements";
+import Icon from "react-native-vector-icons/Ionicons";
 
-const images = [
-  {
-    key: 1,
-    name: "Nathan Anderson",
-    url: "https://unsplash.com/photos/C9t94JC4_L8"
-  },
-  {
-    key: 2,
-    name: "Jamison McAndie",
-    url: "https://unsplash.com/photos/waZEHLRP98s"
-  },
-  {
-    key: 3,
-    name: "Alberto Restifo",
-    url: "https://unsplash.com/photos/cFplR9ZGnAk"
-  },
-  {
-    key: 4,
-    name: "John Towner",
-    url: "https://unsplash.com/photos/89PFnHKg8HE"
+class Explore extends Component {
+  componentWillMount() {
+    this.startHeaderHeight = 80;
+    if (Platform.OS == "android") {
+      this.startHeaderHeight = 100 + StatusBar.currentHeight;
+    }
   }
-];
 
-export default () => (
-  <View style={{ flex: 1 }}>
-    <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
-      {images.map(({ name, url, key }) => (
-        <Text style={{ marginBottom: 10 }}>Profile</Text>
-      ))}
-    </ScrollView>
-  </View>
-);
+  render() {
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={{ flex: 1 }}>
+          <View
+            style={{
+              height: this.startHeaderHeight,
+              backgroundColor: "white",
+              borderBottomWidth: 1,
+              borderBottomColor: "#dddddd"
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                padding: 10,
+                backgroundColor: "white",
+                marginHorizontal: 0,
+                shadowOffset: { width: 0, height: 0 },
+                shadowColor: "black",
+                shadowOpacity: 0.2,
+                marginTop: Platform.OS == "android" ? 30 : null
+              }}
+            >
+              <Avatar
+                large
+                rounded
+                title="BP"
+                onPress={() => console.log("Works!")}
+                activeOpacity={0.7}
+              />
+            </View>
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
+}
+export default Explore;

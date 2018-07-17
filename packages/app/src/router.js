@@ -29,21 +29,21 @@ export const SignedOut = createStackNavigator({
 
 export const SignedIn = createBottomTabNavigator(
   {
-    Home: {
-      screen: Home,
-      navigationOptions: {
-        tabBarLabel: "EXPLORE",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-search-outline" color={tintColor} size={24} />
-        )
-      }
-    },
     Profile: {
       screen: Profile,
       navigationOptions: {
         tabBarLabel: "PROFILE",
         tabBarIcon: ({ tintColor }) => (
           <Icon name="ios-person-outline" color={tintColor} size={24} />
+        )
+      }
+    },
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        tabBarLabel: "EXPLORE",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-search-outline" color={tintColor} size={24} />
         )
       }
     }
