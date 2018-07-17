@@ -8,20 +8,48 @@ import {
   Platform,
   StatusBar,
   ScrollView,
-  Dimensions
+  Dimensions,
+  Animated
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import WorkingOrderBox from "../modules/Home/WorkingOrderBox";
 import SpaceBox from "../modules/Home/SpaceBox";
+import Tag from "../modules/Home/Tag";
 
 const { height, width } = Dimensions.get("window");
 
 class Home extends Component {
   componentWillMount() {
+    this.scrollY = new Animated.Value(0);
+
     this.startHeaderHeight = 80;
-    if (Platform.OS === "android") {
+    this.endHeaderHeight = 50;
+    if (Platform.OS == "android") {
       this.startHeaderHeight = 100 + StatusBar.currentHeight;
+      this.endHeaderHeight = 70 + StatusBar.currentHeight;
     }
+
+    this.animatedHeaderHeight = this.scrollY.interpolate({
+      inputRange: [0, 50],
+      outputRange: [this.startHeaderHeight, this.endHeaderHeight],
+      extrapolate: "clamp"
+    });
+
+    this.animatedOpacity = this.animatedHeaderHeight.interpolate({
+      inputRange: [this.endHeaderHeight, this.startHeaderHeight],
+      outputRange: [0, 1],
+      extrapolate: "clamp"
+    });
+    this.animatedTagTop = this.animatedHeaderHeight.interpolate({
+      inputRange: [this.endHeaderHeight, this.startHeaderHeight],
+      outputRange: [-30, 10],
+      extrapolate: "clamp"
+    });
+    this.animatedMarginTop = this.animatedHeaderHeight.interpolate({
+      inputRange: [this.endHeaderHeight, this.startHeaderHeight],
+      outputRange: [50, 30],
+      extrapolate: "clamp"
+    });
   }
 
   createTable = () => {
@@ -37,9 +65,9 @@ class Home extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1 }}>
-          <View
+          <Animated.View
             style={{
-              height: this.startHeaderHeight,
+              height: this.animatedHeaderHeight,
               backgroundColor: "white",
               borderBottomWidth: 1,
               borderBottomColor: "#dddddd"
@@ -55,19 +83,36 @@ class Home extends Component {
                 shadowColor: "black",
                 shadowOpacity: 0.2,
                 elevation: 1,
-                marginTop: Platform.OS === "android" ? 30 : null
+                marginTop: Platform.OS == "android" ? 30 : null
               }}
             >
-              <Icon name="ios-search" size={20} />
+              <Icon name="ios-search" size={20} style={{ marginRight: 10 }} />
               <TextInput
                 underlineColorAndroid="transparent"
-                placeholder="Try Something"
+                placeholder="Try New Delhi"
                 placeholderTextColor="grey"
-                style={{ flex: 1, backgroundColor: "white", fontWeight: "700" }}
+                style={{ flex: 1, fontWeight: "700", backgroundColor: "white" }}
               />
             </View>
-          </View>
-          <ScrollView scrollEventThrottle={16}>
+            <Animated.View
+              style={{
+                flexDirection: "row",
+                marginHorizontal: 20,
+                position: "relative",
+                top: this.animatedTagTop,
+                opacity: this.animatedOpacity
+              }}
+            >
+              <Tag name="Guests" />
+              <Tag name="Dates" />
+            </Animated.View>
+          </Animated.View>
+          <ScrollView
+            scrollEventThrottle={16}
+            onScroll={Animated.event([
+              { nativeEvent: { contentOffset: { y: this.scrollY } } }
+            ])}
+          >
             <View style={{ flex: 1, backgroundColor: "white", paddingTop: 20 }}>
               <Text
                 style={{
