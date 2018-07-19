@@ -1,25 +1,27 @@
 import React from "react";
-
 import {
   createStackNavigator,
   createBottomTabNavigator,
   createSwitchNavigator
 } from "react-navigation";
 
+// Screens
 import RegisterConnector from "./modules/register/RegisterConnector";
 import LoginConnector from "./modules/login/LoginConnector";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
+import AuthLoadingScreen from "./screens/AuthLoading";
+
 import Icon from "react-native-vector-icons/Ionicons";
 
-export const SignedOut = createStackNavigator({
-  SignUp: {
+const AuthStackNavigator = createStackNavigator({
+  Register: {
     screen: RegisterConnector,
     navigationOptions: {
       header: null
     }
   },
-  SignIn: {
+  Login: {
     screen: LoginConnector,
     navigationOptions: {
       header: null
@@ -27,7 +29,7 @@ export const SignedOut = createStackNavigator({
   }
 });
 
-export const SignedIn = createBottomTabNavigator(
+const AppTabNavigator = createBottomTabNavigator(
   {
     Profile: {
       screen: Profile,
@@ -67,15 +69,18 @@ export const SignedIn = createBottomTabNavigator(
 export const createRootNavigator = (signedIn = false) => {
   return createSwitchNavigator(
     {
-      SignedIn: {
-        screen: SignedIn
+      AuthLoading: {
+        screen: AuthLoadingScreen
       },
-      SignedOut: {
-        screen: SignedOut
+      AppTabNavigator: {
+        screen: AppTabNavigator
+      },
+      AuthStackNavigator: {
+        screen: AuthStackNavigator
       }
     },
     {
-      initialRouteName: signedIn ? "SignedOut" : "SignedIn"
+      initialRouteName: "AuthLoading"
     }
   );
 };

@@ -6,6 +6,10 @@ import { Button } from "react-native-elements";
 import { InputField } from "../../shared/InputField";
 
 class C extends React.PureComponent {
+  dummySubmit(e) {
+    console.log(e);
+  }
+
   render() {
     const { handleSubmit } = this.props;
     return (

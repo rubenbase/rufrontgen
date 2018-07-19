@@ -35,7 +35,6 @@ class C extends React.PureComponent {
           component={InputField}
           containerStyle={{ width: "100%" }}
         />
-
         <Button style={{ padding: 30 }} title="Submit" onPress={handleSubmit} />
         <View>
           <Button
