@@ -35,6 +35,7 @@ export const resolvers: ResolverMap = {
       const user = User.create({
         email,
         password,
+        confirmed: true, // TODO: remove in prod
         name,
         lastname
       });
