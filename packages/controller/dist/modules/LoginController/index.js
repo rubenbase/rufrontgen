@@ -56,19 +56,22 @@ var C = /** @class */ (function (_super) {
     function C() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.submit = function (values) { return __awaiter(_this, void 0, void 0, function () {
-            var login;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var _a, errors, sessionId;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
                         console.log(values);
                         return [4 /*yield*/, this.props.mutate({
                                 variables: values
                             })];
                     case 1:
-                        login = (_a.sent()).data.login;
-                        console.log("response: ", login);
-                        if (login) {
-                            return [2 /*return*/, normalizeErros(login)];
+                        _a = (_b.sent()).data.login, errors = _a.errors, sessionId = _a.sessionId;
+                        console.log("response: ", errors, sessionId);
+                        if (errors) {
+                            return [2 /*return*/, normalizeErros(errors)];
+                        }
+                        if (sessionId && this.props.onSessionId) {
+                            this.props.onSessionId(sessionId);
                         }
                         return [2 /*return*/, null];
                 }
@@ -81,7 +84,7 @@ var C = /** @class */ (function (_super) {
     };
     return C;
 }(React.PureComponent));
-var loginMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      path\n      message\n    }\n  }\n"], ["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      path\n      message\n    }\n  }\n"])));
+var loginMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      errors {\n        path\n        message\n      }\n      sessionId\n    }\n  }\n"], ["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      errors {\n        path\n        message\n      }\n      sessionId\n    }\n  }\n"])));
 export var LoginController = graphql(loginMutation)(C);
 var templateObject_1;
 //# sourceMappingURL=index.js.map
