@@ -3,7 +3,7 @@ import { withFormik, FormikProps, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { loginSchema } from "@rufrontgen/common";
 import { Link } from "react-router-dom";
-
+import { NormalizedErrorMap } from "@rufrontgen/controller";
 import { InputField } from "../../shared/inputField";
 
 const FormItem = FormA.Item;
@@ -14,11 +14,7 @@ interface FormValues {
 }
 
 interface Props {
-  submit: (
-    values: FormValues
-  ) => Promise<{
-    [key: string]: string;
-  } | null>;
+  submit: (values: FormValues) => Promise<NormalizedErrorMap | null>;
 }
 
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {

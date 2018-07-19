@@ -50,12 +50,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import * as React from "react";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
+import { normalizeErros } from "../../utils/normalizeErrors";
 var C = /** @class */ (function (_super) {
     __extends(C, _super);
     function C() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.submit = function (values) { return __awaiter(_this, void 0, void 0, function () {
-            var response;
+            var register;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -64,8 +65,11 @@ var C = /** @class */ (function (_super) {
                                 variables: values
                             })];
                     case 1:
-                        response = _a.sent();
-                        console.log("response: ", response);
+                        register = (_a.sent()).data.register;
+                        console.log("response: ", register);
+                        if (register) {
+                            return [2 /*return*/, normalizeErros(register)];
+                        }
                         return [2 /*return*/, null];
                 }
             });
