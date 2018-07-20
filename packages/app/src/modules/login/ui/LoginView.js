@@ -14,7 +14,7 @@ class C extends React.PureComponent {
           padding: 20,
           flex: 1,
           display: "flex",
-          backgroundColor: "blue",
+          backgroundColor: "green",
           justifyContent: "center"
         }}
       >
