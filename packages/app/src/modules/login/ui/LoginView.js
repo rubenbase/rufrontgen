@@ -18,12 +18,12 @@ class C extends React.PureComponent {
           justifyContent: "center"
         }}
       >
-        <Text style={{ color: "white", fontSize: 30, marginBottom: 100 }}>
-          Login
+        <Text style={{ color: "white", fontSize: 30, marginBottom: 80 }}>
+          Entre en su cuenta
         </Text>
         <Field
           name="email"
-          placeholder="Email"
+          placeholder="Introduzca su email o usuario"
           component={InputField}
           containerStyle={{ width: "100%" }}
           autoCapitalize="none"
@@ -31,16 +31,16 @@ class C extends React.PureComponent {
         <Field
           name="password"
           secureTextEntry={true}
-          placeholder="Password"
+          placeholder="Introduzca su contraseña"
           component={InputField}
           containerStyle={{ width: "100%" }}
         />
 
-        <Button style={{ padding: 30 }} title="Submit" onPress={handleSubmit} />
+        <Button style={{ padding: 20 }} title="Bulea" onPress={handleSubmit} />
         <View>
           <Button
             clear={true}
-            title="or Register "
+            title=" ¡¡regístrate ya!! "
             onPress={() => this.props.navigation.navigate("Register")}
           />
         </View>

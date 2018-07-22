@@ -11,6 +11,7 @@ import LoginConnector from "./modules/login/LoginConnector";
 import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import Icon from "react-native-vector-icons/Ionicons";
+import Legal from "./screens/Legal";
 
 export const SignedOut = createStackNavigator({
   SignUp: {
@@ -24,6 +25,9 @@ export const SignedOut = createStackNavigator({
     navigationOptions: {
       header: null
     }
+  },
+  Legal: {
+    screen: Legal
   }
 });
 
@@ -75,7 +79,7 @@ export const createRootNavigator = (signedIn = false) => {
       }
     },
     {
-      initialRouteName: signedIn ? "SignedOut" : "SignedIn"
+      initialRouteName: signedIn ? "SignedIn" : "SignedOut"
     }
   );
 };
