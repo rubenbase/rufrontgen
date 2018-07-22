@@ -4,11 +4,10 @@ import { RegisterView } from "./ui/RegisterView";
 
 export class RegisterConnector extends React.PureComponent<any> {
   render() {
-    console.log("this proooooooooooppss are =>", this.props);
     return (
       <RegisterController>
         {({ submit }: { submit: any }) => (
-          <RegisterView submit={submit} dsds={this.props} />
+          <RegisterView submit={submit} {...this.props} />
         )}
       </RegisterController>
     );

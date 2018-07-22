@@ -6,7 +6,9 @@ export class LoginConnector extends React.PureComponent {
   render() {
     return (
       <LoginController>
-        {({ submit }: { submit: any }) => <LoginView submit={submit} />}
+        {({ submit }: { submit: any }) => (
+          <LoginView submit={submit} {...this.props} />
+        )}
       </LoginController>
     );
   }
