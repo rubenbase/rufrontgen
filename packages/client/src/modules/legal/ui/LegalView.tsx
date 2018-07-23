@@ -4,7 +4,7 @@ export class LegalView extends React.PureComponent {
   render() {
     return (
       <p>
-        AVISO LEGAL El presente sitio Web whateverhospitality.com es propiedad y
+        AVISO LEGAL La presente App BuleApp es propiedad y
         está gestionado por whatever S.L. CIF: B0000000 (en adelante “whatever”)
         cuyos datos completos son los siguientes: Dirección: CALLE WHATEVER - A
         Coruña Teléfono: 000 00 00 00 E-mail: soporte@whatever.com Empresa

@@ -13,6 +13,8 @@ import Profile from "./screens/Profile";
 import AuthLoadingScreen from "./screens/AuthLoading";
 
 import Icon from "react-native-vector-icons/Ionicons";
+import Legal from "./screens/Legal";
+import Forgot from "./screens/Forgot";
 
 const AuthStackNavigator = createStackNavigator({
   Register: {
@@ -26,6 +28,12 @@ const AuthStackNavigator = createStackNavigator({
     navigationOptions: {
       header: null
     }
+  },
+  Legal: {
+    screen: Legal
+  },
+  Forgot: {
+    screen: Forgot
   }
 });
 

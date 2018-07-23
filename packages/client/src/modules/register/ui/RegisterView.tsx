@@ -28,9 +28,9 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             <Field
               name="email"
               prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(191,63,63,.25)" }} /> as any
               }
-              placeholder="Email"
+              placeholder="Introduzca su email"
               component={InputField}
             />
 
@@ -38,9 +38,9 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
               name="password"
               type="password"
               prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(25,0,0,.25)" }} /> as any
               }
-              placeholder="Password"
+              placeholder="Introduzca su contraseña"
               component={InputField}
             />
 
@@ -49,7 +49,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
               prefix={
                 <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
               }
-              placeholder="Name"
+              placeholder="Introduzca su nombre"
               component={InputField}
             />
 
@@ -58,7 +58,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
               prefix={
                 <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
               }
-              placeholder="Last name"
+              placeholder="Introduzca sus apellidos"
               component={InputField}
             />
 
