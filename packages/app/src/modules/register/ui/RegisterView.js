@@ -72,7 +72,7 @@ class C extends React.PureComponent {
               color: "#FFFFFF",
               fontWeight: "400"
             }}
-            onPress={() => this.props.navigation.navigate("Legal")}
+            onPress={() => this.props.navigation.navigate("Forgot")}
           >
             ¿Olvidaste la contraseña?
           </Text>

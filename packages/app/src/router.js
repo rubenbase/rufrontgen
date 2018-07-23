@@ -12,6 +12,7 @@ import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import Icon from "react-native-vector-icons/Ionicons";
 import Legal from "./screens/Legal";
+import Forgot from "./screens/Forgot";
 
 export const SignedOut = createStackNavigator({
   SignUp: {
@@ -28,6 +29,9 @@ export const SignedOut = createStackNavigator({
   },
   Legal: {
     screen: Legal
+  },
+  Forgot: {
+    screen: Forgot
   }
 });
 
