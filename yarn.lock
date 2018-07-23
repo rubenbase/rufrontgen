@@ -799,6 +799,13 @@
   version "9.6.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.21.tgz#4563c26a53531c5aca943065fcdf2dd562f63cd4"
 
+"@types/nodemailer@^4.6.2":
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-4.6.2.tgz#4a0cf246846cc5178270d354a252394a16860191"
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
+
 "@types/range-parser@*":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.2.tgz#fa8e1ad1d474688a757140c91de6dace6f4abc8d"
@@ -8393,6 +8400,10 @@ node-pre-gyp@^0.10.0:
     semver "^5.3.0"
     tar "^4"
 
+nodemailer@^4.6.7:
+  version "4.6.7"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.6.7.tgz#b68de7f36d65618bdeeeb76234e3547d51266373"
+
 nodemon@^1.17.4:
   version "1.17.5"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.17.5.tgz#e6a665c872fdf09d48bf2a81f3e85f8cfb39322a"
@@ -10087,6 +10098,12 @@ react-lazy-load@^3.0.12:
 react-lifecycles-compat@^3, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-native-animatable@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.0.tgz#b5c3940fc758cfd9b2fe54613a457c4b6962b46e"
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-branch@2.0.0-beta.3:
   version "2.0.0-beta.3"
