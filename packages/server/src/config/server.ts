@@ -26,7 +26,8 @@ const server = new GraphQLServer({
   schema: genSchema() as any,
   context: ({ request }) => ({
     redis,
-    url: request.protocol + "://" + request.get("host"),
+    // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
+    url: 'http://localhost:4000',
     session: request.session,
     req: request
   })
