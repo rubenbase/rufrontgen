@@ -1,0 +1,9 @@
+// Import mixins from "core" module
+@import '../../../mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  ANT DESIGN NOTIFICATION */
+
+.ant-notification {
+  max-width: calc(100vw - 48px);
+}

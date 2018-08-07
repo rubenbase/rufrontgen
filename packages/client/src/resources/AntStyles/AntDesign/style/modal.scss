@@ -1,0 +1,13 @@
+// Import mixins from "core" module
+@import '../../../mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  ANT DESIGN MODAL */
+
+.ant-modal-close {
+  outline: none !important;
+}
+
+.ant-modal-mask {
+  background: rgba(#0f0c29, .5);
+}

@@ -1,0 +1,9 @@
+// Import mixins from "core" module
+@import '../../../mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  ANT DESIGN INPUT */
+
+.ant-input-disabled {
+  background: $gray-lighten-more-more;
+}

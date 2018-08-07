@@ -1,0 +1,9 @@
+// Import mixins from "core" module
+@import '../../../mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  ANT DESIGN SPIN */
+
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: none;
+}
