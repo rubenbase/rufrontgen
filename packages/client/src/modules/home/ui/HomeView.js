@@ -8,7 +8,7 @@ export class HomeView extends React.PureComponent {
     return (
       <Menu onClick={this.handleClick} mode="horizontal">
         <Menu.Item key="home">
-          <Icon type="home" />Home
+          <Icon type="home" />Inicio
         </Menu.Item>
         <Menu.Item key="mail">
           <Icon type="mail" />Contacto
