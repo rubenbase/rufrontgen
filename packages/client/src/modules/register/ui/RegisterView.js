@@ -1,25 +1,13 @@
 import * as React from "react";
-import { withFormik, FormikProps, Field, Form } from "formik";
+import { withFormik, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { validUserSchema } from "@rufrontgen/common";
 import { InputField } from "../../shared/inputField";
 import { Link } from "react-router-dom";
-import { NormalizedErrorMap } from "@rufrontgen/controller";
 
 const FormItem = FormA.Item;
 
-interface FormValues {
-  email: string;
-  password: string;
-  name: string;
-  lastname: string;
-}
-
-interface Props {
-  submit: (values: FormValues) => Promise<NormalizedErrorMap | null>;
-}
-
-class C extends React.PureComponent<FormikProps<FormValues> & Props> {
+class C extends React.PureComponent {
   render() {
     return (
       <div style={{ margin: 250 }}>
@@ -28,7 +16,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             <Field
               name="email"
               prefix={
-                <Icon type="user" style={{ color: "rgba(191,63,63,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(191,63,63,.25)" }} />
               }
               placeholder="Introduzca su email"
               component={InputField}
@@ -38,7 +26,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
               name="password"
               type="password"
               prefix={
-                <Icon type="user" style={{ color: "rgba(25,0,0,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(25,0,0,.25)" }} />
               }
               placeholder="Introduzca su contraseña"
               component={InputField}
@@ -47,7 +35,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             <Field
               name="name"
               prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
               }
               placeholder="Introduzca su nombre"
               component={InputField}
@@ -56,7 +44,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             <Field
               name="lastname"
               prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
               }
               placeholder="Introduzca sus apellidos"
               component={InputField}
@@ -81,7 +69,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
   }
 }
 
-export const RegisterView = withFormik<Props, FormValues>({
+export const RegisterView = withFormik({
   validationSchema: validUserSchema,
   mapPropsToValues: () => ({
     email: "",

@@ -1,10 +1,9 @@
-// import * as React from "react";
+import * as React from "react";
 
 // // Load apollo
 import { ApolloProvider } from "react-apollo";
 import { client } from "./apollo";
 
-import React from "react";
 import { createRootNavigator } from "./router";
 import { isSignedIn } from "./auth";
 

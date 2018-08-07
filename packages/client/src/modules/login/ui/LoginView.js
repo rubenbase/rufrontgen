@@ -1,21 +1,14 @@
 import * as React from "react";
-import { withFormik, FormikProps, Field, Form } from "formik";
+import { withFormik, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
+import { loginSchema } from "@rufrontgen/common";
 import { Link } from "react-router-dom";
-import { NormalizedErrorMap } from "@rufrontgen/controller";
 import { InputField } from "../../shared/inputField";
 
 const FormItem = FormA.Item;
 
-interface FormValues {
-  email: string;
-}
 
-interface Props {
-  submit: (values: FormValues) => Promise<NormalizedErrorMap | null>;
-}
-
-class C extends React.PureComponent<FormikProps<FormValues> & Props> {
+class C extends React.PureComponent {
   render() {
     return (
       <div style={{ margin: 250 }}>
@@ -24,23 +17,38 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             <Field
               name="email"
               prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
               }
               placeholder="Email"
               component={InputField}
             />
+
+            <Field
+              name="password"
+              type="password"
+              prefix={
+                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+              }
+              placeholder="Password"
+              component={InputField}
+            />
+
             <FormItem>
               <Button
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
               >
-                reset password
+                Login
               </Button>
             </FormItem>
-
             <FormItem>
-              Or <Link to="/register">Go back!</Link>
+              <a className="login-form-forgot" href="">
+                Forgot password
+              </a>
+            </FormItem>
+            <FormItem>
+              Or <Link to="/register">Register now!</Link>
             </FormItem>
           </div>
         </Form>
@@ -49,9 +57,13 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
   }
 }
 
-export const ForgotPasswordView = withFormik<Props, FormValues>({
+export const LoginView = withFormik({
+  validationSchema: loginSchema,
+  validateOnBlur: false,
+  validateOnChange: false,
   mapPropsToValues: () => ({
-    email: ""
+    email: "",
+    password: ""
   }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);

@@ -1,6 +1,0 @@
-{
-  "extends": ["tslint-react", "../../tslint.json"],
-  "linterOptions": {
-    "exclude": ["config/**/*.js", "node_modules/**/*.ts"]
-  }
-}

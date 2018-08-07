@@ -13,7 +13,7 @@ class Legal extends Component {
           }}
         >
           <Text style={{ fontSize: 12, fontWeight: "100" }}>
-            AVISO LEGAL La presente App BuleApp es propiedad y está gestionado
+            AVISO LEGAL La presente NEWCO es propiedad y está gestionado
             por whatever S.L. CIF: B0000000 (en adelante “whatever”) cuyos datos
             completos son los siguientes: Dirección: CALLE WHATEVER - A Coruña
             Teléfono: 000 00 00 00 E-mail: soporte@whatever.com Empresa inscrita

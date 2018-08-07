@@ -18,16 +18,16 @@ interface Props {
 
 class C extends React.PureComponent<
   ChildMutateProps<Props, LoginMutation, LoginMutationVariables>
-> {
+  > {
   submit = async (values: LoginMutationVariables) => {
-    console.log(values);
+    console.log("The values of login are =>", values);
     const {
       data: {
         login: { errors, sessionId }
       }
     } = await this.props.mutate({
-      variables: values
-    });
+        variables: values
+      });
     console.log("response: ", errors, sessionId);
 
     if (errors) {
@@ -61,4 +61,4 @@ export const LoginController = graphql<
   Props,
   LoginMutation,
   LoginMutationVariables
->(loginMutation)(C) as any;
+  >(loginMutation)(C) as any;

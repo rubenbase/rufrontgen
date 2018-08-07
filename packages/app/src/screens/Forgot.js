@@ -5,7 +5,7 @@ class Forgot extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Forgot</Text>
+        <Text>Forgot Password</Text>
       </View>
     );
   }

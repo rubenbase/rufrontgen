@@ -60,7 +60,7 @@ var C = /** @class */ (function (_super) {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        console.log(values);
+                        console.log("The values of login are =>", values);
                         return [4 /*yield*/, this.props.mutate({
                                 variables: values
                             })];

@@ -19,9 +19,7 @@ import Forgot from "./screens/Forgot";
 const AuthStackNavigator = createStackNavigator({
   Register: {
     screen: RegisterConnector,
-    navigationOptions: {
-      header: null
-    }
+
   },
   Login: {
     screen: LoginConnector,

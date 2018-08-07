@@ -46,7 +46,7 @@ class C extends Component {
                 justifyContent: "center"
               }}
             >
-              <Text style={{ fontWeight: "bold", fontSize: 26 }}>HFAC</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 26 }}>NEWCO</Text>
             </View>
           </View>
 
@@ -112,7 +112,7 @@ class C extends Component {
                   color: "#5a7fdf",
                   fontWeight: "bold"
                 }}
-                onPress={() => this.props.navigation.navigate("Register")}
+                onPress={() => this.props.navigation.push("Register")}
               >
                 Or register
               </Text>
