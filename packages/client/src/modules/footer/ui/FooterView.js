@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "screens/LoginScreen/Login/style.scss";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class FooterView extends React.PureComponent {
   render() {
