@@ -3,21 +3,30 @@ import { withFormik, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { loginSchema } from "@rufrontgen/common";
 import { Link } from "react-router-dom";
-import { InputField } from "../../../modules/shared/inputField";
+import { InputField } from "../../../../../modules/shared/inputField";
 
 const FormItem = FormA.Item;
 
 class C extends React.PureComponent {
   render() {
     return (
-      <div style={{ margin: 250 }}>
+      <div className="cat__pages__login__block__form">
+        <h4 className="text-uppercase">
+          <strong>Please log in</strong>
+        </h4>
+        <br />
+        <div className="mb-2">
+          Email: <code>admin@mediatec.org</code> or{" "}
+          <code>agent@mediatec.org</code>
+        </div>
+        <div className="mb-4">
+          Password: <code>123123</code>
+        </div>
         <Form style={{ display: "flex" }}>
           <div style={{ width: 400, margin: "auto" }}>
             <Field
               name="email"
-              prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-              }
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="Email"
               component={InputField}
             />
@@ -25,30 +34,35 @@ class C extends React.PureComponent {
             <Field
               name="password"
               type="password"
-              prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-              }
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="Password"
               component={InputField}
             />
 
-            <FormItem>
+            <div className="mb-2">
+              <a
+                href="javascript: void(0);"
+                className="utils__link--blue utils__link--underlined"
+              >
+                Forgot password
+              </a>
+            </div>
+
+            <div className="form-actions">
               <Button
                 type="primary"
                 htmlType="submit"
-                className="login-form-button"
+                className="width-150 mr-4"
               >
                 Login
               </Button>
-            </FormItem>
-            <FormItem>
-              <a className="login-form-forgot" href="">
-                Forgot password
-              </a>
-            </FormItem>
-            <FormItem>
-              Or <Link to="/register">Register now!</Link>
-            </FormItem>
+
+              <Link to="/register">
+                <Button className="width-100" htmlType="button">
+                  Sign Up
+                </Button>
+              </Link>
+            </div>
           </div>
         </Form>
       </div>
@@ -56,7 +70,7 @@ class C extends React.PureComponent {
   }
 }
 
-export const LoginView = withFormik({
+export const LoginForm = withFormik({
   validationSchema: loginSchema,
   validateOnBlur: false,
   validateOnChange: false,

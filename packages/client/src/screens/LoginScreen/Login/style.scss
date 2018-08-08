@@ -1,6 +1,6 @@
-@import '../../../../resources/mixins';
+@import '../../../resources/mixins';
 
-.login {
+.main-login {
   background-size: cover;
   background-color: $gray-lighten-more;
   background-position: center center;
@@ -13,6 +13,7 @@
     height: 100%;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   &__block {
@@ -22,6 +23,10 @@
     align-self: center;
     position: relative;
     z-index: 2;
+
+    &--pb200 {
+      padding-bottom: rem(200) !important;
+    }
 
     @media (max-width: $md-max-width) {
       padding: rem(40) rem(20) rem(80);
@@ -36,6 +41,7 @@
       overflow: hidden;
       background-color: $white;
       position: relative;
+      box-shadow: 0 10px 40px -20px rgba(0,0,50,.2),  0 10px 80px -20px rgba(0,0,50,.1);
     }
     &__form {
       position: relative;
@@ -56,16 +62,16 @@
 
     @media (min-width: $md-min-width) {
       &--extended {
-        .login__block__inner {
+        .main-login__block__inner {
           max-width: rem(800);
           padding: rem(80) rem(80) rem(50);
         }
 
-        .login__block__form {
+        .main-login__block__form {
           margin-right: rem(300);
         }
 
-        .login__block__sidebar {
+        .main-login__block__sidebar {
           display: block;
           position: absolute;
           top: 0;
@@ -155,7 +161,7 @@
   &__footer {
     align-self: flex-end;
     width: 100%;
-    color: white;
+    color: $text;
     padding: rem(40);
 
     @media (max-width: $md-max-width) {
@@ -171,7 +177,7 @@
           margin-right: 0;
         }
         a {
-          color: $white;
+          color: $text;
           opacity: .7;
           line-height: 1.4;
           display: inline-block;
