@@ -22,8 +22,8 @@ class Login extends React.Component {
               <div className="main-login__header__logo">
                 <a href="javascript: void(0);">
                   <img
-                    src="resources/images/login/logo.png"
-                    alt="Insertar logo aqui"
+                    src="../../../../public/img/logo.svg"
+                    alt="Yoowriter logo"
                   />
                 </a>
               </div>
@@ -35,12 +35,12 @@ class Login extends React.Component {
             <div className="col-xl-12">
               <div className="main-login__block__promo text-black text-center">
                 <h1 className="mb-3 text-black">
-                  <strong>Consequat ea reprehenderit velit eu.</strong>
+                  <strong>¡Únete a Yoowriter!</strong>
                 </h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
+                  Yoowriter nace para hacer los Premios Literarios más
+                  transparentes, fiables y seguros.<br />Comprueba todo lo que
+                  te da Yoowriter.
                 </p>
               </div>
               <div className="main-login__block__inner">
