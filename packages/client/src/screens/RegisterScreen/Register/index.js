@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "antd";
 import RegisterConnector from "./RegisterForm/registerConnector";
 import "./style.scss";
+import FooterView from "modules/footer/ui/FooterView";
 
 class Register extends React.Component {
   render() {
@@ -24,8 +25,8 @@ class Register extends React.Component {
         <div className="login__block">
           <div className="row">
             <div className="col-xl-12">
-              <div className="login__block__promo text-white text-center">
-                <h1 className="mb-3 text-white">
+              <div className="login__block__promo text-black text-center">
+                <h1 className="mb-3 text-black">
                   <strong>
                     Enim eu qui veniam officia enim duis officia culpa tempor et
                     dolor.
@@ -49,25 +50,7 @@ class Register extends React.Component {
             </div>
           </div>
         </div>
-        <div className="login__footer text-center">
-          <ul className="list-unstyled list-inline">
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Terms of Use</a>
-            </li>
-            <li className="active list-inline-item">
-              <a href="javascript: void(0);">Compliance</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Confidential Information</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Support</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Contacts</a>
-            </li>
-          </ul>
-        </div>
+        <FooterView />
       </div>
     );
   }
