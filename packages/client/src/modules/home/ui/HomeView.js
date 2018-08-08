@@ -12,7 +12,11 @@ export class HomeView extends React.PureComponent {
         <div className="topbar">
           <div className="topbar__left">
             <a href="javascript: void(0);">
-              <img src="../../../../public/img/logo.svg" alt="Yoowriter logo" />
+              <img
+                class="logo-home"
+                src="resources/images/logo-white.svg"
+                alt="Yoowriter logo"
+              />
             </a>
           </div>
           <div className="topbar__right">
@@ -36,14 +40,21 @@ export class HomeView extends React.PureComponent {
             </Menu>
           </div>
         </div>
-        <div class="jumbotron">
-          <h1 class="display-4 text-center">¡Bienvenidos a Yoowriter!</h1>
-          <p class="lead text-center">
+        <div
+          class="jumbotron"
+          style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
+        >
+          <h1 class="display-4 text-center text-light">
+            ¡Bienvenidos a Yoowriter!
+          </h1>
+          <p class="lead text-center text-light">
             Yoowriter nace para hacer los Premios Literarios más transparentes,
             fiables y seguros.
           </p>
 
-          <p class="text-center">Comprueba todo lo que te da Yoowriter.</p>
+          <p class="text-center text-light">
+            Comprueba todo lo que te da Yoowriter.
+          </p>
           <p class="lead text-center">
             <a class="btn btn-primary btn-lg" href="#" role="button">
               Registrarme
@@ -54,7 +65,12 @@ export class HomeView extends React.PureComponent {
           <div class="row features">
             <div class="col-sm">
               <div class="card">
-                <img class="card-img-top" src="" alt="" title="" />
+                <img
+                  class="card-img-top"
+                  src="resources/images/bg.jpg"
+                  alt=""
+                  title=""
+                />
                 <div class="card-body">
                   <h5 class="card-title text-center">
                     ¿Eres una entidad convocante?
@@ -73,7 +89,12 @@ export class HomeView extends React.PureComponent {
             </div>
             <div class="col-sm">
               <div class="card">
-                <img class="card-img-top" src="" alt="" title="" />
+                <img
+                  class="card-img-top"
+                  src="resources/images/writer.jpg"
+                  alt=""
+                  title=""
+                />
                 <div class="card-body">
                   <h5 class="card-title text-center">¿Eres un autor?</h5>
                   <ul>
@@ -90,7 +111,12 @@ export class HomeView extends React.PureComponent {
             </div>
             <div class="col-sm">
               <div class="card">
-                <img class="card-img-top" src="" alt="" title="" />
+                <img
+                  class="card-img-top"
+                  src="resources/images/reader.jpg"
+                  alt=""
+                  title=""
+                />
                 <div class="card-body">
                   <h5 class="card-title text-center">
                     ¿Eres una persona atenta al mundo literario?
