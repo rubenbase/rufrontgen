@@ -1,6 +1,7 @@
 import React from "react";
 import LoginConnector from "./LoginForm/loginConnector";
 import "./style.scss";
+import FooterView from "modules/footer/ui/FooterView";
 
 class Login extends React.Component {
   state = {};
@@ -71,25 +72,7 @@ class Login extends React.Component {
             </div>
           </div>
         </div>
-        <div className="main-login__footer text-center">
-          <ul className="list-unstyled list-inline">
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Terms of Use</a>
-            </li>
-            <li className="active list-inline-item">
-              <a href="javascript: void(0);">Compliance</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Confidential Information</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Support</a>
-            </li>
-            <li className="list-inline-item">
-              <a href="javascript: void(0);">Contacts</a>
-            </li>
-          </ul>
-        </div>
+        <FooterView />
       </div>
     );
   }
