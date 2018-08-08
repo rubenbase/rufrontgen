@@ -37,33 +37,35 @@ export class HomeView extends React.PureComponent {
           </div>
         </div>
         <div class="jumbotron">
-          <h1 class="display-4">¡Bienvenidos a Yoowriter!</h1>
-          <p class="lead">
+          <h1 class="display-4 text-center">¡Bienvenidos a Yoowriter!</h1>
+          <p class="lead text-center">
             Yoowriter nace para hacer los Premios Literarios más transparentes,
             fiables y seguros.
           </p>
 
-          <p>Comprueba todo lo que te da Yoowriter.</p>
-          <p class="lead">
+          <p class="text-center">Comprueba todo lo que te da Yoowriter.</p>
+          <p class="lead text-center">
             <a class="btn btn-primary btn-lg" href="#" role="button">
               Registrarme
             </a>
           </p>
         </div>
         <div class="container">
-          <div class="row">
+          <div class="row features">
             <div class="col-sm">
               <div class="card">
                 <img class="card-img-top" src="" alt="" title="" />
                 <div class="card-body">
-                  <h5 class="card-title">¿Eres una entidad convocante?</h5>
+                  <h5 class="card-title text-center">
+                    ¿Eres una entidad convocante?
+                  </h5>
                   <ul>
                     <li>Inscríbete en Yoowriter</li>
                     <li>Registrar un premio literario</li>
                     <li>Convoca ya n premio literario</li>
                     <li>Consulta el estado de un concurso</li>
                   </ul>
-                  <a href="#" class="btn btn-primary">
+                  <a href="#" class="btn btn-primary btn-block">
                     Regístrate en Yoowriter
                   </a>
                 </div>
@@ -73,14 +75,14 @@ export class HomeView extends React.PureComponent {
               <div class="card">
                 <img class="card-img-top" src="" alt="" title="" />
                 <div class="card-body">
-                  <h5 class="card-title">¿Eres un autor?</h5>
+                  <h5 class="card-title text-center">¿Eres un autor?</h5>
                   <ul>
                     <li>Inscríbete como autor en Yoowriter</li>
                     <li>Utiliza servicios avanzados</li>
                     <li>Presenta una obra a un concurso</li>
                     <li>Consulta el estado de tus obras</li>
                   </ul>
-                  <a href="#" class="btn btn-primary">
+                  <a href="#" class="btn btn-primary btn-block">
                     Regístrate en Yoowriter
                   </a>
                 </div>
@@ -90,14 +92,14 @@ export class HomeView extends React.PureComponent {
               <div class="card">
                 <img class="card-img-top" src="" alt="" title="" />
                 <div class="card-body">
-                  <h5 class="card-title">
+                  <h5 class="card-title text-center">
                     ¿Eres una persona atenta al mundo literario?
                   </h5>
                   <ul>
                     <li>Inscríbete en Yoowriter</li>
                     <li>Conoce la actualidad de los premios literarios</li>
                   </ul>
-                  <a href="#" class="btn btn-primary">
+                  <a href="#" class="btn btn-primary btn-block">
                     Regístrate en Yoowriter
                   </a>
                 </div>
@@ -106,35 +108,39 @@ export class HomeView extends React.PureComponent {
           </div>
         </div>
         <div class="container">
-          <h2>Ventajas de Yoowriter</h2>
-          <div class="row">
+          <h2 class="text-center">Ventajas de Yoowriter</h2>
+          <div class="row features">
             <div class="col-sm">
-              <Icon type="lock" />
-              <h5>Confidencialidad</h5>
+              <h5 class="text-center">
+                <Icon type="lock" /> Confidencialidad
+              </h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
                 non cum dictumst luctus condimentum ullamcorper
               </p>
             </div>
             <div class="col-sm">
-              <Icon type="sync" />
-              <h5>Transparencia</h5>
+              <h5 class="text-center">
+                <Icon type="sync" /> Transparencia
+              </h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
                 non cum dictumst luctus condimentum ullamcorper
               </p>
             </div>
             <div class="col-sm">
-              <Icon type="hourglass" />
-              <h5>Eficiencia</h5>
+              <h5 class="text-center">
+                <Icon type="hourglass" /> Eficiencia
+              </h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
                 non cum dictumst luctus condimentum ullamcorper
               </p>
             </div>
             <div class="col-sm">
-              <Icon type="heart" />
-              <h5>Sostenibilidad</h5>
+              <h5 class="text-center">
+                <Icon type="heart" /> Sostenibilidad
+              </h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
                 non cum dictumst luctus condimentum ullamcorper

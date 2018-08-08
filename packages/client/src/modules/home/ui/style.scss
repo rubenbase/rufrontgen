@@ -125,3 +125,17 @@
     }
   }
 }
+.btn.btn-primary,
+.show > .btn.btn-primary {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.jumbotron {
+  padding: 10rem 2rem !important;
+}
+.features {
+  margin: 50px 0;
+}
