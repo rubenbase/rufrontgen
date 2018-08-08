@@ -2,6 +2,7 @@
   "name": "@rufrontgen/client",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@rufrontgen/common": "1.0.0",
     "@rufrontgen/controller": "1.0.0",
