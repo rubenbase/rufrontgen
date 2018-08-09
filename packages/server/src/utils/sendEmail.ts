@@ -1,7 +1,11 @@
 // Use at least Nodemailer v4.1.0
 import nodemailer = require("nodemailer");
 
-export const sendEmail = async (recipient: string, url: string) => {
+export const sendEmail = async (
+  recipient: string,
+  url: string,
+  linkText: string
+) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
@@ -34,7 +38,7 @@ export const sendEmail = async (recipient: string, url: string) => {
                           <td style={{ verticalAlign: 'top' }}>
                             <img
                               src="resources/images/logo.png"
-                              alt="Clean UI Admin Template"
+                              alt="RufrontGen"
                               style={{ height: '40px' }}
                             />
                           </td>
@@ -63,7 +67,7 @@ export const sendEmail = async (recipient: string, url: string) => {
                                 Password Reset
                               </h5>
                               <p>
-                                Seems like you forgot your password for Clean UI. If this is true,
+                                Seems like you forgot your password for RufrontGen. If this is true,
                                 click below to reset your password.
                               </p>
                               <div style={{ textAlign: 'center' }}>
@@ -79,7 +83,7 @@ export const sendEmail = async (recipient: string, url: string) => {
                                     borderRadius: '5px',
                                   }}
                                 >
-                                  Reset Password
+                                  ${linkText}
                                 </a>
                               </div>
                               <p>
@@ -102,7 +106,7 @@ export const sendEmail = async (recipient: string, url: string) => {
                       }}
                     >
                       <p>
-                        Mediatec Software Inc., Abbey Road, San Francisco CA 94102
+                        RufrontGen, Ruben Costa, A Coruna SP 15009
                         <br />
                         Don't like these emails?{' '}
                         <a
@@ -112,7 +116,7 @@ export const sendEmail = async (recipient: string, url: string) => {
                           Unsubscribe
                         </a>
                         <br />
-                        Powered by Clean UI
+                        Powered by RufrontGen
                       </p>
                     </div>
                   </div>
