@@ -12,11 +12,11 @@ class C extends React.PureComponent {
     return (
       <div className="cat__pages__login__block__form">
         <h4 className="text-uppercase">
-          <strong>Please log in</strong>
+          <strong>Inicia sesión</strong>
         </h4>
         <br />
         <div className="mb-2">
-          Email: <code>admin@mediatec.org</code> or{" "}
+          Email: <code>ejemplo@gmail.com</code> or{" "}
           <code>agent@mediatec.org</code>
         </div>
         <div className="mb-4">
@@ -44,7 +44,7 @@ class C extends React.PureComponent {
                 href="javascript: void(0);"
                 className="utils__link--blue utils__link--underlined"
               >
-                Forgot password
+                ¿Olvidaste tu contraseña?
               </a>
             </div>
 
@@ -59,7 +59,7 @@ class C extends React.PureComponent {
 
               <Link to="/register">
                 <Button className="width-100" htmlType="button">
-                  Sign Up
+                  Registrarse
                 </Button>
               </Link>
             </div>

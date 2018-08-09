@@ -36,6 +36,8 @@
       overflow: hidden;
       background-color: $white;
       position: relative;
+      box-shadow: 0 10px 40px -20px rgba(0, 0, 50, 0.2),
+        0 10px 80px -20px rgba(0, 0, 50, 0.1);
     }
     &__form {
       position: relative;
@@ -73,7 +75,7 @@
           bottom: 0;
           width: rem(300);
           padding: rem(80) rem(40);
-          color: $white;
+          color: $black;
           background: $black-lighten;
 
           &__item {
@@ -102,7 +104,7 @@
   &__header {
     align-self: flex-start;
     width: 100%;
-    color: $white;
+    color: $black;
     padding: rem(40);
 
     @media (max-width: $md-max-width) {
@@ -133,17 +135,17 @@
           }
           &.active {
             a {
-              border-bottom: 1px solid rgba($white, 0.5);
+              border-bottom: 1px solid rgba($black, 0.5);
             }
           }
           a {
-            color: $white !important;
+            color: $black !important;
             line-height: 1.4;
             display: inline-block;
             margin-right: rem(10);
             font-weight: bold;
             &:hover {
-              border-bottom: 1px solid rgba($white, 0.5);
+              border-bottom: 1px solid rgba($black, 0.5);
             }
           }
         }
@@ -154,7 +156,7 @@
   &__footer {
     align-self: flex-end;
     width: 100%;
-    color: white;
+    color: black;
     padding: rem(40);
 
     @media (max-width: $md-max-width) {
@@ -170,7 +172,7 @@
           margin-right: 0;
         }
         a {
-          color: $white;
+          color: $black;
           opacity: 0.7;
           line-height: 1.4;
           display: inline-block;

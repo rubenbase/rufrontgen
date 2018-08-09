@@ -109,7 +109,7 @@
   &__header {
     align-self: flex-start;
     width: 100%;
-    color: $white;
+    color: $black;
     padding: rem(40);
 
     @media (max-width: $md-max-width) {
@@ -140,17 +140,17 @@
           }
           &.active {
             a {
-              border-bottom: 1px solid rgba($white, 0.5);
+              border-bottom: 1px solid rgba($black, 0.5);
             }
           }
           a {
-            color: $white !important;
+            color: $black !important;
             line-height: 1.4;
             display: inline-block;
             margin-right: rem(10);
             font-weight: bold;
             &:hover {
-              border-bottom: 1px solid rgba($white, 0.5);
+              border-bottom: 1px solid rgba($black, 0.5);
             }
           }
         }

@@ -50,22 +50,22 @@ class Login extends React.Component {
                 </div>
                 <div className="main-login__block__sidebar">
                   <h4 className="main-login__block__sidebar__title text-white">
-                    <strong>Agile Dev Meetup</strong>
+                    <strong>
+                      III CONCURSO INTERNACIONAL DE RELATOS CORTOS CIUDAD DE
+                      SEVILLA
+                    </strong>
                     <br />
-                    <span>August 2018</span>
+                    <span>Noviembre 2018</span>
                   </h4>
                   <div className="main-login__block__sidebar__item">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s.
+                    El Ayuntamiento de Sevilla, la Editorial Samarcanda y el
+                    Círculo Mercantil e Industrial de Sevilla organizan el
+                    certamen literario con las siguientes características.
                   </div>
-                  <div className="main-login__block__sidebar__item">
-                    Ipsum has been the industry's standard dummy text ever since
-                    the 1500s.
-                  </div>
+
                   <div className="main-login__block__sidebar__place">
                     <i className="icmn-location mr-3" />
-                    New York, USA
+                    Ver bases del concurso.
                   </div>
                 </div>
               </div>

@@ -7,41 +7,35 @@ import FooterView from "modules/footer/ui/FooterView";
 class Register extends React.Component {
   render() {
     return (
-      <div className={"login login--fullscreen"}>
+      <div className="login login--fullscreen">
         <div className="login__header">
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-12">
               <div className="login__header__logo">
                 <a href="*">
-                  <img
-                    src="{require('../../../../public/logo.svg')}"
-                    alt="Insert logo here"
-                  />
+                  <img src="resources/images/logo.svg" alt="Insert logo here" />
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div className="login__block">
+        <div className="login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">
               <div className="login__block__promo text-black text-center">
                 <h1 className="mb-3 text-black">
-                  <strong>
-                    Enim eu qui veniam officia enim duis officia culpa tempor et
-                    dolor.
-                  </strong>
+                  <strong>¡Únete a Yoowriter!</strong>
                 </h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
+                  Yoowriter nace para hacer los Premios Literarios más
+                  transparentes, fiables y seguros.<br />Comprueba todo lo que
+                  te da Yoowriter.
                 </p>
               </div>
               <div className="login__block__inner">
                 <div className="login__block__form">
                   <h4 className="text-uppercase">
-                    <strong>Please Register</strong>
+                    <strong>Registro</strong>
                   </h4>
                   <br />
                   <RegisterConnector />

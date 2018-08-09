@@ -45,12 +45,12 @@ class C extends React.PureComponent {
             </Button>
           </div>
           <div className="mb-2">
-            Already have an account?{" "}
+            ¿Ya tienes una cuenta?{" "}
             <Link
               className="utils__link--blue utils__link--underlined"
               to="/login"
             >
-              Sign in!
+              ¡Inicia sesión!
             </Link>
           </div>
         </div>
