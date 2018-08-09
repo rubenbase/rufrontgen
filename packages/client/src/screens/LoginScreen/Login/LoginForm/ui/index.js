@@ -40,12 +40,12 @@ class C extends React.PureComponent {
             />
 
             <div className="mb-2">
-              <a
-                href="javascript: void(0);"
+              <Link
+                to="/forgot-password"
                 className="utils__link--blue utils__link--underlined"
               >
                 ¿Olvidaste tu contraseña?
-              </a>
+              </Link>
             </div>
 
             <div className="form-actions">

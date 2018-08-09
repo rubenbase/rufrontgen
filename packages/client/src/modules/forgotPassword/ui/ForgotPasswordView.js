@@ -2,13 +2,9 @@ import * as React from "react";
 import { withFormik, FormikProps, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
-import { NormalizedErrorMap } from "@rufrontgen/controller";
 import { InputField } from "../../shared/inputField";
 
 const FormItem = FormA.Item;
-
-
-
 
 class C extends React.PureComponent {
   render() {
@@ -18,9 +14,7 @@ class C extends React.PureComponent {
           <div style={{ width: 400, margin: "auto" }}>
             <Field
               name="email"
-              prefix={
-                <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-              }
+              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="Email"
               component={InputField}
             />
@@ -35,7 +29,7 @@ class C extends React.PureComponent {
             </FormItem>
 
             <FormItem>
-              Or <Link to="/register">Go back!</Link>
+              Or <Link to="/login">Go back!</Link>
             </FormItem>
           </div>
         </Form>
