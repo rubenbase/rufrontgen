@@ -9,18 +9,14 @@ export class HomeView extends React.PureComponent {
   render() {
     return (
       <div>
-        <div className="topbar">
-          <div className="topbar__left">
-            <a href="javascript: void(0);">
-              <img
-                class="logo-home"
-                src="resources/images/logo-white.svg"
-                alt="Yoowriter logo"
-              />
-            </a>
+        <div className="menuTop">
+          <div className="menuTop__logo">
+            <div className="menuTop__logoContainer">
+              <img src="resources/images/logo.svg" alt="" />
+            </div>
           </div>
-          <div className="topbar__right">
-            <Menu onClick={this.handleClick} mode="horizontal">
+          <Menu onClick={this.handleClick} mode="horizontal">
+            <Menu className="topbar__right">
               <Menu.Item key="trophy">
                 <Icon type="trophy" />Premios abiertos
               </Menu.Item>
@@ -38,7 +34,7 @@ export class HomeView extends React.PureComponent {
                 <Menu.Item key="setting:2">Registrarse</Menu.Item>
               </SubMenu>
             </Menu>
-          </div>
+          </Menu>
         </div>
         <div
           class="jumbotron"

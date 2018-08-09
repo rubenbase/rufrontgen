@@ -135,6 +135,7 @@
 }
 .jumbotron {
   padding: 10rem 2rem !important;
+  border-radius: 0 !important;
 }
 .features {
   margin: 50px 0;
@@ -143,4 +144,10 @@
   display: block;
   width: 200px;
   margin: 20px;
+}
+.menuTop__logo {
+  height: 48px;
+  width: 150px;
+  float: left;
+  padding: 8px 0 0 10px;
 }
