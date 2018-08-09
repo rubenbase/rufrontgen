@@ -12,7 +12,7 @@ class Register extends React.Component {
           <div className="row">
             <div className="col-lg-12">
               <div className="login__header__logo">
-                <a href="*">
+                <a href="/">
                   <img src="resources/images/logo.svg" alt="Insert logo here" />
                 </a>
               </div>

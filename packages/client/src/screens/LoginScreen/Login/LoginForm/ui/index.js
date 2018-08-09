@@ -16,11 +16,11 @@ class C extends React.PureComponent {
         </h4>
         <br />
         <div className="mb-2">
-          Email: <code>ejemplo@gmail.com</code> or{" "}
-          <code>agent@mediatec.org</code>
+          Email: <code>ejemplo@mailinator.com</code> or{" "}
+          <code>hello@mailinator.org</code>
         </div>
         <div className="mb-4">
-          Password: <code>123123</code>
+          Password: <code>123456</code>
         </div>
         <Form style={{ display: "flex" }}>
           <div style={{ width: 400, margin: "auto" }}>

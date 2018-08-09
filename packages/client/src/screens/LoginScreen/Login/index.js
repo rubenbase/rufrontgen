@@ -21,7 +21,7 @@ class Login extends React.Component {
           <div className="row">
             <div className="col-lg-12">
               <div className="main-login__header__logo">
-                <a href="javascript: void(0);">
+                <a href="/">
                   <img
                     src="resources/images/logo.svg"
                     alt="Insertar logo aqui"
