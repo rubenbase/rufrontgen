@@ -70,7 +70,7 @@ class LiveSearch extends React.Component {
               <div className="livesearch__logo">
                 <img
                   className="livesearch__logo-img"
-                  src="resources/images/logo.png"
+                  src="resources/images/logo.svg"
                   alt=""
                 />
               </div>
@@ -81,20 +81,15 @@ class LiveSearch extends React.Component {
                   value={searchText}
                   onChange={this.changeSearchText}
                   id="livesearchInput"
-                  placeholder="Type to search..."
+                  placeholder="Buscar..."
                   ref={ele => (this.searchInput = ele)}
                 />
               </div>
-              <ul className="livesearch__options">
-                <li className="livesearch__option livesearch__option--checkbox">
-                  <Checkbox>Search within page</Checkbox>
-                </li>
-                <li className="livesearch__option">Press enter to search</li>
-              </ul>
+
               <div className="livesearch__results">
                 <div className="livesearch__results-title">
                   <span className="livesearch__results-title-text">
-                    Pages Search Results
+                    Resultados por páginas
                   </span>
                 </div>
                 <div className="row">
@@ -106,14 +101,14 @@ class LiveSearch extends React.Component {
                           backgroundImage: "url(resources/images/photos/7.jpeg)"
                         }}
                       >
-                        #1
+                        1
                       </div>
                       <div className="livesearch__result">
                         <div className="livesearch__result-text">
-                          Text from input field must be here
+                          Premio de Literatura de La Rioja
                         </div>
                         <div className="livesearch__result-source">
-                          In some partition
+                          20 de agosto de 2018
                         </div>
                       </div>
                     </div>
@@ -124,67 +119,38 @@ class LiveSearch extends React.Component {
                           backgroundImage: "url(resources/images/photos/9.jpeg)"
                         }}
                       >
-                        KF
+                        2
                       </div>
                       <div className="livesearch__result">
                         <div className="livesearch__result-text">
-                          Text from input field must be here
+                          Premio "Tigre Juan"
                         </div>
                         <div className="livesearch__result-source">
-                          In some partition
-                        </div>
-                      </div>
-                    </div>
-                    <div className="livesearch__result-content">
-                      <div
-                        className="livesearch__result-thumb"
-                        style={{
-                          backgroundImage: "url(resources/images/photos/8.jpeg)"
-                        }}
-                      >
-                        GF
-                      </div>
-                      <div className="livesearch__result">
-                        <div className="livesearch__result-text">
-                          Text from input field must be here
-                        </div>
-                        <div className="livesearch__result-source">
-                          In some partition
+                          12 de septiembre de 2018
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-4">
                     <div className="livesearch__result-content">
-                      <div className="livesearch__result-thumb">01</div>
+                      <div className="livesearch__result-thumb">3</div>
                       <div className="livesearch__result">
                         <div className="livesearch__result-text">
-                          Text from input field must be here
+                          Premio de Literatura de Navarra
                         </div>
                         <div className="livesearch__result-source">
-                          In some partition
+                          2 de octubre de 2018
                         </div>
                       </div>
                     </div>
                     <div className="livesearch__result-content">
-                      <div className="livesearch__result-thumb">02</div>
+                      <div className="livesearch__result-thumb">4</div>
                       <div className="livesearch__result">
                         <div className="livesearch__result-text">
-                          Text from input field must be here
+                          Premio "Librín"
                         </div>
                         <div className="livesearch__result-source">
-                          In some partition
-                        </div>
-                      </div>
-                    </div>
-                    <div className="livesearch__result-content">
-                      <div className="livesearch__result-thumb">03</div>
-                      <div className="livesearch__result">
-                        <div className="livesearch__result-text">
-                          Text from input field must be here
-                        </div>
-                        <div className="livesearch__result-source">
-                          In some partition
+                          20 de noviembre de 2018
                         </div>
                       </div>
                     </div>
