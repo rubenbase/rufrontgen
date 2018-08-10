@@ -149,5 +149,14 @@
   height: 48px;
   width: 150px;
   float: left;
-  padding: 8px 0 0 10px;
+  padding: 0 0 0 10px;
+}
+.ant-menu-horizontal {
+  border: 0;
+  border-bottom: 1px solid #e8e8e8;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  line-height: 46px;
+  color: #fff !important;
+  background-color: #000 !important;
 }
