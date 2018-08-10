@@ -13,7 +13,7 @@ class Register extends React.Component {
             <div className="col-lg-12">
               <div className="login__header__logo">
                 <a href="/">
-                  <img src="resources/images/logo.svg" alt="Insert logo here" />
+                  <img src="resources/images/logo.svg" alt="RufrontGen logo" />
                 </a>
               </div>
             </div>

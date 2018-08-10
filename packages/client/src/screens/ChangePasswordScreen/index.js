@@ -1,9 +1,9 @@
 import React from "react";
 // import Page from "components/LayoutComponents/Page";
 import Helmet from "react-helmet";
-import ForgotPassword from "./ForgotPassword";
+import ChangePassword from "./ChangePassword";
 
-class ForgotPasswordScreen extends React.Component {
+class ChangePasswordScreen extends React.Component {
   static defaultProps = {
     pathName: "Lockscreen",
     roles: ["agent", "administrator"]
@@ -15,11 +15,11 @@ class ForgotPasswordScreen extends React.Component {
       //   <Page {...props}>
       <div>
         <Helmet title="Lockscreen" />
-        <ForgotPassword />
+        <ChangePassword />
       </div>
       //   </Page>
     );
   }
 }
 
-export default ForgotPasswordScreen;
+export default ChangePasswordScreen;

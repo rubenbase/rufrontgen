@@ -1,5 +1,4 @@
 import { sendEmail } from "./../../../utils/sendEmail";
-import * as yup from "yup";
 import * as bcrypt from "bcryptjs";
 
 import { ResolverMap } from "../../../types/graphql-utils";
@@ -7,12 +6,8 @@ import { createForgotPasswordLink } from "../../../utils/createForgotPasswordLin
 import { User } from "../../../models/User";
 import { expiredKeyError } from "../../../utils/validation/errorMessages";
 import { forgotPasswordPrefix } from "../../../constants";
-import { registerPasswordValidation } from "@rufrontgen/common";
+import { changePasswordSchema } from "@rufrontgen/common";
 import { formatYupError } from "../../../utils/validation/formatYupError";
-
-const schema = yup.object().shape({
-  newPassword: registerPasswordValidation
-});
 
 export const resolvers: ResolverMap = {
   Mutation: {
@@ -59,7 +54,10 @@ export const resolvers: ResolverMap = {
       }
 
       try {
-        await schema.validate({ newPassword }, { abortEarly: false });
+        await changePasswordSchema.validate(
+          { newPassword },
+          { abortEarly: false }
+        );
       } catch (err) {
         return formatYupError(err);
       }

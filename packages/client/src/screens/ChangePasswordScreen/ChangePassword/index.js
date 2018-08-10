@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "antd";
-import ForgotPasswordConnector from "./ForgotPasswordForm/forgotPasswordConnector";
+import ChangePasswordConnector from "./ChangePasswordForm/changePasswordConnector";
 import "./style.scss";
 
-class ForgotPassword extends React.Component {
+class ChangePassword extends React.Component {
   render() {
     return (
       <div className="login login--fullscreen">
@@ -23,7 +23,7 @@ class ForgotPassword extends React.Component {
             <div className="col-xl-12">
               <div className="login__block__inner">
                 <div className="login__block__form">
-                  <ForgotPasswordConnector />
+                  <ChangePasswordConnector />
                 </div>
               </div>
             </div>
@@ -34,4 +34,4 @@ class ForgotPassword extends React.Component {
   }
 }
 
-export default ForgotPassword;
+export default ChangePassword;

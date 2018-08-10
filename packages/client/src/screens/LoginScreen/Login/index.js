@@ -22,10 +22,7 @@ class Login extends React.Component {
             <div className="col-lg-12">
               <div className="main-login__header__logo">
                 <a href="/">
-                  <img
-                    src="resources/images/logo.svg"
-                    alt="Insertar logo aqui"
-                  />
+                  <img src="resources/images/logo.svg" alt="RufrontGen logo" />
                 </a>
               </div>
             </div>

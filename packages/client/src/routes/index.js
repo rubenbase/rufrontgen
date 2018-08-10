@@ -1,11 +1,12 @@
 import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { LegalConnector } from "../modules/legal/LegalConnector";
-import { HomeView } from "../modules/home/ui/HomeView";
-import LoginScreen from "../screens/LoginScreen";
-import RegisterScreen from "../screens/RegisterScreen";
-import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
+import { LegalConnector } from "modules/legal/LegalConnector";
+import { HomeView } from "modules/home/ui/HomeView";
+import LoginScreen from "screens/LoginScreen";
+import RegisterScreen from "screens/RegisterScreen";
+import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
+import ChangePasswordScreen from "screens/ChangePasswordScreen";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -17,6 +18,11 @@ export const Routes = () => (
         exact={true}
         path="/forgot-password"
         component={ForgotPasswordScreen}
+      />
+      <Route
+        exact={true}
+        path="/change-password:key"
+        component={ChangePasswordScreen}
       />
       <Route exact={true} path="/" component={HomeView} />
     </Switch>
