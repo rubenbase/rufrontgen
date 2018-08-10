@@ -1,4 +1,10 @@
-import { Entity, Column, BaseEntity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  ManyToOne
+} from "typeorm";
 
 @Entity("listings")
 export class Listing extends BaseEntity {
@@ -20,4 +26,7 @@ export class Listing extends BaseEntity {
 
   @Column("text", { array: true })
   amenities: string[];
+
+  @ManyToOne(type => User, user => user.photos)
+  user: User;
 }
