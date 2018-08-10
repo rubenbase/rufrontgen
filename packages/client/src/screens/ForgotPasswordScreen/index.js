@@ -15,7 +15,7 @@ class ForgotPasswordScreen extends React.Component {
       //   <Page {...props}>
       <div>
         <Helmet title="Lockscreen" />
-        <ForgotPassword />
+        <ForgotPassword {...props} />
       </div>
       //   </Page>
     );

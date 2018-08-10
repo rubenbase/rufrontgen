@@ -37,13 +37,17 @@ class Login extends React.Component {
                 </h1>
                 <p>
                   Yoowriter nace para hacer los Premios Literarios más
-                  transparentes, fiables y seguros.<br />Comprueba todo lo que
-                  te da Yoowriter.
+                  transparentes, fiables y seguros.
+                  <br />
+                  Comprueba todo lo que te da Yoowriter.
                 </p>
               </div>
               <div className="main-login__block__inner">
                 <div className="main-login__block__form">
-                  <LoginConnector email={this.state.restoredEmail} />
+                  <LoginConnector
+                    {...this.props}
+                    email={this.state.restoredEmail}
+                  />
                 </div>
                 <div className="main-login__block__sidebar">
                   <h4 className="main-login__block__sidebar__title text-white">

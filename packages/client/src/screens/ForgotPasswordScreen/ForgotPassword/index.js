@@ -23,7 +23,7 @@ class ForgotPassword extends React.Component {
             <div className="col-xl-12">
               <div className="login__block__inner">
                 <div className="login__block__form">
-                  <ForgotPasswordConnector />
+                  <ForgotPasswordConnector {...this.props} />
                 </div>
               </div>
             </div>

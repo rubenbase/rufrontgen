@@ -1,25 +1,25 @@
-import React from 'react'
+import React from "react";
 // import Page from '../../modules/LayoutComponents/Page/Page'
-import Helmet from 'react-helmet'
-import Login from './Login'
+import Helmet from "react-helmet";
+import Login from "./Login";
 
 class LoginScreen extends React.Component {
   static defaultProps = {
-    pathName: 'Login Beta',
-    roles: ['agent', 'administrator'],
-  }
+    pathName: "Login Beta",
+    roles: ["agent", "administrator"]
+  };
 
   render() {
-    const props = this.props
+    const props = this.props;
     return (
       // <Page {...props}>
       <div>
         <Helmet title="Login Beta" />
-        <Login />
+        <Login {...props} />
       </div>
       // </Page>
-    )
+    );
   }
 }
 
-export default LoginScreen
+export default LoginScreen;
