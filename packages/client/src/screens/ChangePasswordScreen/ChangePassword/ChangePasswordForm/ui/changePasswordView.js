@@ -2,6 +2,8 @@ import * as React from "react";
 import { withFormik, FormikProps, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
+import { changePasswordSchema } from "@rufrontgen/common";
+
 import { InputField } from "modules/shared/inputField";
 
 const FormItem = FormA.Item;
@@ -39,6 +41,7 @@ class C extends React.PureComponent {
 }
 
 export const ChangePasswordView = withFormik({
+  validationSchema: changePasswordSchema,
   mapPropsToValues: () => ({
     newPassword: ""
   }),

@@ -1,6 +1,7 @@
 import * as React from "react";
+import { ChangePasswordController } from "@rufrontgen/controller";
+
 import { ChangePasswordView } from "./ui/changePasswordView";
-// import { ChangePasswordController } from "@rufrontgen/controller";
 export default class ChangePasswordConnector extends React.PureComponent {
   render() {
     const {
@@ -9,11 +10,18 @@ export default class ChangePasswordConnector extends React.PureComponent {
       }
     } = this.props;
     return (
-      // <ChangePasswordController>
-      {
-        /* {({ submit }) => <ChangePasswordView submit={submit} />} */
-      }
-      // </ChangePasswordController>
+      <ChangePasswordController>
+        {({ submit }) => (
+          <ChangePasswordView
+            submit={async ({ newPassword }) =>
+              submit({
+                key,
+                newPassword
+              })
+            }
+          />
+        )}
+      </ChangePasswordController>
     );
   }
 }

@@ -23,7 +23,7 @@ class ChangePassword extends React.Component {
             <div className="col-xl-12">
               <div className="login__block__inner">
                 <div className="login__block__form">
-                  <ChangePasswordConnector />
+                  <ChangePasswordConnector {...this.props} />
                 </div>
               </div>
             </div>

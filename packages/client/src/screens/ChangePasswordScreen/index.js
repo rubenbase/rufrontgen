@@ -14,8 +14,8 @@ class ChangePasswordScreen extends React.Component {
     return (
       //   <Page {...props}>
       <div>
-        <Helmet title="Lockscreen" />
-        <ChangePassword />
+        <Helmet title="Change Password" />
+        <ChangePassword {...this.props} />
       </div>
       //   </Page>
     );

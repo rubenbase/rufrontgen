@@ -47,7 +47,7 @@ export const resolvers: ResolverMap = {
       if (!userId) {
         return [
           {
-            path: "key",
+            path: "newPassword",
             message: expiredKeyError
           }
         ];
