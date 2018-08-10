@@ -14,7 +14,7 @@ module.exports = (User: any, redis: any) => {
       if (userId) {
         await User.update({ id: userId }, { confirmed: true });
         await redis.del(id);
-        res.send("Ok");
+        res.redirect(`${process.env.FRONTEND_HOST}/login`);
       } else {
         res.send("Invalid");
       }
