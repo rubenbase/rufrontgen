@@ -3,22 +3,14 @@ import { Button } from "antd";
 import RegisterConnector from "./RegisterForm/registerConnector";
 import "./style.scss";
 import FooterView from "modules/footer/ui/FooterView";
+import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
 
 class Register extends React.Component {
   render() {
     return (
       <div className="login login--fullscreen">
-        <div className="login__header">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="login__header__logo">
-                <a href="/">
-                  <img src="resources/images/logo.svg" alt="RufrontGen logo" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <AuthHeader />
+
         <div className="login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">
