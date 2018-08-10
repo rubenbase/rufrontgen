@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "antd";
 import ChangePasswordConnector from "./ChangePasswordForm/changePasswordConnector";
-import "./style.scss";
 
 class ChangePassword extends React.Component {
   render() {
