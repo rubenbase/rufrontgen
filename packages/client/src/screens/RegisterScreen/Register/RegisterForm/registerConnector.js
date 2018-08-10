@@ -3,10 +3,23 @@ import { RegisterController } from "@rufrontgen/controller";
 import { RegisterForm } from "./ui/";
 
 export default class RegisterConnector extends React.PureComponent {
+  onFinish = () => {
+    console.log(this.props);
+    this.props.history.push("/m/confirm-email", {
+      message: "Please, check your email to confirm your account."
+    });
+  };
+
   render() {
     return (
       <RegisterController>
-        {({ submit }) => <RegisterForm submit={submit} {...this.props} />}
+        {({ submit }) => (
+          <RegisterForm
+            onFinish={this.onFinish}
+            submit={submit}
+            {...this.props}
+          />
+        )}
       </RegisterController>
     );
   }

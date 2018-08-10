@@ -6,7 +6,8 @@ import { HomeView } from "modules/home/ui/HomeView";
 import LoginScreen from "screens/LoginScreen";
 import RegisterScreen from "screens/RegisterScreen";
 import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
-import ChangePasswordScreen from "../screens/ChangePasswordScreen";
+import ChangePasswordScreen from "screens/ChangePasswordScreen";
+import TextScreen from "screens/TextScreen";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -24,6 +25,7 @@ export const Routes = () => (
         path="/change-password/:key"
         component={ChangePasswordScreen}
       />
+      <Route path="/m/" component={TextScreen} />
       <Route exact={true} path="/" component={HomeView} />
     </Switch>
   </BrowserRouter>

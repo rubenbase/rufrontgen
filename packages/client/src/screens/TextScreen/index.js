@@ -1,11 +1,11 @@
 import React from "react";
 // import Page from "components/LayoutComponents/Page";
 import Helmet from "react-helmet";
-import Register from "./Register";
+import Text from "./Text";
 
-class RegisterScreen extends React.Component {
+class TextScreen extends React.Component {
   static defaultProps = {
-    pathName: "Register",
+    pathName: "Lockscreen",
     roles: ["agent", "administrator"]
   };
 
@@ -14,12 +14,12 @@ class RegisterScreen extends React.Component {
     return (
       //   <Page {...props}>
       <div>
-        <Helmet title="Register" />
-        <Register {...this.props} />
+        <Helmet title="Text" />
+        <Text {...this.props} />
       </div>
       //   </Page>
     );
   }
 }
 
-export default RegisterScreen;
+export default TextScreen;

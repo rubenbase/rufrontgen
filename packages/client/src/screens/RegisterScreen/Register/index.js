@@ -28,8 +28,9 @@ class Register extends React.Component {
                 </h1>
                 <p>
                   Yoowriter nace para hacer los Premios Literarios más
-                  transparentes, fiables y seguros.<br />Comprueba todo lo que
-                  te da Yoowriter.
+                  transparentes, fiables y seguros.
+                  <br />
+                  Comprueba todo lo que te da Yoowriter.
                 </p>
               </div>
               <div className="login__block__inner">
@@ -38,7 +39,7 @@ class Register extends React.Component {
                     <strong>Registro</strong>
                   </h4>
                   <br />
-                  <RegisterConnector />
+                  <RegisterConnector {...this.props} />
                 </div>
               </div>
             </div>
