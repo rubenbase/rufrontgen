@@ -14,7 +14,7 @@
     "username": "postgres",
     "password": "admin",
     "database": "postgres",
-    "synchronize": true,
+    "synchronize": false,
     "dropSchema": true,
     "logging": true,
     "entities": ["src/models/**/*.ts"],
