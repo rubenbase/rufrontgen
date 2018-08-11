@@ -1,5 +1,4 @@
 input CreateListingInput {
-  id: ID!
   name: String!
   category: String!
   description: String!
@@ -8,6 +7,10 @@ input CreateListingInput {
   latitude: Float!
   longitude: Float!
   amenities: [String!]!
+}
+
+type Listing {
+  id: ID!
 }
 
 type Mutation {
