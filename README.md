@@ -1,5 +1,7 @@
 # rufrontgen
 
+![alt text](https://github.com/rubenbase/rufrontgen/media/rufrontgen.jpg)
+
 Frontend made in react and typescript that uses [rubackgen](https://github.com/rubenbase/rubackgen)
 
 This boilerplate generates the frontend and backend of a scalable and flexible project in react, nodejs, typescript, graphql and postgres.
