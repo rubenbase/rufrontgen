@@ -1,6 +1,6 @@
 # rufrontgen
 
-![alt text](https://github.com/rubenbase/rufrontgen/media/rufrontgen.jpg)
+![alt text](https://github.com/rubenbase/rufrontgen/blob/master/media/rufrontgen.jpg)
 
 Frontend made in react and typescript that uses [rubackgen](https://github.com/rubenbase/rubackgen)
 
