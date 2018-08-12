@@ -1,6 +1,5 @@
 import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { RegisterConnector } from "../modules/register/RegisterConnector";
 import { LegalConnector } from "../modules/legal/LegalConnector";
 import { HomeView } from "../modules/home/ui/HomeView";
 import LoginScreen from "../screens/LoginScreen";

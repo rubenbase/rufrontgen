@@ -1,0 +1,33 @@
+@import "../../../resources/mixins";
+
+.footer {
+  background: $gray-border;
+  padding: rem(40) rem(60) rem(10);
+  margin: rem(40) rem(30) rem(20);
+  border-radius: 5px 5px 0 0;
+
+  @media (max-width: $sm-max-width) {
+    margin: rem(-25) 0 0;
+  }
+
+  &__copyright {
+    display: inline-block;
+    position: relative;
+
+    @media (max-width: $xs-max-width) {
+      margin-top: rem(20);
+      float: none;
+    }
+
+    img {
+      float: left;
+      width: 80px;
+      position: absolute;
+      top: 6px;
+    }
+    span {
+      display: block;
+      margin-left: 50px;
+    }
+  }
+}
