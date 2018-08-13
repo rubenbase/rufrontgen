@@ -154,7 +154,15 @@ export class HomeView extends React.PureComponent {
           </div>
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6 nopadding">
+              <div class="col-md-6 nopadding features-intro-img order-md-12">
+                <div
+                  class="features-bg"
+                  style={{
+                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
+                  }}
+                />
+              </div>
+              <div class="col-md-6 nopadding order-md-1">
                 <div class="features-text">
                   <h5 className="text-center">
                     <Icon type="sync" /> Transparencia
@@ -164,14 +172,6 @@ export class HomeView extends React.PureComponent {
                     vivamus non cum dictumst luctus condimentum ullamcorper
                   </p>
                 </div>
-              </div>
-              <div class="col-md-6 nopadding features-intro-img">
-                <div
-                  class="features-bg"
-                  style={{
-                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
-                  }}
-                />
               </div>
             </div>
           </div>
@@ -200,7 +200,15 @@ export class HomeView extends React.PureComponent {
           </div>
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6 nopadding">
+              <div class="col-md-6 nopadding features-intro-img order-md-12">
+                <div
+                  class="features-bg"
+                  style={{
+                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
+                  }}
+                />
+              </div>
+              <div class="col-md-6 nopadding order-md-1">
                 <div class="features-text">
                   <h5 className="text-center">
                     <Icon type="heart" /> Sostenibilidad
@@ -210,14 +218,6 @@ export class HomeView extends React.PureComponent {
                     vivamus non cum dictumst luctus condimentum ullamcorper
                   </p>
                 </div>
-              </div>
-              <div class="col-md-6 nopadding features-intro-img">
-                <div
-                  class="features-bg"
-                  style={{
-                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
-                  }}
-                />
               </div>
             </div>
           </div>
