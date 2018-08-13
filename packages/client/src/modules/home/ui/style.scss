@@ -153,10 +153,87 @@
 }
 .ant-menu-horizontal {
   border: 0;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 2px solid #ca6060 !important;
   -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 46px;
   color: #fff !important;
   background-color: #000 !important;
+}
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-submenu-active,
+.ant-menu-horizontal > .ant-menu-item-open,
+.ant-menu-horizontal > .ant-menu-submenu-open,
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+  border-bottom: 2px solid #ca6060 !important;
+  color: #ca6060 !important;
+}
+.ant-menu-item:hover,
+.ant-menu-item-active,
+.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-submenu-active,
+.ant-menu-submenu-title:hover {
+  color: #ca6060 !important;
+}
+.ant-menu-submenu > .ant-menu {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+}
+.btn.btn-primary,
+.show > .btn.btn-primary {
+  background-color: #41ad00 !important;
+  border-color: #41ad00 !important;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:active,
+.show > .btn.btn-primary:hover,
+.show > .btn.btn-primary:active {
+  background-color: #6ae01e !important;
+  border-color: #6ae01e !important;
+}
+.text-header {
+  font-size: 1.5em;
+}
+.card-title {
+  font-size: 1.5rem;
+  color: #ca6060;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.card {
+  min-height: 470px;
+}
+.card-body ul {
+  font-size: 16px;
+  min-height: 130px;
+  margin-top: 20px;
+}
+.features-bg {
+  position: relative;
+  min-height: 400px;
+  background-size: cover;
+}
+.features-text {
+  position: relative;
+  padding: 11% 100px 10% 100px;
+  height: 400px;
+  background-color: #1673b1;
+  h5 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 18px;
+    color: #fff;
+    margin: 20px 0 0 0;
+  }
+}
+.nopadding {
+  margin: 0 !important;
+  padding: 0 !important;
 }
