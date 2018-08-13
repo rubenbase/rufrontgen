@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import { AuthRoute } from "@rufrontgen/controller";
 import { LegalConnector } from "modules/legal/LegalConnector";
 import { HomeView } from "modules/home/ui/HomeView";
 import LoginScreen from "screens/LoginScreen";
@@ -8,6 +8,7 @@ import RegisterScreen from "screens/RegisterScreen";
 import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
 import ChangePasswordScreen from "screens/ChangePasswordScreen";
 import TextScreen from "screens/TextScreen";
+import CreateListingScreen from "screens/CreateListingScreen";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -27,6 +28,11 @@ export const Routes = () => (
       />
       <Route path="/m/" component={TextScreen} />
       <Route exact={true} path="/" component={HomeView} />
+      <AuthRoute
+        exact={true}
+        path="/create-listing"
+        component={CreateListingScreen}
+      />
     </Switch>
   </BrowserRouter>
 );

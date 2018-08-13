@@ -40,7 +40,7 @@ var C = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.renderRoute = function (routeProps) {
             var _a = _this.props, data = _a.data, component = _a.component;
-            if (!data || !data.loading) {
+            if (!data || data.loading) {
                 // loading screen
                 return null;
             }
