@@ -1,30 +1,28 @@
 import * as React from "react";
-import { Form, Input, InputNumber } from "antd";
+import { FieldProps } from "formik";
+import { Form, Select } from "antd";
+
 const FormItem = Form.Item;
 
-export const InputField = ({
-  field: { onChange, ...field }, // { name, value, onChange, onBlur }
+export const TagField = ({
+  field: { onChange, onBlur: _, ...field },
   form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   label,
-  onlyNumbers = false,
   ...props
 }) => {
   const errorMsg = touched[field.name] && errors[field.name];
-  const Comp = onlyNumbers ? InputNumber : Input;
+
   return (
     <FormItem
       label={label}
       help={errorMsg}
       validateStatus={errorMsg ? "error" : undefined}
     >
-      <Comp
+      <Select
         {...field}
         {...props}
-        onChange={
-          onlyNumbers
-            ? newValue => setFieldValue(field.name, newValue)
-            : onChange
-        }
+        mode="tags"
+        onChange={newValue => setFieldValue(field.name, newValue)}
       />
     </FormItem>
   );

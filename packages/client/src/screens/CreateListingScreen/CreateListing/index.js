@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
-
+import CreateListingConnector from "./CreateListingForm/createListingConnector";
 class CreateListing extends React.Component {
   render() {
     return (
@@ -12,7 +12,7 @@ class CreateListing extends React.Component {
             <div className="col-xl-12">
               <div className="login__block__inner">
                 <div className="login__block__form">
-                  <h3>Secret info is here</h3>
+                  <CreateListingConnector />
                 </div>
               </div>
             </div>

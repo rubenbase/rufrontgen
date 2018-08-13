@@ -10,7 +10,7 @@ const FormItem = AntForm.Item;
 
 const pages = [<Page1 />, <Page2 />, <Page3 />];
 
-export class CreateListingConnector extends React.PureComponent {
+export default class CreateListingConnector extends React.PureComponent {
   state = {
     page: 0
   };
@@ -23,9 +23,8 @@ export class CreateListingConnector extends React.PureComponent {
 
   render() {
     return (
-      <Formik>
-        initialValues=
-        {{
+      <Formik
+        initialValues={{
           name: "",
           category: "",
           description: "",
@@ -34,17 +33,19 @@ export class CreateListingConnector extends React.PureComponent {
           longitude: 0,
           amenities: []
         }}
-        onSubmit=
-        {this.submit}>
+        onSubmit={this.submit}
+      >
         {() => (
-          <Form style={{ display: "flex" }}>
-            <div style={{ width: 400, margin: "auto" }}>
+          <Form>
+            <div>
               {pages[this.state.page]}
               <FormItem>
                 {this.state.page === pages.length - 1 ? (
-                  <Button type="primary" htmlType="submit">
-                    create listing
-                  </Button>
+                  <div>
+                    <Button type="primary" htmlType="submit">
+                      create listing
+                    </Button>
+                  </div>
                 ) : (
                   <Button type="primary" onClick={this.nextPage}>
                     next page
