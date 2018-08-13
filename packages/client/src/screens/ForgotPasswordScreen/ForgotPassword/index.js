@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "antd";
 import ForgotPasswordConnector from "./ForgotPasswordForm/forgotPasswordConnector";
-import "./style.scss";
 
 class ForgotPassword extends React.Component {
   render() {

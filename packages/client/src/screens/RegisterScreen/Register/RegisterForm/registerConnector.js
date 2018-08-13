@@ -4,7 +4,6 @@ import { RegisterForm } from "./ui/";
 
 export default class RegisterConnector extends React.PureComponent {
   onFinish = () => {
-    console.log(this.props);
     this.props.history.push("/m/confirm-email", {
       message: "Please, check your email to confirm your account."
     });
