@@ -4,8 +4,6 @@ import { Listing } from "../../../models/Listing";
 export const resolvers: ResolverMap = {
   Mutation: {
     deleteListing: async (_, { id }, { session }) => {
-      console.log(session);
-
       if (!session.userId) {
         throw new Error("not authenticated");
       }

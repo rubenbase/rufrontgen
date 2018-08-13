@@ -1,6 +1,9 @@
 import { GraphQLServer } from "graphql-yoga";
 import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
+import { applyMiddleware } from "graphql-middleware";
+import { middleware } from "../middlewares/middleware";
+// import { middlewareShield } from "../middlewares/shield";
 
 // Iterates over folders and build the executable schemas
 
@@ -22,12 +25,15 @@ if (redisDebugMode) {
 }
 
 // Creates the GraphQL server
+const schema = genSchema() as any;
+applyMiddleware(schema, middleware);
+
 const server = new GraphQLServer({
-  schema: genSchema() as any,
+  schema,
   context: ({ request }) => ({
     redis,
     // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
-    url: 'http://localhost:4000',
+    url: "http://localhost:4000",
     session: request.session,
     req: request
   })
