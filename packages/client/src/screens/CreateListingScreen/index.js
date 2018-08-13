@@ -14,7 +14,7 @@ class CreateListingScreen extends React.Component {
     return (
       //   <Page {...props}>
       <div>
-        <Helmet title="Text" />
+        <Helmet title="Create Listing" />
         <CreateListing {...this.props} />
       </div>
       //   </Page>

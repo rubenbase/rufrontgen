@@ -1,18 +1,31 @@
 import * as React from "react";
-import { Form, Input } from "antd";
-
+import { Form, Input, InputNumber } from "antd";
 const FormItem = Form.Item;
 
 export const InputField = ({
-  field, // { name, value, onChange, onBlur }
-  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  field: { onChange, ...field }, // { name, value, onChange, onBlur }
+  form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  label,
+  onlyNumbers = false,
   ...props
 }) => {
   const errorMsg = touched[field.name] && errors[field.name];
-
+  const Comp = onlyNumbers ? InputNumber : Input;
   return (
-    <FormItem help={errorMsg} validateStatus={errorMsg ? "error" : undefined}>
-      <Input {...field} {...props} />
+    <FormItem
+      label={label}
+      help={errorMsg}
+      validateStatus={errorMsg ? "error" : undefined}
+    >
+      <Comp
+        {...field}
+        {...props}
+        onChange={
+          onlyNumbers
+            ? newValue => setFieldValue(field.name, newValue)
+            : onChange
+        }
+      />
     </FormItem>
   );
 };
