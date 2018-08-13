@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Field } from "formik";
 import { InputField } from "modules/shared/inputField";
+import { TagField } from "modules/shared/TagField";
 
 export const Page3 = () => (
   <React.Fragment>
@@ -16,6 +17,6 @@ export const Page3 = () => (
       component={InputField}
       onlyNumbers
     />
-    <Field name="amenities" placeholder="Amenities" component={InputField} />
+    <Field name="amenities" placeholder="Amenities" component={TagField} />
   </React.Fragment>
 );
