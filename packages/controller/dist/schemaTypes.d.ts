@@ -1,3 +1,9 @@
+export interface MeQuery_me {
+    email: string;
+}
+export interface MeQuery {
+    me: MeQuery_me | null;
+}
 export interface ForgotPasswordChangeMutation_forgotPasswordChange {
     path: string;
     message: string;
