@@ -3,7 +3,7 @@ import { Field } from "formik";
 import { InputField } from "modules/shared/InputField";
 
 export const Page1 = () => (
-  <div>
+  <React.Fragment>
     <Field name="name" placeholder="Name" component={InputField} />
     <Field name="category" placeholder="Category" component={InputField} />
     <Field
@@ -11,5 +11,5 @@ export const Page1 = () => (
       placeholder="Description"
       component={InputField}
     />
-  </div>
+  </React.Fragment>
 );
