@@ -10,5 +10,8 @@ Flow
 (master) git checkout X
 (X) git merge master
 (X) git push origin X
+Vas a github y abres un pull request
+una vez hecho el pull request, vas a master, y borras la rama en la que estabas: git branch -D X
+y a continuación: git pull origin master
 
-vas a github y abres un pull request
+No hay que pushear la rama sino has acabado con tu tarea.
