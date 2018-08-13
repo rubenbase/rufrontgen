@@ -82,7 +82,8 @@ export const startServer = async () => {
     // await createTestConn(true);
     await createTestConn(true);
   } else {
-    await createTypeormConn();
+    const conn = await createTypeormConn();
+    await conn.runMigrations();
   }
 
   // Starts the server

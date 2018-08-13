@@ -12,20 +12,14 @@
     "host": "localhost",
     "port": 5432,
     "username": "postgres",
-    "password": "my_postgres_password",
+    "password": "admin",
     "database": "postgres",
     "synchronize": true,
     "dropSchema": true,
     "logging": true,
-    "entities": [
-      "src/models/**/*.ts"
-    ],
-    "migrations": [
-      "src/migration/**/*.ts"
-    ],
-    "subscribers": [
-      "src/subscriber/**/*.ts"
-    ],
+    "entities": ["src/models/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
     "cli": {
       "entitiesDir": "src/models",
       "migrationsDir": "src/migration",
@@ -43,15 +37,9 @@
     "synchronize": true,
     "dropSchema": true,
     "logging": false,
-    "entities": [
-      "src/models/**/*.ts"
-    ],
-    "migrations": [
-      "src/migration/**/*.ts"
-    ],
-    "subscribers": [
-      "src/subscriber/**/*.ts"
-    ],
+    "entities": ["src/models/**/*.ts"],
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
     "cli": {
       "entitiesDir": "src/models",
       "migrationsDir": "src/migration",

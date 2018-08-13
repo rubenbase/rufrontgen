@@ -2,6 +2,7 @@ import React from "react";
 import LoginConnector from "./LoginForm/loginConnector";
 import "./style.scss";
 import FooterView from "modules/footer/ui/FooterView";
+import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
 
 class Login extends React.Component {
   state = {};
@@ -17,17 +18,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="main-login main-login--fullscreen">
-        <div className="main-login__header">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="main-login__header__logo">
-                <a href="/">
-                  <img src="resources/images/logo.svg" alt="RufrontGen logo" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <AuthHeader />
         <div className="main-login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">

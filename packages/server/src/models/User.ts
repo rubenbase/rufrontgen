@@ -4,9 +4,11 @@ import {
   PrimaryGeneratedColumn,
   Column,
   BeforeInsert,
-  CreateDateColumn
+  CreateDateColumn,
+  OneToMany
 } from "typeorm";
 import { BaseEntity } from "typeorm/repository/BaseEntity";
+import { Listing } from "./Listing";
 
 @Entity("users")
 export class User extends BaseEntity {
@@ -32,6 +34,9 @@ export class User extends BaseEntity {
 
   @Column("boolean", { default: false })
   forgotPasswordLocked: boolean;
+
+  @OneToMany(() => Listing, listing => listing.user)
+  listings: Listing[];
 
   @BeforeInsert()
   async hashPasswordBeforeInsert() {
