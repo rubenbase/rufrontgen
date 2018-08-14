@@ -1,9 +1,11 @@
+scalar Upload
+
 input CreateListingInput {
   name: String!
+  picture: Upload
   category: String!
   description: String!
   price: Int!
-  # pictureUrl: string;
   latitude: Float!
   longitude: Float!
   amenities: [String!]!
