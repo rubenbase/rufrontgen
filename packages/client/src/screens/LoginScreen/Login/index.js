@@ -17,13 +17,16 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="main-login main-login--fullscreen">
+      <div
+        className="main-login main-login--fullscreen"
+        style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
+      >
         <AuthHeader />
         <div className="main-login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">
-              <div className="main-login__block__promo text-black text-center">
-                <h1 className="mb-3 text-black">
+              <div className="main-login__block__promo text-white text-center">
+                <h1 className="mb-3 text-white">
                   <strong>¡Únete a Yoowriter!</strong>
                 </h1>
                 <p>
