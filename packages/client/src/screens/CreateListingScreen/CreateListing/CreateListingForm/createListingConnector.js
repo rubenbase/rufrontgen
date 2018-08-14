@@ -6,6 +6,7 @@ import { Page1 } from "./ui/page1";
 import { Page2 } from "./ui/page2";
 import { Page3 } from "./ui/page3";
 import { withCreateListing } from "@rufrontgen/controller";
+
 const FormItem = AntForm.Item;
 
 const pages = [<Page1 />, <Page2 />, <Page3 />];
@@ -26,6 +27,7 @@ class C extends React.PureComponent {
     return (
       <Formik
         initialValues={{
+          picture: null,
           name: "",
           category: "",
           description: "",
@@ -36,30 +38,32 @@ class C extends React.PureComponent {
         }}
         onSubmit={this.submit}
       >
-        {({ isSubmitting }) => (
-          <Form>
-            <div>
-              {pages[this.state.page]}
-              <FormItem>
-                {this.state.page === pages.length - 1 ? (
-                  <div>
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      disabled={isSubmitting}
-                    >
-                      create listing
+        {({ isSubmitting, values }) =>
+          console.log(values) || (
+            <Form>
+              <div>
+                {pages[this.state.page]}
+                <FormItem>
+                  {this.state.page === pages.length - 1 ? (
+                    <div>
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        disabled={isSubmitting}
+                      >
+                        create listing
+                      </Button>
+                    </div>
+                  ) : (
+                    <Button type="primary" onClick={this.nextPage}>
+                      next page
                     </Button>
-                  </div>
-                ) : (
-                  <Button type="primary" onClick={this.nextPage}>
-                    next page
-                  </Button>
-                )}
-              </FormItem>
-            </div>
-          </Form>
-        )}
+                  )}
+                </FormItem>
+              </div>
+            </Form>
+          )
+        }
       </Formik>
     );
   }
