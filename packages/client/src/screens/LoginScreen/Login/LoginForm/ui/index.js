@@ -54,7 +54,7 @@ class C extends React.PureComponent {
                 htmlType="submit"
                 className="width-150 mr-4"
               >
-                Login
+                Inicia sesión
               </Button>
 
               <Link to="/register">

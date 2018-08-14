@@ -16,26 +16,15 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="main-login main-login--fullscreen">
-        <div className="main-login__header">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="main-login__header__logo">
-                <a href="javascript: void(0);">
-                  <img
-                    src="resources/images/logo.svg"
-                    alt="Insertar logo aqui"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div
+        className="main-login main-login--fullscreen"
+        style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
+      >
         <div className="main-login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">
-              <div className="main-login__block__promo text-black text-center">
-                <h1 className="mb-3 text-black">
+              <div className="main-login__block__promo text-white text-center">
+                <h1 className="mb-3 text-white">
                   <strong>¡Únete a Yoowriter!</strong>
                 </h1>
                 <p>
@@ -65,7 +54,7 @@ class Login extends React.Component {
 
                   <div className="main-login__block__sidebar__place">
                     <i className="icmn-location mr-3" />
-                    Ver bases del concurso.
+                    <a href="javascript: void(0);">Ver bases del concurso.</a>
                   </div>
                 </div>
               </div>
