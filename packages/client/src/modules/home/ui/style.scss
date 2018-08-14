@@ -205,7 +205,7 @@
   margin-bottom: 1rem;
 }
 .card {
-  min-height: 470px;
+  min-height: 535px;
 }
 .card-body ul {
   font-size: 16px;
@@ -222,6 +222,15 @@
   padding: 11% 100px 10% 100px;
   height: 400px;
   background-color: #1673b1;
+  &.yellow {
+    background-color: #dcae62 !important;
+  }
+  &.red {
+    background-color: #ca6060 !important;
+  }
+  &.green {
+    background-color: #41ad00 !important;
+  }
   h5 {
     color: #fff;
     font-size: 32px;

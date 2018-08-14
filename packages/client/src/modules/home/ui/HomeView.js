@@ -93,7 +93,9 @@ export class HomeView extends React.PureComponent {
                   title=""
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">¿Eres un autor?</h5>
+                  <h5 className="card-title text-center">
+                    ¿Eres un autor o autora?
+                  </h5>
                   <ul>
                     <li>Inscríbete como autor en Yoowriter</li>
                     <li>Utiliza servicios avanzados</li>
@@ -115,7 +117,9 @@ export class HomeView extends React.PureComponent {
                   title=""
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">¿Eres un lector?</h5>
+                  <h5 className="card-title text-center">
+                    ¿Eres lectora o lector?
+                  </h5>
                   <ul>
                     <li>Inscríbete en Yoowriter</li>
                     <li>Conoce la actualidad de los premios literarios</li>
@@ -140,13 +144,15 @@ export class HomeView extends React.PureComponent {
                 />
               </div>
               <div class="col-md-6 nopadding">
-                <div class="features-text">
+                <div class="features-text yellow">
                   <h5>
                     <i class="anticon anticon-lock" /> Confidencialidad
                   </h5>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit,
-                    vivamus non cum dictumst luctus condimentum ullamcorper
+                    Yoowriter protege la información facilitada por las
+                    instituciones y/o particulares y garantiza las mejores
+                    condiciones de seguridad para que la confidencialidad de los
+                    usuarios esté asegurada.
                   </p>
                 </div>
               </div>
@@ -158,7 +164,7 @@ export class HomeView extends React.PureComponent {
                 <div
                   class="features-bg"
                   style={{
-                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
+                    backgroundImage: `url(resources/images/features-intro-02.jpg)`
                   }}
                 />
               </div>
@@ -168,8 +174,10 @@ export class HomeView extends React.PureComponent {
                     <Icon type="sync" /> Transparencia
                   </h5>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit,
-                    vivamus non cum dictumst luctus condimentum ullamcorper
+                    Yoowriter asegura la transparencia en los concursos entre
+                    instituciones y/o particulares y, garantiza una comunicación
+                    en tiempo real y verídica sobre los avances del estado de
+                    los concursos.
                   </p>
                 </div>
               </div>
@@ -181,18 +189,19 @@ export class HomeView extends React.PureComponent {
                 <div
                   class="features-bg"
                   style={{
-                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
+                    backgroundImage: `url(resources/images/features-intro-03.jpg)`
                   }}
                 />
               </div>
               <div class="col-md-6 nopadding">
-                <div class="features-text">
+                <div class="features-text red">
                   <h5>
                     <Icon type="hourglass" /> Eficiencia
                   </h5>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit,
-                    vivamus non cum dictumst luctus condimentum ullamcorper
+                    Yoowriter agiliza la burogracia en los consursos entre
+                    instituciones y/o particulares y garantiza un mayor
+                    dinamismo en la realización de los consursos.
                   </p>
                 </div>
               </div>
@@ -204,64 +213,25 @@ export class HomeView extends React.PureComponent {
                 <div
                   class="features-bg"
                   style={{
-                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
+                    backgroundImage: `url(resources/images/features-intro-04.jpg)`
                   }}
                 />
               </div>
               <div class="col-md-6 nopadding order-md-1">
-                <div class="features-text">
+                <div class="features-text green">
                   <h5 className="text-center">
                     <Icon type="heart" /> Sostenibilidad
                   </h5>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit,
-                    vivamus non cum dictumst luctus condimentum ullamcorper
+                    Yoowriter compromete a instituciones y/o particulares a ser
+                    respetuosos con el medio ambiente y las personas en todos
+                    los concursos lieterarios.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <div className="container">
-          <div className="row features">
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="lock" /> Confidencialidad
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="sync" /> Transparencia
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="hourglass" /> Eficiencia
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="heart" /> Sostenibilidad
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
