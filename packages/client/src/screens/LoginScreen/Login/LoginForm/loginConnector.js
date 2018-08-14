@@ -4,7 +4,15 @@ import { LoginForm } from "./ui/index";
 
 export default class LoginConnector extends React.PureComponent {
   onFinish = () => {
-    this.props.history.push("/");
+    const {
+      history,
+      location: { state }
+    } = this.props;
+
+    if (state && state.next) {
+      return history.push(state.next);
+    }
+    history.push("/");
   };
 
   render() {

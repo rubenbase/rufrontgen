@@ -15,6 +15,18 @@ export interface ForgotPasswordChangeMutationVariables {
     newPassword: string;
     key: string;
 }
+export interface CreateListingMutation {
+    createListing: boolean;
+}
+export interface CreateListingMutationVariables {
+    name: string;
+    category: string;
+    description: string;
+    price: number;
+    latitude: number;
+    longitude: number;
+    amenities: string[];
+}
 export interface SendForgotPasswordEmailMutation {
     sendForgotPasswordEmail: boolean | null;
 }

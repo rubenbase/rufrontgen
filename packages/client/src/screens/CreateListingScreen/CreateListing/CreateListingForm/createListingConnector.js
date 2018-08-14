@@ -5,18 +5,19 @@ import { Form, Formik } from "formik";
 import { Page1 } from "./ui/page1";
 import { Page2 } from "./ui/page2";
 import { Page3 } from "./ui/page3";
-
+import { withCreateListing } from "@rufrontgen/controller";
 const FormItem = AntForm.Item;
 
 const pages = [<Page1 />, <Page2 />, <Page3 />];
 
-export default class CreateListingConnector extends React.PureComponent {
+class C extends React.PureComponent {
   state = {
     page: 0
   };
 
-  submit = values => {
-    console.log("values: ", values);
+  submit = async (values, { setSubmitting }) => {
+    await this.props.createListing(values);
+    setSubmitting(false);
   };
 
   nextPage = () => this.setState(state => ({ page: state.page + 1 }));
@@ -35,14 +36,18 @@ export default class CreateListingConnector extends React.PureComponent {
         }}
         onSubmit={this.submit}
       >
-        {() => (
+        {({ isSubmitting }) => (
           <Form>
             <div>
               {pages[this.state.page]}
               <FormItem>
                 {this.state.page === pages.length - 1 ? (
                   <div>
-                    <Button type="primary" htmlType="submit">
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      disabled={isSubmitting}
+                    >
                       create listing
                     </Button>
                   </div>
@@ -59,3 +64,5 @@ export default class CreateListingConnector extends React.PureComponent {
     );
   }
 }
+
+export const CreateListingConnector = withCreateListing(C);

@@ -12,12 +12,12 @@ class CreateListingScreen extends React.Component {
   render() {
     const props = this.props;
     return (
-      //   <Page {...props}>
+      // <Page {...props}>
       <div>
         <Helmet title="Create Listing" />
         <CreateListing {...this.props} />
       </div>
-      //   </Page>
+      // </Page>
     );
   }
 }
