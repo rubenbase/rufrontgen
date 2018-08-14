@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Menu, Icon } from "antd";
 import LiveSearch from "./LiveSearch";
+
 import "./style.scss";
 
 const SubMenu = Menu.SubMenu;
@@ -13,7 +14,7 @@ export class HomeView extends React.PureComponent {
           <div className="topbar__left">
             <div className="menuTop__logo">
               <div className="menuTop__logoContainer">
-                <img src="resources/images/logo-white.svg" alt="" />
+                <img src="resources/images/logo-red.svg" alt="" />
               </div>
             </div>
           </div>
@@ -43,12 +44,12 @@ export class HomeView extends React.PureComponent {
           <h1 className="display-4 text-center text-light">
             ¡Bienvenidos a Yoowriter!
           </h1>
-          <p className="lead text-center text-light">
+          <p className="text-center text-light text-header">
             Yoowriter nace para hacer los Premios Literarios más transparentes,
             fiables y seguros.
           </p>
 
-          <p className="text-center text-light">
+          <p className="text-center text-light text-header">
             Comprueba todo lo que te da Yoowriter.
           </p>
           <p className="lead text-center">
@@ -92,7 +93,9 @@ export class HomeView extends React.PureComponent {
                   title=""
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">¿Eres un autor?</h5>
+                  <h5 className="card-title text-center">
+                    ¿Eres un autor o autora?
+                  </h5>
                   <ul>
                     <li>Inscríbete como autor en Yoowriter</li>
                     <li>Utiliza servicios avanzados</li>
@@ -115,7 +118,7 @@ export class HomeView extends React.PureComponent {
                 />
                 <div className="card-body">
                   <h5 className="card-title text-center">
-                    ¿Eres una persona atenta al mundo literario?
+                    ¿Eres lectora o lector?
                   </h5>
                   <ul>
                     <li>Inscríbete en Yoowriter</li>
@@ -129,47 +132,106 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </div>
-        <div className="container">
-          <h2 className="text-center">Ventajas de Yoowriter</h2>
-          <div className="row features">
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="lock" /> Confidencialidad
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="sync" /> Transparencia
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="hourglass" /> Eficiencia
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
-            </div>
-            <div className="col-sm">
-              <h5 className="text-center">
-                <Icon type="heart" /> Sostenibilidad
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit, vivamus
-                non cum dictumst luctus condimentum ullamcorper
-              </p>
+        <section class="features-intro">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 nopadding features-intro-img">
+                <div
+                  class="features-bg"
+                  style={{
+                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
+                  }}
+                />
+              </div>
+              <div class="col-md-6 nopadding">
+                <div class="features-text yellow">
+                  <h5>
+                    <i class="anticon anticon-lock" /> Confidencialidad
+                  </h5>
+                  <p>
+                    Yoowriter protege la información facilitada por las
+                    instituciones y/o particulares y garantiza las mejores
+                    condiciones de seguridad para que la confidencialidad de los
+                    usuarios esté asegurada.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 nopadding features-intro-img order-md-12">
+                <div
+                  class="features-bg"
+                  style={{
+                    backgroundImage: `url(resources/images/features-intro-02.jpg)`
+                  }}
+                />
+              </div>
+              <div class="col-md-6 nopadding order-md-1">
+                <div class="features-text">
+                  <h5 className="text-center">
+                    <Icon type="sync" /> Transparencia
+                  </h5>
+                  <p>
+                    Yoowriter asegura la transparencia en los concursos entre
+                    instituciones y/o particulares y, garantiza una comunicación
+                    en tiempo real y verídica sobre los avances del estado de
+                    los concursos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 nopadding features-intro-img">
+                <div
+                  class="features-bg"
+                  style={{
+                    backgroundImage: `url(resources/images/features-intro-03.jpg)`
+                  }}
+                />
+              </div>
+              <div class="col-md-6 nopadding">
+                <div class="features-text red">
+                  <h5>
+                    <Icon type="hourglass" /> Eficiencia
+                  </h5>
+                  <p>
+                    Yoowriter agiliza la burogracia en los consursos entre
+                    instituciones y/o particulares y garantiza un mayor
+                    dinamismo en la realización de los consursos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 nopadding features-intro-img order-md-12">
+                <div
+                  class="features-bg"
+                  style={{
+                    backgroundImage: `url(resources/images/features-intro-04.jpg)`
+                  }}
+                />
+              </div>
+              <div class="col-md-6 nopadding order-md-1">
+                <div class="features-text green">
+                  <h5 className="text-center">
+                    <Icon type="heart" /> Sostenibilidad
+                  </h5>
+                  <p>
+                    Yoowriter compromete a instituciones y/o particulares a ser
+                    respetuosos con el medio ambiente y las personas en todos
+                    los concursos lieterarios.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
