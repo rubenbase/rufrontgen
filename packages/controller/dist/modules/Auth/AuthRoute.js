@@ -46,7 +46,10 @@ var C = /** @class */ (function (_super) {
             }
             if (!data.me) {
                 // user not logged in
-                return React.createElement(Redirect, { to: "/login" });
+                return (React.createElement(Redirect, { to: {
+                        pathname: "/login",
+                        state: { next: routeProps.location.pathname }
+                    } }));
             }
             var Component = component;
             return React.createElement(Component, __assign({}, routeProps));
