@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
-import CreateListingConnector from "./CreateListingForm/createListingConnector";
+import { CreateListingConnector } from "./CreateListingForm/createListingConnector";
 class CreateListing extends React.Component {
   render() {
     return (
