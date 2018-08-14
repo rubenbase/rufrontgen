@@ -2,6 +2,7 @@ import * as React from "react";
 import { Menu, Icon } from "antd";
 import LiveSearch from "./LiveSearch";
 import "./style.scss";
+import GeneralFooterView from "modules/generalFooter/ui/generalFooterView";
 
 const SubMenu = Menu.SubMenu;
 
@@ -19,7 +20,8 @@ export class HomeView extends React.PureComponent {
           </div>
 
           <Menu.Item key="trophy">
-            <Icon type="trophy" />Premios abiertos
+            <Icon type="trophy" />
+            Premios abiertos
           </Menu.Item>
           <Menu.Item key="home">
             <LiveSearch />
@@ -27,7 +29,8 @@ export class HomeView extends React.PureComponent {
           <SubMenu
             title={
               <span>
-                <Icon type="user" />Iniciar sesión
+                <Icon type="user" />
+                Iniciar sesión
               </span>
             }
           >
@@ -170,6 +173,7 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </div>
+        <GeneralFooterView />
       </div>
     );
   }
