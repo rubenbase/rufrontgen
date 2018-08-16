@@ -12,6 +12,6 @@ export const Page1 = () => (
       placeholder="Description"
       component={InputField}
     />
-    <Field name="picture" placeholder="Picture" component={DropzoneField} />
+    <Field name="picture" component={DropzoneField} />
   </React.Fragment>
 );
