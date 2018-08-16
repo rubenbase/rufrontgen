@@ -15,13 +15,7 @@ class C extends React.PureComponent {
           <strong>Inicia sesión</strong>
         </h4>
         <br />
-        <div className="mb-2">
-          Email: <code>ejemplo@mailinator.com</code> or{" "}
-          <code>hello@mailinator.org</code>
-        </div>
-        <div className="mb-4">
-          Password: <code>123456</code>
-        </div>
+
         <Form style={{ display: "flex" }}>
           <div style={{ width: 400, margin: "auto" }}>
             <Field
@@ -34,7 +28,7 @@ class C extends React.PureComponent {
             <Field
               name="password"
               type="password"
-              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="Password"
               component={InputField}
             />
@@ -54,7 +48,7 @@ class C extends React.PureComponent {
                 htmlType="submit"
                 className="width-150 mr-4"
               >
-                Login
+                Inicia sesión
               </Button>
 
               <Link to="/register">
