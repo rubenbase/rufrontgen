@@ -20,7 +20,7 @@ class C extends React.PureComponent {
           <div style={{ width: 400, margin: "auto" }}>
             <Field
               name="email"
-              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+              prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
               placeholder="Email"
               component={InputField}
             />

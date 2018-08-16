@@ -8,14 +8,17 @@ import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
 class Register extends React.Component {
   render() {
     return (
-      <div className="login login--fullscreen">
+      <div
+        className="login login--fullscreen"
+        style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
+      >
         <AuthHeader />
 
         <div className="login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">
-              <div className="login__block__promo text-black text-center">
-                <h1 className="mb-3 text-black">
+              <div className="login__block__promo text-white text-center">
+                <h1 className="mb-3 text-white">
                   <strong>¡Únete a Yoowriter!</strong>
                 </h1>
                 <p>
@@ -28,7 +31,7 @@ class Register extends React.Component {
               <div className="login__block__inner">
                 <div className="login__block__form">
                   <h4 className="text-uppercase">
-                    <strong>Registro</strong>
+                    <strong>Regístrate en Yoowriter</strong>
                   </h4>
                   <br />
                   <RegisterConnector {...this.props} />
