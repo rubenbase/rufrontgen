@@ -54,7 +54,11 @@ export class HomeView extends React.PureComponent {
             Comprueba todo lo que te da Yoowriter.
           </p>
           <p className="lead text-center">
-            <a className="btn btn-primary btn-lg" href="#" role="button">
+            <a
+              className="btn btn-primary btn-lg"
+              href="./register"
+              role="button"
+            >
               Registrarme
             </a>
           </p>
@@ -79,7 +83,7 @@ export class HomeView extends React.PureComponent {
                     <li>Convoca ya n premio literario</li>
                     <li>Consulta el estado de un concurso</li>
                   </ul>
-                  <a href="#" className="btn btn-primary btn-block">
+                  <a href="./register" className="btn btn-primary btn-block">
                     Regístrate en Yoowriter
                   </a>
                 </div>
@@ -101,7 +105,7 @@ export class HomeView extends React.PureComponent {
                     <li>Presenta una obra a un concurso</li>
                     <li>Consulta el estado de tus obras</li>
                   </ul>
-                  <a href="#" className="btn btn-primary btn-block">
+                  <a href="./register" className="btn btn-primary btn-block">
                     Regístrate en Yoowriter
                   </a>
                 </div>
@@ -123,7 +127,7 @@ export class HomeView extends React.PureComponent {
                     <li>Inscríbete en Yoowriter</li>
                     <li>Conoce la actualidad de los premios literarios</li>
                   </ul>
-                  <a href="#" className="btn btn-primary btn-block">
+                  <a href="./register" className="btn btn-primary btn-block">
                     Regístrate en Yoowriter
                   </a>
                 </div>

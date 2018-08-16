@@ -8,19 +8,19 @@ export default class FooterView extends React.PureComponent {
       <div className="login__footer text-center">
         <ul className="list-unstyled list-inline">
           <li className="list-inline-item">
-            <Link to="javascript: void(0);">Terms of Use</Link>
+            <Link to="./legal">Terms of Use</Link>
           </li>
           <li className="active list-inline-item">
-            <Link to="javascript: void(0);">Compliance</Link>
+            <Link to="./legal">Compliance</Link>
           </li>
           <li className="list-inline-item">
-            <Link to="javascript: void(0);">Confidential Information</Link>
+            <Link to="./legal">Confidential Information</Link>
           </li>
           <li className="list-inline-item">
-            <Link to="javascript: void(0);">Support</Link>
+            <Link to="./legal">Support</Link>
           </li>
           <li className="list-inline-item">
-            <Link to="javascript: void(0);">Contacts</Link>
+            <Link to="./legal">Contacts</Link>
           </li>
         </ul>
       </div>
