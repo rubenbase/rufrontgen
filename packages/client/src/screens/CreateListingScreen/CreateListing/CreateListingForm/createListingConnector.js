@@ -47,6 +47,9 @@ class C extends React.PureComponent {
             <Form style={{ display: "flex" }}>
               <div style={{ width: 400, margin: "auto" }}>
                 {pages[this.state.page]}
+                <ul>
+                  <li>{values && values.picture ? values.picture.name : ""}</li>
+                </ul>
                 <FormItem>
                   <div
                     style={{
