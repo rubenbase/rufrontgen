@@ -199,7 +199,7 @@
   font-size: 1.5em;
 }
 .card-title {
-  font-size: 1.5rem;
+  font-size: 26px;
   color: #ca6060;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -245,4 +245,37 @@
 .nopadding {
   margin: 0 !important;
   padding: 0 !important;
+}
+.landing-logo {
+  max-width: 450px;
+  margin: 0 auto 25px;
+  display: block;
+}
+.header-text {
+  font-size: 21px !important;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+.card {
+  border-radius: 0 !important;
+}
+.form-home {
+  max-width: 450px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  label {
+    font-size: 16px;
+    margin: 20px 0 0;
+  }
+}
+.login-form-button {
+  margin-top: 40px;
+}
+.form-check {
+  padding-left: 0 !important;
 }

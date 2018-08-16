@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Menu, Icon } from "antd";
-import LiveSearch from "./LiveSearch";
+import { Menu, Input, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
 
 const SubMenu = Menu.SubMenu;
@@ -9,59 +8,57 @@ export class HomeView extends React.PureComponent {
   render() {
     return (
       <div>
-        <Menu className="topbar" onClick={this.handleClick} mode="horizontal">
-          <div className="topbar__left">
-            <div className="menuTop__logo">
-              <div className="menuTop__logoContainer">
-                <img src="resources/images/logo-white.svg" alt="" />
-              </div>
-            </div>
-          </div>
-
-          <Menu.Item key="trophy">
-            <Icon type="trophy" />
-            Premios abiertos
-          </Menu.Item>
-          <Menu.Item key="home">
-            <LiveSearch />
-          </Menu.Item>
-          <SubMenu
-            title={
-              <span>
-                <Icon type="user" />
-                Iniciar sesión
-              </span>
-            }
-          >
-            <Menu.Item key="setting:1">Entrar</Menu.Item>
-            <Menu.Item key="setting:2">Registrarse</Menu.Item>
-          </SubMenu>
-        </Menu>
-
         <div
           className="jumbotron"
           style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
         >
-          <h1 className="display-4 text-center text-light">
-            ¡Bienvenidos a Yoowriter!
-          </h1>
-          <p className="lead text-center text-light">
-            Yoowriter nace para hacer los Premios Literarios más transparentes,
-            fiables y seguros.
-          </p>
+          <div class="row">
+            <div class="col-sm">
+              <img
+                class="landing-logo"
+                src="resources/images/logo-white.svg"
+                alt=""
+              />
+              <h1 className="display-4 text-center text-light">
+                ¡Bienvenidos a Yoowriter!
+              </h1>
+              <p className="lead text-center text-light header-text">
+                Yoowriter nace para hacer los Premios Literarios más
+                transparentes, fiables y seguros.
+              </p>
 
-          <p className="text-center text-light">
-            Comprueba todo lo que te da Yoowriter.
-          </p>
-          <p className="lead text-center">
-            <a
-              className="btn btn-primary btn-lg"
-              href="./register"
-              role="button"
-            >
-              Registrarme
-            </a>
-          </p>
+              <p className="text-center text-light header-text">
+                Comprueba todo lo que te da Yoowriter.
+              </p>
+            </div>
+            <div class="col-sm">
+              <div class="form-home">
+                <h2>Me gustaría estar informado los concursos literarios.</h2>
+                <form>
+                  <div className="form-group">
+                    <label for="exampleInputEmail1">Email de contacto:</label>
+                    <Input placeholder="ejemplo@gmail.com" />
+                    <label for="exampleInputEmail1">Nombre:</label>
+                    <Input placeholder="Tu nombre" />
+                    <label for="exampleInputEmail1">Primer apellido:</label>
+                    <Input placeholder="Tu apellido" />
+                    <div class="form-check">
+                      <Checkbox>
+                        Acepto los <a href="./legal">Términos y condiciones</a>
+                      </Checkbox>
+                    </div>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      className="login-form-button"
+                    >
+                      Quiero información
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="container">
           <div className="row features">
@@ -69,7 +66,7 @@ export class HomeView extends React.PureComponent {
               <div className="card">
                 <img
                   className="card-img-top"
-                  src="resources/images/bg.jpg"
+                  src="resources/images/entity.jpg"
                   alt=""
                   title=""
                 />
@@ -78,14 +75,10 @@ export class HomeView extends React.PureComponent {
                     ¿Eres una entidad convocante?
                   </h5>
                   <ul>
-                    <li>Inscríbete en Yoowriter</li>
                     <li>Registrar un premio literario</li>
-                    <li>Convoca ya n premio literario</li>
+                    <li>Convoca un premio literario</li>
                     <li>Consulta el estado de un concurso</li>
                   </ul>
-                  <a href="./register" className="btn btn-primary btn-block">
-                    Regístrate en Yoowriter
-                  </a>
                 </div>
               </div>
             </div>
@@ -100,36 +93,10 @@ export class HomeView extends React.PureComponent {
                 <div className="card-body">
                   <h5 className="card-title text-center">¿Eres un autor?</h5>
                   <ul>
-                    <li>Inscríbete como autor en Yoowriter</li>
                     <li>Utiliza servicios avanzados</li>
                     <li>Presenta una obra a un concurso</li>
                     <li>Consulta el estado de tus obras</li>
                   </ul>
-                  <a href="./register" className="btn btn-primary btn-block">
-                    Regístrate en Yoowriter
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm">
-              <div className="card">
-                <img
-                  className="card-img-top"
-                  src="resources/images/reader.jpg"
-                  alt=""
-                  title=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title text-center">
-                    ¿Eres una persona atenta al mundo literario?
-                  </h5>
-                  <ul>
-                    <li>Inscríbete en Yoowriter</li>
-                    <li>Conoce la actualidad de los premios literarios</li>
-                  </ul>
-                  <a href="./register" className="btn btn-primary btn-block">
-                    Regístrate en Yoowriter
-                  </a>
                 </div>
               </div>
             </div>
@@ -233,6 +200,35 @@ export class HomeView extends React.PureComponent {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="form-home">
+              <h2>Me gustaría estar informado los concursos literarios.</h2>
+              <form>
+                <div className="form-group">
+                  <label for="exampleInputEmail1">Email de contacto:</label>
+                  <Input placeholder="ejemplo@gmail.com" />
+                  <label for="exampleInputEmail1">Nombre:</label>
+                  <Input placeholder="Tu nombre" />
+                  <label for="exampleInputEmail1">Primer apellido:</label>
+                  <Input placeholder="Tu apellido" />
+                  <div class="form-check">
+                    <Checkbox>
+                      Acepto los <a href="./legal">Términos y condiciones</a>
+                    </Checkbox>
+                  </div>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    className="login-form-button"
+                  >
+                    Quiero información
+                  </Button>
+                </div>
+              </form>
             </div>
           </div>
         </section>
