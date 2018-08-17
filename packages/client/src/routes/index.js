@@ -9,12 +9,15 @@ import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
 import ChangePasswordScreen from "screens/ChangePasswordScreen";
 import TextScreen from "screens/TextScreen";
 import CreateListingScreen from "screens/CreateListingScreen";
+import FindListingsScreen from "screens/FindListingsScreen";
 
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
+      <Route exact={true} path="/" component={HomeView} />
+
+      {/* Auth Flow Routes */}
       <Route exact={true} path="/register" component={RegisterScreen} />
-      <Route exact={true} path="/legal" component={LegalConnector} />
       <Route exact={true} path="/login" component={LoginScreen} />
       <Route
         exact={true}
@@ -26,13 +29,20 @@ export const Routes = () => (
         path="/change-password/:key"
         component={ChangePasswordScreen}
       />
-      <Route path="/m/" component={TextScreen} />
-      <Route exact={true} path="/" component={HomeView} />
+
+      {/* Listings Routes */}
+      <Route exact={true} path="/listings" component={FindListingsScreen} />
       <AuthRoute
         exact={true}
         path="/create-listing"
         component={CreateListingScreen}
       />
+
+      {/* Legal Routes */}
+      <Route exact={true} path="/legal" component={LegalConnector} />
+
+      {/* Misc Routes */}
+      <Route path="/m/" component={TextScreen} />
     </Switch>
   </BrowserRouter>
 );

@@ -19,6 +19,7 @@ export interface CreateListingMutation {
     createListing: boolean;
 }
 export interface CreateListingMutationVariables {
+    picture?: any | null;
     name: string;
     category: string;
     description: string;
@@ -26,6 +27,14 @@ export interface CreateListingMutationVariables {
     latitude: number;
     longitude: number;
     amenities: string[];
+}
+export interface FindListingsQuery_findListings {
+    id: string;
+    name: string;
+    pictureUrl: string;
+}
+export interface FindListingsQuery {
+    findListings: FindListingsQuery_findListings[];
 }
 export interface SendForgotPasswordEmailMutation {
     sendForgotPasswordEmail: boolean | null;

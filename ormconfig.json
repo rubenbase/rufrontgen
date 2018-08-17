@@ -15,7 +15,7 @@
     "password": "my_postgres_password",
     "database": "postgres",
     "synchronize": true,
-    "dropSchema": true,
+    "dropSchema": false,
     "logging": true,
     "entities": ["src/models/**/*.ts"],
     "migrations": ["src/migration/**/*.ts"],
