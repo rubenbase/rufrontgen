@@ -25,17 +25,6 @@ class Login extends React.Component {
         <div className="main-login__block main-login__block--extended pb-0">
           <div className="row">
             <div className="col-xl-12">
-              <div className="main-login__block__promo text-white text-center">
-                <h1 className="mb-3 text-white">
-                  <strong>¡Únete a Yoowriter!</strong>
-                </h1>
-                <p>
-                  Yoowriter nace para hacer los Premios Literarios más
-                  transparentes, fiables y seguros.
-                  <br />
-                  Comprueba todo lo que te da Yoowriter.
-                </p>
-              </div>
               <div className="main-login__block__inner">
                 <div className="main-login__block__form">
                   <LoginConnector

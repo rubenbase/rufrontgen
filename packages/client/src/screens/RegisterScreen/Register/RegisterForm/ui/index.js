@@ -15,7 +15,7 @@ class C extends React.PureComponent {
           <Field
             name="email"
             prefix={
-              <Icon type="user" style={{ color: "rgba(191,63,63,.25)" }} />
+              <Icon type="mail" style={{ color: "rgba(191,63,63,.25)" }} />
             }
             placeholder="Introduzca su email"
             component={InputField}
@@ -23,7 +23,7 @@ class C extends React.PureComponent {
           <Field
             name="password"
             type="password"
-            prefix={<Icon type="user" style={{ color: "rgba(25,0,0,.25)" }} />}
+            prefix={<Icon type="lock" style={{ color: "rgba(25,0,0,.25)" }} />}
             placeholder="Introduzca su contraseña"
             component={InputField}
           />
@@ -41,7 +41,7 @@ class C extends React.PureComponent {
           />
           <div className="form-actions">
             <Button type="primary" htmlType="submit" className="width-150 mr-4">
-              Register
+              Regístrate
             </Button>
           </div>
           <div className="mb-2">
