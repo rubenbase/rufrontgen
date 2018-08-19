@@ -7,9 +7,14 @@ import { Listing } from "../../../models/Listing";
 // Route where images will be saved
 const uploadDir = "images";
 
-const storeUpload = async ({ stream, filename }: any): Promise<any> => {
-  const id = shortid.generate();
-  const path = `${uploadDir}/${id}-${filename}`;
+const storeUpload = async (
+  stream: any,
+  filename: string,
+  mimetype: string
+): Promise<any> => {
+  const extension = mimetype.split("/")[1];
+  const id = `${shortid.generate()}${filename}.${extension}`;
+  const path = `${uploadDir}/${id}`;
 
   return new Promise((resolve, reject) =>
     stream
@@ -20,8 +25,8 @@ const storeUpload = async ({ stream, filename }: any): Promise<any> => {
 };
 
 const processUpload = async (upload: any) => {
-  const { stream, filename } = await upload;
-  const { id } = await storeUpload({ stream, filename });
+  const { stream, filename, mimetype } = await upload;
+  const { id } = await storeUpload(stream, filename, mimetype);
   return id;
 };
 
