@@ -217,10 +217,13 @@
   min-height: 400px;
   background-size: cover;
 }
+.features-section {
+  background-color: #dcae62 !important;
+}
 .features-text {
   position: relative;
-  padding: 11% 100px 10% 100px;
-  height: 400px;
+  padding: 10% 100px 10% 100px;
+  min-height: 400px;
   background-color: #1673b1;
   &.yellow {
     background-color: #dcae62 !important;
@@ -278,4 +281,8 @@
 }
 .form-check {
   padding-left: 0 !important;
+}
+.footer-form {
+  padding: 50px;
+  background-color: #2f374e;
 }
