@@ -1,6 +1,7 @@
-import { User } from "./../models/User";
 import { Redis } from "ioredis";
 import DataLoader = require("dataloader");
+import express = require("express");
+import { User } from "./../models/User";
 export interface Session extends Express.Session {
   userId: string;
 }
@@ -10,6 +11,7 @@ export interface Context {
   url: string;
   session: Session;
   req: Express.Request;
+  res: express.Response;
   userLoader: DataLoader<string, User>;
 }
 

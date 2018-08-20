@@ -31,12 +31,13 @@ applyMiddleware(schema, middleware);
 
 const server = new GraphQLServer({
   schema,
-  context: ({ request }) => ({
+  context: ({ request, response }) => ({
     redis,
     // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
     url: "http://localhost:4000",
     session: request.session,
     req: request,
+    res: response,
     userLoader: userLoader()
   })
 });
