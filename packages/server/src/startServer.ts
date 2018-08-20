@@ -4,7 +4,7 @@ import RateLimitRedisStore = require("rate-limit-redis");
 import "reflect-metadata";
 import session = require("express-session");
 import connectRedis = require("connect-redis");
-
+import express = require("express");
 import { createTypeormConn } from "./utils/createTypeormConn";
 import { User } from "./models/User";
 import { redisSessionPrefix } from "./constants";
@@ -62,6 +62,8 @@ export const startServer = async () => {
       }
     } as any)
   );
+
+  server.express.use("/images", express.static("images"));
 
   const cors = {
     credentials: true,

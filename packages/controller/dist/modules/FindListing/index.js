@@ -4,7 +4,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 };
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
-export var findListingsQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query FindListingsQuery {\n    findListings {\n      id\n      name\n      pictureUrl\n    }\n  }\n"], ["\n  query FindListingsQuery {\n    findListings {\n      id\n      name\n      pictureUrl\n    }\n  }\n"])));
+export var findListingsQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query FindListingsQuery {\n    findListings {\n      id\n      name\n      pictureUrl\n      owner {\n        id\n        email\n      }\n    }\n  }\n"], ["\n  query FindListingsQuery {\n    findListings {\n      id\n      name\n      pictureUrl\n      owner {\n        id\n        email\n      }\n    }\n  }\n"])));
 export var withFindListings = graphql(findListingsQuery, {
     props: function (_a) {
         var data = _a.data;

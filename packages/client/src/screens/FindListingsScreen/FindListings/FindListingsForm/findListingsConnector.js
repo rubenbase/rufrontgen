@@ -15,14 +15,9 @@ class C extends React.PureComponent {
             key={`${l.id}-card`}
             hoverable={true}
             style={{ width: 240 }}
-            cover={
-              <img
-                alt="example"
-                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              />
-            }
+            cover={l.pictureUrl && <img alt={l.name} src={l.pictureUrl} />}
           >
-            <Meta title={l.name} description="add description here" />
+            <Meta title={l.name} description={l.owner.email} />>
           </Card>
         ))}
       </div>

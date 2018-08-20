@@ -28,10 +28,15 @@ export interface CreateListingMutationVariables {
     longitude: number;
     amenities: string[];
 }
+export interface FindListingsQuery_findListings_owner {
+    id: string;
+    email: string;
+}
 export interface FindListingsQuery_findListings {
     id: string;
     name: string;
     pictureUrl: string;
+    owner: FindListingsQuery_findListings_owner;
 }
 export interface FindListingsQuery {
     findListings: FindListingsQuery_findListings[];

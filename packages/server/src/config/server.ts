@@ -1,3 +1,4 @@
+import { userLoader } from "./../loaders/UserLoader";
 import { GraphQLServer } from "graphql-yoga";
 import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
@@ -35,7 +36,8 @@ const server = new GraphQLServer({
     // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
     url: "http://localhost:4000",
     session: request.session,
-    req: request
+    req: request,
+    userLoader: userLoader()
   })
 });
 

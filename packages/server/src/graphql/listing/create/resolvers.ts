@@ -7,9 +7,10 @@ import { Listing } from "../../../models/Listing";
 // Route where images will be saved
 const uploadDir = "images";
 
-const storeUpload = async ({ stream, filename }: any): Promise<any> => {
-  const id = shortid.generate();
-  const path = `${uploadDir}/${id}-${filename}`;
+const storeUpload = async (stream: any, filename: string): Promise<any> => {
+  const id = `${shortid.generate()}${filename}`;
+  console.log("ALIBABA ID IS ==> ", id);
+  const path = `${uploadDir}/${id}`;
 
   return new Promise((resolve, reject) =>
     stream
@@ -21,14 +22,15 @@ const storeUpload = async ({ stream, filename }: any): Promise<any> => {
 
 const processUpload = async (upload: any) => {
   const { stream, filename } = await upload;
-  const { id } = await storeUpload({ stream, filename });
+  const { id } = await storeUpload(stream, filename);
   return id;
 };
 
 export const resolvers: ResolverMap = {
   Mutation: {
     createListing: async (_, { input: { picture, ...data } }, { session }) => {
-      const pictureUrl = await processUpload(picture);
+      const pictureUrl = picture ? await processUpload(picture) : null;
+
       await Listing.create({
         ...data,
         pictureUrl,
