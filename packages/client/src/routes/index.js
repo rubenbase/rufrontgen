@@ -10,6 +10,7 @@ import ChangePasswordScreen from "screens/ChangePasswordScreen";
 import TextScreen from "screens/TextScreen";
 import CreateListingScreen from "screens/CreateListingScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
+import Logout from "modules/logout";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ export const Routes = () => (
       {/* Auth Flow Routes */}
       <Route exact={true} path="/register" component={RegisterScreen} />
       <Route exact={true} path="/login" component={LoginScreen} />
+      <Route exact={true} path="/logout" component={Logout} />
       <Route
         exact={true}
         path="/forgot-password"

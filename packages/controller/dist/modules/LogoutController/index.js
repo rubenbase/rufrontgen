@@ -1,13 +1,3 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
@@ -47,45 +37,32 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import * as React from "react";
-import { graphql, withApollo } from "react-apollo";
+var _this = this;
 import gql from "graphql-tag";
-import { normalizeErros } from "../../utils/normalizeErrors";
-var C = /** @class */ (function (_super) {
-    __extends(C, _super);
-    function C() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.submit = function (values) { return __awaiter(_this, void 0, void 0, function () {
-            var _a, errors, sessionId;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        console.log("The values of login are =>", values);
-                        return [4 /*yield*/, this.props.mutate({
-                                variables: values
-                            })];
-                    case 1:
-                        _a = (_b.sent()).data.login, errors = _a.errors, sessionId = _a.sessionId;
-                        console.log("response: ", errors, sessionId);
-                        if (errors) {
-                            return [2 /*return*/, normalizeErros(errors)];
-                        }
-                        if (sessionId && this.props.onSessionId) {
-                            this.props.onSessionId(sessionId);
-                        }
-                        this.props.client.resetStore();
-                        return [2 /*return*/, null];
-                }
-            });
-        }); };
-        return _this;
-    }
-    C.prototype.render = function () {
-        return this.props.children({ submit: this.submit });
-    };
-    return C;
-}(React.PureComponent));
-var loginMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      errors {\n        path\n        message\n      }\n      sessionId\n    }\n  }\n"], ["\n  mutation LoginMutation($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      errors {\n        path\n        message\n      }\n      sessionId\n    }\n  }\n"])));
-export var LoginController = graphql(loginMutation)(withApollo(C));
+import * as React from "react";
+import { Mutation } from "react-apollo";
+var logoutMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation LogoutMutation {\n    logout\n  }\n"], ["\n  mutation LogoutMutation {\n    logout\n  }\n"])));
+// React.SFC = React functional component
+export var LogoutController = function (_a) {
+    var children = _a.children;
+    return (React.createElement(Mutation, { mutation: logoutMutation }, function (mutate, _a) {
+        var client = _a.client;
+        return children({
+            logout: function () { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, mutate()];
+                        case 1:
+                            _a.sent();
+                            return [4 /*yield*/, client.resetStore()];
+                        case 2:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            }); }
+        });
+    }));
+};
 var templateObject_1;
 //# sourceMappingURL=index.js.map

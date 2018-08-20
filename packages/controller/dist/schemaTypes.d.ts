@@ -62,6 +62,9 @@ export interface LoginMutationVariables {
     email: string;
     password: string;
 }
+export interface LogoutMutation {
+    logout: boolean | null;
+}
 export interface RegisterMutation_register {
     path: string;
     message: string;
