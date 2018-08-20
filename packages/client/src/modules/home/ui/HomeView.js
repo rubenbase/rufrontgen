@@ -1,9 +1,20 @@
 import * as React from "react";
-import { Menu, Input, Button, Icon, Checkbox } from "antd";
+import { Menu, Input, List, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
 
 const SubMenu = Menu.SubMenu;
 
+const data = [
+  "Registra un premio literario.",
+  "Convoca un premio literario.",
+  "Consulta el estado de un concurso."
+];
+
+const data2 = [
+  "Utiliza servicios avanzados.",
+  "Presenta una obra a un concurso.",
+  "Consulta el estado de tus obras."
+];
 export class HomeView extends React.PureComponent {
   render() {
     return (
@@ -44,7 +55,10 @@ export class HomeView extends React.PureComponent {
                     <Input placeholder="Tu apellido" />
                     <div class="form-check">
                       <Checkbox>
-                        Acepto los <a href="./legal">Términos y condiciones</a>
+                        Acepto los{" "}
+                        <a href="./legal" target="_blank">
+                          Términos y condiciones
+                        </a>
                       </Checkbox>
                     </div>
                     <Button
@@ -71,14 +85,11 @@ export class HomeView extends React.PureComponent {
                   title=""
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">
-                    ¿Eres una entidad convocante?
-                  </h5>
-                  <ul>
-                    <li>Registrar un premio literario</li>
-                    <li>Convoca un premio literario</li>
-                    <li>Consulta el estado de un concurso</li>
-                  </ul>
+                  <h5 className="card-title">¿Eres una entidad convocante?</h5>
+                  <List
+                    dataSource={data}
+                    renderItem={item => <List.Item>{item}</List.Item>}
+                  />
                 </div>
               </div>
             </div>
@@ -91,29 +102,19 @@ export class HomeView extends React.PureComponent {
                   title=""
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">¿Eres un autor?</h5>
-                  <ul>
-                    <li>Utiliza servicios avanzados</li>
-                    <li>Presenta una obra a un concurso</li>
-                    <li>Consulta el estado de tus obras</li>
-                  </ul>
+                  <h5 className="card-title">¿Eres un autor?</h5>
+                  <List
+                    dataSource={data2}
+                    renderItem={item => <List.Item>{item}</List.Item>}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <section class="features-intro">
+        <section class="features-section">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6 nopadding features-intro-img">
-                <div
-                  class="features-bg"
-                  style={{
-                    backgroundImage: `url(resources/images/features-intro-01.jpg)`
-                  }}
-                />
-              </div>
               <div class="col-md-6 nopadding">
                 <div class="features-text yellow">
                   <h5>
@@ -126,18 +127,6 @@ export class HomeView extends React.PureComponent {
                     usuarios esté asegurada.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 nopadding features-intro-img order-md-12">
-                <div
-                  class="features-bg"
-                  style={{
-                    backgroundImage: `url(resources/images/features-intro-02.jpg)`
-                  }}
-                />
               </div>
               <div class="col-md-6 nopadding order-md-1">
                 <div class="features-text">
@@ -153,40 +142,18 @@ export class HomeView extends React.PureComponent {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="container-fluid">
             <div class="row">
-              <div class="col-md-6 nopadding features-intro-img">
-                <div
-                  class="features-bg"
-                  style={{
-                    backgroundImage: `url(resources/images/features-intro-03.jpg)`
-                  }}
-                />
-              </div>
               <div class="col-md-6 nopadding">
                 <div class="features-text red">
                   <h5>
                     <Icon type="hourglass" /> Eficiencia
                   </h5>
                   <p>
-                    Yoowriter agiliza la burogracia en los consursos entre
+                    Yoowriter agiliza la burocracia en los consursos entre
                     instituciones y/o particulares y garantiza un mayor
                     dinamismo en la realización de los consursos.
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 nopadding features-intro-img order-md-12">
-                <div
-                  class="features-bg"
-                  style={{
-                    backgroundImage: `url(resources/images/features-intro-04.jpg)`
-                  }}
-                />
               </div>
               <div class="col-md-6 nopadding order-md-1">
                 <div class="features-text green">
@@ -203,7 +170,8 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </section>
-        <section>
+
+        <section class="footer-form">
           <div class="container">
             <div class="form-home">
               <h2>Me gustaría estar informado los concursos literarios.</h2>
@@ -217,7 +185,10 @@ export class HomeView extends React.PureComponent {
                   <Input placeholder="Tu apellido" />
                   <div class="form-check">
                     <Checkbox>
-                      Acepto los <a href="./legal">Términos y condiciones</a>
+                      Acepto los{" "}
+                      <a href="./legal" target="_blank">
+                        Términos y condiciones
+                      </a>
                     </Checkbox>
                   </div>
                   <Button
