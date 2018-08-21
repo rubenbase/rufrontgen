@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Menu, Input, List, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
+import { SubscribeForm } from "../../subscribeForm/index";
 
 const SubMenu = Menu.SubMenu;
 
@@ -15,6 +16,7 @@ const data2 = [
   "Presenta una obra a un concurso.",
   "Consulta el estado de tus obras."
 ];
+
 export class HomeView extends React.PureComponent {
   render() {
     return (
@@ -45,31 +47,7 @@ export class HomeView extends React.PureComponent {
             <div class="col-sm">
               <div class="form-home">
                 <h2>Me gustaría estar informado los concursos literarios.</h2>
-                <form>
-                  <div className="form-group">
-                    <label for="exampleInputEmail1">Email de contacto:</label>
-                    <Input placeholder="ejemplo@gmail.com" />
-                    <label for="exampleInputEmail1">Nombre:</label>
-                    <Input placeholder="Tu nombre" />
-                    <label for="exampleInputEmail1">Primer apellido:</label>
-                    <Input placeholder="Tu apellido" />
-                    <div class="form-check">
-                      <Checkbox>
-                        Acepto los{" "}
-                        <a href="./legal" target="_blank">
-                          Términos y condiciones
-                        </a>
-                      </Checkbox>
-                    </div>
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="login-form-button"
-                    >
-                      Quiero información
-                    </Button>
-                  </div>
-                </form>
+                <SubscribeForm />
               </div>
             </div>
           </div>
