@@ -78,3 +78,11 @@ export interface RegisterMutationVariables {
     name: string;
     lastname: string;
 }
+export interface SubscribeToListMutation {
+    subscribeToList: boolean;
+}
+export interface SubscribeToListMutationVariables {
+    email: string;
+    name: string;
+    lastname: string;
+}

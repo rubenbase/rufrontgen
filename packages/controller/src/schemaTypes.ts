@@ -163,6 +163,24 @@ export interface RegisterMutationVariables {
   lastname: string;
 }
 
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: SubscribeToListMutation
+// ====================================================
+
+export interface SubscribeToListMutation {
+  subscribeToList: boolean;
+}
+
+export interface SubscribeToListMutationVariables {
+  email: string;
+  name: string;
+  lastname: string;
+}
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
