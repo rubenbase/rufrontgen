@@ -153,31 +153,7 @@ export class HomeView extends React.PureComponent {
           <div class="container">
             <div class="form-home">
               <h2>Me gustaría estar informado los concursos literarios.</h2>
-              <form>
-                <div className="form-group">
-                  <label for="exampleInputEmail1">Email de contacto:</label>
-                  <Input placeholder="ejemplo@gmail.com" />
-                  <label for="exampleInputEmail1">Nombre:</label>
-                  <Input placeholder="Tu nombre" />
-                  <label for="exampleInputEmail1">Primer apellido:</label>
-                  <Input placeholder="Tu apellido" />
-                  <div class="form-check">
-                    <Checkbox>
-                      Acepto los{" "}
-                      <a href="./legal" target="_blank">
-                        Términos y condiciones
-                      </a>
-                    </Checkbox>
-                  </div>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    className="login-form-button"
-                  >
-                    Quiero información
-                  </Button>
-                </div>
-              </form>
+              <SubscribeForm />
             </div>
           </div>
         </section>
