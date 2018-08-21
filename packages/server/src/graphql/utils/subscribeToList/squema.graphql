@@ -1,0 +1,9 @@
+input SubscribeToListInput {
+  email: String!
+  name: String!
+  lastname: String!
+}
+
+type Mutation {
+  subscribeToList(input: SubscribeToListInput!): Boolean!
+}

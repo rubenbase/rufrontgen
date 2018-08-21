@@ -41,7 +41,7 @@ var _this = this;
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 export var subscribeToListMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  mutation SubscribeToListMutation(\n    $email: String!\n    $name: String!\n    $lastname: String!\n  ) {\n    subscribeToList(input: { email: $email, name: $name, lastname: $lastname })\n  }\n"], ["\n  mutation SubscribeToListMutation(\n    $email: String!\n    $name: String!\n    $lastname: String!\n  ) {\n    subscribeToList(input: { email: $email, name: $name, lastname: $lastname })\n  }\n"])));
-export var withCreateListing = graphql(subscribeToListMutation, {
+export var withSubscribeToList = graphql(subscribeToListMutation, {
     props: function (_a) {
         var mutate = _a.mutate;
         return ({

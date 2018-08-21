@@ -3,6 +3,7 @@ export * from "./modules/LoginController";
 export * from "./modules/ForgotPasswordController";
 export * from "./modules/ChangePasswordController";
 export * from "./modules/LogoutController";
+export * from "./modules/Subscribe";
 export * from "./modules/FindListing";
 export * from "./modules/CreateListing";
 export * from "./schemaTypes";

@@ -1,23 +1,16 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import { Form as AntForm, Button, Icon, Checkbox } from "antd";
-import { Form, Formik, FormikActions, Field } from "formik";
-import { withCreateListing } from "@rufrontgen/controller";
+import { Form, Formik, Field } from "formik";
+import { withSubscribeToList } from "@rufrontgen/controller";
 import { InputField } from "modules/shared/inputField";
 
 const FormItem = AntForm.Item;
 
 class C extends React.PureComponent {
-  state = {
-    page: 0
-  };
-
   submit = async (values, { setSubmitting }) => {
-    console.log("ALIBABA sending values", values);
+    await this.props.subscribeToList(values);
     setSubmitting(false);
   };
-
-  nextPage = () => this.setState(state => ({ page: state.page + 1 }));
 
   render() {
     return (
@@ -85,4 +78,4 @@ class C extends React.PureComponent {
   }
 }
 
-export const SubscribeForm = withCreateListing(C);
+export const SubscribeForm = withSubscribeToList(C);

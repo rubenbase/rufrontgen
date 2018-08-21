@@ -21,7 +21,7 @@ export interface SubscribeToListProps {
   subscribeToList: (variables: SubscribeToListMutationVariables) => void;
 }
 
-export const withCreateListing = graphql<
+export const withSubscribeToList = graphql<
   any,
   SubscribeToListMutation,
   SubscribeToListMutationVariables,
