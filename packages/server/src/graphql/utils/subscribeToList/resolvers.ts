@@ -24,7 +24,7 @@ export const resolvers: ResolverMap = {
             "base64"
           )}`
         },
-        json: true // Automatically stringifies the body to JSON
+        json: true
       };
 
       await rp.post(URL, {

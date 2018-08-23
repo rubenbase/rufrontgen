@@ -11,7 +11,6 @@ class C extends React.PureComponent {
     await this.props.subscribeToList(values);
     setSubmitting(false);
   };
-
   render() {
     return (
       <Formik

@@ -148,7 +148,6 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </section>
-
         <section class="footer-form">
           <div class="container">
             <div class="form-home">
