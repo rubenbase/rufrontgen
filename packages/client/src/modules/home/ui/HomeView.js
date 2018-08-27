@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Menu, Input, List, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
+import { Logo } from "./Logo";
 import { SubscribeForm } from "../../subscribeForm/index";
 
 const SubMenu = Menu.SubMenu;
@@ -27,11 +28,9 @@ export class HomeView extends React.PureComponent {
         >
           <div class="row">
             <div class="col-sm">
-              <img
-                class="landing-logo"
-                src="resources/images/logo-white.svg"
-                alt=""
-              />
+              <div className="landing-logo">
+                <Logo />
+              </div>
               <h1 className="display-4 text-center text-light">
                 ¡Bienvenidos a Yoowriter!
               </h1>
