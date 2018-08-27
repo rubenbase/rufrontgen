@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Menu, Input, List, Button, Icon, Checkbox } from "antd";
+import { Menu, Input, Card, List, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
 import { Logo } from "./Logo";
 import { SubscribeForm } from "../../subscribeForm/index";
@@ -17,6 +17,8 @@ const data2 = [
   "Presenta una obra a un concurso.",
   "Consulta el estado de tus obras."
 ];
+
+const { Meta } = Card;
 
 export class HomeView extends React.PureComponent {
   render() {
@@ -54,38 +56,28 @@ export class HomeView extends React.PureComponent {
         <div className="container">
           <div className="row features">
             <div className="col-sm">
-              <div className="card">
-                <img
-                  className="card-img-top"
-                  src="resources/images/entity.jpg"
-                  alt=""
-                  title=""
+              <Card
+                className="home-cards"
+                cover={<img alt="example" src="resources/images/entity.jpg" />}
+              >
+                <Meta title="¿Eres una entidad convocante?" />
+                <List
+                  dataSource={data}
+                  renderItem={item => <List.Item>{item}</List.Item>}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">¿Eres una entidad convocante?</h5>
-                  <List
-                    dataSource={data}
-                    renderItem={item => <List.Item>{item}</List.Item>}
-                  />
-                </div>
-              </div>
+              </Card>
             </div>
             <div className="col-sm">
-              <div className="card">
-                <img
-                  className="card-img-top"
-                  src="resources/images/writer.jpg"
-                  alt=""
-                  title=""
+              <Card
+                className="home-cards"
+                cover={<img alt="example" src="resources/images/writer.jpg" />}
+              >
+                <Meta title="¿Eres un autor?" />
+                <List
+                  dataSource={data2}
+                  renderItem={item => <List.Item>{item}</List.Item>}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">¿Eres un autor?</h5>
-                  <List
-                    dataSource={data2}
-                    renderItem={item => <List.Item>{item}</List.Item>}
-                  />
-                </div>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
