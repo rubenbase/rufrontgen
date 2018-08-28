@@ -1,6 +1,6 @@
 type Message {
   text: String!
-  userId: String!
+  user: User!
   listingId: String!
 }
 type Query {
