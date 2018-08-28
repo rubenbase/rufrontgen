@@ -286,3 +286,16 @@
   padding: 50px;
   background-color: #2f374e;
 }
+.home-cards {
+  .ant-card-meta-title {
+    font-size: 26px;
+    color: #ca6060;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+  .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.92rem 2.3rem;
+  }
+}

@@ -29,5 +29,8 @@
   "scripts": {
     "build:server": "lerna run build --scope={'@rufrontgen/common','@rufrontgen/server'}",
     "build:web": "lerna run build --scope={@rufrontgen/common, @rufrontgen/controller, @rufrontgen/web}"
+  },
+  "dependencies": {
+    "react-router-dom": "^4.3.1"
   }
 }
