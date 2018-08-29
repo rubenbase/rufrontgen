@@ -3,6 +3,7 @@ import { Form as AntForm, Button, Icon, Checkbox } from "antd";
 import { Form, Formik, Field } from "formik";
 import { withSubscribeToList } from "@rufrontgen/controller";
 import { InputField } from "modules/shared/inputField";
+import { Link } from "react-router-dom";
 
 const FormItem = AntForm.Item;
 
@@ -53,9 +54,9 @@ class C extends React.PureComponent {
                   <div class="form-check">
                     <Checkbox>
                       Acepto los{" "}
-                      <a href="./legal" target="_blank">
+                      <Link to="/legal" target="_blank">
                         Términos y condiciones
-                      </a>
+                      </Link>
                     </Checkbox>
                   </div>
                   <div className="form-actions">
