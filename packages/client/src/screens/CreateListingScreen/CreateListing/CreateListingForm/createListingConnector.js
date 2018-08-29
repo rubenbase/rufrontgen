@@ -45,7 +45,6 @@ class C extends React.PureComponent {
         {({ isSubmitting, values }) =>
           console.log(values) || (
             <Form style={{ display: "flex" }}>
-              <Link to="logout">logout</Link>
               <div style={{ width: 400, margin: "auto" }}>
                 {pages[this.state.page]}
                 <ul>
