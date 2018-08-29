@@ -2,6 +2,8 @@ import React from "react";
 import "./style.scss";
 import { Logo } from "../../home/ui/Logo/index";
 import { Link } from "react-router-dom";
+import { Icon } from "antd";
+
 class MainMenu extends React.PureComponent {
   render() {
     return (
@@ -9,7 +11,9 @@ class MainMenu extends React.PureComponent {
         <a class="navbar-brand navbar-logo">
           <Logo />
         </a>
-        <Link to="logout">logout</Link>
+        <Link to="logout">
+          Cerrar sesión <Icon type="logout" />
+        </Link>
       </nav>
     );
   }
