@@ -1,26 +1,22 @@
 import React from "react";
 import "./style.scss";
+import { Logo } from "../../home/ui/Logo/index";
 import { Link } from "react-router-dom";
-class AuthHeader extends React.PureComponent {
+import { Icon } from "antd";
+
+class MainMenu extends React.PureComponent {
   render() {
     return (
-      <div className="auth_header">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="login__header__logo">
-              <a href="/">
-                <img
-                  src="resources/images/logo-white.svg"
-                  alt="Yoowriter logo"
-                />
-              </a>
-            </div>
-            <Link to="logout">logout</Link>
-          </div>
-        </div>
-      </div>
+      <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand navbar-logo">
+          <Logo />
+        </a>
+        <Link to="logout">
+          Cerrar sesión <Icon type="logout" />
+        </Link>
+      </nav>
     );
   }
 }
 
-export default AuthHeader;
+export default MainMenu;

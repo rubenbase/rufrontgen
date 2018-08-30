@@ -64,12 +64,12 @@ class C extends React.PureComponent {
                           htmlType="submit"
                           disabled={isSubmitting}
                         >
-                          create listing
+                          Crear concurso
                         </Button>
                       </div>
                     ) : (
                       <Button type="primary" onClick={this.nextPage}>
-                        next page
+                        Siguiente paso
                       </Button>
                     )}
                   </div>
