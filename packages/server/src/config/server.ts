@@ -1,5 +1,5 @@
 import { userLoader } from "./../loaders/UserLoader";
-import { GraphQLServer } from "graphql-yoga";
+import { GraphQLServer, PubSub } from "graphql-yoga";
 import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
 import { applyMiddleware } from "graphql-middleware";
@@ -29,16 +29,19 @@ if (redisDebugMode) {
 const schema = genSchema() as any;
 applyMiddleware(schema, middleware);
 
+const pubsub = new PubSub();
+
 const server = new GraphQLServer({
   schema,
   context: ({ request, response }) => ({
     redis,
     // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
-    url: "http://localhost:4000",
-    session: request.session,
+    url: request ? request.protocol + "://" + request.get("host") : "",
+    session: request ? request.session : undefined,
     req: request,
     res: response,
-    userLoader: userLoader()
+    userLoader: userLoader(),
+    pubsub
   })
 });
 
