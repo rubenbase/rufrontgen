@@ -45,7 +45,6 @@ class C extends React.PureComponent {
         {({ isSubmitting, values }) =>
           console.log(values) || (
             <Form style={{ display: "flex" }}>
-              <Link to="logout">logout</Link>
               <div style={{ width: 400, margin: "auto" }}>
                 {pages[this.state.page]}
                 <ul>
@@ -65,12 +64,12 @@ class C extends React.PureComponent {
                           htmlType="submit"
                           disabled={isSubmitting}
                         >
-                          create listing
+                          Crear concurso
                         </Button>
                       </div>
                     ) : (
                       <Button type="primary" onClick={this.nextPage}>
-                        next page
+                        Siguiente paso
                       </Button>
                     )}
                   </div>

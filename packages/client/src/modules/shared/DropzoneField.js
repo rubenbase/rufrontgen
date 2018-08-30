@@ -1,6 +1,7 @@
 import * as React from "react";
 import { FieldProps } from "formik";
 import Dropzone from "react-dropzone";
+import "./style.scss";
 
 const files = [];
 export const DropzoneField = ({
@@ -15,7 +16,7 @@ export const DropzoneField = ({
         setFieldValue(name, field);
       }}
     >
-      <p>Try dropping some files here, or click to select files to upload.</p>
+      <p className="droptext">Arrastra una imágen o haz clic aquí.</p>
     </Dropzone>
   );
 };
