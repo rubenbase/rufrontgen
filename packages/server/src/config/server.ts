@@ -1,12 +1,12 @@
+import { applyMiddleware } from "graphql-middleware";
+import { GraphQLServer } from "graphql-yoga";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+
 import { userLoader } from "./../loaders/UserLoader";
-import { GraphQLServer, PubSub } from "graphql-yoga";
 import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
-import { applyMiddleware } from "graphql-middleware";
 import { middleware } from "../middlewares/middleware";
 // import { middlewareShield } from "../middlewares/shield";
-
-// Iterates over folders and build the executable schemas
 
 const redisDebugMode = false;
 
@@ -29,7 +29,7 @@ if (redisDebugMode) {
 const schema = genSchema() as any;
 applyMiddleware(schema, middleware);
 
-const pubsub = new PubSub();
+const pubsub = new RedisPubSub();
 
 const server = new GraphQLServer({
   schema,
