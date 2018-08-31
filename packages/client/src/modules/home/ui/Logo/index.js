@@ -5,7 +5,7 @@ class Logo extends React.Component {
   render() {
     return (
       <img
-        class="logo"
+        className="logo"
         src="resources/images/logo-white.svg"
         alt="Logo"
         title="logo"

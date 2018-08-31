@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Card, List, Avatar } from "antd";
 import { withFindListings } from "@rufrontgen/controller";
-import "./style.scss";
 
 const { Meta } = Card;
 
@@ -11,18 +10,19 @@ class C extends React.PureComponent {
     return (
       <div>
         <div className="listings-title">Próximos Concursos Literarios</div>
+
         {loading && <div>...loading</div>}
         {listings.map(l => (
           <List
             key={`${l.id}-card`}
-            hoverable={true}
-            itemLayout="horizontal"
+            dataSource={listings}
+            cover={l.pictureUrl && <img alt={l.name} src={l.pictureUrl} />}
             renderItem={item => (
               <List.Item>
                 <List.Item.Meta
-                  avatar={<Avatar src={l.pictureUrl} />}
-                  title={<a href="./">{l.name}</a>}
-                  description={l.owner.email}
+                  avatar={<Avatar src={item.pictureUrl} />}
+                  title={<a href="./">{item.name}</a>}
+                  description={item.owner.email}
                 />
               </List.Item>
             )}

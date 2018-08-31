@@ -28,8 +28,8 @@ export class HomeView extends React.PureComponent {
           className="jumbotron"
           style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
         >
-          <div class="row">
-            <div class="col-sm">
+          <div className="row">
+            <div className="col-sm">
               <div className="landing-logo">
                 <Logo />
               </div>
@@ -45,8 +45,8 @@ export class HomeView extends React.PureComponent {
                 Comprueba todo lo que te da Yoowriter.
               </p>
             </div>
-            <div class="col-sm">
-              <div class="form-home">
+            <div className="col-sm">
+              <div className="form-home">
                 <h2>Me gustaría estar informado los concursos literarios.</h2>
                 <SubscribeForm />
               </div>
@@ -81,13 +81,13 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </div>
-        <section class="features-section">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 nopadding">
-                <div class="features-text yellow">
+        <section className="features-section">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-md-6 nopadding">
+                <div className="features-text yellow">
                   <h5>
-                    <i class="anticon anticon-lock" /> Confidencialidad
+                    <i className="anticon anticon-lock" /> Confidencialidad
                   </h5>
                   <p>
                     Yoowriter protege la información facilitada por las
@@ -97,8 +97,8 @@ export class HomeView extends React.PureComponent {
                   </p>
                 </div>
               </div>
-              <div class="col-md-6 nopadding order-md-1">
-                <div class="features-text">
+              <div className="col-md-6 nopadding order-md-1">
+                <div className="features-text">
                   <h5 className="text-center">
                     <Icon type="sync" /> Transparencia
                   </h5>
@@ -111,9 +111,9 @@ export class HomeView extends React.PureComponent {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6 nopadding">
-                <div class="features-text red">
+            <div className="row">
+              <div className="col-md-6 nopadding">
+                <div className="features-text red">
                   <h5>
                     <Icon type="hourglass" /> Eficiencia
                   </h5>
@@ -124,8 +124,8 @@ export class HomeView extends React.PureComponent {
                   </p>
                 </div>
               </div>
-              <div class="col-md-6 nopadding order-md-1">
-                <div class="features-text green">
+              <div className="col-md-6 nopadding order-md-1">
+                <div className="features-text green">
                   <h5 className="text-center">
                     <Icon type="heart" /> Sostenibilidad
                   </h5>
@@ -139,9 +139,9 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </section>
-        <section class="footer-form">
-          <div class="container">
-            <div class="form-home">
+        <section className="footer-form">
+          <div className="container">
+            <div className="form-home">
               <h2>Me gustaría estar informado los concursos literarios.</h2>
               <SubscribeForm />
             </div>

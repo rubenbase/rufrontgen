@@ -51,7 +51,7 @@ class C extends React.PureComponent {
                     placeholder="Apellido"
                     component={InputField}
                   />
-                  <div class="form-check">
+                  <div className="form-check">
                     <Checkbox>
                       Acepto los{" "}
                       <Link to="/legal" target="_blank">

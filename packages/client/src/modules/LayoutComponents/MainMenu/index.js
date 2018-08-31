@@ -7,8 +7,8 @@ import { Icon } from "antd";
 class MainMenu extends React.PureComponent {
   render() {
     return (
-      <nav class="navbar navbar-dark bg-dark justify-content-between">
-        <a class="navbar-brand navbar-logo">
+      <nav className="navbar navbar-dark bg-dark justify-content-between">
+        <a className="navbar-brand navbar-logo">
           <Logo />
         </a>
         <Link to="logout">
