@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Card } from "antd";
 import { withFindListings } from "@rufrontgen/controller";
+import "./style.scss";
 
 const { Meta } = Card;
 
@@ -9,6 +10,7 @@ class C extends React.PureComponent {
     const { listings, loading } = this.props;
     return (
       <div>
+        <div className="listings-title">Próximos Concursos Literarios</div>
         {loading && <div>...loading</div>}
         {listings.map(l => (
           <Card
