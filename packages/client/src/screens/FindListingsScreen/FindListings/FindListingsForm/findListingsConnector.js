@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Card } from "antd";
+import { Card, List, Avatar } from "antd";
 import { withFindListings } from "@rufrontgen/controller";
+import "./style.scss";
 
 const { Meta } = Card;
 
@@ -9,16 +10,23 @@ class C extends React.PureComponent {
     const { listings, loading } = this.props;
     return (
       <div>
+        <div className="listings-title">Próximos Concursos Literarios</div>
         {loading && <div>...loading</div>}
         {listings.map(l => (
-          <Card
+          <List
             key={`${l.id}-card`}
             hoverable={true}
-            style={{ width: 240 }}
-            cover={l.pictureUrl && <img alt={l.name} src={l.pictureUrl} />}
-          >
-            <Meta title={l.name} description={l.owner.email} />>
-          </Card>
+            itemLayout="horizontal"
+            renderItem={item => (
+              <List.Item>
+                <List.Item.Meta
+                  avatar={<Avatar src={l.pictureUrl} />}
+                  title={<a href="./">{l.name}</a>}
+                  description={l.owner.email}
+                />
+              </List.Item>
+            )}
+          />
         ))}
       </div>
     );

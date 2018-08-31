@@ -6,13 +6,13 @@ import { TagField } from "modules/shared/TagField";
 export const Page3 = () => (
   <React.Fragment>
     <Field
-      label="Nº de caracteres mínimos"
+      label="Nº de páginas mínimos"
       placeholder="Longitude"
       component={InputField}
       onlyNumbers
     />
     <Field
-      label="Nº de caracteres máximos"
+      label="Nº de páginas máximos"
       name="longitude"
       placeholder="Longitude"
       component={InputField}
