@@ -1,12 +1,8 @@
 // @ts-ignore
 import * as React from "react";
 import gql from "graphql-tag";
-import { graphql } from "react-apollo";
-import {
-  ViewListingQuery_viewListing,
-  ViewListingQuery,
-  ViewListingQueryVariables
-} from "../../schemaTypes";
+import { Query } from "react-apollo";
+import { ViewListingQuery_viewListing } from "../../schemaTypes";
 
 export const viewListingQuery = gql`
   query ViewListingQuery($id: String!) {
@@ -28,23 +24,27 @@ export interface WithViewListing {
   loading: boolean;
 }
 
-export const withViewListing = graphql<
-  any,
-  ViewListingQuery,
-  ViewListingQueryVariables, // if no variables pass {}
-  WithViewListing
->(viewListingQuery, {
-  props: ({ data }) => {
-    let listing: ViewListingQuery_viewListing | null = null;
+export class ViewListing extends React.PureComponent<{
+  listingId: string;
+  children: (data: WithViewListing) => JSX.Element | null;
+}> {
+  render() {
+    const { children, listingId } = this.props;
+    return (
+      <Query query={viewListingQuery} variables={{ id: listingId }}>
+        {({ data, loading }) => {
+          let listing: ViewListingQuery_viewListing | null = null;
 
-    if (data && !data.loading && data.viewListing) {
-      listing = data.viewListing;
-    }
+          if (data && data.viewListing) {
+            listing = data.viewListing;
+          }
 
-    return {
-      listing,
-      loading: data ? data.loading : false
-    };
-  },
-  options: props => ({ variables: { id: props.listingId } })
-});
+          return children({
+            listing,
+            loading
+          });
+        }}
+      </Query>
+    );
+  }
+}

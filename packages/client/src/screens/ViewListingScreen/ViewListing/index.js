@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ViewWrapper } from "./ui";
+import { ViewListing } from "@rufrontgen/controller";
 
 export default class ViewListingConnector extends React.PureComponent {
   render() {
@@ -9,7 +9,7 @@ export default class ViewListingConnector extends React.PureComponent {
       }
     } = this.props;
     return (
-      <ViewWrapper listingId={listingId}>
+      <ViewListing listingId={listingId}>
         {data => {
           console.log(data);
 
@@ -19,7 +19,7 @@ export default class ViewListingConnector extends React.PureComponent {
 
           return <div>{data.listing.name}</div>;
         }}
-      </ViewWrapper>
+      </ViewListing>
     );
   }
 }

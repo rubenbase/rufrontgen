@@ -5,4 +5,9 @@ export interface WithViewListing {
     listing: ViewListingQuery_viewListing | null;
     loading: boolean;
 }
-export declare const withViewListing: (WrappedComponent: React.ComponentType<any>) => React.ComponentClass<any>;
+export declare class ViewListing extends React.PureComponent<{
+    listingId: string;
+    children: (data: WithViewListing) => JSX.Element | null;
+}> {
+    render(): JSX.Element;
+}
