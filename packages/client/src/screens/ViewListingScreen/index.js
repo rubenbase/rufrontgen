@@ -21,4 +21,4 @@ class ViewListingScreen extends React.Component {
   }
 }
 
-export default FindListingsScreen;
+// export default FindListingsScreen;

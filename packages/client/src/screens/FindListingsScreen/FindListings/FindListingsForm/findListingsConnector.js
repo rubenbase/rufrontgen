@@ -10,24 +10,20 @@ class C extends React.PureComponent {
     return (
       <div>
         <div className="listings-title">Próximos Concursos Literarios</div>
-
         {loading && <div>...loading</div>}
-        {listings.map(l => (
-          <List
-            key={`${l.id}-card`}
-            dataSource={listings}
-            cover={l.pictureUrl && <img alt={l.name} src={l.pictureUrl} />}
-            renderItem={item => (
-              <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src={item.pictureUrl} />}
-                  title={<a href="./">{item.name}</a>}
-                  description={item.owner.email}
-                />
-              </List.Item>
-            )}
-          />
-        ))}
+        <List
+          dataSource={listings}
+          renderItem={item => (
+            <List.Item>
+              <List.Item.Meta
+                key={`${item.id}-card`}
+                avatar={<Avatar src={item.pictureUrl} />}
+                title={<a href="./">{item.name}</a>}
+                description={item.owner.email}
+              />
+            </List.Item>
+          )}
+        />
       </div>
     );
   }
