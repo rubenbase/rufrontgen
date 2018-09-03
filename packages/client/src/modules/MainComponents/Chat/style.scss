@@ -1,0 +1,55 @@
+@import '../../../resources/mixins';
+
+.chat {
+  overflow-x: hidden;
+
+  &__messaging {
+    overflow: auto;
+  }
+  
+  &__item {
+    padding: rem(10) 0;
+
+    &--right {
+
+      .chat__itemContent {
+        margin-left: 0px;
+        margin-right: 70px;
+
+        &:after {
+          left: 100%;
+          border: rem(7) solid transparent;
+          border-left-color: #f2f4f8;
+        }
+      }
+
+      .chat__itemAvatar {
+        float: right;
+      }
+    }
+  }
+  
+  &__itemAvatar {
+    float: left;
+  }
+
+  &__itemContent {
+    padding: rem(10) rem(15) rem(1);
+    background: #f2f4f8;
+    margin-left: rem(70);
+    border-radius: 5px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: rem(22);
+      left: rem(-14);
+      width: 0;
+      height: 0;
+      display: block;
+      content: '';
+      border: rem(7) solid transparent;
+      border-right-color: #f2f4f8;
+    }
+  }
+}
