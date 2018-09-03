@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import ViewListingConnector from "./ViewListing/index";
 // import Page from "components/LayoutComponents/Page";
 // import FindListings from "./FindListings";
 
@@ -14,11 +15,12 @@ class ViewListingScreen extends React.Component {
     return (
       // <Page {...props}>
       <div>
-        <Helmet title="Find Listings" />
+        <Helmet title="Listing detail" />
+        <ViewListingConnector {...props} />
       </div>
       // </Page>
     );
   }
 }
 
-// export default FindListingsScreen;
+export default ViewListingScreen;

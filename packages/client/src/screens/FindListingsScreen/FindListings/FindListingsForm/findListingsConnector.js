@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Card, List, Avatar } from "antd";
 import { withFindListings } from "@rufrontgen/controller";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
@@ -14,14 +15,16 @@ class C extends React.PureComponent {
         <List
           dataSource={listings}
           renderItem={item => (
-            <List.Item>
-              <List.Item.Meta
-                key={`${item.id}-card`}
-                avatar={<Avatar src={item.pictureUrl} />}
-                title={<a href="./">{item.name}</a>}
-                description={item.owner.email}
-              />
-            </List.Item>
+            <Link to={`/listing/${item.id}`}>
+              <List.Item>
+                <List.Item.Meta
+                  key={`${item.id}-card`}
+                  avatar={<Avatar src={item.pictureUrl} />}
+                  title={item.name}
+                  description={item.owner.email}
+                />
+              </List.Item>
+            </Link>
           )}
         />
       </div>

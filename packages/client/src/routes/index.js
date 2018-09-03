@@ -10,6 +10,7 @@ import ChangePasswordScreen from "screens/ChangePasswordScreen";
 import TextScreen from "screens/TextScreen";
 import CreateListingScreen from "screens/CreateListingScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
+import ViewListingScreen from "screens/ViewListingScreen";
 import Logout from "modules/logout";
 
 export const Routes = () => (
@@ -37,7 +38,7 @@ export const Routes = () => (
       <AuthRoute
         exact={true}
         path="/listing/:listingId"
-        component={FindListingsScreen}
+        component={ViewListingScreen}
       />
       <Route
         exact={true}
