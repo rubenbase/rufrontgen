@@ -19,9 +19,9 @@ export class MessageConnector extends React.PureComponent {
 
           return (
             <div>
-              {messages.map((m, i) => (
+              {/* {messages.map((m, i) => (
                 <div key={`${i}-lm`}>{m.text}</div>
-              ))}
+              ))} */}
 
               <div className="card">
                 <div className="card-header">
@@ -33,7 +33,11 @@ export class MessageConnector extends React.PureComponent {
                   </div>
                 </div>
                 <div className="card-body">
-                  <Chat />
+                  <Chat
+                    chats={messages}
+                    username={"Ruben"}
+                    listingId={listingId}
+                  />
                 </div>
               </div>
             </div>

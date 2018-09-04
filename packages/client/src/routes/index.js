@@ -35,12 +35,12 @@ export const Routes = () => (
 
       {/* Listings Routes */}
       <Route exact={true} path="/listings" component={FindListingsScreen} />
-      <AuthRoute
+      <Route
         exact={true}
         path="/listing/:listingId"
         component={ViewListingScreen}
       />
-      <Route
+      <AuthRoute
         exact={true}
         path="/create-listing"
         component={CreateListingScreen}

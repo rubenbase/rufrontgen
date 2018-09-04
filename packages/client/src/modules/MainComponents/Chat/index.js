@@ -1,8 +1,9 @@
 import React from "react";
-import "./style.scss";
 
+import "./style.scss";
+import InputBar from "./InputBar";
 import Avatar from "modules/MainComponents/Avatar";
-const chats = [];
+// const chats = [];
 
 const Message = ({ chat, user }) => (
   <div
@@ -15,7 +16,7 @@ const Message = ({ chat, user }) => (
     </div>
     <div className="chat__itemContent">
       <strong>{chat.username}</strong>
-      <p>{chat.content}</p>
+      <p>{chat.text}</p>
     </div>
   </div>
 );
@@ -27,7 +28,9 @@ class Chat extends React.Component {
   };
 
   render() {
-    const { username } = this.props;
+    const { username } = this.state;
+    const { chats, listingId } = this.props;
+
     return (
       <div className="chat">
         <div className="chat__messaging" style={{ height: 287 }}>
@@ -37,7 +40,7 @@ class Chat extends React.Component {
             ))}
           </div>
         </div>
-        <form className="form-group mt-4 mb-0">
+        {/* <form className="form-group mt-4 mb-0">
           <textarea
             className="form-control adjustable-textarea"
             placeholder="Type message..."
@@ -47,9 +50,10 @@ class Chat extends React.Component {
               <i className="fa fa-send mr-2" />
               Send
             </button>
-            <button className="btn btn-link">Attach File</button>
-          </div>
-        </form>
+            <button className="btn btn-link">Attach File</button> */}
+        <InputBar listingId={listingId} />
+        {/* </div> */}
+        {/* </form> */}
       </div>
     );
   }

@@ -9,7 +9,6 @@ const uploadDir = "images";
 
 const storeUpload = async (stream: any, filename: string): Promise<any> => {
   const id = `${shortid.generate()}${filename}`;
-  console.log("ALIBABA ID IS ==> ", id);
   const path = `${uploadDir}/${id}`;
 
   return new Promise((resolve, reject) =>
