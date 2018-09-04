@@ -4,6 +4,8 @@ import { ViewMessages } from "@rufrontgen/controller";
 import Chat from "./../MainComponents/Chat";
 
 export class MessageConnector extends React.PureComponent {
+  unsubscribe = () => null;
+
   render() {
     const {
       match: {
@@ -12,9 +14,13 @@ export class MessageConnector extends React.PureComponent {
     } = this.props;
     return (
       <ViewMessages listingId={listingId}>
-        {({ loading, messages }) => {
+        {({ loading, messages, subscribe }) => {
           if (loading) {
             return <div>...loading</div>;
+          }
+
+          if (!this.unsubscribe) {
+            this.unsubscribe = subscribe();
           }
 
           return (

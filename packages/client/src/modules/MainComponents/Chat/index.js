@@ -52,6 +52,7 @@ class Chat extends React.Component {
             </button>
             <button className="btn btn-link">Attach File</button> */}
         <InputBar listingId={listingId} />
+        <button onClick={this.unsubscribe}>unsubscribe</button>
         {/* </div> */}
         {/* </form> */}
       </div>
