@@ -35,7 +35,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
     "@types/apollo-upload-client": "^8.1.0",
@@ -50,7 +52,13 @@
     "react-app-rewire-yarn-workspaces": "^1.0.3",
     "react-app-rewired": "^1.5.2",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.1",
+    "@storybook/react": "^3.4.10",
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/addons": "^3.4.10",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0"
   },
   "lint-staged": {
     "src/**/*.js": [
