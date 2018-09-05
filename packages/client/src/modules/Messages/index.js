@@ -4,7 +4,7 @@ import { ViewMessages } from "@rufrontgen/controller";
 import Chat from "./../MainComponents/Chat";
 
 export class MessageConnector extends React.PureComponent {
-  unsubscribe = () => null;
+  unsubscribe = null;
 
   render() {
     const {
