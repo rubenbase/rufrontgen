@@ -31,3 +31,14 @@
     _At this point you will see the example app at `http://localhost:3000` and the Graphql console at `http://localhost:4000`._
 
 Now you're ready!
+
+
+## ☑ TODO 
+
+- [X] Add subscriptions support
+- [ ] Add roles/permissions
+- [ ] Add storybook and stories
+- [ ] Add multiple language support
+- [ ] Update to apollo server 2.0 
+- [ ] Improve folder structure
+- [ ] Implement SSR
