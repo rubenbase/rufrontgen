@@ -10,6 +10,8 @@ import {
 import { BaseEntity } from "typeorm/repository/BaseEntity";
 import { Listing } from "./Listing";
 
+type UserRole = "user" | "admin";
+
 @Entity("users")
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
@@ -39,8 +41,8 @@ export class User extends BaseEntity {
   @Column("boolean", { default: false })
   forgotPasswordLocked: boolean;
 
-  @Column("text", { array: true }) // Roles are -> user, admin
-  roles: string[];
+  @Column("text", { array: true, default: "{user}" })
+  roles: UserRole[];
 
   @OneToMany(() => Listing, listing => listing.user)
   listings: Listing[];

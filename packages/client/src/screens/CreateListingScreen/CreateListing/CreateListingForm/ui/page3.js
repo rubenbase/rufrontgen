@@ -7,7 +7,8 @@ export const Page3 = () => (
   <React.Fragment>
     <Field
       label="Nº de páginas mínimos"
-      placeholder="Longitude"
+      name="latitude"
+      placeholder="Latitude"
       component={InputField}
       onlyNumbers
     />
