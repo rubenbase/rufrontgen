@@ -2,6 +2,7 @@ import * as React from "react";
 import { Field } from "formik";
 import { InputField } from "modules/shared/inputField";
 import { DropzoneField } from "modules/shared/DropzoneField";
+import { LocationField } from "modules/shared/LocationField";
 import "./style.scss";
 
 export const Page1 = () => (
@@ -24,6 +25,9 @@ export const Page1 = () => (
       placeholder="Escribe una descripción."
       component={InputField}
     />
+    <p>Selecciona tu lugar en el mapa</p>
+    <Field name="tmp" component={LocationField} />
+
     <div>Adjunta una imágen:</div>
     <Field name="picture" component={DropzoneField} />
   </React.Fragment>

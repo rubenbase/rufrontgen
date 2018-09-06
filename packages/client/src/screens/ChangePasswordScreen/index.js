@@ -10,7 +10,6 @@ class ChangePasswordScreen extends React.Component {
   };
 
   render() {
-    const props = this.props;
     return (
       //   <Page {...props}>
       <div>
