@@ -36,8 +36,8 @@ Now you're ready!
 ## ☑ TODO 
 
 - [X] Add subscriptions support
-- [ ] Add roles/permissions
-- [ ] Add storybook and stories
+- [X] Add roles/permissions
+- [X] Add storybook and stories
 - [ ] Add multiple language support
 - [ ] Update to apollo server 2.0 
 - [ ] Improve folder structure
