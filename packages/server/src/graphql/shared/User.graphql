@@ -3,4 +3,5 @@ type User {
   email: String!
   name: String!
   lastname: String!
+  roles: [String!]!
 }
