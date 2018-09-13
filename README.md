@@ -22,6 +22,9 @@
 
 ## Quick start
 
+You will need to install Postgres. The db info is located in the ormconfig file.
+Also, you will need to install redis.
+
 1.  Make sure that you have Node v8 or above installed.
 2.  Clone this repo using `git clone --depth=1 https://github.com/rubenbase/rufrontgen.git`
 3.  Move to the appropriate directory: `cd rufrontgen`.<br />
