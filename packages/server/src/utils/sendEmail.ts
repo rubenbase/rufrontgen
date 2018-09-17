@@ -10,8 +10,8 @@ export const sendEmail = async (
     host: "smtp.ethereal.email",
     port: 587,
     auth: {
-      user: "ze7fym7yn6th42g2@ethereal.email",
-      pass: "8XRyggHfGtC1xfsPJv"
+      user: "rhz7vvzvyrkxcqz7@ethereal.email",
+      pass: "3DtyGCGmdPxgK4Fc5Y"
     }
   });
 
@@ -131,6 +131,7 @@ export const sendEmail = async (
     }
 
     console.log("Message sent: %s", info.messageId);
+
     // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   });
