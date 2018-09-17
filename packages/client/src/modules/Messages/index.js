@@ -1,5 +1,5 @@
 import * as React from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ViewMessages } from "@rufrontgen/controller";
 import Chat from "./../MainComponents/Chat";
 
@@ -28,7 +28,9 @@ export class MessageConnector extends React.PureComponent {
               {/* {messages.map((m, i) => (
                 <div key={`${i}-lm`}>{m.text}</div>
               ))} */}
-
+              <div>
+                <Link to={`/listing/${listingId}/edit`}>edit</Link>
+              </div>
               <div className="card">
                 <div className="card-header">
                   <div className="utils__title">
@@ -38,6 +40,7 @@ export class MessageConnector extends React.PureComponent {
                     Block with important Chat information
                   </div>
                 </div>
+
                 <div className="card-body">
                   <Chat
                     chats={messages}

@@ -11,6 +11,7 @@ import TextScreen from "screens/TextScreen";
 import CreateListingScreen from "screens/CreateListingScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
+import EditListingScreen from "screens/EditListingScreen";
 import Logout from "modules/logout";
 
 export const Routes = () => (
@@ -40,6 +41,12 @@ export const Routes = () => (
         path="/listing/:listingId"
         component={ViewListingScreen}
       />
+      <AuthRoute
+        exact={true}
+        path="/listing/:listingId/edit"
+        component={EditListingScreen}
+      />
+
       <AuthRoute
         exact={true}
         path="/create-listing"

@@ -37,7 +37,7 @@ const siteConfig = {
   favicon: "img/favicon.png",
   colors: {
     primaryColor: "#9e42f4",
-    secondaryColor: "#205C3B"
+    secondaryColor: "#9e42bb"
   },
   editUrl: "https://github.com/rubenbase/rufrontgen/edit/master/docs/",
   // Users variable set above
