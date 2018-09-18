@@ -1,0 +1,129 @@
+@import '../../../resources/mixins';
+
+.infoCard {
+  color: $text;
+  background-color: $white;
+  padding: rem(20);
+  border-radius: 3px;
+  display: block;
+  margin-bottom: rem(20);
+
+    &__digit {
+    float: left;
+    margin-right: rem(20);
+    font-size: rem(42);
+    width: rem(56);
+    line-height: rem(50);
+    text-align: center;
+    font-weight: bold;
+    i {
+      font-size: rem(36);
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: rem(16);
+  }
+
+  &__desc {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &--default, &--primary, &--secondary,
+  &--success, &--info, &--warning, &--danger {
+    color: $white !important;
+  }
+
+  &--empty {
+    border: 1px solid $gray-border;
+  }
+
+  &--default {
+    background: $default !important;
+    border-bottom-color: $default;
+  }
+
+  &--primary {
+    background: $primary !important;
+    border-bottom-color: $primary;
+  }
+
+  &--secondary {
+    background: $secondary !important;
+    border-bottom-color: $secondary;
+  }
+
+  &--success {
+    background: $success !important;
+    border-bottom-color: $success;
+  }
+
+  &--info {
+    background: $info !important;
+    border-bottom-color: $info;
+  }
+
+  &--warning {
+    background: $warning !important;
+    border-bottom-color: $warning;
+  }
+
+  &--danger {
+    background: $danger !important;
+    border-bottom-color: $danger;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+
+  &--squared {
+    border-radius: 0;
+  }
+
+  &--bordered {
+    padding: rem(5) 0 rem(10) 0;
+    margin-bottom: rem(-12);
+    margin-top: rem(0);
+    color: $text !important;
+    background-color: $white !important;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-radius: 0;
+    .infoCard {
+      &__digit {
+        font-size: rem(28);
+        line-height: rem(38);
+        height: rem(24);
+        display: block;
+        width: auto;
+        min-width: rem(40);
+        margin: 0 rem(10);
+        i {
+          font-size: rem(24);
+        }
+      }
+      &__title {
+        font-weight: bold;
+        font-size: rem(13);
+      }
+      &__desc {
+        padding-top: 0;
+        p {
+          font-size: rem(12);
+          margin-bottom: rem(5);
+          color: $gray-darken;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $md-max-width) {
+    margin-bottom: rem(16) !important;
+    margin-top: 0 !important;
+  }
+}

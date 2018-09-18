@@ -1,0 +1,28 @@
+@import '../../../resources/mixins';
+
+.breadcrumbBar {
+  padding: rem(10) rem(20);
+  margin: rem(-30);
+  margin-bottom: rem(30);
+  background-color: $white;
+  border-bottom: 1px solid $gray-border;
+
+  @media(max-width: $sm-min-width) {
+    margin-left: rem(-20);
+    margin-right: rem(-20);
+  }
+
+  &__path {
+    font-size: rem(18);
+    color: $black;
+  }
+
+  &__arrow {
+    display: inline-block;
+    margin: 0 rem(10);
+    &:after {
+      display: inline-block;
+      content: '·';
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import '../../../resources/mixins';
+
+.avatar {
+  width: rem(35);
+  height: rem(35);
+  background-color: $gray-lighten;
+  border-color: $gray-darken;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 500px;
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &--20 {
+    width: rem(20);
+    height: rem(20);
+  }
+
+  &--25 {
+    width: rem(25);
+    height: rem(25);
+  }
+
+  &--50 {
+    width: rem(50);
+    height: rem(50);
+  }
+
+  &--70 {
+    width: rem(70);
+    height: rem(70);
+  }
+
+  &--90 {
+    width: rem(90);
+    height: rem(90);
+  }
+
+  &--110 {
+    width: rem(110);
+    height: rem(110);
+  }
+
+  &--border {
+    border: 4px solid $gray;
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../../resources/mixins';
+
+.menu {
+  &__collapseLabel {
+    position: absolute;
+    top: 11px;
+    right: -40px;
+    height: 40px;
+    width: 40px;
+    background: $menuBg;
+    border-radius: 0 4px 4px 0;
+    color: $white;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    padding-right: 2px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+}
+
+.drawer-content {
+  overflow: visible;
+  background: $menuBg;
+  transition: background .3s;
+}
+
+.drawer-button {
+  background: $menuBg !important;
+  top: 64px;
+}
+
+.drawer.drawer-open .drawer-button-icon {
+  background: transparent !important;
+}
+
+.drawer-button-icon {
+  background: $white !important;
+  &:after, &:before {
+    background: $white !important;
+  }
+}
+
+.drawer {
+  .ant-layout-sider {
+    box-shadow: none !important;
+  }
+
+  .ant-menu {
+    border-right: none !important;
+  }
+}
