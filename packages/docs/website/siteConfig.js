@@ -36,8 +36,8 @@ const siteConfig = {
   headerIcon: "img/docusaurus.svg",
   favicon: "img/favicon.png",
   colors: {
-    primaryColor: "#9e42f4",
-    secondaryColor: "#9e42bb"
+    primaryColor: "#8e44ad",
+    secondaryColor: "#8e44ad"
   },
   editUrl: "https://github.com/rubenbase/rufrontgen/edit/master/docs/",
   // Users variable set above

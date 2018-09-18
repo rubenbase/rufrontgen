@@ -1,0 +1,124 @@
+@import '../../../mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  THEME PARAMS STYLES */
+
+body.fixedWidth {
+  #root {
+    max-width: 1420px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1440px) {
+    .ant-layout-sider {
+      border-left: 1px solid $gray-border !important;
+      border-right: 1px solid $gray-border !important;
+      box-sizing: content-box;
+    }
+
+    .ant-menu {
+      color: $text;
+      border-right: none !important;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &.isMenuTop {
+      .utils__content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .breadcrumbBar, .footer {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
+body.squaredBorders {
+  .card {
+    border-radius: 0;
+  }
+}
+
+body.menuShadow {
+  .ant-layout-sider {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 200px -20px rgba(57,55,73,.4);
+  }
+}
+
+body.borderedCards {
+  .card {
+    border-top: 4px solid $success !important;
+  }
+}
+
+body.menuHorizontal {
+  &.fixedWidth {
+    .utils__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .breadcrumbBar, .footer {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+body.themeLight {
+  .ant-layout-sider-trigger {
+    background: $gray-border;
+    color: inherit;
+  }
+
+  .ant-layout-sider {
+    background: $white;
+    border-right: 1px solid $gray-border;
+  }
+
+  &:not(.menuCollapsed) {
+    .ant-menu {
+      color: $text;
+      border-right: none;
+    }
+  }
+
+  .ant-menu-item > a {
+    color: $text;
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  .drawer-content {
+    background: $white !important;
+  }
+}
+
+body.borderLess {
+  .card {
+    border: none
+  }
+
+  .card-header {
+    padding-top: rem(20);
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .card-footer {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .utils__title {
+    text-transform: uppercase;
+    font-size: rem(16);
+  }
+}
