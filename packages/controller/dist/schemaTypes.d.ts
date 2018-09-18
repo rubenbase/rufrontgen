@@ -92,6 +92,13 @@ export interface SubscribeToListMutationVariables {
     name: string;
     lastname: string;
 }
+export interface UpdateListingMutation {
+    updateListing: boolean;
+}
+export interface UpdateListingMutationVariables {
+    listingId: string;
+    input: UpdateListingInput;
+}
 export interface ViewListingQuery_viewListing_owner {
     id: string;
     email: string;
@@ -99,8 +106,13 @@ export interface ViewListingQuery_viewListing_owner {
 export interface ViewListingQuery_viewListing {
     id: string;
     name: string;
+    description: string;
     category: string;
     pictureUrl: string;
+    price: number;
+    latitude: number;
+    longitude: number;
+    amenities: string[];
     owner: ViewListingQuery_viewListing_owner;
 }
 export interface ViewListingQuery {
@@ -124,10 +136,39 @@ export interface ViewMessagesQuery {
 export interface ViewMessagesQueryVariables {
     listingId: string;
 }
+export interface NewMessageSubscription_newMessage_user {
+    id: string;
+    email: string;
+}
+export interface NewMessageSubscription_newMessage {
+    text: string;
+    user: NewMessageSubscription_newMessage_user;
+    listingId: string;
+}
+export interface NewMessageSubscription {
+    newMessage: NewMessageSubscription_newMessage;
+}
+export interface NewMessageSubscriptionVariables {
+    listingId: string;
+}
 /**
  *
  */
 export interface MessageInput {
     text: string;
     listingId: string;
+}
+/**
+ *
+ */
+export interface UpdateListingInput {
+    name?: string | null;
+    picture?: any | null;
+    pictureUrl?: string | null;
+    category?: string | null;
+    description?: string | null;
+    price?: number | null;
+    latitude?: number | null;
+    longitude?: number | null;
+    amenities?: string[] | null;
 }

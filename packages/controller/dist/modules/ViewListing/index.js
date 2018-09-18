@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 import * as React from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-export var viewListingQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query ViewListingQuery($id: String!) {\n    viewListing(id: $id) {\n      id\n      name\n      category\n      pictureUrl\n      owner {\n        id\n        email\n      }\n    }\n  }\n"], ["\n  query ViewListingQuery($id: String!) {\n    viewListing(id: $id) {\n      id\n      name\n      category\n      pictureUrl\n      owner {\n        id\n        email\n      }\n    }\n  }\n"])));
+export var viewListingQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query ViewListingQuery($id: String!) {\n    viewListing(id: $id) {\n      id\n      name\n      description\n      category\n      pictureUrl\n      price\n      latitude\n      longitude\n      amenities\n      owner {\n        id\n        email\n      }\n    }\n  }\n"], ["\n  query ViewListingQuery($id: String!) {\n    viewListing(id: $id) {\n      id\n      name\n      description\n      category\n      pictureUrl\n      price\n      latitude\n      longitude\n      amenities\n      owner {\n        id\n        email\n      }\n    }\n  }\n"])));
 var ViewListing = /** @class */ (function (_super) {
     __extends(ViewListing, _super);
     function ViewListing() {

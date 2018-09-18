@@ -25,7 +25,7 @@ import * as React from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 export var viewMessagesQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query ViewMessagesQuery($listingId: String!) {\n    messages(listingId: $listingId) {\n      text\n      user {\n        id\n        email\n      }\n      listingId\n    }\n  }\n"], ["\n  query ViewMessagesQuery($listingId: String!) {\n    messages(listingId: $listingId) {\n      text\n      user {\n        id\n        email\n      }\n      listingId\n    }\n  }\n"])));
-export var newMessageSubscription = gql(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  subscription($listingId: String!) {\n    newMessage(listingId: $listingId) {\n      text\n      user {\n        id\n        email\n      }\n      listingId\n    }\n  }\n"], ["\n  subscription($listingId: String!) {\n    newMessage(listingId: $listingId) {\n      text\n      user {\n        id\n        email\n      }\n      listingId\n    }\n  }\n"])));
+export var newMessageSubscription = gql(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  subscription NewMessageSubscription($listingId: String!) {\n    newMessage(listingId: $listingId) {\n      text\n      user {\n        id\n        email\n      }\n      listingId\n    }\n  }\n"], ["\n  subscription NewMessageSubscription($listingId: String!) {\n    newMessage(listingId: $listingId) {\n      text\n      user {\n        id\n        email\n      }\n      listingId\n    }\n  }\n"])));
 var ViewMessages = /** @class */ (function (_super) {
     __extends(ViewMessages, _super);
     function ViewMessages() {
