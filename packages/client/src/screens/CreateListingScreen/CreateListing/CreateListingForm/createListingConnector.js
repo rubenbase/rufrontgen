@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { Form as AntForm, Button } from "antd";
-import { Form, Formik, FormikActions } from "formik";
+import { Form, Formik } from "formik";
 import { withCreateListing } from "@rufrontgen/controller";
 import { ImageFile } from "react-dropzone";
 
@@ -50,6 +50,7 @@ class C extends React.PureComponent {
                 <ul>
                   <li>{values && values.picture ? values.picture.name : ""}</li>
                 </ul>
+
                 <FormItem>
                   <div
                     style={{

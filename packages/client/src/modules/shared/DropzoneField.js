@@ -1,44 +1,47 @@
 import * as React from "react";
-import { FieldProps } from "formik";
 import Dropzone from "react-dropzone";
 import "./style.scss";
+import { Button } from "antd";
 
 const files = [];
 export const DropzoneField = ({
-  field: { name },
-  form: { setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  field: { name, value },
+  form: { setFieldValue, values, setValues }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   ...props
 }) => {
+  const pUrl = (value ? value.preview : null) || values.pictureUrl;
+
   return (
-    <Dropzone
-      accept="image/jpg, image/png"
-      onDrop={([field]) => {
-        setFieldValue(name, field);
-      }}
-    >
-      <p className="droptext">Arrastra una imágen o haz clic aquí.</p>
-    </Dropzone>
+    <div>
+      <Dropzone
+        accept="image/jpg, image/png"
+        onDrop={([field]) => {
+          setFieldValue(name, field);
+        }}
+        {...props}
+      >
+        <p className="droptext">Arrastra una imágen o haz clic aquí.</p>
+      </Dropzone>
+      {pUrl && (
+        <img
+          src={pUrl}
+          alt={"Insert"}
+          style={{
+            maxHeight: 200
+          }}
+        />
+      )}
+      <Button
+        onClick={() =>
+          setValues({
+            ...values,
+            pictureUrl: null,
+            picture: null
+          })
+        }
+      >
+        remove
+      </Button>
+    </div>
   );
 };
-
-// import * as React from "react";
-// import { FieldProps } from "formik";
-// import Dropzone from "react-dropzone";
-
-// const files = [];
-// export const DropzoneField = ({
-//   field: { name },
-//   form: { setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-//   ...props
-// }) => {
-//   return (
-//     <Dropzone
-//       accept=".pdf"
-//       onDrop={([field]) => {
-//         setFieldValue(name, field);
-//       }}
-//     >
-//       <p>Try dropping some files here, or click to select files to upload.</p>
-//     </Dropzone>
-//   );
-// };
