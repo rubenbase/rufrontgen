@@ -1,7 +1,13 @@
 input SearchListingInput {
-  guests: Int
+  name: String
+  category: String
+  price: Number
 }
 
 type Query {
-  searchListings(input: SearchListingInput): [Listing!]!
+  searchListings(
+    input: SearchListingInput
+    offset: Int!
+    limit: Int!
+  ): [Listing!]!
 }
