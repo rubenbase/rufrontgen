@@ -88,13 +88,13 @@ export const startServer = async () => {
     await conn.runMigrations();
   }
 
+  // TODO: Remove this cache part in case we want to implement other cache solution
   // clear cache
   await redis.del(listingCacheKey);
   // fill cache
   const listings = await Listing.find();
   const listingStrings = listings.map(x => JSON.stringify(x));
   await redis.lpush(listingCacheKey, ...listingStrings);
-  console.log(await redis.lrange(listingCacheKey, 0, -1));
 
   // Starts the server
   const app = await server.start({
