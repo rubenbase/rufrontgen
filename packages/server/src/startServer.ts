@@ -7,8 +7,9 @@ import connectRedis = require("connect-redis");
 import express = require("express");
 import { createTypeormConn } from "./utils/createTypeormConn";
 import { User } from "./models/User";
-import { redisSessionPrefix } from "./constants";
+import { redisSessionPrefix, listingCacheKey } from "./constants";
 import { createTestConn } from "./utils/testing/createTestConn";
+import { Listing } from "./models/Listing";
 
 const SESSION_SECRET = "sdbvsahvasv";
 const RedisStore = connectRedis(session);
@@ -81,12 +82,19 @@ export const startServer = async () => {
 
   // Creates TypeORM connection
   if (process.env.NODE_ENV === "test") {
-    // await createTestConn(true);
     await createTestConn(true);
   } else {
     const conn = await createTypeormConn();
     await conn.runMigrations();
   }
+
+  // clear cache
+  await redis.del(listingCacheKey);
+  // fill cache
+  const listings = await Listing.find();
+  const listingStrings = listings.map(x => JSON.stringify(x));
+  await redis.lpush(listingCacheKey, ...listingStrings);
+  console.log(await redis.lrange(listingCacheKey, 0, -1));
 
   // Starts the server
   const app = await server.start({
