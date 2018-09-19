@@ -1,0 +1,2 @@
+-- Approach 2 for populating the db can be done via sql command
+-- psql dbname < mock.sql  

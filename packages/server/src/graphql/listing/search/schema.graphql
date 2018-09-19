@@ -1,0 +1,7 @@
+input SearchListingInput {
+  guests: Int
+}
+
+type Query {
+  searchListings(input: SearchListingInput): [Listing!]!
+}
