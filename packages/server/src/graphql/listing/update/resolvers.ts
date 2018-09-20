@@ -3,7 +3,6 @@ import { ResolverMap } from "../../../types/graphql-utils";
 import { Listing } from "../../../models/Listing";
 import { processUpload } from "../shared/processUpload";
 import { getConnection } from "typeorm";
-import { listingCacheKey } from "../../../constants";
 
 export const resolvers: ResolverMap = {
   Mutation: {

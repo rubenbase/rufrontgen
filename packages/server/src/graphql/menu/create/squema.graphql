@@ -1,0 +1,7 @@
+input CreateMenuInput {
+  name: String!
+}
+
+type Mutation {
+  createMenu(input: CreateMenuInput!): Boolean!
+}
