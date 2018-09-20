@@ -55,7 +55,6 @@ const siteConfig = {
     apiKey: "0f9f28b9ab9efae89810921a351753b5",
     indexName: "github"
   },
-
   markdownPlugins: [
     function foo(md) {
       md.renderer.rules.fence_custom.foo = function(

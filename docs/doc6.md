@@ -1,3 +1,8 @@
+---
+id: doc6
+title: This is document number 6
+---
+
 Flow
 
 (master) git pull origin master
