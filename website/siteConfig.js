@@ -9,7 +9,7 @@ const users = [
 
 const siteConfig = {
   title: "Rufrontgen",
-  tagline: "Generate websites and mobile apps!",
+  tagline: "Generate websites and mobile apps.",
   url: "https://docusaurus.io",
   baseUrl: "/",
   // For github.io type URLS, you would combine the URL and baseUrl like:
