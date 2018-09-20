@@ -1,7 +1,7 @@
 input SearchListingInput {
   name: String
   category: String
-  price: Number
+  price: Int
 }
 
 type Query {
