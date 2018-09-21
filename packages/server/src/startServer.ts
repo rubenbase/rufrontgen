@@ -7,9 +7,8 @@ import connectRedis = require("connect-redis");
 import express = require("express");
 import { createTypeormConn } from "./utils/createTypeormConn";
 import { User } from "./models/User";
-import { redisSessionPrefix, listingCacheKey } from "./constants";
+import { redisSessionPrefix } from "./constants";
 import { createTestConn } from "./utils/testing/createTestConn";
-import { Listing } from "./models/Listing";
 
 const SESSION_SECRET = "sdbvsahvasv";
 const RedisStore = connectRedis(session);
@@ -90,11 +89,11 @@ export const startServer = async () => {
 
   // TODO: Remove this cache part in case we want to implement other cache solution
   // clear cache
-  await redis.del(listingCacheKey);
+  // await redis.del(listingCacheKey);
   // fill cache
-  const listings = await Listing.find();
-  const listingStrings = listings.map(x => JSON.stringify(x));
-  await redis.lpush(listingCacheKey, ...listingStrings);
+  // const listings = await Listing.find();
+  // const listingStrings = listings.map(x => JSON.stringify(x));
+  // await redis.lpush(listingCacheKey, ...listingStrings);
 
   // Starts the server
   const app = await server.start({
