@@ -2,7 +2,7 @@ import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthRoute } from "@rufrontgen/controller";
 import { LegalConnector } from "modules/legal/LegalConnector";
-import { HomeView } from "modules/home/ui/HomeView";
+import HomeView from "modules/home/ui/HomeView";
 import LoginScreen from "screens/LoginScreen";
 import RegisterScreen from "screens/RegisterScreen";
 import ForgotPasswordScreen from "screens/ForgotPasswordScreen";

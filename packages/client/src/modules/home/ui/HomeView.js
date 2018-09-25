@@ -3,6 +3,8 @@ import { Menu, Input, Card, List, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
 import { Logo } from "./Logo";
 import { SubscribeForm } from "../../subscribeForm/index";
+import { graphql, compose } from "react-apollo";
+import getCurrentLanguage from "graphql/State/getCurrentLanguage";
 
 const SubMenu = Menu.SubMenu;
 
@@ -20,10 +22,15 @@ const data2 = [
 
 const { Meta } = Card;
 
-export class HomeView extends React.PureComponent {
+class HomeView extends React.PureComponent {
   render() {
+    const {
+      currentLanguage: { currentLanguage }
+    } = this.props;
+
     return (
       <div>
+        {console.log(currentLanguage)}
         <div
           className="jumbotron"
           style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
@@ -151,3 +158,12 @@ export class HomeView extends React.PureComponent {
     );
   }
 }
+
+export default compose(
+  graphql(getCurrentLanguage, {
+    props: ({ data: { currentLanguage, loading } }) => ({
+      currentLanguage,
+      loading
+    })
+  })
+)(HomeView);

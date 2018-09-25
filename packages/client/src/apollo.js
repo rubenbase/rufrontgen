@@ -12,7 +12,7 @@ const cache = new InMemoryCache();
 // Creates the default global state
 const defaultState = {
   currentLanguage: {
-    __typename: "CURRENT_LANGUAGE",
+    __typename: "currentLanguage",
     currentLanguage: "es"
   }
 };
