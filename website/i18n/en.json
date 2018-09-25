@@ -3,87 +3,38 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Create web and mobile apps in seconds",
+    "tagline": "Generate websites and mobile apps.",
     "docs": {
-      "api": {
-        "title": "API"
+      "doc1": {
+        "title": "Latin-ish",
+        "sidebar_label": "Example Page"
       },
-      "browser": {
-        "title": "Browser"
+      "doc2": {
+        "title": "document number 2"
       },
-      "cli": {
-        "title": "CLI"
+      "doc3": {
+        "title": "This is document number 3"
       },
-      "comparison": {
-        "title": "Prettier vs. Linters"
+      "doc6": {
+        "title": "This is document number 6"
       },
-      "configuration": {
-        "title": "Configuration File"
+      "doc4": {
+        "title": "Other Document"
       },
-      "editors": {
-        "title": "Editor Integration"
-      },
-      "eslint": {
-        "title": "Integrating with ESLint"
-      },
-      "ignore": {
-        "title": "Ignoring Code"
-      },
-      "index": {
-        "title": "What is Prettier?"
-      },
-      "install": {
-        "title": "Install"
-      },
-      "language-support": {
-        "title": "Language Support"
-      },
-      "option-philosophy": {
-        "title": "Option Philosophy"
-      },
-      "options": {
-        "title": "Options"
-      },
-      "plugins": {
-        "title": "Plugins (Beta)"
-      },
-      "precommit": {
-        "title": "Pre-commit Hook"
-      },
-      "rationale": {
-        "title": "Rationale"
-      },
-      "related-projects": {
-        "title": "Related Projects"
-      },
-      "technical-details": {
-        "title": "Technical Details"
-      },
-      "vim": {
-        "title": "Vim Setup"
-      },
-      "watching-files": {
-        "title": "Watching For Changes"
-      },
-      "webstorm": {
-        "title": "WebStorm Setup"
-      },
-      "why-prettier": {
-        "title": "Why Prettier?"
+      "doc5": {
+        "title": "Fifth Document"
       }
     },
     "links": {
-      "About": "About",
-      "Usage": "Usage",
-      "Blog": "Blog",
-      "GitHub": "GitHub"
+      "Docs": "Docs",
+      "API": "API",
+      "Help": "Help",
+      "Blog": "Blog"
     },
     "categories": {
-      "About": "About",
-      "Usage": "Usage",
-      "Configuring Prettier": "Configuring Prettier",
-      "Editors": "Editors",
-      "Misc": "Misc"
+      "Docusaurus": "Docusaurus",
+      "First Category": "First Category",
+      "Second Category": "Second Category"
     }
   },
   "pages-strings": {

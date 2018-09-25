@@ -1,26 +1,10 @@
 {
   "docs": {
-    "About": [
-      "index",
-      "why-prettier",
-      "comparison",
-      "language-support",
-      "option-philosophy",
-      "rationale"
-    ],
-    "Usage": [
-      "install",
-      "cli",
-      "api",
-      "browser",
-      "plugins",
-      "precommit",
-      "watching-files",
-      "eslint",
-      "ignore"
-    ],
-    "Configuring Prettier": ["options", "configuration"],
-    "Editors": ["editors", "webstorm", "vim"],
-    "Misc": ["technical-details", "related-projects"]
+    "Docusaurus": ["doc1"],
+    "First Category": ["doc2"],
+    "Second Category": ["doc3", "doc6"]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
   }
 }
