@@ -20,7 +20,14 @@ const defaultState = {
 // Links the state
 const stateLink = withClientState({
   cache,
-  defaults: defaultState
+  defaults: defaultState,
+  resolvers: {
+    Mutation: {
+      updateLanguage: (_, { index, value }, { cache }) => {
+        console.log(index, value);
+      }
+    }
+  }
 });
 
 // Creates the http link

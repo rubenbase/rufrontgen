@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 import { SubscribeForm } from "../../subscribeForm/index";
 import { graphql, compose } from "react-apollo";
 import getCurrentLanguage from "graphql/State/getCurrentLanguage";
+import setCurrentLanguage from "graphql/State/setCurrentLanguage";
 
 const SubMenu = Menu.SubMenu;
 
@@ -25,12 +26,25 @@ const { Meta } = Card;
 class HomeView extends React.PureComponent {
   render() {
     const {
+      setCurrentLanguage,
       currentLanguage: { currentLanguage }
     } = this.props;
 
     return (
       <div>
         {console.log(currentLanguage)}
+        <button
+          onClick={() =>
+            setCurrentLanguage({
+              variables: {
+                index: "currentLanguage",
+                value: currentLanguage + "S"
+              }
+            })
+          }
+        >
+          Cambiar lenguage !!!!!!!!!!
+        </button>
         <div
           className="jumbotron"
           style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
@@ -160,6 +174,7 @@ class HomeView extends React.PureComponent {
 }
 
 export default compose(
+  graphql(setCurrentLanguage, { name: "setCurrentLanguage" }),
   graphql(getCurrentLanguage, {
     props: ({ data: { currentLanguage, loading } }) => ({
       currentLanguage,
