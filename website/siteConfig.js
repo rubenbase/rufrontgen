@@ -1,89 +1,97 @@
-"use strict";
-
-// Docs: https://docusaurus.io/docs/en/site-config.html
-
-const parseYaml = require("js-yaml").safeLoad;
-const path = require("path");
-const fs = require("fs");
-const PACKAGE = {
-  name: "rufrontgen",
-  homepage: "https://rubenbase.github.io/rufrontgen/",
-  repository: "rubenbase/rufrontgen"
-};
-const GITHUB_URL = `https://github.com/${PACKAGE.repository}`;
-
-function loadYaml(fsPath) {
-  return parseYaml(fs.readFileSync(path.join(__dirname, fsPath), "utf8"));
-}
-
-const users = loadYaml("./data/users.yml");
-const editors = loadYaml("./data/editors.yml");
-const supportedLanguages = loadYaml("./data/languages.yml");
+const users = [
+  {
+    caption: "Usera1",
+    image: "/test-site/img/docusaurus.svg",
+    infoLink: "https://www.example.com",
+    pinned: true
+  }
+];
 
 const siteConfig = {
   title: "Rufrontgen",
-  tagline: "Create web and mobile apps in seconds",
-  githubUrl: GITHUB_URL,
-  url: PACKAGE.homepage,
-  baseUrl: "/",
-  projectName: PACKAGE.name,
-  repo: PACKAGE.repository,
-  cname: "prettier.io",
-  users,
-  editors,
-  supportedLanguages,
-  /* base url for editing docs, usage example: editUrl + 'en/doc1.md' */
-  editUrl: `${GITHUB_URL}/edit/master/docs/`,
+  tagline: "Generate websites and mobile apps.",
+  url: "https://rubenbase.github.io",
+  baseUrl: "/rufrontgen/",
+  // For github.io type URLS, you would combine the URL and baseUrl like:
+  // url: 'https://reasonml.github.io',
+  // baseUrl: '/reason-react/',
+  defaultVersionShown: "1.0.0",
+  organizationName: "rubenbase",
+  projectName: "rufrontgen",
+  noIndex: false,
+  // Add custom scripts here that would be placed in <script> tags.
+  scripts: ["https://buttons.github.io/buttons.js"],
+
+  // On page navigation for the current documentation page.
+  onPageNav: "separate",
+  // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: "index", label: "About" },
-    { doc: "install", label: "Usage" },
-    { blog: true, label: "Blog" },
+    { doc: "doc1", label: "Docs" },
+    { doc: "doc4", label: "API" },
+    { page: "help", label: "Help" },
     { search: true },
-    { href: GITHUB_URL, label: "GitHub" }
+    { blog: true, label: "Blog" }
   ],
-  /* path to images for header/footer */
-  headerIcon: "icon.png",
-  footerIcon: "icon.png",
-  favicon: "icon.png",
-  /* colors for website */
+
+  headerIcon: "img/docusaurus.svg",
+  favicon: "img/favicon.png",
   colors: {
-    primaryColor: "#1A2B34",
-    secondaryColor: "#808080"
+    primaryColor: "#8e44ad",
+    secondaryColor: "#8e44ad"
   },
+  editUrl: "https://github.com/rubenbase/rufrontgen/edit/master/docs/",
+  // Users variable set above
+  users,
+  disableHeaderTitle: false,
+  disableTitleTagline: false,
   highlight: {
+    // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: "default"
   },
-  useEnglishUrl: true,
-  scripts: ["https://buttons.github.io/buttons.js"],
-  stylesheets: [
-    "//unpkg.com/@sandhose/prettier-animated-logo@1.0.3/dist/wide.css"
-  ],
+  separateCss: ["static/css/non-docusaurus", "static/assets/separate-css"],
+  footerIcon: "img/docusaurus.svg",
+  translationRecruitingLink: "https://crowdin.com/project/docusaurus",
   algolia: {
-    apiKey: process.env.ALGOLIA_PRETTIER_API_KEY,
-    indexName: "prettier"
+    apiKey: "0f9f28b9ab9efae89810921a351753b5",
+    indexName: "github"
   },
   markdownPlugins: [
-    // ignore `<!-- prettier-ignore -->` before passing into Docusaurus to avoid mis-parsing (#3322)
-    md => {
-      md.block.ruler.before(
-        "htmlblock",
-        "prettierignore",
-        (state, startLine) => {
-          const pos = state.bMarks[startLine];
-          const max = state.eMarks[startLine];
-          if (/<!-- prettier-ignore -->/.test(state.src.slice(pos, max))) {
-            state.line += 1;
-            return true;
-          }
-          return false;
-        }
-      );
+    function foo(md) {
+      md.renderer.rules.fence_custom.foo = function(
+        tokens,
+        idx,
+        options,
+        env,
+        instance
+      ) {
+        return '<div class="foo">bar</div>';
+      };
     }
   ],
-  separateCss: ["static/separate-css"],
-  gaTrackingId: "UA-111350464-1",
-  twitter: true,
-  onPageNav: "separate"
+  scripts: [
+    "https://docusaurus.io/slash.js",
+    {
+      src:
+        "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
+      async: true
+    }
+  ],
+  stylesheets: [
+    "https://docusaurus.io/style.css",
+    {
+      href: "http://css.link",
+      type: "text/css"
+    }
+  ],
+  // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
+  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+
+  ogImage: "img/docusaurus.png",
+  cleanUrl: true,
+  scrollToTop: true,
+  scrollToTopOptions: {
+    zIndex: 100
+  }
 };
 
 module.exports = siteConfig;

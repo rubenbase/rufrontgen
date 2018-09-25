@@ -1,7 +1,0 @@
-input CreateCategoryInput {
-  name: String!
-}
-
-type Mutation {
-  createCategory(input: CreateCategoryInput!): Boolean!
-}
