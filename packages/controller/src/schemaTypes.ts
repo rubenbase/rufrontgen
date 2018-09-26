@@ -65,6 +65,22 @@ export interface CreateListingMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateMenuMutation
+// ====================================================
+
+export interface CreateMenuMutation {
+  createMenu: boolean;
+}
+
+export interface CreateMenuMutationVariables {
+  name: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: CreateMessageMutation
 // ====================================================
 
@@ -92,7 +108,7 @@ export interface FindListingsQuery_findListings_owner {
 export interface FindListingsQuery_findListings {
   id: string;
   name: string;
-  pictureUrl: string;
+  pictureUrl: string | null;
   owner: FindListingsQuery_findListings_owner;
 }
 
@@ -232,7 +248,7 @@ export interface ViewListingQuery_viewListing {
   name: string;
   description: string;
   category: string;
-  pictureUrl: string;
+  pictureUrl: string | null;
   price: number;
   latitude: number;
   longitude: number;
