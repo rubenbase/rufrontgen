@@ -6,8 +6,11 @@ import { WebSocketLink } from "apollo-link-ws";
 import { getMainDefinition } from "apollo-utilities";
 import { withClientState } from "apollo-link-state";
 
-// Creates the default global state
+// Import the default global state
 import { defaultState } from "./defaultState";
+
+// Import the resolvers
+import { stateResolvers } from "./stateResolvers";
 
 // Creates the cache
 const cache = new InMemoryCache();
@@ -17,11 +20,7 @@ const stateLink = withClientState({
   cache,
   defaults: defaultState,
   resolvers: {
-    Mutation: {
-      updateLanguage: (_, { index, value }, { cache }) => {
-        console.log(index, value);
-      }
-    }
+    Mutation: stateResolvers
   }
 });
 
