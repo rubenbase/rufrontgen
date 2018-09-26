@@ -6,16 +6,11 @@ import { WebSocketLink } from "apollo-link-ws";
 import { getMainDefinition } from "apollo-utilities";
 import { withClientState } from "apollo-link-state";
 
+// Creates the default global state
+import { defaultState } from "./defaultState";
+
 // Creates the cache
 const cache = new InMemoryCache();
-
-// Creates the default global state
-const defaultState = {
-  currentLanguage: {
-    __typename: "currentLanguage",
-    currentLanguage: "es"
-  }
-};
 
 // Links the state
 const stateLink = withClientState({
