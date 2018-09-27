@@ -1,0 +1,7 @@
+type Menu {
+  id: ID!
+  name: String!
+}
+type Query {
+  findMenus: [Menu!]!
+}

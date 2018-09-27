@@ -1,8 +1,8 @@
 import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthRoute } from "@rufrontgen/controller";
-import { LegalConnector } from "modules/legal/LegalConnector";
-import { HomeView } from "modules/home/ui/HomeView";
+import { LegalConnector } from "../modules/legal/LegalConnector";
+import { HomeView } from "../modules/home/ui/HomeView";
 import LoginScreen from "screens/LoginScreen";
 import RegisterScreen from "screens/RegisterScreen";
 import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
@@ -11,6 +11,7 @@ import TextScreen from "screens/TextScreen";
 import CreateListingScreen from "screens/CreateListingScreen";
 import CreateMenuScreen from "screens/CreateMenuScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
+import FindMenusScreen from "screens/FindMenusScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
 import EditListingScreen from "screens/EditListingScreen";
 
@@ -53,6 +54,14 @@ export const Routes = () => (
         exact={true}
         path="/create-listing"
         component={CreateListingScreen}
+      />
+
+      <Route exact={true} path="/menus" component={FindMenusScreen} />
+
+      <AuthRoute
+        exact={true}
+        path="/create-menu"
+        component={CreateMenuScreen}
       />
 
       {/* Legal Routes */}

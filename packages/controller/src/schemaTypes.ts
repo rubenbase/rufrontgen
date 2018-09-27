@@ -121,6 +121,23 @@ export interface FindListingsQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: FindMenusQuery
+// ====================================================
+
+export interface FindMenusQuery_findMenus {
+  id: string;
+  name: string;
+}
+
+export interface FindMenusQuery {
+  findMenus: FindMenusQuery_findMenus[];
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: SendForgotPasswordEmailMutation
 // ====================================================
 

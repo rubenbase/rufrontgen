@@ -28,6 +28,12 @@ export interface CreateListingMutationVariables {
     longitude: number;
     amenities: string[];
 }
+export interface CreateMenuMutation {
+    createMenu: boolean;
+}
+export interface CreateMenuMutationVariables {
+    name: string;
+}
 export interface CreateMessageMutation {
     createMessage: boolean;
 }
@@ -41,11 +47,18 @@ export interface FindListingsQuery_findListings_owner {
 export interface FindListingsQuery_findListings {
     id: string;
     name: string;
-    pictureUrl: string;
+    pictureUrl: string | null;
     owner: FindListingsQuery_findListings_owner;
 }
 export interface FindListingsQuery {
     findListings: FindListingsQuery_findListings[];
+}
+export interface FindMenusQuery_findMenus {
+    id: string;
+    name: string;
+}
+export interface FindMenusQuery {
+    findMenus: FindMenusQuery_findMenus[];
 }
 export interface SendForgotPasswordEmailMutation {
     sendForgotPasswordEmail: boolean | null;
@@ -108,7 +121,7 @@ export interface ViewListingQuery_viewListing {
     name: string;
     description: string;
     category: string;
-    pictureUrl: string;
+    pictureUrl: string | null;
     price: number;
     latitude: number;
     longitude: number;
