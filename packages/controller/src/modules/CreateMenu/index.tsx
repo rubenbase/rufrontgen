@@ -19,7 +19,7 @@ export const createMenuMutation = gql`
   }
 `;
 
-export interface WithCreateListingProps {
+export interface WithCreateMenuProps {
   createMenu: (variables: CreateMenuMutationVariables) => void;
 }
 
@@ -27,7 +27,7 @@ export const withCreateMenu = graphql<
   any,
   CreateMenuMutation,
   CreateMenuMutationVariables,
-  WithCreateListingProps
+  WithCreateMenuProps
 >(createMenuMutation, {
   props: ({ mutate }) => ({
     createMenu: async variables => {

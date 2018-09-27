@@ -1,4 +1,4 @@
-import React from "../../../../../node_modules/@types/react/index";
+import React from "react";
 // import Page from "components/LayoutComponents/Page";
 import Helmet from "react-helmet";
 import CreateMenu from "./CreateMenu";

@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "antd";
-import MainMenu from "modules/LayoutComponents/MainMenu/index";
-import { CreateListingConnector } from "./CreateListingForm/createListingConnector";
-class CreateListing extends React.Component {
+import MainMenu from "../../../modules/LayoutComponents/MainMenu/index";
+import { CreateMenuConnector } from "./CreateMenuForm/createMenuConnector";
+class CreateMenu extends React.Component {
   render() {
     return (
       <div className="login login--fullscreen">
@@ -12,7 +12,7 @@ class CreateListing extends React.Component {
             <div className="col-xl-12">
               <div className="login__block__inner">
                 <div className="login__block__form">
-                  <CreateListingConnector />
+                  <CreateMenuConnector />
                 </div>
               </div>
             </div>
@@ -23,4 +23,4 @@ class CreateListing extends React.Component {
   }
 }
 
-export default CreateListing;
+export default CreateMenu;

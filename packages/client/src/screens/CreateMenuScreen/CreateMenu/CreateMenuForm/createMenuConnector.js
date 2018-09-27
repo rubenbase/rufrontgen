@@ -1,7 +1,8 @@
-import * as React from "../../../../../../../node_modules/@types/react/index";
+import * as React from "react";
 import { Form as AntForm, Button } from "antd";
-import { Form, Formik } from "formik";
+import { Form, Formik, Field } from "formik";
 import { withCreateMenu } from "@rufrontgen/controller";
+import { InputField } from "../../../../modules/shared/inputField";
 import "./ui/style.scss";
 
 const FormItem = AntForm.Item;
@@ -30,7 +31,6 @@ class C extends React.PureComponent {
           console.log(values) || (
             <Form style={{ display: "flex" }}>
               <div style={{ width: 400, margin: "auto" }}>
-                {pages[this.state.page]}
                 <React.Fragment>
                   <Field
                     label="Nombre"
