@@ -42,6 +42,22 @@ export interface ForgotPasswordChangeMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateDishMutation
+// ====================================================
+
+export interface CreateDishMutation {
+  createDish: boolean;
+}
+
+export interface CreateDishMutationVariables {
+  dish: DishInput;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: CreateListingMutation
 // ====================================================
 
@@ -252,6 +268,29 @@ export interface UpdateListingMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: ViewDishesQuery
+// ====================================================
+
+export interface ViewDishesQuery_dishes {
+  name: string;
+  description: string;
+  price: number;
+  menuId: string;
+}
+
+export interface ViewDishesQuery {
+  dishes: ViewDishesQuery_dishes[];
+}
+
+export interface ViewDishesQueryVariables {
+  menuId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ViewListingQuery
 // ====================================================
 
@@ -278,6 +317,27 @@ export interface ViewListingQuery {
 }
 
 export interface ViewListingQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewMenuQuery
+// ====================================================
+
+export interface ViewMenuQuery_viewMenu {
+  id: string;
+  name: string;
+}
+
+export interface ViewMenuQuery {
+  viewMenu: ViewMenuQuery_viewMenu | null;
+}
+
+export interface ViewMenuQueryVariables {
   id: string;
 }
 
@@ -341,6 +401,16 @@ export interface NewMessageSubscriptionVariables {
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+/**
+ * 
+ */
+export interface DishInput {
+  name: string;
+  description: string;
+  price: number;
+  MenuId: string;
+}
 
 /**
  * 

@@ -1,0 +1,10 @@
+input DishInput {
+  name: String!
+  description: String!
+  price: Int!
+  MenuId: String!
+}
+
+type Mutation {
+  createDish(dish: DishInput!): Boolean!
+}

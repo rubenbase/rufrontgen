@@ -1,0 +1,9 @@
+type Dish {
+  name: String!
+  description: String!
+  price: Int!
+  menuId: String!
+}
+type Query {
+  dishes(menuId: String!): [Dish!]!
+}

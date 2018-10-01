@@ -15,6 +15,12 @@ export interface ForgotPasswordChangeMutationVariables {
     newPassword: string;
     key: string;
 }
+export interface CreateDishMutation {
+    createDish: boolean;
+}
+export interface CreateDishMutationVariables {
+    dish: DishInput;
+}
 export interface CreateListingMutation {
     createListing: boolean;
 }
@@ -112,6 +118,18 @@ export interface UpdateListingMutationVariables {
     listingId: string;
     input: UpdateListingInput;
 }
+export interface ViewDishesQuery_dishes {
+    name: string;
+    description: string;
+    price: number;
+    menuId: string;
+}
+export interface ViewDishesQuery {
+    dishes: ViewDishesQuery_dishes[];
+}
+export interface ViewDishesQueryVariables {
+    menuId: string;
+}
 export interface ViewListingQuery_viewListing_owner {
     id: string;
     email: string;
@@ -132,6 +150,16 @@ export interface ViewListingQuery {
     viewListing: ViewListingQuery_viewListing | null;
 }
 export interface ViewListingQueryVariables {
+    id: string;
+}
+export interface ViewMenuQuery_viewMenu {
+    id: string;
+    name: string;
+}
+export interface ViewMenuQuery {
+    viewMenu: ViewMenuQuery_viewMenu | null;
+}
+export interface ViewMenuQueryVariables {
     id: string;
 }
 export interface ViewMessagesQuery_messages_user {
@@ -163,6 +191,15 @@ export interface NewMessageSubscription {
 }
 export interface NewMessageSubscriptionVariables {
     listingId: string;
+}
+/**
+ *
+ */
+export interface DishInput {
+    name: string;
+    description: string;
+    price: number;
+    MenuId: string;
 }
 /**
  *
