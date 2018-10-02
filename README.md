@@ -40,7 +40,7 @@ Now you're ready!
 - [x] Add subscriptions support
 - [x] Add roles/permissions
 - [x] Add storybook and stories
-- [ ] Add multiple language support
-- [ ] Update to apollo server 2.0
+- [x] Add multiple language support
+- [ ] Update to apollo server 2.0 `DOING`
 - [ ] Improve folder structure / Improve REST implementation / Improve data loaders system
 - [ ] Implement SSR
