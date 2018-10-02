@@ -35,13 +35,12 @@ Also, you will need to install redis and create a .env file on the server and cl
 
 Now you're ready!
 
+## ☑ TODO
 
-## ☑ TODO 
-
-- [X] Add subscriptions support
-- [X] Add roles/permissions
-- [X] Add storybook and stories
-- [ ] Add multiple language support
-- [ ] Update to apollo server 2.0 
-- [ ] Improve folder structure
+- [x] Add subscriptions support
+- [x] Add roles/permissions
+- [x] Add storybook and stories
+- [x] Add multiple language support
+- [ ] Update to apollo server 2.0 `DOING`
+- [ ] Improve folder structure / Improve REST implementation / Improve data loaders system
 - [ ] Implement SSR
