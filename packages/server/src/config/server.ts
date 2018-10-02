@@ -1,15 +1,12 @@
-// import { applyMiddleware } from "graphql-middleware";
+import { applyMiddleware } from "graphql-middleware";
 // import { GraphQLServer } from "graphql-yoga";
-// import { RedisPubSub } from "graphql-redis-subscriptions";
-
+import { RedisPubSub } from "graphql-redis-subscriptions";
 import { ApolloServer } from "apollo-server";
 
-// import { userLoader } from "./../loaders/UserLoader";
+import { userLoader } from "./../loaders/UserLoader";
 import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
-// import { middleware } from "../middlewares/middleware";
-
-// este estaba comentado
+import { middleware } from "../middlewares/middleware";
 // import { middlewareShield } from "../middlewares/shield";
 
 const redisDebugMode = false;
@@ -30,32 +27,34 @@ if (redisDebugMode) {
 }
 
 // Creates the GraphQL server
-const { typeDefs, resolvers } = genSchema() as any;
+const schema = genSchema() as any;
+applyMiddleware(schema, middleware);
+
+const pubsub = new RedisPubSub();
+
+const cors = {
+  credentials: true,
+  origin:
+    process.env.NODE_ENV === "test"
+      ? "*"
+      : (process.env.FRONTEND_HOST as string) // Depends on where the front-end is
+};
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers
+  schema,
+  context: ({ request, response }: { request: any; response: any }) => ({
+    redis,
+    // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
+    // url: request ?"http://localhost:4000",
+    url: request ? "http://localhost:4000" : "",
+    session: request ? request.session : undefined,
+    req: request,
+    res: response,
+    userLoader: userLoader(),
+    pubsub,
+    cors
+  })
 });
 
-// console.log("ALIBABA EL SCHEMA ES ====> ", schema);
-// applyMiddleware(schema, middleware);
-
-// const pubsub = new RedisPubSub();
-
-// const server = new GraphQLServer({
-//   schema,
-//   context: ({ request, response }) => ({
-//     redis,
-//     // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
-//     // url: request ?"http://localhost:4000",
-//     url: request ? "http://localhost:4000" : "",
-//     session: request ? request.session : undefined,
-//     req: request,
-//     res: response,
-//     userLoader: userLoader(),
-//     pubsub
-//   })
-// });
-
 module.exports.server = server;
-// module.exports.redis = redis;
+module.exports.redis = redis;

@@ -5,10 +5,10 @@ import "reflect-metadata";
 // import session = require("express-session");
 // import connectRedis = require("connect-redis");
 // import express = require("express");
-// import { createTypeormConn } from "./utils/createTypeormConn";
+import { createTypeormConn } from "./utils/createTypeormConn";
 // import { User } from "./models/User";
 // import { redisSessionPrefix } from "./constants";
-// import { createTestConn } from "./utils/testing/createTestConn";
+import { createTestConn } from "./utils/testing/createTestConn";
 
 // const SESSION_SECRET = "sdbvsahvasv";
 // const RedisStore = connectRedis(session);
@@ -18,22 +18,16 @@ export const startServer = async () => {
   const result = dotenv.config();
 
   if (result.error) {
-    console.log("ERROR: dotenv error.");
     throw result.error;
   }
 
   // GraphQL & Redis Configuration
-  // const { server, redis } = require("./config/server");
-  const { server } = require("./config/server");
-
-  server.listen().then(({ url }: { url: any }) => {
-    console.log(`🚀 Server ready at ${url}`);
-  });
+  const { server, redis } = require("./config/server");
 
   // Clears redis data for testing
-  // if (process.env.NODE_ENV === "test") {
-  //   await redis.flushall();
-  // }
+  if (process.env.NODE_ENV === "test") {
+    await redis.flushall();
+  }
 
   // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
   // app.enable("trust proxy");
@@ -71,14 +65,6 @@ export const startServer = async () => {
 
   // server.express.use("/images", express.static("images"));
 
-  // const cors = {
-  //   credentials: true,
-  //   origin:
-  //     process.env.NODE_ENV === "test"
-  //       ? "*"
-  //       : (process.env.FRONTEND_HOST as string) // Depends on where the front-end is
-  // };
-
   // Load express routes
   // const authRoute = require("./routes/authRoutes")(User, redis);
 
@@ -86,12 +72,12 @@ export const startServer = async () => {
   // server.express.use("/auth", authRoute);
 
   // Creates TypeORM connection
-  // if (process.env.NODE_ENV === "test") {
-  //   await createTestConn(true);
-  // } else {
-  //   const conn = await createTypeormConn();
-  //   await conn.runMigrations();
-  // }
+  if (process.env.NODE_ENV === "test") {
+    await createTestConn(true);
+  } else {
+    const conn = await createTypeormConn();
+    await conn.runMigrations();
+  }
 
   // TODO: Remove this cache part in case we want to implement other cache solution
   // clear cache
@@ -102,11 +88,9 @@ export const startServer = async () => {
   // await redis.lpush(listingCacheKey, ...listingStrings);
 
   // Starts the server
-  // const app = await server.start({
-  //   cors,
-  //   port: process.env.NODE_ENV === "test" ? 0 : 4000
-  // });
+  const app = await server.listen().then(({ url }: { url: any }) => {
+    console.log(`\n🚀  Server ready at ${url}`);
+  });
 
-  // console.log("\nServer is running! Go to http://localhost:4000");
-  // return app;
+  return app;
 };

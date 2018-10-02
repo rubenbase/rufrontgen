@@ -1,8 +1,8 @@
 import * as path from "path";
 import * as fs from "fs";
-import { gql } from "apollo-server";
 
 import { mergeTypes, mergeResolvers } from "merge-graphql-schemas";
+import { makeExecutableSchema } from "graphql-tools";
 import * as glob from "glob";
 
 export const genSchema = () => {
@@ -15,8 +15,8 @@ export const genSchema = () => {
     .sync(`${pathToModules}/**/resolvers.?s`)
     .map(resolver => require(resolver).resolvers);
 
-  return {
-    typeDefs: gql(mergeTypes(graphqlTypes)),
-    resolver: mergeResolvers(resolvers)
-  };
+  return makeExecutableSchema({
+    typeDefs: mergeTypes(graphqlTypes),
+    resolvers: mergeResolvers(resolvers)
+  });
 };
