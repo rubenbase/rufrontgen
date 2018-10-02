@@ -1,11 +1,15 @@
-import { applyMiddleware } from "graphql-middleware";
-import { GraphQLServer } from "graphql-yoga";
-import { RedisPubSub } from "graphql-redis-subscriptions";
+// import { applyMiddleware } from "graphql-middleware";
+// import { GraphQLServer } from "graphql-yoga";
+// import { RedisPubSub } from "graphql-redis-subscriptions";
 
-import { userLoader } from "./../loaders/UserLoader";
+import { ApolloServer } from "apollo-server";
+
+// import { userLoader } from "./../loaders/UserLoader";
 import { redis } from "./../redis";
 import { genSchema } from "../utils/genSchema";
-import { middleware } from "../middlewares/middleware";
+// import { middleware } from "../middlewares/middleware";
+
+// este estaba comentado
 // import { middlewareShield } from "../middlewares/shield";
 
 const redisDebugMode = false;
@@ -26,25 +30,32 @@ if (redisDebugMode) {
 }
 
 // Creates the GraphQL server
-const schema = genSchema() as any;
-applyMiddleware(schema, middleware);
+const { typeDefs, resolvers } = genSchema() as any;
 
-const pubsub = new RedisPubSub();
-
-const server = new GraphQLServer({
-  schema,
-  context: ({ request, response }) => ({
-    redis,
-    // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
-    // url: request ?"http://localhost:4000",
-    url: request ? "http://localhost:4000" : "",
-    session: request ? request.session : undefined,
-    req: request,
-    res: response,
-    userLoader: userLoader(),
-    pubsub
-  })
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
 });
 
+// console.log("ALIBABA EL SCHEMA ES ====> ", schema);
+// applyMiddleware(schema, middleware);
+
+// const pubsub = new RedisPubSub();
+
+// const server = new GraphQLServer({
+//   schema,
+//   context: ({ request, response }) => ({
+//     redis,
+//     // P22 uncomment this when going to production url: request.protocol + "://" + request.get("host"),
+//     // url: request ?"http://localhost:4000",
+//     url: request ? "http://localhost:4000" : "",
+//     session: request ? request.session : undefined,
+//     req: request,
+//     res: response,
+//     userLoader: userLoader(),
+//     pubsub
+//   })
+// });
+
 module.exports.server = server;
-module.exports.redis = redis;
+// module.exports.redis = redis;

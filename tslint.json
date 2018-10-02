@@ -9,6 +9,7 @@
     "ordered-imports": false,
     "interface-name": false,
     "no-submodule-imports": false,
+    "no-shadowed-variable": false,
     "jsx-no-lambda": false
   },
   "rulesDirectory": []
