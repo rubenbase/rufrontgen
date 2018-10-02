@@ -61,15 +61,13 @@ const messages = {
   es: messages_es,
   en: messages_en
 };
+
 addLocaleData([...locale_en, ...locale_es]);
 
 ReactDOM.render(
   <IntlProvider locale={language} messages={messages[language]}>
     <ApolloProvider client={client}>
-      <FormattedMessage
-        id="app.title"
-        defaultMessage="It's a beautiful day outside."
-      />
+      <FormattedMessage id="app.title" defaultMessage="Welcome to Rufrontgen" />
       <Routes />
     </ApolloProvider>
   </IntlProvider>,
