@@ -13,20 +13,34 @@ class C extends React.PureComponent {
   };
 
   submit = async (values, { setSubmitting }) => {
-    await this.props.createMenu(values);
+    const dish = {
+      MenuId:this.menuId,
+      ...values
+    }
+    alert(JSON.stringify(dish));
+    await this.props.createDish(dish);
     setSubmitting(false);
   };
 
 
   render() {
+    const {
+      match: {
+        params: { menuId }
+      }
+    } = this.props;
     return (
       <Formik
         initialValues={{
-          name: ""
+          name: "",
+          description: "",
+          price: 0,
+          MenuId: menuId
         }}
         onSubmit={this.submit}
       >
         {({ isSubmitting, values }) =>
+        
           console.log(values) || (
             <Form style={{ display: "flex" }}>
               <div style={{ width: 400, margin: "auto" }}>
@@ -34,6 +48,18 @@ class C extends React.PureComponent {
                   <Field
                     label="Nombre"
                     name="name"
+                    placeholder="Escribe el nombre del concurso."
+                    component={InputField}
+                  />
+                  <Field
+                    label="Nombre"
+                    name="description"
+                    placeholder="Escribe el nombre del concurso."
+                    component={InputField}
+                  />
+                  <Field
+                    label="Nombre"
+                    name="price"
                     placeholder="Escribe el nombre del concurso."
                     component={InputField}
                   />
@@ -58,8 +84,7 @@ class C extends React.PureComponent {
                 </FormItem>
               </div>
             </Form>
-          )
-        }
+          )}
       </Formik>
     );
   }

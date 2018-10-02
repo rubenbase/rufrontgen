@@ -40,12 +40,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
-export var createDishMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nmutation CreateDishMutation($dish: DishInput!) {\n  createDish(dish: $dish)\n}\n"], ["\nmutation CreateDishMutation($dish: DishInput!) {\n  createDish(dish: $dish)\n}\n"])));
+export var createDishMutation = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\nmutation CreateDishMutation(  $name: String!\n  $description: String!\n  $price: Int!\n  $MenuId: String!) {\n  createDish( input: {\n    name: $name,\n    description: $description, \n    price: $price,\n    menuId: $MenuId\n  }\n  )\n}\n"], ["\nmutation CreateDishMutation(  $name: String!\n  $description: String!\n  $price: Int!\n  $MenuId: String!) {\n  createDish( input: {\n    name: $name,\n    description: $description, \n    price: $price,\n    menuId: $MenuId\n  }\n  )\n}\n"])));
 export var withCreateDish = graphql(createDishMutation, {
     props: function (_a) {
         var mutate = _a.mutate;
         return ({
-            createMenu: function (variables) { return __awaiter(_this, void 0, void 0, function () {
+            createDish: function (variables) { return __awaiter(_this, void 0, void 0, function () {
                 var response;
                 return __generator(this, function (_a) {
                     switch (_a.label) {

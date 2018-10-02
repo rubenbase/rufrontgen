@@ -21,13 +21,13 @@ export interface WithViewDishes {
 }
 
 export class ViewDishes extends React.PureComponent<{
-  listingId: string;
+  menuId: string;
   children: (data: WithViewDishes) => JSX.Element | null;
 }> {
   render() {
-    const { children, listingId } = this.props;
+    const { children, menuId } = this.props;
     return (
-      <Query query={viewDishesQuery} variables={{ listingId }}>
+      <Query query={viewDishesQuery} variables={{ menuId }}>
         {({ data, loading, subscribeToMore }) => {
           let dishes: ViewDishesQuery_dishes[] = [];
 

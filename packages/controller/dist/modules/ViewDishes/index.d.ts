@@ -6,7 +6,7 @@ export interface WithViewDishes {
     loading: boolean;
 }
 export declare class ViewDishes extends React.PureComponent<{
-    listingId: string;
+    menuId: string;
     children: (data: WithViewDishes) => JSX.Element | null;
 }> {
     render(): JSX.Element;

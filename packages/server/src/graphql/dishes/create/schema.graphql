@@ -2,9 +2,9 @@ input DishInput {
   name: String!
   description: String!
   price: Int!
-  MenuId: String!
+  menuId: String!
 }
 
 type Mutation {
-  createDish(dish: DishInput!): Boolean!
+  createDish(input: DishInput!): Boolean!
 }

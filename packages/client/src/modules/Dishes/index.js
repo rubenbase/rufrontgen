@@ -14,6 +14,7 @@ export class DishConnector extends React.PureComponent {
     return (
       <ViewDishes menuId={menuId}>
         {({ loading, dishes }) => {
+          alert(JSON.stringify(menuId))
           if (loading) {
             return <div>...loading</div>;
           }
@@ -21,7 +22,7 @@ export class DishConnector extends React.PureComponent {
           return (
             <div>
                {dishes.map((d, i) => (
-                <div key={`${i}-lm`}>{d.text}</div>
+                <div key={`${i}-lm`}>{d.name}</div>
               ))} 
               <div>
                 <Link to={`/menu/${menuId}/edit`}>edit</Link>

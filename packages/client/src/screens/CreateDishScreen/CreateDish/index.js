@@ -1,9 +1,10 @@
 import React from "react";
-import { Button } from "antd";
 import MainMenu from "../../../modules/LayoutComponents/MainMenu/index";
-import { CreateDishConnector } from "./CreateMenuForm/createDishConnector";
+import { CreateDishConnector } from "./CreateDishForm/createDishConnector";
 class CreateDish extends React.Component {
+  
   render() {
+
     return (
       <div className="login login--fullscreen">
         <MainMenu />
@@ -12,7 +13,7 @@ class CreateDish extends React.Component {
             <div className="col-xl-12">
               <div className="login__block__inner">
                 <div className="login__block__form">
-                  <CreateDishConnector />
+                  <CreateDishConnector {...this.props}/>
                 </div>
               </div>
             </div>
@@ -23,4 +24,4 @@ class CreateDish extends React.Component {
   }
 }
 
-export default CreateMenu;
+export default CreateDish;

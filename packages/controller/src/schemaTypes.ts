@@ -50,7 +50,10 @@ export interface CreateDishMutation {
 }
 
 export interface CreateDishMutationVariables {
-  dish: DishInput;
+  name: string;
+  description: string;
+  price: number;
+  MenuId: string;
 }
 
 
@@ -401,16 +404,6 @@ export interface NewMessageSubscriptionVariables {
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
-
-/**
- * 
- */
-export interface DishInput {
-  name: string;
-  description: string;
-  price: number;
-  MenuId: string;
-}
 
 /**
  * 

@@ -19,7 +19,10 @@ export interface CreateDishMutation {
     createDish: boolean;
 }
 export interface CreateDishMutationVariables {
-    dish: DishInput;
+    name: string;
+    description: string;
+    price: number;
+    MenuId: string;
 }
 export interface CreateListingMutation {
     createListing: boolean;
@@ -191,15 +194,6 @@ export interface NewMessageSubscription {
 }
 export interface NewMessageSubscriptionVariables {
     listingId: string;
-}
-/**
- *
- */
-export interface DishInput {
-    name: string;
-    description: string;
-    price: number;
-    MenuId: string;
 }
 /**
  *

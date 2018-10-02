@@ -1,7 +1,7 @@
 import React from "react";
 // import Page from "components/LayoutComponents/Page";
 import Helmet from "react-helmet";
-import CreateMenu from "./CreateMenu";
+import CreateDish from "./CreateDish";
 
 class CreateDishScreen extends React.Component {
   static defaultProps = {

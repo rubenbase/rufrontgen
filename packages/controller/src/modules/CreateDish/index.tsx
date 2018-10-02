@@ -8,13 +8,22 @@ import {
 } from "../../schemaTypes";
 
 export const createDishMutation = gql`
-mutation CreateDishMutation($dish: DishInput!) {
-  createDish(dish: $dish)
+mutation CreateDishMutation(  $name: String!
+  $description: String!
+  $price: Int!
+  $MenuId: String!) {
+  createDish( input: {
+    name: $name,
+    description: $description, 
+    price: $price,
+    menuId: $MenuId
+  }
+  )
 }
 `;
 
 export interface WithCreateDishProps {
-  createMenu: (variables: CreateDishMutationVariables) => void;
+  createDish: (variables: CreateDishMutationVariables) => void;
 }
 
 export const withCreateDish = graphql<
@@ -24,7 +33,7 @@ export const withCreateDish = graphql<
   WithCreateDishProps
 >(createDishMutation, {
   props: ({ mutate }) => ({
-    createMenu: async variables => {
+    createDish: async variables => {
       if (!mutate) {
         return;
       }

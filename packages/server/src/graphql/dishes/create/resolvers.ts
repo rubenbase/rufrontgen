@@ -1,18 +1,16 @@
-import { PUBSUB_NEW_MESSAGE } from "./../../../constants";
 import { ResolverMap } from "../../../types/graphql-utils";
 import { Dish } from "../../../models/Dish";
 
 export const resolvers: ResolverMap = {
   Mutation: {
-    createDish: async (_, { dish }, { session, pubsub }) => {
-      const dbDish = await Dish.create({
-        ...dish,
-        userId: session.userId
+    createDish: async (_, { input: { ...data } }) => {
+      await Dish.create({
+        ...data
       }).save();
 
-      pubsub.publish(PUBSUB_NEW_MESSAGE, {
+    /*  pubsub.publish(PUBSUB_NEW_MESSAGE, {
         newDish: dbDish
-      });
+      });*/
 
       return true;
     }

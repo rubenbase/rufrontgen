@@ -23,8 +23,8 @@ var ViewDishes = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ViewDishes.prototype.render = function () {
-        var _a = this.props, children = _a.children, listingId = _a.listingId;
-        return (React.createElement(Query, { query: viewDishesQuery, variables: { listingId: listingId } }, function (_a) {
+        var _a = this.props, children = _a.children, menuId = _a.menuId;
+        return (React.createElement(Query, { query: viewDishesQuery, variables: { menuId: menuId } }, function (_a) {
             var data = _a.data, loading = _a.loading, subscribeToMore = _a.subscribeToMore;
             var dishes = [];
             if (data && data.dishes) {
