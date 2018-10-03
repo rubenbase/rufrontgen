@@ -1,12 +1,15 @@
 import * as React from "react";
 import { LogoutController } from "@rufrontgen/controller";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, Redirect } from "react-router-dom";
 
 import CallLogout from "./callLogout";
 
 export default class Logout extends React.PureComponent {
   onFinish = () => {
-    this.props.history.push("/");
+    window.location.replace("/");
+
+    // TODO: Check why this.props.history breaks the store
+    // this.props.history.push("/");
   };
 
   render() {

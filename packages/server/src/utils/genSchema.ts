@@ -1,5 +1,6 @@
 import * as path from "path";
 import * as fs from "fs";
+
 import { mergeTypes, mergeResolvers } from "merge-graphql-schemas";
 import { makeExecutableSchema } from "graphql-tools";
 import * as glob from "glob";
