@@ -121,6 +121,13 @@ export interface UpdateListingMutationVariables {
     listingId: string;
     input: UpdateListingInput;
 }
+export interface UpdateMenuMutation {
+    updateMenu: boolean;
+}
+export interface UpdateMenuMutationVariables {
+    menuId: string;
+    input: UpdateMenuInput;
+}
 export interface ViewDishesQuery_dishes {
     name: string;
     description: string;
@@ -215,4 +222,10 @@ export interface UpdateListingInput {
     latitude?: number | null;
     longitude?: number | null;
     amenities?: string[] | null;
+}
+/**
+ *
+ */
+export interface UpdateMenuInput {
+    name?: string | null;
 }

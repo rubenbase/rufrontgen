@@ -14,6 +14,7 @@ export * from "./modules/CreateMenu";
 export * from "./modules/ViewMenu";
 export * from "./modules/CreateDish";
 export * from "./modules/ViewDishes";
+export * from "./modules/UpdateMenu";
 export * from "./modules/CreateMessage";
 export * from "./schemaTypes";
 export * from "./modules/Auth/AuthRoute";

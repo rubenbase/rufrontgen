@@ -271,6 +271,23 @@ export interface UpdateListingMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateMenuMutation
+// ====================================================
+
+export interface UpdateMenuMutation {
+  updateMenu: boolean;
+}
+
+export interface UpdateMenuMutationVariables {
+  menuId: string;
+  input: UpdateMenuInput;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ViewDishesQuery
 // ====================================================
 
@@ -426,6 +443,13 @@ export interface UpdateListingInput {
   latitude?: number | null;
   longitude?: number | null;
   amenities?: string[] | null;
+}
+
+/**
+ * 
+ */
+export interface UpdateMenuInput {
+  name?: string | null;
 }
 
 //==============================================================

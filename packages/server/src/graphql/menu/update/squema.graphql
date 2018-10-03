@@ -1,0 +1,7 @@
+input UpdateMenuInput {
+  name: String
+}
+
+type Mutation {
+  updateMenu(menuId: String!, input: UpdateMenuInput!): Boolean!
+}

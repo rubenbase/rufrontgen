@@ -15,6 +15,7 @@ import FindMenusScreen from "screens/FindMenusScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
 import ViewMenuScreen from "screens/ViewMenuScreen";
 import EditListingScreen from "screens/EditListingScreen";
+import EditMenuScreen from "screens/EditMenuScreen";
 import CreateDishScreen from "screens/CreateDishScreen";
 
 import Logout from "modules/logout";
@@ -70,6 +71,11 @@ export const Routes = () => (
         path="/menu/:menuId/create-dish"
         component={CreateDishScreen}
         />
+      <AuthRoute
+        exact={true}
+        path="/menu/:menuId/edit"
+        component={EditMenuScreen}
+      />
       <AuthRoute
         exact={true}
         path="/create-menu"
