@@ -25,6 +25,7 @@ const { Meta } = Card;
 
 class HomeView extends React.PureComponent {
   render() {
+    console.log("ALIBABA HOME THIS PROPS ARE ===> ", this.props);
     const {
       setCurrentLanguage,
       currentLanguage: { currentLanguage }
@@ -43,7 +44,7 @@ class HomeView extends React.PureComponent {
             })
           }
         >
-          Cambiar lenguage !!!!!!!!!!
+          Change global state
         </button>
         <div
           className="jumbotron"
@@ -176,9 +177,10 @@ class HomeView extends React.PureComponent {
 export default compose(
   graphql(setCurrentLanguage, { name: "setCurrentLanguage" }),
   graphql(getCurrentLanguage, {
-    props: ({ data: { currentLanguage, loading } }) => ({
+    props: ({ data: { currentLanguage, loading, error } }) => ({
       currentLanguage,
-      loading
+      loading,
+      error
     })
   })
 )(HomeView);

@@ -1,4 +1,4 @@
-import { withFilter } from "graphql-yoga";
+import { withFilter } from "graphql-subscriptions";
 import { PUBSUB_NEW_MESSAGE } from "./../../../constants";
 import { ResolverMap } from "../../../types/graphql-utils";
 
