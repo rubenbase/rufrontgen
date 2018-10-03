@@ -2,7 +2,7 @@ import * as React from "react";
 import { withFormik, FormikProps, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
-import { InputField } from "modules/shared/inputField";
+import { InputField } from "containers/shared/inputField";
 
 const FormItem = FormA.Item;
 

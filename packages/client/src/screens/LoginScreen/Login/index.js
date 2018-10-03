@@ -1,8 +1,8 @@
 import React from "react";
 import LoginConnector from "./LoginForm/loginConnector";
 import "./style.scss";
-import FooterView from "modules/footer/ui/FooterView";
-import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
+import FooterView from "containers/footer/ui/FooterView";
+import AuthHeader from "containers/LayoutComponents/AuthHeader/index";
 
 class Login extends React.Component {
   state = {};

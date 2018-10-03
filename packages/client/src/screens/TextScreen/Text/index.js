@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "antd";
-import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
+import AuthHeader from "containers/LayoutComponents/AuthHeader/index";
 
 class Text extends React.Component {
   render() {

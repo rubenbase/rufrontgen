@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import ChangePasswordConnector from "./ChangePasswordForm/changePasswordConnector";
-import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
+import AuthHeader from "containers/LayoutComponents/AuthHeader/index";
 
 class ChangePassword extends React.Component {
   render() {

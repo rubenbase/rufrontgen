@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Field } from "formik";
-import { InputField } from "modules/shared/inputField";
-import { TagField } from "modules/shared/TagField";
+import { InputField } from "containers/shared/inputField";
+import { TagField } from "containers/shared/TagField";
 
 export const Page3 = () => (
   <React.Fragment>

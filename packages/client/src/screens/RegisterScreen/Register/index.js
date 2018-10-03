@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "antd";
 import RegisterConnector from "./RegisterForm/registerConnector";
 import "./style.scss";
-import FooterView from "modules/footer/ui/FooterView";
-import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
+import FooterView from "containers/footer/ui/FooterView";
+import AuthHeader from "containers/LayoutComponents/AuthHeader/index";
 
 class Register extends React.Component {
   render() {

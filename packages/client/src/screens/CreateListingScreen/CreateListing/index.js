@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "antd";
-import MainMenu from "modules/LayoutComponents/MainMenu/index";
+import MainMenu from "containers/LayoutComponents/MainMenu/index";
 import { CreateListingConnector } from "./CreateListingForm/createListingConnector";
 class CreateListing extends React.Component {
   render() {
