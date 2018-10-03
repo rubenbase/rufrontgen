@@ -4,7 +4,7 @@ import { Form as FormA, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
 import { changePasswordSchema } from "@rufrontgen/common";
 
-import { InputField } from "containers/shared/inputField";
+import { InputField } from "components/Inputs/inputField";
 
 const FormItem = FormA.Item;
 
