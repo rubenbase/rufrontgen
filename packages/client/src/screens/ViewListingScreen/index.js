@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import ViewListingConnector from "./ViewListing/index";
-// import Page from "components/LayoutComponents/Page";
+// import Page from "containers/LayoutContainers/Page";
 // import FindListings from "./FindListings";
 
 class ViewListingScreen extends React.Component {

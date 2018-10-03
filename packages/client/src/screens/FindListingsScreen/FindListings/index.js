@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "antd";
-import AuthHeader from "containers/LayoutComponents/AuthHeader/index";
+import AuthHeader from "containers/LayoutContainers/AuthHeader/index";
 import { FindListingsConnector } from "./FindListingsForm/findListingsConnector";
-import MainMenu from "containers/LayoutComponents/MainMenu/index";
+import MainMenu from "containers/LayoutContainers/MainMenu/index";
 class FindListings extends React.Component {
   render() {
     return (

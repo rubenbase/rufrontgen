@@ -1,5 +1,4 @@
 import React from "react";
-// import Page from '../../containers/LayoutComponents/Page/Page'
 import Helmet from "react-helmet";
 import Login from "./Login";
 

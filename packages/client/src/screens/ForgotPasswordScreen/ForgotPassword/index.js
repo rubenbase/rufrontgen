@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import ForgotPasswordConnector from "./ForgotPasswordForm/forgotPasswordConnector";
-import AuthHeader from "containers/LayoutComponents/AuthHeader/index";
+import AuthHeader from "containers/LayoutContainers/AuthHeader/index";
 
 class ForgotPassword extends React.Component {
   render() {
