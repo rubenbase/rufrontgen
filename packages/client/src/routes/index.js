@@ -12,12 +12,14 @@ import CreateListingScreen from "screens/CreateListingScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
 import EditListingScreen from "screens/EditListingScreen";
+import Home from "screens/HomeScreen";
 import Logout from "containers/logout";
 
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact={true} path="/" component={HomeView} />
+      <Route exact={true} path="/home" component={Home} />
 
       {/* Auth Flow Routes */}
       <Route exact={true} path="/register" component={RegisterScreen} />
