@@ -30,11 +30,9 @@ import "./resources/CleanStyles/Vendors/vendors.cleanui.scss";
  *  React Intl - Internationalization
  *****************/
 import {
-  intlShape,
   injectIntl,
   IntlProvider,
   addLocaleData,
-  defineMesssages,
   FormattedMessage
 } from "react-intl";
 import locale_en from "react-intl/locale-data/en";

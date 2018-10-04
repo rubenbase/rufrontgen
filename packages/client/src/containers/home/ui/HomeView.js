@@ -6,6 +6,7 @@ import { SubscribeForm } from "../../subscribeForm/index";
 import { graphql, compose } from "react-apollo";
 import getCurrentLanguage from "graphql/State/getCurrentLanguage";
 import setCurrentLanguage from "graphql/State/setCurrentLanguage";
+import Footer from "containers/LayoutContainers/FooterMain";
 
 const SubMenu = Menu.SubMenu;
 
@@ -169,6 +170,7 @@ class HomeView extends React.PureComponent {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     );
   }

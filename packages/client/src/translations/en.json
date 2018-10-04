@@ -1,3 +1,7 @@
 {
-  "app.title": "Welcome to rufrontgen"
+  "app.title": "Welcome to rufrontgen",
+  "app.footer.footerFirstTitle": "Resources",
+  "app.footer.footerSecondTitle": "Community",
+  "app.footer.footerThirdTitle": "Help",
+  "app.footer.footerFourthTitle": "More products"
 }
