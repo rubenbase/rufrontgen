@@ -10871,7 +10871,7 @@ node-gyp@^3.3.1:
     tar "^2.0.0"
     which "1"
 
-node-gyp@^3.6.2:
+node-gyp@^3.6.2, node-gyp@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.8.0.tgz#540304261c330e80d0d5edce253a68cb3964218c"
   dependencies:
@@ -10966,6 +10966,30 @@ node-sass@^4.9.2:
     mkdirp "^0.5.1"
     nan "^2.10.0"
     node-gyp "^3.3.1"
+    npmlog "^4.0.0"
+    request "2.87.0"
+    sass-graph "^2.2.4"
+    stdout-stream "^1.4.0"
+    "true-case-path" "^1.0.2"
+
+node-sass@^4.9.3:
+  version "4.9.3"
+  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.9.3.tgz#f407cf3d66f78308bb1e346b24fa428703196224"
+  dependencies:
+    async-foreach "^0.1.3"
+    chalk "^1.1.1"
+    cross-spawn "^3.0.0"
+    gaze "^1.0.0"
+    get-stdin "^4.0.1"
+    glob "^7.0.3"
+    in-publish "^2.0.0"
+    lodash.assign "^4.2.0"
+    lodash.clonedeep "^4.3.2"
+    lodash.mergewith "^4.6.0"
+    meow "^3.7.0"
+    mkdirp "^0.5.1"
+    nan "^2.10.0"
+    node-gyp "^3.8.0"
     npmlog "^4.0.0"
     request "2.87.0"
     sass-graph "^2.2.4"
@@ -12380,7 +12404,7 @@ radium@^0.19.0:
     inline-style-prefixer "^2.0.5"
     prop-types "^15.5.8"
 
-raf@3.4.0, raf@^3.4.0:
+raf@3.4.0, raf@3.x, raf@^3.4.0, raf@~3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
   dependencies:
@@ -12650,6 +12674,14 @@ rc-progress@~2.2.2:
     babel-runtime "6.x"
     prop-types "^15.5.8"
 
+rc-queue-anim@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/rc-queue-anim/-/rc-queue-anim-1.6.6.tgz#eb8f278fc91c49330ccbb577e81515b235fee1ed"
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.6.0"
+    rc-tween-one "^2.2.8"
+
 rc-rate@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/rc-rate/-/rc-rate-2.4.0.tgz#97ebcc5876e2e498b9f5f65ced256d8ab54e5f06"
@@ -12658,6 +12690,16 @@ rc-rate@~2.4.0:
     classnames "^2.2.5"
     prop-types "^15.5.8"
     rc-util "^4.3.0"
+
+rc-scroll-anim@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/rc-scroll-anim/-/rc-scroll-anim-2.5.5.tgz#1734cbc4e9e3530f995406e20f5079f1529ec80c"
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.6.0"
+    raf "3.x"
+    rc-tween-one "^2.1.0"
+    tween-functions "1.x"
 
 rc-select@~8.1.1:
   version "8.1.1"
@@ -12822,6 +12864,16 @@ rc-trigger@^3.0.0-rc.2:
     rc-align "^2.4.1"
     rc-animate "^3.0.0-rc.1"
     rc-util "^4.4.0"
+
+rc-tween-one@^2.1.0, rc-tween-one@^2.2.8:
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-2.2.10.tgz#edbcbbaf52228d8077975997b9debd494aeb7f63"
+  dependencies:
+    babel-runtime "6.x"
+    prop-types "^15.6.1"
+    raf "~3.4.0"
+    style-utils "~0.1.13"
+    tween-functions "~1.2.0"
 
 rc-upload@~2.5.0:
   version "2.5.1"
@@ -13032,6 +13084,12 @@ react-geosuggest@^2.8.0:
     classnames "^2.2.6"
     lodash.debounce "^4.0.6"
     react-addons-shallow-compare "^15.6.2"
+
+react-github-button@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/react-github-button/-/react-github-button-0.1.11.tgz#fc61e1f1e1371169d3618c1ba37306ba04081e56"
+  dependencies:
+    prop-types "^15.5.10"
 
 react-google-maps@^7.3.0:
   version "7.3.0"
@@ -14974,6 +15032,10 @@ style-loader@^0.20.3:
     loader-utils "^1.1.0"
     schema-utils "^0.4.5"
 
+style-utils@~0.1.13:
+  version "0.1.21"
+  resolved "https://registry.yarnpkg.com/style-utils/-/style-utils-0.1.21.tgz#18578663b943e0d64f2f8471ab5c7a4a0108a0e1"
+
 subarg@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/subarg/-/subarg-1.0.0.tgz#f62cf17581e996b48fc965699f54c06ae268b8d2"
@@ -15468,6 +15530,10 @@ tunnel-agent@^0.6.0:
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@1.x, tween-functions@~1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
