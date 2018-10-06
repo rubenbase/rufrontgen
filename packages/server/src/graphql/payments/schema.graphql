@@ -1,0 +1,8 @@
+type Billing {
+  id: ID!
+  price: Int
+  plan: String!
+}
+type Mutation {
+  createSubscription(source: String!): Boolean
+}

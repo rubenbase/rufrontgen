@@ -8,7 +8,7 @@ export class Billing extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("money")
+  @Column("money", { nullable: true })
   price: number;
 
   @Column("text", { nullable: true })

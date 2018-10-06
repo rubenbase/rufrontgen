@@ -7,7 +7,9 @@ import {
   CreateDateColumn,
   OneToMany,
   OneToOne,
-  JoinColumn
+  JoinColumn,
+  AfterInsert
+  // getConnection
 } from "typeorm";
 import { BaseEntity } from "typeorm/repository/BaseEntity";
 import { Listing } from "./Listing";
@@ -55,7 +57,26 @@ export class User extends BaseEntity {
   billing: Billing;
 
   @BeforeInsert()
-  async hashPasswordBeforeInsert() {
+  async doBeforeInsert() {
+    // Hash the password
     this.password = await bcrypt.hash(this.password, 10);
+
+    // Create the billing info for the user
+    const billingInfo = new Billing();
+    this.billing = billingInfo;
+    await billingInfo.save();
+  }
+
+  @AfterInsert()
+  async doAfterInsert() {
+    // const response = await getConnection()
+    //   .getRepository(User)
+    //   .createQueryBuilder("user")
+    //   // .innerJoinAndSelect("user.billing", "billing")
+    //   .where('user."id" = :value', {
+    //     value: "c0b4440c-c0c2-4f11-a68f-e1c26f4d09ab"
+    //   })
+    //   .getOne();
+    // console.log("ALIBABA RESPONSE IS=> ,", response);
   }
 }
