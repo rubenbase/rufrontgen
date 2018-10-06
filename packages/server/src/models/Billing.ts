@@ -1,15 +1,7 @@
 // @ts-ignore
 import * as bcrypt from "bcryptjs";
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  BeforeInsert,
-  OneToOne,
-  JoinColumn
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { BaseEntity } from "typeorm/repository/BaseEntity";
-import { User } from "./User";
 
 @Entity("billings")
 export class Billing extends BaseEntity {
@@ -22,8 +14,6 @@ export class Billing extends BaseEntity {
   @Column("text", { nullable: true })
   stripeId: string;
 
-  @BeforeInsert()
-  async hashPasswordBeforeInsert() {
-    this.password = await bcrypt.hash(this.password, 10);
-  }
+  @Column("text", { default: "free-trial" })
+  plan: string;
 }

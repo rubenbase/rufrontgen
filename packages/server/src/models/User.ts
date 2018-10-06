@@ -5,10 +5,13 @@ import {
   Column,
   BeforeInsert,
   CreateDateColumn,
-  OneToMany
+  OneToMany,
+  OneToOne,
+  JoinColumn
 } from "typeorm";
 import { BaseEntity } from "typeorm/repository/BaseEntity";
 import { Listing } from "./Listing";
+import { Billing } from "./Billing";
 
 type UserRole = "user" | "admin";
 
@@ -46,6 +49,10 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Listing, listing => listing.user)
   listings: Listing[];
+
+  @OneToOne(() => Billing)
+  @JoinColumn()
+  billing: Billing;
 
   @BeforeInsert()
   async hashPasswordBeforeInsert() {
