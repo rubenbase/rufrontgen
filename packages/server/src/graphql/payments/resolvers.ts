@@ -5,10 +5,10 @@ import { getConnection } from "typeorm";
 
 export const resolvers: ResolverMap = {
   Mutation: {
-    createSubscription: async (_, { source }) => {
-      // if (!req.session || !req.session.userId) {
-      //   throw new Error("not authenticated");
-      // }
+    createSubscription: async (_, { source }, { session }) => {
+      if (!session.userId) {
+        throw new Error("not authenticated");
+      }
 
       const user = await User.findOne("43a64a1b-d5d9-4373-aedd-25d3c0aba985");
       console.log("ALIBABA USER IS ->", user);
