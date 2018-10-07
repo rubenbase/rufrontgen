@@ -38,6 +38,7 @@
     "@types/cors": "^2.8.4",
     "@types/express-rate-limit": "^2.9.3",
     "@types/faker": "^4.1.2",
+    "@types/stripe": "^6.0.1",
     "apollo-engine": "^1.1.2",
     "apollo-server": "^2.1.0",
     "apollo-server-express": "^2.1.0",
@@ -69,6 +70,7 @@
     "reflect-metadata": "^0.1.12",
     "request-promise": "^4.2.2",
     "shortid": "^2.2.12",
+    "stripe": "^6.12.1",
     "typeorm": "0.2.5",
     "uuid": "^3.2.1",
     "yup": "^0.25.1"
