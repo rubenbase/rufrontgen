@@ -12,6 +12,10 @@ import CreateListingScreen from "screens/CreateListingScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
 import EditListingScreen from "screens/EditListingScreen";
+import CreateCategoryScreen from "screens/CreateCategoryScreen";
+import FindCategoryScreen from "screens/FindCategoryScreen";
+import ViewCategoryScreen from "screens/ViewCategoryScreen";
+import EditCategoryScreen from "screens/EditCategoryScreen";
 import Home from "screens/HomeScreen";
 import Logout from "containers/logout";
 
@@ -53,6 +57,27 @@ export const Routes = () => (
         exact={true}
         path="/create-listing"
         component={CreateListingScreen}
+      />
+
+      {/* Category Routes */}
+      <Route
+        exact={true}
+        path="/create-categories"
+        component={CreateCategoryScreen}
+      />
+
+      <Route exact={true} path="/categories" component={FindCategoryScreen} />
+
+      <Route
+        exact={true}
+        path="/view-categories"
+        component={ViewCategoryScreen}
+      />
+
+      <Route
+        exact={true}
+        path="/edit-categories"
+        component={EditCategoryScreen}
       />
 
       {/* Legal Routes */}

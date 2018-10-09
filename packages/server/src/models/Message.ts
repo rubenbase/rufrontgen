@@ -1,7 +1,7 @@
+import { BaseEntity } from 'typeorm/repository/BaseEntity';
 import {
   Entity,
   Column,
-  BaseEntity,
   PrimaryGeneratedColumn,
   ManyToOne
 } from "typeorm";
