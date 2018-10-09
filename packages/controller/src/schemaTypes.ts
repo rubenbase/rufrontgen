@@ -20,6 +20,77 @@ export interface MeQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateCategoriesMutation
+// ====================================================
+
+export interface CreateCategoriesMutation {
+  createCategories: boolean;
+}
+
+export interface CreateCategoriesMutationVariables {
+  name: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: FindCategoriesQuery
+// ====================================================
+
+export interface FindCategoriesQuery_findCategories {
+  id: string;
+  name: string;
+}
+
+export interface FindCategoriesQuery {
+  findCategories: FindCategoriesQuery_findCategories[];
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: UpdateCategoryMutation
+// ====================================================
+
+export interface UpdateCategoryMutation {
+  updateCategory: boolean | null;
+}
+
+export interface UpdateCategoryMutationVariables {
+  id: string;
+  name: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewCategoryQuery
+// ====================================================
+
+export interface ViewCategoryQuery_viewCategory {
+  id: string;
+  name: string;
+}
+
+export interface ViewCategoryQuery {
+  viewCategory: ViewCategoryQuery_viewCategory | null;
+}
+
+export interface ViewCategoryQueryVariables {
+  id: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: ForgotPasswordChangeMutation
 // ====================================================
 
@@ -92,7 +163,7 @@ export interface FindListingsQuery_findListings_owner {
 export interface FindListingsQuery_findListings {
   id: string;
   name: string;
-  pictureUrl: string;
+  pictureUrl: string | null;
   owner: FindListingsQuery_findListings_owner;
 }
 
@@ -232,7 +303,7 @@ export interface ViewListingQuery_viewListing {
   name: string;
   description: string;
   category: string;
-  pictureUrl: string;
+  pictureUrl: string | null;
   price: number;
   latitude: number;
   longitude: number;
