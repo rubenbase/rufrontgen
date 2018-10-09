@@ -23,9 +23,16 @@ column: number;
 interface IQuery {
 __typename: "Query";
 findListings: Array<IListing>;
+searchListings: Array<IListing>;
 viewListing: IListing | null;
 messages: Array<IMessage>;
 me: IUser | null;
+}
+
+interface ISearchListingsOnQueryArguments {
+input?: ISearchListingInput | null;
+offset: number;
+limit: number;
 }
 
 interface IViewListingOnQueryArguments {
@@ -46,7 +53,7 @@ price: number;
 latitude: number;
 longitude: number;
 amenities: Array<string>;
-pictureUrl: string;
+pictureUrl: string | null;
 owner: IUser;
 }
 
@@ -59,6 +66,12 @@ lastname: string;
 roles: Array<string>;
 }
 
+interface ISearchListingInput {
+name?: string | null;
+category?: string | null;
+price?: number | null;
+}
+
 interface IMessage {
 __typename: "Message";
 text: string;
@@ -68,8 +81,10 @@ listingId: string;
 
 interface IMutation {
 __typename: "Mutation";
+createCategories: boolean;
 createListing: boolean;
 deleteListing: boolean;
+updateListing: boolean;
 createMessage: boolean;
 sendForgotPasswordEmail: boolean | null;
 forgotPasswordChange: Array<IError>;
@@ -79,12 +94,21 @@ register: Array<IError>;
 subscribeToList: boolean;
 }
 
+interface ICreateCategoriesOnMutationArguments {
+input: ICreateCategoriesInput;
+}
+
 interface ICreateListingOnMutationArguments {
 input: ICreateListingInput;
 }
 
 interface IDeleteListingOnMutationArguments {
 id: string;
+}
+
+interface IUpdateListingOnMutationArguments {
+listingId: string;
+input: IUpdateListingInput;
 }
 
 interface ICreateMessageOnMutationArguments {
@@ -116,6 +140,10 @@ interface ISubscribeToListOnMutationArguments {
 input: ISubscribeToListInput;
 }
 
+interface ICreateCategoriesInput {
+name: string;
+}
+
 interface ICreateListingInput {
 name: string;
 picture?: any | null;
@@ -124,6 +152,18 @@ description: string;
 price: number;
 latitude: number;
 longitude: number;
+amenities: Array<string>;
+}
+
+interface IUpdateListingInput {
+name?: string | null;
+picture?: any | null;
+pictureUrl?: string | null;
+category?: string | null;
+description?: string | null;
+price?: number | null;
+latitude?: number | null;
+longitude?: number | null;
 amenities: Array<string>;
 }
 

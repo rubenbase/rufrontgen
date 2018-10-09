@@ -4,6 +4,36 @@ export interface MeQuery_me {
 export interface MeQuery {
     me: MeQuery_me | null;
 }
+export interface CreateCategoriesMutation {
+    createCategories: boolean;
+}
+export interface CreateCategoriesMutationVariables {
+    name: string;
+}
+export interface FindCategoriesQuery_findCategories {
+    id: string;
+    name: string;
+}
+export interface FindCategoriesQuery {
+    findCategories: FindCategoriesQuery_findCategories[];
+}
+export interface UpdateCategoryMutation {
+    updateCategory: boolean | null;
+}
+export interface UpdateCategoryMutationVariables {
+    id: string;
+    name: string;
+}
+export interface ViewCategoryQuery_viewCategory {
+    id: string;
+    name: string;
+}
+export interface ViewCategoryQuery {
+    viewCategory: ViewCategoryQuery_viewCategory | null;
+}
+export interface ViewCategoryQueryVariables {
+    id: string;
+}
 export interface ForgotPasswordChangeMutation_forgotPasswordChange {
     path: string;
     message: string;
@@ -41,7 +71,7 @@ export interface FindListingsQuery_findListings_owner {
 export interface FindListingsQuery_findListings {
     id: string;
     name: string;
-    pictureUrl: string;
+    pictureUrl: string | null;
     owner: FindListingsQuery_findListings_owner;
 }
 export interface FindListingsQuery {
@@ -108,7 +138,7 @@ export interface ViewListingQuery_viewListing {
     name: string;
     description: string;
     category: string;
-    pictureUrl: string;
+    pictureUrl: string | null;
     price: number;
     latitude: number;
     longitude: number;
