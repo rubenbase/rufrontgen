@@ -1,4 +1,4 @@
-import { Categorias } from '../models/Categorias';
+import { Categories } from '../models/Categories';
 import { Message } from '../models/Message';
 import { getConnectionOptions, createConnection } from "typeorm";
 import { User } from "../models/User";
@@ -10,7 +10,7 @@ export const createTypeormConn = async () => {
     ? createConnection({
         ...connectionOptions,
         url: process.env.DATABASE_URL as string,
-        entities: [User, Listing, Message, Categorias],
+        entities: [User, Listing, Message, Categories],
         name: "default"
       } as any)
     : createConnection({ ...connectionOptions, name: "default" });
