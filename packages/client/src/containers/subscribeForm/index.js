@@ -2,7 +2,7 @@ import * as React from "react";
 import { Form as AntForm, Button, Icon, Checkbox } from "antd";
 import { Form, Formik, Field } from "formik";
 import { withSubscribeToList } from "@rufrontgen/controller";
-import { InputField } from "modules/shared/inputField";
+import { InputField } from "components/Inputs/inputField";
 import { Link } from "react-router-dom";
 
 const FormItem = AntForm.Item;

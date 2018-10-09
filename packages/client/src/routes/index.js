@@ -1,8 +1,8 @@
 import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthRoute } from "@rufrontgen/controller";
-import { LegalConnector } from "modules/legal/LegalConnector";
-import { HomeView } from "modules/home/ui/HomeView";
+import { LegalConnector } from "containers/legal/LegalConnector";
+import HomeView from "containers/home/ui/HomeView";
 import LoginScreen from "screens/LoginScreen";
 import RegisterScreen from "screens/RegisterScreen";
 import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
@@ -12,16 +12,18 @@ import CreateListingScreen from "screens/CreateListingScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
 import EditListingScreen from "screens/EditListingScreen";
-import Logout from "modules/logout";
 import CreateCategoryScreen from "screens/CreateCategoryScreen";
 import FindCategoryScreen from "screens/FindCategoryScreen";
 import ViewCategoryScreen from "screens/ViewCategoryScreen";
 import EditCategoryScreen from "screens/EditCategoryScreen";
+import Home from "screens/HomeScreen";
+import Logout from "containers/logout";
 
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact={true} path="/" component={HomeView} />
+      <Route exact={true} path="/home" component={Home} />
 
       {/* Auth Flow Routes */}
       <Route exact={true} path="/register" component={RegisterScreen} />

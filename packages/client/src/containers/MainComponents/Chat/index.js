@@ -2,7 +2,7 @@ import React from "react";
 
 import "./style.scss";
 import InputBar from "./InputBar";
-import Avatar from "modules/MainComponents/Avatar";
+import Avatar from "containers/MainComponents/Avatar";
 // const chats = [];
 
 const Message = ({ chat, user }) => (

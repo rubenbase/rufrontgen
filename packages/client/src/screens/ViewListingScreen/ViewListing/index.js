@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ViewListing } from "@rufrontgen/controller";
-import { MessageConnector } from "modules/Messages";
+import { MessageConnector } from "containers/Messages";
 export default class ViewListingConnector extends React.PureComponent {
   render() {
     const {

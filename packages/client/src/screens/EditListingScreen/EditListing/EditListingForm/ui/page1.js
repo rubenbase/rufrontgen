@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Field } from "formik";
-import { InputField } from "modules/shared/inputField";
-import { DropzoneField } from "modules/shared/DropzoneField";
-import { LocationField } from "modules/shared/LocationField";
+import { InputField } from "components/Inputs/inputField";
+import { DropzoneField } from "components/Inputs/DropzoneField";
+import { LocationField } from "components/Inputs/LocationField";
 import "./style.scss";
 
 export const Page1 = () => (

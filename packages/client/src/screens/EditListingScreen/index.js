@@ -1,5 +1,5 @@
 import React from "react";
-// import Page from "components/LayoutComponents/Page";
+// import Page from "containers/LayoutContainers/Page";
 import Helmet from "react-helmet";
 import EditListing from "./EditListing";
 

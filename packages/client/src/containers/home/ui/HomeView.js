@@ -3,6 +3,10 @@ import { Menu, Input, Card, List, Button, Icon, Checkbox } from "antd";
 import "./style.scss";
 import { Logo } from "./Logo";
 import { SubscribeForm } from "../../subscribeForm/index";
+import { graphql, compose } from "react-apollo";
+import getCurrentLanguage from "graphql/State/getCurrentLanguage";
+import setCurrentLanguage from "graphql/State/setCurrentLanguage";
+import Footer from "containers/LayoutContainers/FooterMain";
 
 const SubMenu = Menu.SubMenu;
 
@@ -20,10 +24,29 @@ const data2 = [
 
 const { Meta } = Card;
 
-export class HomeView extends React.PureComponent {
+class HomeView extends React.PureComponent {
   render() {
+    console.log("ALIBABA HOME THIS PROPS ARE ===> ", this.props);
+    const {
+      setCurrentLanguage,
+      currentLanguage: { currentLanguage }
+    } = this.props;
+
     return (
       <div>
+        {console.log(currentLanguage)}
+        <button
+          onClick={() =>
+            setCurrentLanguage({
+              variables: {
+                index: "currentLanguage",
+                value: currentLanguage + "S"
+              }
+            })
+          }
+        >
+          Change global state
+        </button>
         <div
           className="jumbotron"
           style={{ backgroundImage: `url(resources/images/bg.jpg)` }}
@@ -147,7 +170,19 @@ export class HomeView extends React.PureComponent {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     );
   }
 }
+
+export default compose(
+  graphql(setCurrentLanguage, { name: "setCurrentLanguage" }),
+  graphql(getCurrentLanguage, {
+    props: ({ data: { currentLanguage, loading, error } }) => ({
+      currentLanguage,
+      loading,
+      error
+    })
+  })
+)(HomeView);

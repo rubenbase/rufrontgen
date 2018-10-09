@@ -1,7 +1,15 @@
+type Billing {
+  id: ID!
+  price: Int
+  stripeId: String
+  plan: String
+}
+
 type User {
   id: ID!
   email: String!
   name: String!
   lastname: String!
   roles: [String!]!
+  billing: Billing!
 }

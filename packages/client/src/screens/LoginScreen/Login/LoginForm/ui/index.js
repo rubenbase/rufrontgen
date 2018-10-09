@@ -3,7 +3,7 @@ import { withFormik, Field, Form } from "formik";
 import { Form as FormA, Icon, Button } from "antd";
 import { loginSchema } from "@rufrontgen/common";
 import { Link } from "react-router-dom";
-import { InputField } from "modules/shared/inputField";
+import { InputField } from "components/Inputs/inputField";
 
 const FormItem = FormA.Item;
 

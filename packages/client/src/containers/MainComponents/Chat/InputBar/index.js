@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { CreateMessage } from "@rufrontgen/controller";
 
-import { InputField } from "modules/shared/inputField";
+import { InputField } from "components/Inputs/inputField";
 
 class InputBar extends React.PureComponent {
   render() {
