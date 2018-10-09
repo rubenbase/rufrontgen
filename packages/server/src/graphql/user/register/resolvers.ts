@@ -13,7 +13,6 @@ export const resolvers: ResolverMap = {
       args: GQL.IRegisterOnMutationArguments,
       { redis, url }
     ) => {
-      console.log(args);
       try {
         await validUserSchema.validate(args, { abortEarly: false });
       } catch (err) {
