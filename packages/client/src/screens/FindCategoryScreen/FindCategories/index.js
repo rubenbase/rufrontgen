@@ -1,8 +1,5 @@
 import React from "react";
-import { Button } from "antd";
-import AuthHeader from "modules/LayoutComponents/AuthHeader/index";
 import { FindCategoriesConnector } from "./FindCategoriesForm/findCategoriesConnector";
-import ViewCategoryScreen from "../../ViewCategoryScreen/index";
 
 class FindCategories extends React.Component {
   render() {

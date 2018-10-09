@@ -4,7 +4,7 @@ import { ViewCategory, UpdateCategory } from "@rufrontgen/controller";
 import { Form as AntForm, Button } from "antd";
 import { Form, Formik } from "formik";
 import { Field } from "formik";
-import { InputField } from "modules/shared/inputField";
+import { InputField } from "components/Inputs/inputField";
 
 const FormItem = AntForm.Item;
 

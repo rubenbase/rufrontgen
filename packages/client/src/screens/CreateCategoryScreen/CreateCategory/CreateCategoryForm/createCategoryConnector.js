@@ -3,7 +3,7 @@ import { Form as AntForm, Button } from "antd";
 import { Form, Formik } from "formik";
 import { withCreateCategories } from "@rufrontgen/controller";
 import { Field } from "formik";
-import { InputField } from "modules/shared/inputField";
+import { InputField } from "components/Inputs/inputField";
 
 const FormItem = AntForm.Item;
 

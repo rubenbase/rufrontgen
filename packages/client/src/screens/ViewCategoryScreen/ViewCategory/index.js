@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ViewCategory } from "@rufrontgen/controller";
-import { MessageConnector } from "modules/Messages";
+import { MessageConnector } from "containers/Messages";
 
 export default class ViewCategoryConnector extends React.PureComponent {
   render() {

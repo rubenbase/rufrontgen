@@ -12,6 +12,7 @@ export * from "./modules/UpdateListing";
 export * from "./modules/Categories/createCategory";
 export * from "./modules/Categories/findCategory";
 export * from "./modules/Categories/viewCategory/";
+export * from "./modules/Categories/updateCategory";
 export * from "./modules/CreateMessage";
 export * from "./schemaTypes";
 export * from "./modules/Auth/AuthRoute";

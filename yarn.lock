@@ -1766,6 +1766,12 @@
   dependencies:
     "@types/node" "*"
 
+"@types/stripe@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-6.0.1.tgz#e23d10d7a2c36a56828eff0c2523effcc7bd8dd8"
+  dependencies:
+    "@types/node" "*"
+
 "@types/tough-cookie@*":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.3.tgz#7f226d67d654ec9070e755f46daebf014628e9d9"
@@ -15007,6 +15013,14 @@ strip-indent@^2.0.0:
 strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+stripe@^6.12.1:
+  version "6.12.1"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-6.12.1.tgz#fbe74fefd99f256f0d713c97f6ff36221add8d27"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    qs "~6.5.1"
+    safe-buffer "^5.1.1"
 
 strong-log-transformer@^1.0.6:
   version "1.0.6"

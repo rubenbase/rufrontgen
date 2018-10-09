@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "antd";
-import MainMenu from "modules/LayoutComponents/MainMenu/index";
+import MainMenu from "containers/LayoutContainers/MainMenu";
 import { EditCategoryConnector } from "./EditCategoryForm/editCategoryConnector";
 
 class EditCategory extends React.Component {
