@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Form as AntForm, Button } from "antd";
 import { Form, Formik, Field } from "formik";
-import { withCreateDish } from "@rufrontgen/controller";
+import { withUpdateDish } from "@rufrontgen/controller";
 import { InputField } from "../../../../modules/shared/inputField";
 import "./ui/style.scss";
 
@@ -13,11 +13,15 @@ class C extends React.PureComponent {
   };
 
   submit = async (values, { setSubmitting }) => {
+    alert(this.dishId);
     const dish = {
-      MenuId:this.menuId,
+      dishId: this.dishId,
       ...values
     }
-    await this.props.createDish(dish);
+    alert(JSON.stringify(dish));
+    await this.props.updateDish(
+      dish
+      );
     setSubmitting(false);
   };
 
@@ -25,7 +29,7 @@ class C extends React.PureComponent {
   render() {
     const {
       match: {
-        params: { menuId }
+        params: { dishId }
       }
     } = this.props;
     return (
@@ -34,7 +38,7 @@ class C extends React.PureComponent {
           name: "",
           description: "",
           price: 0,
-          MenuId: menuId
+          dishId: dishId
         }}
         onSubmit={this.submit}
       >
@@ -76,7 +80,7 @@ class C extends React.PureComponent {
                           htmlType="submit"
                           disabled={isSubmitting}
                         >
-                          Crear concurso
+                          Edit concurso
                         </Button>
                       </div>
                   </div>
@@ -89,4 +93,4 @@ class C extends React.PureComponent {
   }
 }
 
-export const CreateDishConnector = withCreateDish(C);
+export const EditDishConnector = withUpdateDish(C);

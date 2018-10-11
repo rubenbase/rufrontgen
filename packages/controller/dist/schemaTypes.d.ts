@@ -114,6 +114,15 @@ export interface SubscribeToListMutationVariables {
     name: string;
     lastname: string;
 }
+export interface UpdateDishMutation {
+    updateDish: boolean;
+}
+export interface UpdateDishMutationVariables {
+    dishId: string;
+    name: string;
+    description: string;
+    price: number;
+}
 export interface UpdateListingMutation {
     updateListing: boolean;
 }
@@ -129,6 +138,7 @@ export interface UpdateMenuMutationVariables {
     input: UpdateMenuInput;
 }
 export interface ViewDishesQuery_dishes {
+    id: string;
     name: string;
     description: string;
     price: number;

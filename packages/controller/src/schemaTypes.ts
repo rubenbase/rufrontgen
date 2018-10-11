@@ -254,6 +254,25 @@ export interface SubscribeToListMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateDishMutation
+// ====================================================
+
+export interface UpdateDishMutation {
+  updateDish: boolean;
+}
+
+export interface UpdateDishMutationVariables {
+  dishId: string;
+  name: string;
+  description: string;
+  price: number;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateListingMutation
 // ====================================================
 
@@ -292,6 +311,7 @@ export interface UpdateMenuMutationVariables {
 // ====================================================
 
 export interface ViewDishesQuery_dishes {
+  id: string;
   name: string;
   description: string;
   price: number;

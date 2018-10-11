@@ -1,0 +1,9 @@
+input UpdateDishInput {
+  name: String!
+  description: String!
+  price: Int!
+}
+
+type Mutation {
+  updateDish(dishId: String!, input: UpdateDishInput!): Boolean!
+}

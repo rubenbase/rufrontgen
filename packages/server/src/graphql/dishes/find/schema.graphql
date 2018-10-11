@@ -1,4 +1,5 @@
 type Dish {
+  id: ID!
   name: String!
   description: String!
   price: Int!

@@ -17,6 +17,7 @@ import ViewMenuScreen from "screens/ViewMenuScreen";
 import EditListingScreen from "screens/EditListingScreen";
 import EditMenuScreen from "screens/EditMenuScreen";
 import CreateDishScreen from "screens/CreateDishScreen";
+import EditDishScreen from "screens/EditDishScreen";
 
 import Logout from "modules/logout";
 
@@ -80,6 +81,11 @@ export const Routes = () => (
         exact={true}
         path="/create-menu"
         component={CreateMenuScreen}
+      />
+      <Route
+        exact={true}
+        path="/dish/:dishId/edit"
+        component={EditDishScreen}
       />
 
       {/* Legal Routes */}

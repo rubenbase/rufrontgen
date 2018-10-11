@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 import * as React from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-export var viewDishesQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query ViewDishesQuery($menuId: String!) {\n    dishes(menuId: $menuId) {\n      name,\n      description,\n      price,\n      menuId\n    }\n  }\n"], ["\n  query ViewDishesQuery($menuId: String!) {\n    dishes(menuId: $menuId) {\n      name,\n      description,\n      price,\n      menuId\n    }\n  }\n"])));
+export var viewDishesQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query ViewDishesQuery($menuId: String!) {\n    dishes(menuId: $menuId) {\n      id,\n      name,\n      description,\n      price,\n      menuId\n    }\n  }\n"], ["\n  query ViewDishesQuery($menuId: String!) {\n    dishes(menuId: $menuId) {\n      id,\n      name,\n      description,\n      price,\n      menuId\n    }\n  }\n"])));
 var ViewDishes = /** @class */ (function (_super) {
     __extends(ViewDishes, _super);
     function ViewDishes() {

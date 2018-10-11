@@ -7,6 +7,7 @@ import { ViewDishesQuery_dishes } from "../../schemaTypes";
 export const viewDishesQuery = gql`
   query ViewDishesQuery($menuId: String!) {
     dishes(menuId: $menuId) {
+      id,
       name,
       description,
       price,
