@@ -84,4 +84,4 @@ class C extends React.PureComponent {
   }
 }
 
-export const CreateListingConnector = withCreateListing(C);
+export const CreateListingConnector = withCreateListing(C); //hoc
