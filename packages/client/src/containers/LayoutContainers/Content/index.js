@@ -1,18 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import { setUpdatingContent } from "ducks/app";
 import { isEmpty } from "lodash";
-import Breadcrumb from "components/LayoutComponents/Breadcrumb";
+import Breadcrumb from "containers/LayoutContainers/Breadcrumb";
 
-const mapStateToProps = (state, props) => ({
-  isUpdatingContent: state.app.isUpdatingContent
-});
+// const mapStateToProps = (state, props) => ({
+//   isUpdatingContent: state.app.isUpdatingContent
+// });
 
+// @connect(mapStateToProps)
 class AppContent extends React.Component {
   static contextTypes = {
     getContentBuffer: PropTypes.func
   };
 
-  shouldComponentUpdate(nextProps: { isUpdatingContent: boolean }) {
+  //   node: HTMLElement;
+
+  shouldComponentUpdate(nextProps) {
     if (this.props.isUpdatingContent && !nextProps.isUpdatingContent) {
       return false;
     }
@@ -22,7 +27,8 @@ class AppContent extends React.Component {
   componentDidUpdate() {
     const { isUpdatingContent, dispatch } = this.props;
     if (isUpdatingContent) {
-      dispatch(setUpdatingContent(false));
+      //   dispatch(setUpdatingContent(false));
+      //   setUpdatingContent(false);
     }
   }
 

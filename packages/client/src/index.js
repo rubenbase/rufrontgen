@@ -1,5 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import "setimmediate";
+import { Helmet } from "react-helmet";
+import Layout from "components/LayoutComponents/Layout";
 
 /*
  *  Apollo
@@ -65,7 +68,10 @@ addLocaleData([...locale_en, ...locale_es]);
 ReactDOM.render(
   <IntlProvider locale={language} messages={messages[language]}>
     <ApolloProvider client={client}>
-      <Routes />
+      <div>
+        <Helmet titleTemplate="RuFrontGen" />
+        <Layout />
+      </div>
     </ApolloProvider>
   </IntlProvider>,
   document.getElementById("root")

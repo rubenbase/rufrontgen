@@ -1,0 +1,56 @@
+@import "../../../../resources/mixins";
+
+.menuTop {
+  &__logo {
+    height: 48px;
+    width: 150px;
+    background: $menuBg-darken;
+    float: left;
+  }
+
+  &__logoContainer {
+    height: 48px;
+    padding: 9px 20px 0px 17px;
+    img {
+      height: 28px;
+    }
+  }
+
+  &__icon {
+    margin-top: rem(16);
+    margin-right: rem(7);
+
+    @media (max-width: $md-max-width) {
+      display: none !important;
+    }
+  }
+  .ant-menu-item-divider {
+    height: 36px !important;
+    margin-top: 6px !important;
+    width: 1px !important;
+    float: left;
+  }
+
+  .ant-menu-dark {
+    .ant-menu-item-divider {
+      background: $text-darken-more !important;
+    }
+    .menuTop__icon {
+      color: $gray-darken;
+    }
+
+    .menuTop__item-title {
+      color: $gray-darken;
+    }
+  }
+
+  .ant-menu-light {
+    .menuTop__icon {
+      color: $text;
+    }
+
+    .menuTop__item-title {
+      color: $text;
+    }
+  }
+}
