@@ -9,8 +9,6 @@ export const resolvers: ResolverMap = {
         throw new Error("not authenticated");
       }
 
-      console.log("ALIBABA SESSION IS -> ", session);
-
       const user = await getConnection()
         .getRepository(User)
         .createQueryBuilder("user")
