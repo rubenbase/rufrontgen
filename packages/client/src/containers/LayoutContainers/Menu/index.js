@@ -3,16 +3,16 @@ import React from "react";
 import DrawerMenu from "rc-drawer";
 import { MenuLeft } from "./MenuLeft";
 import { MenuTop } from "./MenuTop";
-import { connect } from "react-redux";
-import { setLayoutState } from "ducks/app";
+// import { connect } from "react-redux";
+// import { setLayoutState } from "ducks/app";
 import "./style.scss";
 
-const mapStateToProps = ({ app }, props) => ({
-  open: app.layoutState.menuMobileOpened,
-  isMenuTop: app.layoutState.isMenuTop
-});
+// const mapStateToProps = ({ app }, props) => ({
+//   open: app.layoutState.menuMobileOpened,
+//   isMenuTop: app.layoutState.isMenuTop
+// });
 
-@connect(mapStateToProps)
+// @connect(mapStateToProps)
 class AppMenu extends React.Component {
   state = {
     open: this.props.open,
@@ -22,7 +22,7 @@ class AppMenu extends React.Component {
   toggleOpen = () => {
     const { dispatch } = this.props;
     const { open } = this.state;
-    dispatch(setLayoutState({ menuMobileOpened: !open }));
+    // dispatch(setLayoutState({ menuMobileOpened: !open }));
   };
 
   componentWillReceiveProps({ open, isMenuTop }) {

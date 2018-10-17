@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import "setimmediate";
 import { Helmet } from "react-helmet";
-import Layout from "components/LayoutComponents/Layout";
+import Layout from "containers/LayoutContainers/Layout";
 
 /*
  *  Apollo
@@ -18,7 +18,7 @@ import { client } from "./apollo";
 /*
  *  Routes
  *****************/
-import { Routes } from "./routes";
+// import { Routes } from "./routes";
 
 /*
  *  Resources

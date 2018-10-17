@@ -1,0 +1,125 @@
+@import '../../../resources/mixins';
+
+.topbar {
+  background: $white;
+  padding: 0 rem(20);
+  height: 100%;
+  border-bottom: 1px solid $gray-border;
+  color: $text;
+
+  &__left {
+    float: left;
+  }
+  
+  &__right {
+    float: right;
+  }
+
+  &__dropdown {
+
+    .ant-dropdown-link {
+      padding-right: 15px;
+      position: relative;
+
+      &:after {
+        color: $gray;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -2px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .255em;
+        vertical-align: .255em;
+        content: '';
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent;
+      }
+
+      &:hover {
+        &:after {
+          color: $gray-darken;
+        }
+        .topbar__dropdownIcon {
+          color: $gray-darken;
+        }
+      }
+    }
+  }
+
+  &__dropdownIcon {
+    color: $gray;
+  }
+
+  &__dropdownMenuIcon {
+    margin-right: 5px;
+  }
+
+  &__dropdownTitle {
+    display: block;
+    padding: rem(8) rem(20);
+  }
+
+  &__avatar {
+    background: $gray-border !important;
+  }
+
+  &__activity {
+    width: rem(290);
+    margin: 0;
+    background: $white;
+    border-radius: 5px;
+    overflow: hidden;
+    &__item {
+      border-bottom: 1px solid $gray-border;
+      padding: rem(10) 0;
+      position: relative;
+      &:last-child {
+        border-bottom: 0;
+      }
+      &:hover {
+        background: $gray-lighten;
+
+        .topbar__activity__icon {
+          background: $text-lighten;
+          color: $white;
+          border-color: $text-lighten;
+        }
+      }
+    }
+    &__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      padding-top: rem(12);
+      font-size: rem(16);
+      width: rem(40);
+      text-align: center;
+      color: $gray;
+      background: $gray-lighten-more;
+      border-bottom: 1px solid $gray-lighten;
+    }
+    &__inner {
+      margin-left: rem(50);
+      padding-right: rem(15);
+      label {
+        font-size: rem(12);
+      }
+    }
+    &__descr {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &__title {
+      > span {
+        font-size: rem(13);
+        color: $gray;
+      }
+    }
+  }
+}

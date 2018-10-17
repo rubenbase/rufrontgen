@@ -11,9 +11,9 @@ class MainMenu extends React.PureComponent {
         <a className="navbar-brand navbar-logo">
           <Logo />
         </a>
-        <Link to="logout">
+        {/* <Link to="logout">
           Cerrar sesión <Icon type="logout" />
-        </Link>
+        </Link> */}
       </nav>
     );
   }

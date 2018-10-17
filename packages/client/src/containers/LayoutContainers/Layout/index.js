@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { BackTop, Layout as AntLayout } from "antd";
-import Routes from "routes";
-import TopBar from "containers/LayoutContainers/TopBar";
-// import Footer from "containers/LayoutContainers/Footer";
-import Menu from "containers/LayoutContainers/Menu";
+import { Routes } from "./../../../routes";
+// import TopBar from "containers/LayoutContainers/TopBar";
+import Footer from "containers/LayoutContainers/FooterMain";
+// import Menu from "containers/LayoutContainers/Menu";
 import Content from "containers/LayoutContainers/Content";
-import Loader from "containers/LayoutContainers/Loader";
+// import Loader from "containers/LayoutContainers/Loader";
 // import LayoutState from "containers/LayoutContainers/LayoutState";
-import SettingsSider from "containers/LayoutContainers/SettingsSider";
+// import SettingsSider from "containers/LayoutContainers/SettingsSider";
 import { enquireScreen, unenquireScreen } from "enquire-js";
 import { ContainerQuery } from "react-container-query";
 import classNames from "classnames";
 
 const AntContent = AntLayout.Content;
 const AntHeader = AntLayout.Header;
-// const AntFooter = AntLayout.Footer;
+const AntFooter = AntLayout.Footer;
 
 const query = {
   "screen-xs": {
@@ -90,21 +90,19 @@ class Layout extends React.Component {
           <div className={classNames(params)}>
             <AntLayout>
               {/* <LayoutState /> */}
-              <Loader />
+              {/* <Loader /> */}
               <BackTop />
               <Routes />
-              <Menu isMobile={isMobile} />
-              <SettingsSider />
+              {/* <Menu isMobile={isMobile} /> */}
+              {/* <SettingsSider /> */}
               <AntLayout>
-                <AntHeader>
-                  <TopBar />
-                </AntHeader>
+                <AntHeader>{/* <TopBar /> */}</AntHeader>
                 <AntContent style={{ height: "100%" }}>
                   <Content />
                 </AntContent>
-                {/* <AntFooter>
+                <AntFooter>
                   <Footer />
-                </AntFooter> */}
+                </AntFooter>
               </AntLayout>
             </AntLayout>
           </div>

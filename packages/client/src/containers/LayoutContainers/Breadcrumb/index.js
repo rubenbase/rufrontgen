@@ -4,7 +4,7 @@ import { menuData } from "../Menu/MenuLeft";
 import { reduce } from "lodash";
 import "./style.scss";
 
-@withRouter
+// @withRouter
 class Breadcrumb extends React.Component {
   state = {
     breadcrumb: []
@@ -85,9 +85,9 @@ class Breadcrumb extends React.Component {
     return (
       <div className="breadcrumbBar">
         <div className="breadcrumbBar__path">
-          <Link to={`/dashboard/alpha`} className="text-muted">
+          {/* <Link to={`/dashboard/alpha`} className="text-muted">
             Home
-          </Link>
+          </Link> */}
           {breadcrumb}
         </div>
       </div>

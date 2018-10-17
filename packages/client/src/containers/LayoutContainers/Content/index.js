@@ -36,7 +36,8 @@ class AppContent extends React.Component {
     const { getContentBuffer } = this.context;
     const { pathName, content } = getContentBuffer();
     return isEmpty(content) ? (
-      <div className="utils__loadingPage" />
+      // <div className="utils__loadingPage" />
+      <div>hola</div>
     ) : (
       <div className="utils__content">
         <Breadcrumb name={pathName} />

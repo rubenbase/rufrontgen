@@ -1,9 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { Menu, Layout } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import { reduce } from "lodash";
-import { setLayoutState } from "ducks/app";
+// import { setLayoutState } from "ducks/app";
 import { Scrollbars } from "react-custom-scrollbars";
 import { default as menuData } from "./menuData";
 import "./style.scss";
@@ -12,18 +12,18 @@ const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 const Divider = Menu.Divider;
 
-const mapStateToProps = ({ app, routing }, props) => {
-  const { layoutState } = app;
-  return {
-    pathname: routing.location.pathname,
-    collapsed: layoutState.menuCollapsed,
-    theme: layoutState.themeLight ? "light" : "dark",
-    settingsOpened: layoutState.settingsOpened
-  };
-};
+// const mapStateToProps = ({ app, routing }, props) => {
+//   const { layoutState } = app;
+//   return {
+//     pathname: routing.location.pathname,
+//     collapsed: layoutState.menuCollapsed,
+//     theme: layoutState.themeLight ? "light" : "dark",
+//     settingsOpened: layoutState.settingsOpened
+//   };
+// };
 
-@connect(mapStateToProps)
-@withRouter
+// @connect(mapStateToProps)
+// @withRouter
 class MenuLeft extends React.Component {
   state = {
     pathname: this.props.pathname,
@@ -38,11 +38,11 @@ class MenuLeft extends React.Component {
     const { dispatch, isMobile } = this.props;
     if (isMobile) {
       // collapse menu on isMobile state
-      dispatch(setLayoutState({ menuMobileOpened: false }));
+      // dispatch(setLayoutState({ menuMobileOpened: false }));
     }
     if (e.key === "settings") {
       // prevent click and toggle settings block on theme settings link
-      dispatch(setLayoutState({ settingsOpened: !this.state.settingsOpened }));
+      // dispatch(setLayoutState({ settingsOpened: !this.state.settingsOpened }));
       return;
     }
     // set current selected keys
@@ -135,7 +135,8 @@ class MenuLeft extends React.Component {
           onClick={
             this.props.isMobile
               ? () => {
-                  dispatch(setLayoutState({ menuCollapsed: false }));
+                  // dispatch(setLayoutState({ menuCollapsed: false }));
+                  null;
                 }
               : undefined
           }
@@ -158,7 +159,7 @@ class MenuLeft extends React.Component {
     if (type === "responsive" && collapsed) {
       return;
     }
-    dispatch(setLayoutState({ menuCollapsed: !collapsed }));
+    // dispatch(setLayoutState({ menuCollapsed: !collapsed }));
   };
 
   componentDidMount() {

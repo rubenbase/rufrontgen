@@ -1,0 +1,7 @@
+@import '../../../../resources/mixins';
+
+div.bitcoinPrice {
+  @media(max-width: 1300px) {
+    display: none !important;
+  }
+}

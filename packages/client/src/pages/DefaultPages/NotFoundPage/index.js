@@ -12,9 +12,9 @@ const NotFoundPage = () => (
         removed altogether. You might want to try the search function.
         Alternatively, return to the front page.
       </p>
-      <Link to="/" className="btn">
+      {/* <Link to="/" className="btn">
         Go back to the main page
-      </Link>
+      </Link> */}
     </div>
   </div>
 );

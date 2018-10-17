@@ -33,11 +33,11 @@ class MenuTop extends React.Component {
     const { dispatch, isMobile } = this.props;
     if (isMobile) {
       // collapse menu on isMobile state
-      dispatch(setLayoutState({ menuMobileOpened: false }));
+      // dispatch(setLayoutState({ menuMobileOpened: false }));
     }
     if (e.key === "settings") {
       // prevent click and toggle settings block on theme settings link
-      dispatch(setLayoutState({ settingsOpened: !this.state.settingsOpened }));
+      // dispatch(setLayoutState({ settingsOpened: !this.state.settingsOpened }));
       return;
     }
     // set current selected keys
@@ -126,7 +126,8 @@ class MenuTop extends React.Component {
           onClick={
             this.props.isMobile
               ? () => {
-                  dispatch(setLayoutState({ menuCollapsed: false }));
+                  // dispatch(setLayoutState({ menuCollapsed: false }));
+                  null;
                 }
               : undefined
           }
