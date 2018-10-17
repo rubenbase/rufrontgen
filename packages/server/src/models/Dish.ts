@@ -6,6 +6,7 @@ import {
     ManyToOne
   } from "typeorm";
   import { Menu } from "./Menu";
+  import { User } from "./User";
   
   @Entity("dishes")
   export class Dish extends BaseEntity {
@@ -20,6 +21,12 @@ import {
 
     @Column("int")
     price: number;
+
+    @Column("uuid")
+    userId: string;
+  
+    @ManyToOne(() => User, user => user.listings)
+    user: User;
   
     @Column("uuid")
     menuId: string;

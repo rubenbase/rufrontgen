@@ -4,6 +4,7 @@ type Dish {
   description: String!
   price: Int!
   menuId: String!
+  owner: User!
 }
 type Query {
   dishes(menuId: String!): [Dish!]!
