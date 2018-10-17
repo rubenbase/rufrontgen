@@ -4,12 +4,12 @@ import { Menu } from "../../../models/Menu";
 export const resolvers: ResolverMap = {
   Mutation: {
     createMenu: async (
-      _,
-      { input: { ...data } }
+      _, { input: { ...data }}, { session } 
     ) => {
 
       await Menu.create({
-        ...data
+        ...data,
+        userId: session.userId
       }).save();
 
       // TODO: We update the cache | We need to delete this in case we remove this cache implementation

@@ -14,7 +14,7 @@ export const resolvers: ResolverMap = {
         throw new Error("does not exist");
       }
 
-      /*if (session.userId !== menu.userId) {
+      if (session.userId !== menu.userId) {
         // Maybe in the future keep track of this and ban users
         console.log(
           `This user ${
@@ -22,7 +22,7 @@ export const resolvers: ResolverMap = {
           } is trying to delete a listing they don´t own`
         );
         throw new Error("not authorized");
-      }*/
+      }
 
       await Menu.remove(menu);
 

@@ -32,7 +32,6 @@ export const deleteMenuMutation = gql`
 export interface WithFindMenus {
   menus: FindMenusQuery_findMenus[];
   loading: boolean;
-  deleteMenu: boolean;
 }
 
 export interface DeleteMenuMutation {
@@ -62,8 +61,5 @@ export const withFindMenus = graphql<
       menus,
       loading: data ? data.loading : false
     };
-  },
-  deleteMenu: () =>{
-    
   }
 });

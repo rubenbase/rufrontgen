@@ -3,6 +3,7 @@ import { Menu } from "../../../models/Menu";
 
 export const resolvers: ResolverMap = {
   Menu: {
+    owner: ({ userId }, _, { userLoader }) => userLoader.load(userId)
   },
   Query: {
     findMenus: async (_, __) => {
