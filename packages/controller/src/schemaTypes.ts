@@ -157,6 +157,22 @@ export interface FindMenusQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: DeleteMenuMutation
+// ====================================================
+
+export interface DeleteMenuMutation {
+  deleteMenu: boolean;
+}
+
+export interface DeleteMenuMutationVariables {
+  menuId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: SendForgotPasswordEmailMutation
 // ====================================================
 

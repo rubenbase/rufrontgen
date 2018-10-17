@@ -5,7 +5,9 @@ import { graphql } from "react-apollo";
 
 import {
   FindMenusQuery_findMenus,
-  FindMenusQuery
+  FindMenusQuery,
+  DeleteMenuMutation,
+  DeleteMenuMutationVariables
 } from "../../schemaTypes";
 
 export const findMenusQuery = gql`
@@ -17,10 +19,31 @@ export const findMenusQuery = gql`
   }
 `;
 
+export const deleteMenuMutation = gql`
+  mutation DeleteMenuMutation(
+    $menuId: String!
+  ) {
+    deleteMenu(
+      id: $menuId
+    )
+  }
+`;
+
 export interface WithFindMenus {
   menus: FindMenusQuery_findMenus[];
   loading: boolean;
+  deleteMenu: boolean;
 }
+
+export interface DeleteMenuMutation {
+  deleteMenu: boolean;
+}
+
+export interface DeleteMenuMutationVariables {
+  menuId: string;
+}
+
+
 
 export const withFindMenus = graphql<
   any,
@@ -39,5 +62,8 @@ export const withFindMenus = graphql<
       menus,
       loading: data ? data.loading : false
     };
+  },
+  deleteMenu: () =>{
+    
   }
 });
