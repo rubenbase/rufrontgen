@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as React from "react";
 import gql from "graphql-tag";
-import { graphql } from "react-apollo";
+import { graphql, compose } from "react-apollo";
 
 import {
   FindMenusQuery_findMenus,
@@ -34,17 +34,12 @@ export interface WithFindMenus {
   loading: boolean;
 }
 
-export interface DeleteMenuMutation {
-  deleteMenu: boolean;
-}
-
-export interface DeleteMenuMutationVariables {
-  menuId: string;
+export interface WithDeleteMenuProps {
+  deleteMenu: (variables: DeleteMenuMutationVariables) => void;
 }
 
 
-
-export const withFindMenus = graphql<
+const findMenus = graphql<
   any,
   FindMenusQuery,
   {},
@@ -63,3 +58,26 @@ export const withFindMenus = graphql<
     };
   }
 });
+
+const deleteMenu = graphql<
+  any,
+  DeleteMenuMutation,
+  DeleteMenuMutationVariables,
+  WithDeleteMenuProps
+>(deleteMenuMutation, {
+  props: ({ mutate }) => ({
+    deleteMenu: async variables => {
+      alert(JSON.stringify(variables));
+      if (!mutate) {
+        return;
+      }
+
+      const response = await mutate({
+        variables
+      });
+      console.log(response);
+    }
+  })
+});
+
+export const withFindMenus = compose(deleteMenu, findMenus);

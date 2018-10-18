@@ -69,6 +69,12 @@ export interface FindMenusQuery_findMenus {
 export interface FindMenusQuery {
     findMenus: FindMenusQuery_findMenus[];
 }
+export interface DeleteMenuMutation {
+    deleteMenu: boolean;
+}
+export interface DeleteMenuMutationVariables {
+    menuId: string;
+}
 export interface SendForgotPasswordEmailMutation {
     sendForgotPasswordEmail: boolean | null;
 }

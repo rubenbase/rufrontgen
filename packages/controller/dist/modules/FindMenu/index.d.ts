@@ -1,8 +1,11 @@
-import * as React from "react";
-import { FindMenusQuery_findMenus } from "../../schemaTypes";
+import { FindMenusQuery_findMenus, DeleteMenuMutationVariables } from "../../schemaTypes";
 export declare const findMenusQuery: any;
+export declare const deleteMenuMutation: any;
 export interface WithFindMenus {
     menus: FindMenusQuery_findMenus[];
     loading: boolean;
 }
-export declare const withFindMenus: (WrappedComponent: React.ComponentType<any>) => React.ComponentClass<any>;
+export interface WithDeleteMenuProps {
+    deleteMenu: (variables: DeleteMenuMutationVariables) => void;
+}
+export declare const withFindMenus: any;

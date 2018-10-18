@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 class C extends React.PureComponent {
+
   render() {
     const { menus, loading } = this.props;
     return (
@@ -21,6 +22,7 @@ class C extends React.PureComponent {
                   key={`${item.id}-card`}
                   title={item.name}
                 />
+                <button onClick={()=>this.props.deleteMenu({ menuId:item.id})}>delete</button>
               </List.Item>
             </Link>
           )}
