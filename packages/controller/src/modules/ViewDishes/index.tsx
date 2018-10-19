@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as React from "react";
 import gql from "graphql-tag";
-import { Query } from "react-apollo";
+import { Query, Mutation } from "react-apollo";
 import { ViewDishesQuery_dishes } from "../../schemaTypes";
 
 export const viewDishesQuery = gql`
@@ -16,10 +16,38 @@ export const viewDishesQuery = gql`
   }
 `;
 
+export const deleteDishMutation = gql`
+  mutation DeleteDishMutation(
+    $dishId: String!
+  ) {
+    deleteDish(
+      id: $dishId
+    )
+  }
+`;
+
 export interface WithViewDishes {
   dishes: ViewDishesQuery_dishes[];
   loading: boolean;
 }
+
+export class DeleteDish extends React.PureComponent<{
+  children: (data: any) => JSX.Element | null;
+}> {
+  render() {
+    const { children } = this.props;
+    return (
+      <Mutation mutation={deleteDishMutation}>
+      {mutate => {
+        return children({
+          deleteDish: mutate
+        });
+      }}
+    </Mutation>
+    );
+  }
+}
+
 
 export class ViewDishes extends React.PureComponent<{
   menuId: string;

@@ -15,8 +15,25 @@ var __extends = (this && this.__extends) || (function () {
 // @ts-ignore
 import * as React from "react";
 import gql from "graphql-tag";
-import { Query } from "react-apollo";
+import { Query, Mutation } from "react-apollo";
 export var viewDishesQuery = gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query ViewDishesQuery($menuId: String!) {\n    dishes(menuId: $menuId) {\n      id,\n      name,\n      description,\n      price,\n      menuId\n    }\n  }\n"], ["\n  query ViewDishesQuery($menuId: String!) {\n    dishes(menuId: $menuId) {\n      id,\n      name,\n      description,\n      price,\n      menuId\n    }\n  }\n"])));
+export var deleteDishMutation = gql(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  mutation DeleteDishMutation(\n    $dishId: String!\n  ) {\n    deleteDish(\n      id: $dishId\n    )\n  }\n"], ["\n  mutation DeleteDishMutation(\n    $dishId: String!\n  ) {\n    deleteDish(\n      id: $dishId\n    )\n  }\n"])));
+var DeleteDish = /** @class */ (function (_super) {
+    __extends(DeleteDish, _super);
+    function DeleteDish() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    DeleteDish.prototype.render = function () {
+        var children = this.props.children;
+        return (React.createElement(Mutation, { mutation: deleteDishMutation }, function (mutate) {
+            return children({
+                deleteDish: mutate
+            });
+        }));
+    };
+    return DeleteDish;
+}(React.PureComponent));
+export { DeleteDish };
 var ViewDishes = /** @class */ (function (_super) {
     __extends(ViewDishes, _super);
     function ViewDishes() {
@@ -39,5 +56,5 @@ var ViewDishes = /** @class */ (function (_super) {
     return ViewDishes;
 }(React.PureComponent));
 export { ViewDishes };
-var templateObject_1;
+var templateObject_1, templateObject_2;
 //# sourceMappingURL=index.js.map

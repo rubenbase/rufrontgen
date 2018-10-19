@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { ViewDishes } from "@rufrontgen/controller";
+import { ViewDishes, DeleteDish } from "@rufrontgen/controller";
 
 export class DishConnector extends React.PureComponent {
   unsubscribe = null;
@@ -21,7 +21,12 @@ export class DishConnector extends React.PureComponent {
           return (
             <div>
                {dishes.map((d, i) => (
-                <div key={`${i}-lm`}>{d.name} <Link to={`/dish/${d.id}/edit`}>edit</Link> </div> 
+                <div key={`${i}-lm`}>{d.name} <Link to={`/dish/${d.id}/edit`}>edit</Link> 
+                <DeleteDish>
+                  <button onClick={()=>this.props.deleteDish({ dishId:d.id})}>delete</button>
+                </DeleteDish>
+              </div> 
+                
               ))} 
               <div>
                 <Link to={`/menu/${menuId}/edit`}>edit</Link>
