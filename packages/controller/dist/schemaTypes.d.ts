@@ -15,6 +15,14 @@ export interface ForgotPasswordChangeMutationVariables {
     newPassword: string;
     key: string;
 }
+export interface CreateAllergeneMutation {
+    createAllergene: boolean;
+}
+export interface CreateAllergeneMutationVariables {
+    name: string;
+    description: string;
+    DishId: string;
+}
 export interface CreateDishMutation {
     createDish: boolean;
 }
@@ -120,6 +128,14 @@ export interface SubscribeToListMutationVariables {
     name: string;
     lastname: string;
 }
+export interface UpdateAllergeneMutation {
+    updateAllergene: boolean;
+}
+export interface UpdateAllergeneMutationVariables {
+    allergeneId: string;
+    name: string;
+    description: string;
+}
 export interface UpdateDishMutation {
     updateDish: boolean;
 }
@@ -142,6 +158,35 @@ export interface UpdateMenuMutation {
 export interface UpdateMenuMutationVariables {
     menuId: string;
     input: UpdateMenuInput;
+}
+export interface ViewAllergenesQuery_allergenes {
+    id: string;
+    name: string;
+    description: string;
+    dishId: string;
+}
+export interface ViewAllergenesQuery {
+    allergenes: ViewAllergenesQuery_allergenes[];
+}
+export interface ViewAllergenesQueryVariables {
+    dishId: string;
+}
+export interface DeleteAllergeneMutation {
+    deleteAllergene: boolean;
+}
+export interface DeleteAllergeneMutationVariables {
+    allergeneId: string;
+}
+export interface ViewDishQuery_viewDish {
+    id: string;
+    name: string;
+    description: string;
+}
+export interface ViewDishQuery {
+    viewDish: ViewDishQuery_viewDish | null;
+}
+export interface ViewDishQueryVariables {
+    id: string;
 }
 export interface ViewDishesQuery_dishes {
     id: string;

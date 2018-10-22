@@ -1,0 +1,8 @@
+input UpdateAllergeneInput {
+  name: String!
+  description: String!
+}
+
+type Mutation {
+  updateAllergene(allergeneId: String!, input: UpdateAllergeneInput!): Boolean!
+}

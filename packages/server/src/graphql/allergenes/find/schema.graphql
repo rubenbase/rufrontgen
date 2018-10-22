@@ -1,0 +1,10 @@
+type Allergene {
+  id: ID!
+  name: String!
+  description: String!
+  dishId: String!
+  owner: User!
+}
+type Query {
+  allergenes(dishId: String!): [Allergene!]!
+}

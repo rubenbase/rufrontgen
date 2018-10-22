@@ -10,14 +10,18 @@ import ChangePasswordScreen from "screens/ChangePasswordScreen";
 import TextScreen from "screens/TextScreen";
 import CreateListingScreen from "screens/CreateListingScreen";
 import CreateMenuScreen from "screens/CreateMenuScreen";
+import CreateAllergeneScreen from "screens/CreateAllergeneScreen";
 import FindListingsScreen from "screens/FindListingsScreen";
 import FindMenusScreen from "screens/FindMenusScreen";
 import ViewListingScreen from "screens/ViewListingScreen";
 import ViewMenuScreen from "screens/ViewMenuScreen";
+import ViewDishScreen from "screens/ViewDishScreen";
 import EditListingScreen from "screens/EditListingScreen";
 import EditMenuScreen from "screens/EditMenuScreen";
 import CreateDishScreen from "screens/CreateDishScreen";
 import EditDishScreen from "screens/EditDishScreen";
+import EditAllergeneScreen from "screens/EditAllergeneScreen";
+
 
 import Logout from "modules/logout";
 
@@ -87,7 +91,21 @@ export const Routes = () => (
         path="/dish/:dishId/edit"
         component={EditDishScreen}
       />
-
+      <Route
+        exact={true}
+        path="/dish/:dishId"
+        component={ViewDishScreen}
+      />
+      <Route 
+        exact={true}
+        path="/dish/:dishId/create-allergene"
+        component={CreateAllergeneScreen}
+        />
+      <Route
+        exact={true}
+        path="/allergene/:allergeneId/edit"
+        component={EditAllergeneScreen}
+      />
       {/* Legal Routes */}
       <Route exact={true} path="/legal" component={LegalConnector} />
 

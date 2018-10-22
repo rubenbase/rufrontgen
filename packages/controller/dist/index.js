@@ -14,8 +14,12 @@ export * from "./modules/CreateMenu";
 export * from "./modules/ViewMenu";
 export * from "./modules/CreateDish";
 export * from "./modules/ViewDishes";
+export * from "./modules/ViewDish";
+export * from "./modules/CreateAllergene";
+export * from "./modules/ViewAllergenes";
 export * from "./modules/UpdateDish";
 export * from "./modules/UpdateMenu";
+export * from "./modules/UpdateAllergene";
 export * from "./modules/CreateMessage";
 export * from "./modules/Auth/AuthRoute";
 //# sourceMappingURL=index.js.map

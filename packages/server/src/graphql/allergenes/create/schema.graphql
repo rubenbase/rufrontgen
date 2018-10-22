@@ -1,0 +1,9 @@
+input AllergeneInput {
+  name: String!
+  description: String!
+  dishId: String!
+}
+
+type Mutation {
+  createAllergene(input: AllergeneInput!): Boolean!
+}

@@ -42,6 +42,24 @@ export interface ForgotPasswordChangeMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateAllergeneMutation
+// ====================================================
+
+export interface CreateAllergeneMutation {
+  createAllergene: boolean;
+}
+
+export interface CreateAllergeneMutationVariables {
+  name: string;
+  description: string;
+  DishId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: CreateDishMutation
 // ====================================================
 
@@ -270,6 +288,24 @@ export interface SubscribeToListMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateAllergeneMutation
+// ====================================================
+
+export interface UpdateAllergeneMutation {
+  updateAllergene: boolean;
+}
+
+export interface UpdateAllergeneMutationVariables {
+  allergeneId: string;
+  name: string;
+  description: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: UpdateDishMutation
 // ====================================================
 
@@ -316,6 +352,67 @@ export interface UpdateMenuMutation {
 export interface UpdateMenuMutationVariables {
   menuId: string;
   input: UpdateMenuInput;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewAllergenesQuery
+// ====================================================
+
+export interface ViewAllergenesQuery_allergenes {
+  id: string;
+  name: string;
+  description: string;
+  dishId: string;
+}
+
+export interface ViewAllergenesQuery {
+  allergenes: ViewAllergenesQuery_allergenes[];
+}
+
+export interface ViewAllergenesQueryVariables {
+  dishId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: DeleteAllergeneMutation
+// ====================================================
+
+export interface DeleteAllergeneMutation {
+  deleteAllergene: boolean;
+}
+
+export interface DeleteAllergeneMutationVariables {
+  allergeneId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewDishQuery
+// ====================================================
+
+export interface ViewDishQuery_viewDish {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface ViewDishQuery {
+  viewDish: ViewDishQuery_viewDish | null;
+}
+
+export interface ViewDishQueryVariables {
+  id: string;
 }
 
 

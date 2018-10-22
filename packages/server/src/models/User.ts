@@ -9,6 +9,7 @@ import {
 } from "typeorm";
 import { BaseEntity } from "typeorm/repository/BaseEntity";
 import { Listing } from "./Listing";
+import { Dish } from "./Dish";
 
 type UserRole = "user" | "admin";
 
@@ -46,6 +47,8 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Listing, listing => listing.user)
   listings: Listing[];
+  @OneToMany(() => Dish, dish => dish.user)
+  dishes: Dish[];
 
   @BeforeInsert()
   async hashPasswordBeforeInsert() {

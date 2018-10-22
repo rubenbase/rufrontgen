@@ -5,11 +5,11 @@ import {
     PrimaryGeneratedColumn,
     ManyToOne
   } from "typeorm";
-  import { Menu } from "./Menu";
+  import { Dish } from "./Dish";
   import { User } from "./User";
   
-  @Entity("dishes")
-  export class Dish extends BaseEntity {
+  @Entity("allergenes")
+  export class Allergene extends BaseEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
   
@@ -19,19 +19,16 @@ import {
     @Column("text")
     description: string;
 
-    @Column("int")
-    price: number;
-
     @Column("uuid")
     userId: string;
   
-    @ManyToOne(() => User, user => user.dishes)
+    @ManyToOne(() => User, user => user.listings)
     user: User;
   
     @Column("uuid")
-    menuId: string;
+    dishId: string;
   
-    @ManyToOne(() => Menu)
-    menu: Menu;
+    @ManyToOne(() => Dish)
+    dish: Dish;
   }
   
