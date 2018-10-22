@@ -156,6 +156,12 @@ export interface ViewDishesQuery {
 export interface ViewDishesQueryVariables {
     menuId: string;
 }
+export interface DeleteDishMutation {
+    deleteDish: boolean;
+}
+export interface DeleteDishMutationVariables {
+    dishId: string;
+}
 export interface ViewListingQuery_viewListing_owner {
     id: string;
     email: string;

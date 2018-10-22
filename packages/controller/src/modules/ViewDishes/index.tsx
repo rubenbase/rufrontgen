@@ -1,8 +1,8 @@
 // @ts-ignore
 import * as React from "react";
 import gql from "graphql-tag";
-import { Query, Mutation } from "react-apollo";
-import { ViewDishesQuery_dishes } from "../../schemaTypes";
+import { Query, graphql } from "react-apollo";
+import { ViewDishesQuery_dishes,DeleteDishMutationVariables,DeleteDishMutation } from "../../schemaTypes";
 
 export const viewDishesQuery = gql`
   query ViewDishesQuery($menuId: String!) {
@@ -29,35 +29,43 @@ export const deleteDishMutation = gql`
 export interface WithViewDishes {
   dishes: ViewDishesQuery_dishes[];
   loading: boolean;
+  deleteDish: any;
 }
 
-export class DeleteDish extends React.PureComponent<{
-  children: (data: any) => JSX.Element | null;
-}> {
-  render() {
-    const { children } = this.props;
-    return (
-      <Mutation mutation={deleteDishMutation}>
-      {mutate => {
-        return children({
-          deleteDish: mutate
-        });
-      }}
-    </Mutation>
-    );
-  }
+export interface WithDeleteDishProps {
+  deleteDish: (variables: DeleteDishMutationVariables) => void;
 }
 
+const deleteDish = graphql<
+  any,
+  DeleteDishMutation,
+  DeleteDishMutationVariables,
+  WithDeleteDishProps
+>(deleteDishMutation, {
+  props: ({ mutate }) => ({
+    deleteDish: async variables => {
+      if (!mutate) {
+        return;
+      }
 
-export class ViewDishes extends React.PureComponent<{
+      const response = await mutate({
+        variables
+      });
+      console.log(response);
+    }
+  })
+});
+
+class ListDishes extends React.PureComponent<{
   menuId: string;
   children: (data: WithViewDishes) => JSX.Element | null;
+  deleteDish:any
 }> {
   render() {
     const { children, menuId } = this.props;
     return (
       <Query query={viewDishesQuery} variables={{ menuId }}>
-        {({ data, loading, subscribeToMore }) => {
+        {({ data, loading }) => {
           let dishes: ViewDishesQuery_dishes[] = [];
 
           if (data && data.dishes) {
@@ -66,10 +74,13 @@ export class ViewDishes extends React.PureComponent<{
 
           return children({
             dishes,
-            loading
+            loading,
+            deleteDish: this.props.deleteDish
           });
         }}
       </Query>
     );
   }
 }
+
+export const ViewDishes = deleteDish(ListDishes);

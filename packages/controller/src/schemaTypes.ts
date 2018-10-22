@@ -347,6 +347,22 @@ export interface ViewDishesQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: DeleteDishMutation
+// ====================================================
+
+export interface DeleteDishMutation {
+  deleteDish: boolean;
+}
+
+export interface DeleteDishMutationVariables {
+  dishId: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ViewListingQuery
 // ====================================================
 

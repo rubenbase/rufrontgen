@@ -1,19 +1,13 @@
 import * as React from "react";
-import { ViewDishesQuery_dishes } from "../../schemaTypes";
+import { ViewDishesQuery_dishes, DeleteDishMutationVariables } from "../../schemaTypes";
 export declare const viewDishesQuery: any;
 export declare const deleteDishMutation: any;
 export interface WithViewDishes {
     dishes: ViewDishesQuery_dishes[];
     loading: boolean;
+    deleteDish: any;
 }
-export declare class DeleteDish extends React.PureComponent<{
-    children: (data: any) => JSX.Element | null;
-}> {
-    render(): JSX.Element;
+export interface WithDeleteDishProps {
+    deleteDish: (variables: DeleteDishMutationVariables) => void;
 }
-export declare class ViewDishes extends React.PureComponent<{
-    menuId: string;
-    children: (data: WithViewDishes) => JSX.Element | null;
-}> {
-    render(): JSX.Element;
-}
+export declare const ViewDishes: React.ComponentClass<any>;
