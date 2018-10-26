@@ -2,27 +2,11 @@ import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
 
-import Page from "components/LayoutComponents/Page";
+import Page from "containers/LayoutContainers/Page";
 import NotFoundPage from "pages/DefaultPages/NotFoundPage";
 
 import { AuthRoute } from "@rufrontgen/controller";
-import { LegalConnector } from "containers/legal/LegalConnector";
 import HomeView from "containers/home/ui/HomeView";
-import LoginScreen from "screens/LoginScreen";
-import RegisterScreen from "screens/RegisterScreen";
-import ForgotPasswordScreen from "screens/ForgotPasswordScreen";
-import ChangePasswordScreen from "screens/ChangePasswordScreen";
-import TextScreen from "screens/TextScreen";
-import CreateListingScreen from "screens/CreateListingScreen";
-import FindListingsScreen from "screens/FindListingsScreen";
-import ViewListingScreen from "screens/ViewListingScreen";
-import EditListingScreen from "screens/EditListingScreen";
-import CreateCategoryScreen from "screens/CreateCategoryScreen";
-import FindCategoryScreen from "screens/FindCategoryScreen";
-import ViewCategoryScreen from "screens/ViewCategoryScreen";
-import EditCategoryScreen from "screens/EditCategoryScreen";
-import Home from "screens/HomeScreen";
-import Logout from "containers/logout";
 
 const loadable = loader =>
   Loadable({
@@ -32,25 +16,66 @@ const loadable = loader =>
   });
 
 const loadableRoutes = {
-     /* Auth Flow Routes */
+  /* Auth Flow Routes */
+  "/register": {
+    component: loadable(() => import("screens/RegisterScreen"))
+  },
+  "/login": {
+    component: loadable(() => import("screens/LoginScreen"))
+  },
+  "/logout": {
+    component: loadable(() => import("containers/logout"))
+  },
+  "/forgot-password": {
+    component: loadable(() => import("screens/ForgotPasswordScreen"))
+  },
+  "/change-password/:key": {
+    component: loadable(() => import("screens/ChangePasswordScreen"))
+  },
 
-     '/register': {
-      component: loadable(() => import('screens/RegisterScreen')),
-    },
+  /* Listings Routes */
+  "/listings": {
+    component: loadable(() => import("screens/FindListingsScreen"))
+  },
+  "/listing/:listingId": {
+    component: loadable(() => import("screens/ViewListingScreen"))
+  },
+  "/listing/:listingId/edit": {
+    component: loadable(() => import("screens/EditListingScreen"))
+  },
+  "/create-listing": {
+    component: loadable(() => import("screens/CreateListingScreen"))
+  },
 
-     <Route exact={true} path="/register" component={RegisterScreen} />
-     <Route exact={true} path="/login" component={LoginScreen} />
-     <Route exact={true} path="/logout" component={Logout} />
-     <Route
-       exact={true}
-       path="/forgot-password"
-       component={ForgotPasswordScreen}
-     />
-     <Route
-       exact={true}
-       path="/change-password/:key"
-       component={ChangePasswordScreen}
-     />
+  /* Category Routes */
+  "/create-categories": {
+    component: loadable(() => import("screens/CreateCategoryScreen"))
+  },
+  "/categories": {
+    component: loadable(() => import("screens/FindCategoryScreen"))
+  },
+  "/view-categories": {
+    component: loadable(() => import("screens/ViewCategoryScreen"))
+  },
+  "/edit-categories": {
+    component: loadable(() => import("screens/EditCategoryScreen"))
+  },
+
+  /* Legal Routes */
+  "/legal": {
+    component: loadable(() => import("containers/legal/LegalConnector"))
+  },
+
+  /* Misc Routes */
+  "/m/": {
+    component: loadable(() => import("screens/TextScreen")),
+    exact: false
+  },
+
+  /* In maintenance Routes */
+  "/home": {
+    component: loadable(() => import("screens/HomeScreen"))
+  }
 };
 
 class Routes extends React.PureComponent {
@@ -80,6 +105,7 @@ class Routes extends React.PureComponent {
           {Object.keys(loadableRoutes).map(path => {
             const { exact, ...props } = loadableRoutes[path];
             props.exact = exact === void 0 || exact || false; // set true as default
+            console.log(props.exact);
             return <Route key={path} path={path} {...props} />;
           })}
           <Route
@@ -95,14 +121,24 @@ class Routes extends React.PureComponent {
   }
 }
 
-export const Routes = () => (
-  <BrowserRouter>
-    <Switch>
-      {/* <Route exact={true} path="/" component={HomeView} /> */}
-      <Route exact={true} path="/home" component={Home} />
+export { loadableRoutes };
+export { Routes };
 
-      {/* Auth Flow Routes */}
-      <Route exact={true} path="/register" component={RegisterScreen} />
+// export const Routes = () => (
+//   <BrowserRouter>
+//     <Switch>
+{
+  /* <Route exact={true} path="/" component={HomeView} /> */
+}
+{
+  /* <Route exact={true} path="/home" component={Home} /> */
+}
+
+{
+  /* Auth Flow Routes */
+}
+{
+  /* <Route exact={true} path="/register" component={RegisterScreen} />
       <Route exact={true} path="/login" component={LoginScreen} />
       <Route exact={true} path="/logout" component={Logout} />
       <Route
@@ -114,10 +150,14 @@ export const Routes = () => (
         exact={true}
         path="/change-password/:key"
         component={ChangePasswordScreen}
-      />
+      /> */
+}
 
-      {/* Listings Routes */}
-      <Route exact={true} path="/listings" component={FindListingsScreen} />
+{
+  /* Listings Routes */
+}
+{
+  /* <Route exact={true} path="/listings" component={FindListingsScreen} />
       <Route
         exact={true}
         path="/listing/:listingId"
@@ -133,10 +173,14 @@ export const Routes = () => (
         exact={true}
         path="/create-listing"
         component={CreateListingScreen}
-      />
+      /> */
+}
 
-      {/* Category Routes */}
-      <Route
+{
+  /* Category Routes */
+}
+{
+  /* <Route
         exact={true}
         path="/create-categories"
         component={CreateCategoryScreen}
@@ -154,13 +198,18 @@ export const Routes = () => (
         exact={true}
         path="/edit-categories"
         component={EditCategoryScreen}
-      />
+      /> */
+}
 
-      {/* Legal Routes */}
-      <Route exact={true} path="/legal" component={LegalConnector} />
+{
+  /* Legal Routes */
+}
+// <Route exact={true} path="/legal" component={LegalConnector} />
 
-      {/* Misc Routes */}
-      <Route path="/m/" component={TextScreen} />
-    </Switch>
-  </BrowserRouter>
-);
+{
+  /* Misc Routes */
+}
+// <Route path="/m/" component={TextScreen} />
+//     </Switch>
+//   </BrowserRouter>
+// );

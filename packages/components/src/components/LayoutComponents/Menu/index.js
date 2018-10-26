@@ -1,41 +1,41 @@
-import 'rc-drawer/assets/index.css'
-import React from 'react'
-import DrawerMenu from 'rc-drawer'
-import { MenuLeft } from './MenuLeft'
-import { MenuTop } from './MenuTop'
-import { connect } from 'react-redux'
-import { setLayoutState } from 'ducks/app'
-import './style.scss'
+import "rc-drawer/assets/index.css";
+import React from "react";
+import DrawerMenu from "rc-drawer";
+import { MenuLeft } from "./MenuLeft";
+import { MenuTop } from "./MenuTop";
+import { connect } from "react-redux";
+// import { setLayoutState } from 'ducks/app'
+import "./style.scss";
 
 const mapStateToProps = ({ app }, props) => ({
   open: app.layoutState.menuMobileOpened,
-  isMenuTop: app.layoutState.isMenuTop,
-})
+  isMenuTop: app.layoutState.isMenuTop
+});
 
 @connect(mapStateToProps)
 class AppMenu extends React.Component {
   state = {
     open: this.props.open,
-    isMenuTop: this.props.isMenuTop,
-  }
+    isMenuTop: this.props.isMenuTop
+  };
 
   toggleOpen = () => {
-    const { dispatch } = this.props
-    const { open } = this.state
-    dispatch(setLayoutState({ menuMobileOpened: !open }))
-  }
+    const { dispatch } = this.props;
+    const { open } = this.state;
+    // dispatch(setLayoutState({ menuMobileOpened: !open }))
+  };
 
   componentWillReceiveProps({ open, isMenuTop }) {
     this.setState({
       open,
-      isMenuTop,
-    })
+      isMenuTop
+    });
   }
 
   render() {
-    const { isMobile } = this.props
+    const { isMobile } = this.props;
 
-    const { open, isMenuTop } = this.state
+    const { open, isMenuTop } = this.state;
     return isMobile ? (
       <DrawerMenu
         getContainer={null}
@@ -50,8 +50,8 @@ class AppMenu extends React.Component {
       <MenuTop {...this.props} />
     ) : (
       <MenuLeft {...this.props} />
-    )
+    );
   }
 }
 
-export default AppMenu
+export default AppMenu;
