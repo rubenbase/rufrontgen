@@ -23,5 +23,13 @@ export const stateResolvers = {
 
     cache.writeData({ query, data });
     console.log(data);
+  },
+  setIsUpdatingContent: (_, { index, value }, { cache }) => {
+    cache.writeData({ data: { isUpdatingContent: value } });
+    console.log(value);
+  },
+  isLoading: (_, { index, value }, { cache }) => {
+    cache.writeData({ data: { isLoading: value } });
+    console.log(value);
   }
 };
