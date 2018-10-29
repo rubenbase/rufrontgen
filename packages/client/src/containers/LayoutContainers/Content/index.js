@@ -6,6 +6,8 @@ import { graphql, compose } from "react-apollo";
 // import { setUpdatingContent } from "ducks/app";
 import { isEmpty } from "lodash";
 import Breadcrumb from "containers/LayoutContainers/Breadcrumb";
+import setIsUpdatingContent from "../../../graphql/State/setIsUpdatingContent";
+import getIsUpdatingContent from "../../../graphql/State/getIsUpdatingContent";
 
 // const mapStateToProps = (state, props) => ({
 //   isUpdatingContent: state.app.isUpdatingContent
@@ -34,7 +36,7 @@ class AppContent extends React.Component {
 
     const { isUpdatingContent, dispatch } = this.props;
     if (isUpdatingContent) {
-      dispatch(setUpdatingContent(false));
+      // dispatch(setUpdatingContent(false));
     }
   }
 
@@ -61,10 +63,10 @@ class AppContent extends React.Component {
 }
 
 export default compose(
-  graphql(setCurrentLanguage, { name: "setCurrentLanguage" }),
-  graphql(getCurrentLanguage, {
-    props: ({ data: { currentLanguage, loading, error } }) => ({
-      currentLanguage,
+  graphql(setIsUpdatingContent, { name: "setCurrentLanguage" }),
+  graphql(getIsUpdatingContent, {
+    props: ({ data: { isUpdatingContent, loading, error } }) => ({
+      isUpdatingContent,
       loading,
       error
     })
