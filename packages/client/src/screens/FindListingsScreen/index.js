@@ -4,10 +4,10 @@ import Helmet from "react-helmet";
 import FindListings from "./FindListings";
 
 class FindListingsScreen extends React.Component {
-  // static defaultProps = {
-  //   pathName: "Lockscreen",
-  //   roles: ["agent", "administrator"]
-  // };
+  static defaultProps = {
+    pathName: "Listings",
+    roles: ["agent", "administrator"]
+  };
 
   render() {
     const props = this.props;

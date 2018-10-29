@@ -86,27 +86,29 @@ class Layout extends React.Component {
     const isMobile = !!this.state.isMobile;
     return (
       <ContainerQuery query={query}>
-        {params => (
-          <div className={classNames(params)}>
-            <AntLayout>
-              {/* <LayoutState /> */}
-              {/* <Loader /> */}
-              <BackTop />
-              <Routes />
-              {/* <Menu isMobile={isMobile} /> */}
-              {/* <SettingsSider /> */}
+        {params =>
+          console.log("ALIBABA PAARAMAS ARE ", params) || (
+            <div className={classNames(params)}>
               <AntLayout>
-                <AntHeader>{/* <TopBar /> */}</AntHeader>
-                <AntContent style={{ height: "100%" }}>
-                  <Content />
-                </AntContent>
-                <AntFooter>
-                  <Footer />
-                </AntFooter>
+                {/* <LayoutState /> */}
+                {/* <Loader /> */}
+                <BackTop />
+                <Routes />
+                {/* <Menu isMobile={isMobile} /> */}
+                {/* <SettingsSider /> */}
+                <AntLayout>
+                  <AntHeader>{/* <TopBar /> */}</AntHeader>
+                  <AntContent style={{ height: "100%" }}>
+                    <Content />
+                  </AntContent>
+                  <AntFooter>
+                    <Footer />
+                  </AntFooter>
+                </AntLayout>
               </AntLayout>
-            </AntLayout>
-          </div>
-        )}
+            </div>
+          )
+        }
       </ContainerQuery>
     );
   }

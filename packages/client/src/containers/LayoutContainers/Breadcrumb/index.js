@@ -4,7 +4,7 @@ import { menuData } from "../Menu/MenuLeft";
 import { reduce } from "lodash";
 import "./style.scss";
 
-// @withRouter
+@withRouter
 class Breadcrumb extends React.Component {
   state = {
     breadcrumb: []
@@ -34,6 +34,7 @@ class Breadcrumb extends React.Component {
   }
 
   getBreadcrumb = (props, items) => {
+    console.log("B R E A D   ->   PROPS IN BREADCRUM ARE -> ", props);
     let { breadcrumb } = this.state;
     let url = props.location.pathname;
     let [activeMenuItem, ...path] = this.getPath(items, url);

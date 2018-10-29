@@ -1,5 +1,6 @@
 import React from "react";
 import NotFoundPage from "pages/DefaultPages/NotFoundPage";
+import PropTypes from "prop-types";
 
 let source = null;
 
@@ -13,6 +14,21 @@ class Page extends React.Component {
   //     isLoading: boolean,
   //     dispatch: Function
   //   };
+
+  static propTypes = {
+    roles: PropTypes.array,
+    pathName: PropTypes.any,
+    isNotFound: PropTypes.bool,
+    onMounted: PropTypes.func,
+    children: PropTypes.any,
+    // from connect
+    isLoading: PropTypes.bool,
+    dispatch: PropTypes.func
+  };
+
+  static contextTypes = {
+    setContentBuffer: PropTypes.func
+  };
 
   static defaultProps = {
     roles: [],
@@ -32,6 +48,18 @@ class Page extends React.Component {
   updateContent = () => {
     const { setContentBuffer } = this.context;
     const { isNotFound, pathName, children, dispatch } = this.props;
+    console.log(
+      "ALIBABA ____ ESTAMOS EN updateContent() METHOD AND THIS CONTEXT IS => ",
+      this.context
+    );
+    console.log(
+      "ALIBABA LAS MOVIDAS DEL PATHNAME QUE SE VA ACTUALIZAR ES -> ",
+      pathName
+    );
+    console.log(
+      "ALIBABA LAS MOVIDAS DEL children QUE SE VA ACTUALIZAR ES -> ",
+      children
+    );
     setContentBuffer({
       pathName,
       content: isNotFound ? <NotFoundPage /> : children
@@ -121,10 +149,11 @@ class Page extends React.Component {
   }
 
   componentDidUpdate() {
-    const { isLoading } = this.props;
-    if (this._onMounted && !isLoading) {
-      this.updateContent();
-    }
+    // const { isLoading } = this.props;
+    // if (this._onMounted && !isLoading) {
+    console.log("ALIBABA ENTRO EN COMPONENTDIDUPDATE Y VA A UPDATECONTENT");
+    this.updateContent();
+    // }
   }
 
   render() {

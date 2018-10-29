@@ -87,7 +87,7 @@ class Routes extends React.PureComponent {
         Object.keys(loadableRoutes).forEach(path =>
           loadableRoutes[path].component.preload()
         ),
-      5000 // load after 5 sec
+      2000 // load after 5 sec
     );
   }
 

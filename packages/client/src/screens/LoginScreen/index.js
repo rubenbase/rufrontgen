@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Login from "./Login";
+import Page from "containers/LayoutContainers/Page";
 
 class LoginScreen extends React.Component {
   static defaultProps = {
@@ -11,12 +12,10 @@ class LoginScreen extends React.Component {
   render() {
     const props = this.props;
     return (
-      // <Page {...props}>
-      <div>
+      <Page {...props}>
         <Helmet title="Login Beta" />
         <Login {...props} />
-      </div>
-      // </Page>
+      </Page>
     );
   }
 }
