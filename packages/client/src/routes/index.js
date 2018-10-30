@@ -21,7 +21,9 @@ const loadableRoutes = {
     component: loadable(() => import("screens/RegisterScreen"))
   },
   "/login": {
-    component: loadable(() => import("screens/LoginScreen"))
+    component: loadable(
+      () => import("screens/LoginScreen") /* webpackChunkName: "LoginChunk" */
+    )
   },
   "/logout": {
     component: loadable(() => import("containers/logout"))

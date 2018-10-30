@@ -85,31 +85,31 @@ class Layout extends React.Component {
   render() {
     const isMobile = !!this.state.isMobile;
     return (
-      <ContainerQuery query={query}>
-        {params =>
-          console.log("ALIBABA PAARAMAS ARE ", params) || (
-            <div className={classNames(params)}>
-              <AntLayout>
-                {/* <LayoutState /> */}
-                {/* <Loader /> */}
-                <BackTop />
-                <Routes />
-                {/* <Menu isMobile={isMobile} /> */}
-                {/* <SettingsSider /> */}
-                <AntLayout>
-                  <AntHeader>{/* <TopBar /> */}</AntHeader>
-                  <AntContent style={{ height: "100%" }}>
-                    <Content />
-                  </AntContent>
-                  <AntFooter>
-                    <Footer />
-                  </AntFooter>
-                </AntLayout>
-              </AntLayout>
-            </div>
-          )
-        }
-      </ContainerQuery>
+      // <ContainerQuery query={query}>
+      //   {params =>
+      //     console.log("ALIBABA PAARAMAS ARE ", params) || (
+      //       <div className={classNames(params)}>
+      <AntLayout>
+        {/* <LayoutState /> */}
+        {/* <Loader /> */}
+        <BackTop />
+        <Routes />
+        {/* <Menu isMobile={isMobile} /> */}
+        {/* <SettingsSider /> */}
+        <AntLayout>
+          <AntHeader>{/* <TopBar /> */}</AntHeader>
+          <AntContent style={{ height: "100%" }}>
+            <Content />
+          </AntContent>
+          <AntFooter>
+            <Footer />
+          </AntFooter>
+        </AntLayout>
+      </AntLayout>
+      //       </div>
+      //     )
+      //   }
+      // </ContainerQuery>
     );
   }
 }
