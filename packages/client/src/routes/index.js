@@ -8,65 +8,108 @@ import NotFoundPage from "pages/DefaultPages/NotFoundPage";
 import { AuthRoute } from "@rufrontgen/controller";
 import HomeView from "containers/home/ui/HomeView";
 
-const loadable = loader =>
-  Loadable({
-    loader,
-    delay: false,
-    loading: () => null
-  });
+/************************************
+ *           R o u t e s
+ ************************************/
+
+const tmp_LoadingComponent = <div>Loading...</div>;
+
+/****************** Auth Flow Routes ******************/
+const Register = Loadable({
+  loader: () =>
+    import("screens/RegisterScreen" /* webpackChunkName: "RegisterChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const Login = Loadable({
+  loader: () =>
+    import("screens/LoginScreen" /* webpackChunkName: "LoginChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const Logout = Loadable({
+  loader: () =>
+    import("containers/logout" /* webpackChunkName: "LogoutChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const ForgotPassword = Loadable({
+  loader: () =>
+    import("screens/ForgotPasswordScreen" /* webpackChunkName: "ForgotPasswordChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const ChangePassword = Loadable({
+  loader: () =>
+    import("screens/ChangePasswordScreen" /* webpackChunkName: "ChangePasswordChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+/****************** Listings Routes ******************/
+const Listings = Loadable({
+  loader: () =>
+    import("screens/FindListingsScreen" /* webpackChunkName: "ListingsChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const Listing = Loadable({
+  loader: () =>
+    import("screens/ViewListingScreen" /* webpackChunkName: "ListingChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const ListingEdit = Loadable({
+  loader: () =>
+    import("screens/EditListingScreen" /* webpackChunkName: "ListingEditChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+const ListingCreate = Loadable({
+  loader: () =>
+    import("screens/CreateListingScreen" /* webpackChunkName: "ListingCreateChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+/****************** Legal Routes ******************/
+const Legal = Loadable({
+  loader: () =>
+    import("containers/legal/LegalConnector" /* webpackChunkName: "CategoryCreateChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+/****************** Category Routes ******************/
+const CategoryCreate = Loadable({
+  loader: () =>
+    import("screens/CreateCategoryScreen" /* webpackChunkName: "CategoryCreateChunk" */),
+  loading: () => tmp_LoadingComponent
+});
+
+/****************** Misc Routes ******************/
+const Text = Loadable({
+  loader: () =>
+    import("screens/TextScreen" /* webpackChunkName: "TextChunk" */),
+  loading: () => tmp_LoadingComponent
+});
 
 const loadableRoutes = {
-  /* Auth Flow Routes */
-  "/register": {
-    component: loadable(() => import("screens/RegisterScreen"))
-  },
-  "/login": {
-    component: loadable(
-      () => import("screens/LoginScreen") /* webpackChunkName: "LoginChunk" */
-    )
-  },
-  "/logout": {
-    component: loadable(() => import("containers/logout"))
-  },
-  "/forgot-password": {
-    component: loadable(() => import("screens/ForgotPasswordScreen"))
-  },
-  "/change-password/:key": {
-    component: loadable(() => import("screens/ChangePasswordScreen"))
-  },
-
-  /* Listings Routes */
-  "/listings": {
-    component: loadable(() => import("screens/FindListingsScreen"))
-  },
-  "/listing/:listingId": {
-    component: loadable(() => import("screens/ViewListingScreen"))
-  },
-  "/listing/:listingId/edit": {
-    component: loadable(() => import("screens/EditListingScreen"))
-  },
-  "/create-listing": {
-    component: loadable(() => import("screens/CreateListingScreen"))
-  },
-
   /* Category Routes */
-  "/create-categories": {
-    component: loadable(() => import("screens/CreateCategoryScreen"))
-  },
-  "/categories": {
-    component: loadable(() => import("screens/FindCategoryScreen"))
-  },
-  "/view-categories": {
-    component: loadable(() => import("screens/ViewCategoryScreen"))
-  },
-  "/edit-categories": {
-    component: loadable(() => import("screens/EditCategoryScreen"))
-  },
+  // "/create-categories": {
+  //   component: loadable(() => import("screens/CreateCategoryScreen"))
+  // },
+  // "/categories": {
+  //   component: loadable(() => import("screens/FindCategoryScreen"))
+  // },
+  // "/view-categories": {
+  //   component: loadable(() => import("screens/ViewCategoryScreen"))
+  // },
+  // "/edit-categories": {
+  //   component: loadable(() => import("screens/EditCategoryScreen"))
+  // },
 
   /* Legal Routes */
-  "/legal": {
-    component: loadable(() => import("containers/legal/LegalConnector"))
-  },
+  // "/legal": {
+  //   component: loadable(() => import("containers/legal/LegalConnector"))
+  // },
 
   /* Misc Routes */
   "/m/": {
