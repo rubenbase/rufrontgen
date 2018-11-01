@@ -6,10 +6,11 @@ export const resolvers: ResolverMap = {
     owner: ({ userId }, _, { userLoader }) => userLoader.load(userId)
   },
   Query: {
-    allergenes: async (_, { dishId }) => {
+    allergenes: async (_, { dishId }, {session}) => {
       return Allergene.find({
         where: {
-          dishId
+          dishId,
+          userId: session.userId
         }
       });
     }
