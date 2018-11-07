@@ -23,14 +23,12 @@ export class AllergenesConnector extends React.PureComponent {
           return (
             <div>
                {allergenes.map((d, i) => (
+                 <Link to={`/allergene/${d.id}/`}>
                 <div key={`${i}-lm`}>{d.name} <Link to={`/allergene/${d.id}/edit`}>edit</Link> 
                 <button onClick={()=>deleteAllergene({ allergeneId:d.id})}>delete</button>
               </div> 
-                
+                </Link>
               ))} 
-              <div>
-                <Link to={`/dish/${dishId}/edit`}>edit</Link>
-              </div>
             </div>
           );
         }}

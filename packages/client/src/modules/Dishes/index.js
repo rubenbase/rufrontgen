@@ -22,15 +22,16 @@ export class DishConnector extends React.PureComponent {
           return (
             <div>
                {dishes.map((d, i) => (
-                <div key={`${i}-lm`}>{d.name} <Link to={`/dish/${d.id}/edit`}>edit</Link> 
-                <Link to={`/dish/${d.id}`}>view</Link> 
+                 <div>
+                <Link to={`/dish/${d.id}`}>
+                <div key={`${i}-lm`}>{d.name} 
+
                 <button onClick={()=>deleteDish({ dishId:d.id})}>delete</button>
               </div> 
-                
-              ))} 
-              <div>
-                <Link to={`/menu/${menuId}/edit`}>edit</Link>
+              </Link> 
+              <Link to={`/dish/${d.id}/edit`}>edit</Link> 
               </div>
+              ))} 
             </div>
           );
         }}
