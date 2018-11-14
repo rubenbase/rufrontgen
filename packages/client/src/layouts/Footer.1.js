@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import { Layout, Icon } from "antd";
-// import GlobalFooter from '@r/components/GlobalFooter';
-
+// import GlobalFooter from '@rufrontgen/components/GlobalFooter';
+// TODO: Finish this on components package and link it here
 const { Footer } = Layout;
 const FooterView = () => (
   <Footer style={{ padding: 0 }}>
-    <div>This is the Footer</div>
     {/* <GlobalFooter
       links={[
         {

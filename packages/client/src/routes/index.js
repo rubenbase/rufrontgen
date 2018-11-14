@@ -18,11 +18,22 @@ import ViewCategoryScreen from "screens/ViewCategoryScreen";
 import EditCategoryScreen from "screens/EditCategoryScreen";
 import Home from "screens/HomeScreen";
 import Logout from "containers/logout";
+import BasicLayout from "layouts/BasicLayout";
 
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact={true} path="/" component={HomeView} />
+      {/* <Route exact={true} path="/" component={HomeView} /> */}
+      <Route
+        exact={true}
+        path="/"
+        render={() => (
+          <BasicLayout>
+            <HomeView />
+          </BasicLayout>
+        )}
+      />
+
       <Route exact={true} path="/home" component={Home} />
 
       {/* Auth Flow Routes */}

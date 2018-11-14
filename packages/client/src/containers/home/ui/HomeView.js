@@ -170,7 +170,6 @@ class HomeView extends React.PureComponent {
             </div>
           </div>
         </section>
-        <Footer />
       </div>
     );
   }
