@@ -140,7 +140,9 @@ class HeaderView extends PureComponent {
         className={fixedHeader ? styles.fixedHeader : ""}
       >
         {isTop && !isMobile ? (
-          <TopNavHeader
+          <div>
+            TOPNAVHEADER
+            {/* <TopNavHeader
             theme={navTheme}
             mode="horizontal"
             // Authorized={Authorized}
@@ -149,22 +151,25 @@ class HeaderView extends PureComponent {
             onMenuClick={this.handleMenuClick}
             onNoticeVisibleChange={this.handleNoticeVisibleChange}
             {...this.props}
-          />
+          /> */}
+          </div>
         ) : (
-          <GlobalHeader
+          <div>
+            {/* <GlobalHeader
             onCollapse={handleMenuCollapse}
             onNoticeClear={this.handleNoticeClear}
             onMenuClick={this.handleMenuClick}
             onNoticeVisibleChange={this.handleNoticeVisibleChange}
             {...this.props}
-          />
+          /> */}
+            GLOBALHEADER
+          </div>
         )}
       </Header>
     ) : null;
     return (
       //   <Animate component="" transitionName="fade">
-      //   <div>{HeaderDom}</div>
-      <div>holi</div>
+      <div>{HeaderDom}</div>
       //   </Animate>
     );
   }
