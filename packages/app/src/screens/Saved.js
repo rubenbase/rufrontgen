@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-class Profile extends Component {
+class Saved extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Profile</Text>
+        <Text>Saved</Text>
       </View>
     );
   }
 }
-export default Profile;
+export default Saved;
 
 const styles = StyleSheet.create({
   container: {

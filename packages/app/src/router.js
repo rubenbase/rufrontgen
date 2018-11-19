@@ -9,7 +9,12 @@ import {
 import RegisterConnector from "./modules/register/RegisterConnector";
 import LoginConnector from "./modules/login/LoginConnector";
 import Home from "./screens/Home";
+import Explore from "./screens/Explore";
+import Inbox from "./screens/Inbox";
 import Profile from "./screens/Profile";
+import Saved from "./screens/Saved";
+import Trips from "./screens/Trips";
+
 import AuthLoadingScreen from "./screens/AuthLoading";
 
 import Icon from "react-native-vector-icons/Ionicons";
@@ -18,8 +23,7 @@ import Forgot from "./screens/Forgot";
 
 const AuthStackNavigator = createStackNavigator({
   Register: {
-    screen: RegisterConnector,
-
+    screen: RegisterConnector
   },
   Login: {
     screen: LoginConnector,
@@ -37,8 +41,26 @@ const AuthStackNavigator = createStackNavigator({
 
 const AppTabNavigator = createBottomTabNavigator(
   {
+    Explore: {
+      screen: Explore,
+      navigationOptions: {
+        tabBarLabel: "Explora",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-person-outline" color={tintColor} size={24} />
+        )
+      }
+    },
     Profile: {
       screen: Profile,
+      navigationOptions: {
+        tabBarLabel: "Perfil",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-person-outline" color={tintColor} size={24} />
+        )
+      }
+    },
+    Saved: {
+      screen: Saved,
       navigationOptions: {
         tabBarLabel: "PROFILE",
         tabBarIcon: ({ tintColor }) => (
@@ -46,12 +68,21 @@ const AppTabNavigator = createBottomTabNavigator(
         )
       }
     },
-    Home: {
-      screen: Home,
+    Trips: {
+      screen: Trips,
       navigationOptions: {
-        tabBarLabel: "EXPLORE",
+        tabBarLabel: "Comidas",
         tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-search-outline" color={tintColor} size={24} />
+          <Icon name="ios-person-outline" color={tintColor} size={24} />
+        )
+      }
+    },
+    Inbox: {
+      screen: Inbox,
+      navigationOptions: {
+        tabBarLabel: "Inbox",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-person-outline" color={tintColor} size={24} />
         )
       }
     }
@@ -86,7 +117,7 @@ export const createRootNavigator = (signedIn = false) => {
       }
     },
     {
-      initialRouteName: "AuthLoading"
+      initialRouteName: "AppTabNavigator"
     }
   );
 };
