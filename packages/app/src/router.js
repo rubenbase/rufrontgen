@@ -8,13 +8,9 @@ import {
 // Screens
 import RegisterConnector from "./modules/register/RegisterConnector";
 import LoginConnector from "./modules/login/LoginConnector";
-import Home from "./screens/Home";
 import Explore from "./screens/Explore";
-import Inbox from "./screens/Inbox";
 import Profile from "./screens/Profile";
-import Saved from "./screens/Saved";
-import Trips from "./screens/Trips";
-
+import Order from "./screens/Order";
 import AuthLoadingScreen from "./screens/AuthLoading";
 
 import Icon from "react-native-vector-icons/Ionicons";
@@ -59,28 +55,11 @@ const AppTabNavigator = createBottomTabNavigator(
         )
       }
     },
-    Saved: {
-      screen: Saved,
+
+    Order: {
+      screen: Order,
       navigationOptions: {
-        tabBarLabel: "PROFILE",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-person-outline" color={tintColor} size={24} />
-        )
-      }
-    },
-    Trips: {
-      screen: Trips,
-      navigationOptions: {
-        tabBarLabel: "Comidas",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-person-outline" color={tintColor} size={24} />
-        )
-      }
-    },
-    Inbox: {
-      screen: Inbox,
-      navigationOptions: {
-        tabBarLabel: "Inbox",
+        tabBarLabel: "Order",
         tabBarIcon: ({ tintColor }) => (
           <Icon name="ios-person-outline" color={tintColor} size={24} />
         )
