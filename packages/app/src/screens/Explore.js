@@ -13,10 +13,12 @@ import {
   Animated
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import Pub from "../modules/Explore/Pub";
 import Category from "../modules/Explore/Category";
+import PubExperimental from "../modules/Explore/PubExperimental";
+import SayHi from "../modules/Explore/SayHi";
 
 const { height, width } = Dimensions.get("window");
+
 class Explore extends Component {
   componentWillMount() {
     this.scrollY = new Animated.Value(0);
@@ -91,103 +93,35 @@ class Explore extends Component {
               { nativeEvent: { contentOffset: { y: this.scrollY } } }
             ])}
           >
-            <View style={{ flex: 1, backgroundColor: "white", paddingTop: 20 }}>
-              <Text
-                style={{
-                  fontSize: 24,
-                  fontWeight: "700",
-                  paddingHorizontal: 20
-                }}
-              >
-                ¡Bienvenido, Aitor!
-              </Text>
+            <SayHi />
 
-              <View style={{ height: 130, marginTop: 20 }}>
-                <ScrollView
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
-                >
-                  <Category
-                    imageUri={require("../../assets/home.jpg")}
-                    name="Home"
-                  />
-                  <Category
-                    imageUri={require("../../assets/experiences.jpg")}
-                    name="Experiences"
-                  />
-                  <Category
-                    imageUri={require("../../assets/restaurant.jpg")}
-                    name="Resturant"
-                  />
-                </ScrollView>
-              </View>
-              <Pub />
-              <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
-                <Text style={{ fontSize: 24, fontWeight: "700" }}>
-                  Le Tavernier
-                </Text>
-                <Text style={{ fontWeight: "100", marginTop: 10 }}>
-                  Cafetería y coctelería de referencia local.
-                </Text>
-                <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
-                  <Image
-                    style={{
-                      flex: 1,
-                      height: null,
-                      width: null,
-                      resizeMode: "cover",
-                      borderRadius: 5,
-                      borderWidth: 1,
-                      borderColor: "#dddddd"
-                    }}
-                    source={require("../../assets/tavernier.jpg")}
-                  />
-                </View>
-              </View>
-              <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
-                <Text style={{ fontSize: 24, fontWeight: "700" }}>
-                  Quai Coruña
-                </Text>
-                <Text style={{ fontWeight: "100", marginTop: 10 }}>
-                  Local nocturno de copas.
-                </Text>
-                <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
-                  <Image
-                    style={{
-                      flex: 1,
-                      height: null,
-                      width: null,
-                      resizeMode: "cover",
-                      borderRadius: 5,
-                      borderWidth: 1,
-                      borderColor: "#dddddd"
-                    }}
-                    source={require("../../assets/home.jpg")}
-                  />
-                </View>
-              </View>
-            </View>
-            <Pub />
-            <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
-              <Text style={{ fontSize: 24, fontWeight: "700" }}>Brit</Text>
-              <Text style={{ fontWeight: "100", marginTop: 10 }}>
-                Coctelería y pub de referencia
-              </Text>
-              <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
-                <Image
-                  style={{
-                    flex: 1,
-                    height: null,
-                    width: null,
-                    resizeMode: "cover",
-                    borderRadius: 5,
-                    borderWidth: 1,
-                    borderColor: "#dddddd"
-                  }}
-                  source={require("../../assets/brit.png")}
-                />
-              </View>
-            </View>
+            <PubExperimental
+              name="LeTavernier"
+              description="Cafetería y coctelería de reconocido prestigio situada en uno de los lugares más emblemáticos de La Coruña"
+              navigation={this.props.navigation}
+              imageName="tavernier"
+            />
+
+            <PubExperimental
+              name="Quai Coruña"
+              description="Pub hindie de referencia."
+              navigation={this.props.navigation}
+              imageName="quai"
+            />
+
+            <PubExperimental
+              name="Brit"
+              description="Un local que recrea con enorme fidelidad los pubs británicos de categoría, y lo hace con los sellos más prestigiosos."
+              navigation={this.props.navigation}
+              imageName="brit"
+            />
+
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
 
             {/* <View style={{ marginTop: 40 }}>
               <Text

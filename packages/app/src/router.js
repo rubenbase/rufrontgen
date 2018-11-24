@@ -18,6 +18,12 @@ import Legal from "./screens/Legal";
 import Forgot from "./screens/Forgot";
 
 const AuthStackNavigator = createStackNavigator({
+  Home: {
+    screen: Explore
+  },
+  Order: {
+    screen: Order
+  },
   Register: {
     screen: RegisterConnector
   },
