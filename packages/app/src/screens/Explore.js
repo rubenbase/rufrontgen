@@ -13,7 +13,6 @@ import {
   Animated
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import Category from "../modules/Explore/Category";
 import PubExperimental from "../modules/Explore/PubExperimental";
 import SayHi from "../modules/Explore/SayHi";
 
@@ -123,48 +122,24 @@ class Explore extends Component {
               imageName="monty"
             />
 
-            {/* <View style={{ marginTop: 40 }}>
-              <Text
-                style={{
-                  fontSize: 24,
-                  fontWeight: "700",
-                  paddingHorizontal: 20
-                }}
-              >
-                Locales a tu alrededor
-              </Text>
-              <View
-                style={{
-                  paddingHorizontal: 20,
-                  marginTop: 20,
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                  justifyContent: "space-between"
-                }}
-              >
-                <Home
-                  width={width}
-                  name="Resturant"
-                  type="Coctelería"
-                  price={10}
-                  rating={5}
-                />
-                <Home
-                  width={width}
-                  name="Quai Coruña"
-                  type="Bar"
-                  price={82}
-                  rating={3}
-                />
-                <Home
-                  width={width}
-                  name="Brit Coruña"
-                  type="Pub"
-                  price={82}
-                  rating={4}
-                />
-              </View>
-            </View> */}
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
           </ScrollView>
         </View>
       </SafeAreaView>

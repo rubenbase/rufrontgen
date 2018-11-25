@@ -20,7 +20,7 @@ export default class SayHi extends Component {
             paddingHorizontal: 20
           }}
         >
-          ¡Bienvenido, Prueba!
+          ¡Bienvenido, Aitor!
         </Text>
 
         <View style={{ height: 130, marginTop: 20 }}>
