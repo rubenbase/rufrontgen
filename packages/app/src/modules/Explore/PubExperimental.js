@@ -5,10 +5,7 @@ import {
   Image,
   StyleSheet,
   Dimensions,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback
+  TouchableOpacity
 } from "react-native";
 const { height, width } = Dimensions.get("window");
 
