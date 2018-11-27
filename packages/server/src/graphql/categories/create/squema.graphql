@@ -1,7 +1,8 @@
 input CreateCategoriesInput {
-  name: String!
+ name: String!
 }
 
 type Mutation {
   createCategories(input: CreateCategoriesInput!): Boolean!
 }
+

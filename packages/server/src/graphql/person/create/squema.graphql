@@ -1,0 +1,12 @@
+input PersonInput{
+    name: String!
+    lastName: String!
+    age: Int!
+}
+
+type Mutation {
+    
+    # Creates a new person with the given name
+    # returning [true] if the person details has been successfuly added
+    createPerson(input: PersonInput): Boolean!
+}
