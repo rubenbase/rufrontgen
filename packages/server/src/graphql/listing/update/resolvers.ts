@@ -10,7 +10,7 @@ export const resolvers: ResolverMap = {
       if (picture) {
         data.pictureUrl = await processUpload(picture);
       }
-
+      
       await getConnection()
         .createQueryBuilder()
         .update(Listing)

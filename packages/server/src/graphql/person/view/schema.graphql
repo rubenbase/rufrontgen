@@ -1,0 +1,4 @@
+type Query {
+  # View one specific person from his given ID
+  viewPerson(id: ID!): Person
+}

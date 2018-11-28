@@ -10,6 +10,7 @@ type Listing {
   pictureUrl: String
   owner: User!
 }
+
 type Query {
   findListings: [Listing!]!
 }

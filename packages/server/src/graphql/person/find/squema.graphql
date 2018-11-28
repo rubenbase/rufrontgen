@@ -1,0 +1,19 @@
+type Person{
+    # UUID
+    id: ID!
+
+    # String with the name of the person (may contain blank spaces between names)
+    name: String!
+
+    # String with the last name of the person (may contain blank spaces between last names)
+    lastName: String
+
+    # Smallint, from 0 to 32767
+    age: Int
+}
+
+type Query {    
+    # Array of every person, containing (in order) 
+    # its id, name, last and age.
+    findPersons: [Person!]!
+}

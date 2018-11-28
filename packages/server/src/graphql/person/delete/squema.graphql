@@ -1,0 +1,5 @@
+type Mutation {
+    # Delete the person with the given id, returning true if the user has been 
+    # succesfully deleted or an error info about what has gone wrong.
+    deletePerson(id: ID!): Boolean!
+}

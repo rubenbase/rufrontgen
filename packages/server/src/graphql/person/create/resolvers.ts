@@ -2,6 +2,7 @@ import { ResolverMap } from "./../../../types/graphql-utils";
 import { Person } from "./../../../models/Person";
 
 export const resolvers: ResolverMap = {
+
     Mutation: {
         createPerson: async (_, {input: {name, lastName, age} }) => {
             
@@ -14,4 +15,5 @@ export const resolvers: ResolverMap = {
             return true;
         }
     }
+    
 }

@@ -1,0 +1,9 @@
+input UpdateClientInput {
+  name: String
+  lastName: String
+  age: Int
+}
+
+type Mutation {
+  updatePerson(id: ID!, input: UpdateClientInput): Boolean!
+}

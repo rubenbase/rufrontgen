@@ -5,7 +5,7 @@ export const resolvers: ResolverMap = {
   Mutation: {
     deleteListing: async (_, { id }, { session }) => {
       if (!session.userId) {
-        throw new Error("not authenticated");
+        throw new Error("not authenticated") ;
       }
 
       const listing = await Listing.findOne({ where: { id } });
