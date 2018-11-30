@@ -17,6 +17,7 @@ import FindCategoryScreen from "screens/FindCategoryScreen";
 import ViewCategoryScreen from "screens/ViewCategoryScreen";
 import EditCategoryScreen from "screens/EditCategoryScreen";
 import Home from "screens/HomeScreen";
+import PersonTestScreen from "screens/PersonTest";
 import Logout from "containers/logout";
 import BasicLayout from "layouts/BasicLayout";
 
@@ -89,6 +90,12 @@ export const Routes = () => (
         exact={true}
         path="/edit-categories"
         component={EditCategoryScreen}
+      />
+
+      <Route 
+        exact={true}
+        path="/person-test"
+        component={PersonTestScreen}
       />
 
       {/* Legal Routes */}

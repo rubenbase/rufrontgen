@@ -1,5 +1,10 @@
 import React from "react";
 import "./style.scss";
+
+/**
+ * Class that returns a bar with the logo Yoowriter, which get the user to the root
+ * page after clicking the icon.
+ */
 class AuthHeader extends React.PureComponent {
   render() {
     return (
