@@ -2,8 +2,8 @@
 
 <br />
 
-<div align="center"><strong>Start your web and mobile project in just seconds!</strong></div>
-<div align="center">A highly scalable, efficient, offline-first and visual rich project made with best practices</div>
+<div align="center"><strong>Start your web project in just seconds!</strong></div>
+<div align="center"></div>
 
 <br />
 
