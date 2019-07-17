@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import {
-  SafeAreaView,
+  View,
   Text,
   StyleSheet,
-  View,
+  SafeAreaView,
   TextInput,
   Platform,
   StatusBar,
   ScrollView,
+  Image,
   Dimensions,
   Animated
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import WorkingOrderBox from "../modules/Home/WorkingOrderBox";
-import SpaceBox from "../modules/Home/SpaceBox";
-import Tag from "../modules/Home/Tag";
+import PubExperimental from "../modules/Explore/PubExperimental";
+import SayHi from "../modules/Explore/SayHi";
 
 const { height, width } = Dimensions.get("window");
 
-class Home extends Component {
+class Explore extends Component {
   componentWillMount() {
     this.scrollY = new Animated.Value(0);
 
     this.startHeaderHeight = 80;
     this.endHeaderHeight = 50;
     if (Platform.OS == "android") {
-      this.startHeaderHeight = 100 + StatusBar.currentHeight;
+      this.startHeaderHeight = 70 + StatusBar.currentHeight;
       this.endHeaderHeight = 70 + StatusBar.currentHeight;
     }
 
@@ -52,15 +52,6 @@ class Home extends Component {
     });
   }
 
-  createTable = () => {
-    let values = [];
-    for (let i = 0; i < 100; i++) {
-      values.push(<SpaceBox name={100 + i} width={width} />);
-    }
-
-    return values;
-  };
-
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -78,34 +69,22 @@ class Home extends Component {
                 flexDirection: "row",
                 padding: 10,
                 backgroundColor: "white",
-                marginHorizontal: 20,
-                shadowOffset: { width: 0, height: 0 },
+                marginHorizontal: 10,
+                shadowOffset: { width: 10, height: 10 },
                 shadowColor: "black",
                 shadowOpacity: 0.2,
-                elevation: 1,
+                elevation: 3,
                 marginTop: Platform.OS == "android" ? 30 : null
               }}
             >
-              <Icon name="ios-search" size={20} style={{ marginRight: 10 }} />
+              <Icon name="ios-search" size={20} style={{ marginRight: 15 }} />
               <TextInput
                 underlineColorAndroid="transparent"
-                placeholder="Try New Delhi"
+                placeholder="Busca tu Bule local"
                 placeholderTextColor="grey"
                 style={{ flex: 1, fontWeight: "700", backgroundColor: "white" }}
               />
             </View>
-            <Animated.View
-              style={{
-                flexDirection: "row",
-                marginHorizontal: 20,
-                position: "relative",
-                top: this.animatedTagTop,
-                opacity: this.animatedOpacity
-              }}
-            >
-              <Tag name="Guests" />
-              <Tag name="Dates" />
-            </Animated.View>
           </Animated.View>
           <ScrollView
             scrollEventThrottle={16}
@@ -113,62 +92,65 @@ class Home extends Component {
               { nativeEvent: { contentOffset: { y: this.scrollY } } }
             ])}
           >
-            <View style={{ flex: 1, backgroundColor: "white", paddingTop: 20 }}>
-              <Text
-                style={{
-                  fontSize: 24,
-                  fontWeight: "700",
-                  paddingHorizontal: 20
-                }}
-              >
-                Section title
-              </Text>
-              <View
-                style={{
-                  height: 30,
-                  marginTop: 20
-                }}
-              >
-                <ScrollView
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
-                >
-                  <WorkingOrderBox date={"1"} />
-                  <WorkingOrderBox date={"2"} />
-                  <WorkingOrderBox date={"3"} />
-                  <WorkingOrderBox date={"4"} />
-                  <WorkingOrderBox date={"5"} />
-                  <WorkingOrderBox date={"6"} />
-                </ScrollView>
-              </View>
-            </View>
+            <SayHi />
 
-            <View style={{ marginTop: 40 }}>
-              <View
-                style={{
-                  paddingHorizontal: 20,
-                  marginTop: 20,
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                  justifyContent: "space-between"
-                }}
-              >
-                {this.createTable()}
-              </View>
-            </View>
+            <PubExperimental
+              name="LeTavernier"
+              description="Cafetería y coctelería de reconocido prestigio situada en uno de los lugares más emblemáticos de La Coruña"
+              navigation={this.props.navigation}
+              imageName="tavernier"
+            />
+
+            <PubExperimental
+              name="Quai Coruña"
+              description="Pub hindie de referencia."
+              navigation={this.props.navigation}
+              imageName="quai"
+            />
+
+            <PubExperimental
+              name="Brit"
+              description="Un local que recrea con enorme fidelidad los pubs británicos de categoría, y lo hace con los sellos más prestigiosos."
+              navigation={this.props.navigation}
+              imageName="brit"
+            />
+
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
+
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
+            <PubExperimental
+              name="Monty"
+              description="Asociación de artistas y cafetería."
+              navigation={this.props.navigation}
+              imageName="monty"
+            />
           </ScrollView>
         </View>
       </SafeAreaView>
     );
   }
 }
-
-export default Home;
+export default Explore;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
   }

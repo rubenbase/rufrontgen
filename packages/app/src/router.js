@@ -8,8 +8,9 @@ import {
 // Screens
 import RegisterConnector from "./modules/register/RegisterConnector";
 import LoginConnector from "./modules/login/LoginConnector";
-import Home from "./screens/Home";
+import Explore from "./screens/Explore";
 import Profile from "./screens/Profile";
+import Order from "./screens/Order";
 import AuthLoadingScreen from "./screens/AuthLoading";
 
 import Icon from "react-native-vector-icons/Ionicons";
@@ -17,9 +18,14 @@ import Legal from "./screens/Legal";
 import Forgot from "./screens/Forgot";
 
 const AuthStackNavigator = createStackNavigator({
+  Home: {
+    screen: Explore
+  },
+  Order: {
+    screen: Order
+  },
   Register: {
-    screen: RegisterConnector,
-
+    screen: RegisterConnector
   },
   Login: {
     screen: LoginConnector,
@@ -37,21 +43,31 @@ const AuthStackNavigator = createStackNavigator({
 
 const AppTabNavigator = createBottomTabNavigator(
   {
-    Profile: {
-      screen: Profile,
+    Explore: {
+      screen: Explore,
       navigationOptions: {
-        tabBarLabel: "PROFILE",
+        tabBarLabel: "Explora",
         tabBarIcon: ({ tintColor }) => (
           <Icon name="ios-person-outline" color={tintColor} size={24} />
         )
       }
     },
-    Home: {
-      screen: Home,
+    Profile: {
+      screen: Profile,
       navigationOptions: {
-        tabBarLabel: "EXPLORE",
+        tabBarLabel: "Perfil",
         tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-search-outline" color={tintColor} size={24} />
+          <Icon name="ios-person-outline" color={tintColor} size={24} />
+        )
+      }
+    },
+
+    Order: {
+      screen: Order,
+      navigationOptions: {
+        tabBarLabel: "Order",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-person-outline" color={tintColor} size={24} />
         )
       }
     }
@@ -86,7 +102,7 @@ export const createRootNavigator = (signedIn = false) => {
       }
     },
     {
-      initialRouteName: "AuthLoading"
+      initialRouteName: "AppTabNavigator"
     }
   );
 };
